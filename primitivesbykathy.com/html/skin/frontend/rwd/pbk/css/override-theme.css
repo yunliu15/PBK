@@ -1,0 +1,7 @@
+/****** Header ********/
+
+#header-account {float:right;}
+#header-account ul li,#header-account .links {
+    display:inline-block;
+}
+.welcome-msg {text-transform: uppercase;}

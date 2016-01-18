@@ -50,11 +50,19 @@
               // See app.js for details ?>
         <div class="store-language-container"></div>
 
+        <!-- Account -->
+
+        <div id="header-account">
+            <span class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getChildHtml('accountLinks') ?></span>
+            <?php echo $this->getChildHtml('topLinks') ?>
+        </div>
+
+
         <!-- Skip Links -->
 
         <div class="skip-links">
 
-            <span class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php echo $this->getChildHtml('accountLinks') ?></span>
+
             <a href="#header-nav" class="skip-link skip-nav">
                 <span class="icon"></span>
                 <span class="label"><?php echo $this->__('Menu'); ?></span>
@@ -65,21 +73,9 @@
                 <span class="label"><?php echo $this->__('Search'); ?></span>
             </a>
 
-            <div class="account-cart-wrapper">
-                <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
-                    <span class="icon"></span>
-                    <span class="label"><?php echo $this->__('Account'); ?></span>
-                </a>
-
-                <!-- Cart -->
-
-                <div class="header-minicart">
-                    <?php echo $this->getChildHtml('minicart_head'); ?>
-                </div>
-            </div>
-
 
         </div>
+
 
         <!-- Navigation -->
 
@@ -93,11 +89,7 @@
             <?php echo $this->getChildHtml('topSearch') ?>
         </div>
 
-        <!-- Account -->
 
-        <div id="header-account" class="skip-content">
-            <?php echo $this->getChildHtml('topLinks') ?>
-        </div>
     </div>
 </header>
 

@@ -12,5 +12,16 @@
             <action method="addItem"><type>skin_css</type><name>css/override-theme.css</name><params/></action>
 
         </reference>
+
+        <reference name="top.links">
+
+            <remove name="wishlist_link"/>
+            <remove name="checkout_cart_link"/>
+
+        </reference>
+        <reference name="header">
+            <remove name="minicart_head"/>
+        </reference>
+
     </default>
 </layout>
