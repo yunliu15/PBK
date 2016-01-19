@@ -1,3 +1,50 @@
+
+/* fonts */
+@font-face {
+    font-family: 'icomoon';
+    src:    url('icomoon.eot?6vthk3');
+    src:    url('icomoon.eot?6vthk3#iefix') format('embedded-opentype'),
+    url('icomoon.ttf?6vthk3') format('truetype'),
+    url('icomoon.woff?6vthk3') format('woff'),
+    url('icomoon.svg?6vthk3#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/***  GENERAL ***/
+
+.all-upper {text-transform: uppercase;}
+.icon-moon {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    width:15px!important;
+    height:15px!important;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.arrow-down:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    vertical-align: middle;
+    content: "";
+    border-style: solid solid none;
+    border-width: 4px 4px 0;
+    border-color: #fff transparent transparent;
+}
+
 /****** Header ********/
 
 #header-account {float:right;}
@@ -5,3 +52,61 @@
     display:inline-block;
 }
 .welcome-msg {text-transform: uppercase;}
+#header-account .welcome-msg a[title='Send Invitations'] {display:none;}
+#header-search {float:right;margin-top:20px;}
+#header-nav {clear:both;}
+header .need-help {float:left;padding-top:15px;}
+.header-top p {text-align:center;}
+.logo {margin:auto;}
+.store-language-container {display:none;}
+
+.page-header .wishlist-cart-wrapper {float:right;}
+.page-header .wishlist-cart-wrapper .block-wishlist {display:inline-block;margin-bottom:0;}
+#header .wishlist-cart-wrapper .block-wishlist .block-title {
+    width:auto;
+    cursor:pointer;
+    border-top:none;
+    padding-top:5px;
+
+}
+#header .wishlist-cart-wrapper .skip-link {background:none;}
+#wishlist-top-content.skip-active {
+    background: #FBFBFB;
+    border: solid 1px #cccccc;
+    display: block;
+    position: absolute;
+    z-index: 200;
+    top: 40px;
+    right: 0;
+    width: 320px;
+    background: white;
+}
+#header .block-wishlist .block-title .icon:before {
+    content: "\e90a";
+    color:#fff;
+}
+
+.wishlist-cart-wrapper > .checkout-button {vertical-align: top;margin-top:15px;}
+
+#header #header-nav {
+    display:inline-block;
+    border-bottom:none;
+
+}
+#header-nav .level0 > a{
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.nav-wishlist-cart-wrapper {background-color:#333;}
+
+
+/****** Media Query ******/
+@media only screen and (min-width: 771px) {
+    .nav-primary {
+
+        margin-bottom: 13px;
+    }
+}

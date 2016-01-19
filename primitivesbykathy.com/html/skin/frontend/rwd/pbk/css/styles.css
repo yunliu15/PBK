@@ -499,12 +499,12 @@ textarea {
 }
 
 a {
-  color: #3399cc;
+  color: #fff;
   text-decoration: none;
 }
 
 a:hover {
-  color: #2e8ab8;
+  color:  #633125;
   text-decoration: underline;
 }
 
@@ -873,7 +873,7 @@ body:not(.customer-account) .block:first-child .block-title {
 }
 .block-account li a:hover,
 .block-cms-menu li a:hover {
-  color: #3399cc;
+  color:  #633125;
 }
 
 /* ============================================ *
@@ -920,7 +920,7 @@ body:not(.customer-account) .block:first-child .block-title {
 .cart-table .product-cart-actions .button,
 #co-shipping-method-form .buttons-set .button,
 .footer .button {
-  background: #3399cc;
+  background: #343636;
   display: inline-block;
   padding: 7px 15px;
   border: 0;
@@ -1156,7 +1156,7 @@ a.button:hover {
 }
 
 .breadcrumbs a:hover {
-  color: #3399cc;
+  color:  #633125;
 }
 
 .breadcrumbs strong {
@@ -3243,7 +3243,7 @@ body {
  * ============================================ */
 .logo {
   display: block;
-  float: left;
+  /*float: left;*/
   width: 65%;
   min-width: 100px;
   min-height: 44px;
@@ -3660,7 +3660,7 @@ a.skip-link {
 @media only screen and (min-width: 771px) {
   #header-search {
     display: block;
-    position: absolute;
+    /*position: absolute;*/
     top: 55px;
     right: 0;
     width: 25%;
@@ -3829,7 +3829,7 @@ a.skip-link {
   z-index: 5;
   width: 22px;
   height: 22px;
-  background: rgba(51, 153, 204, 0.9);
+  /*background: rgba(51, 153, 204, 0.9);*/
   color: #FFFFFF;
   font-size: 11px;
   line-height: 22px;
@@ -3852,7 +3852,7 @@ a.skip-link {
 }
 @media only screen and (min-width: 771px) {
   .skip-cart {
-    color: #3399cc;
+    color: #fff;
     text-transform: uppercase;
   }
   .skip-cart:hover {
@@ -3870,16 +3870,16 @@ a.skip-link {
     font-size: 14px;
     width: auto;
   }
-  .skip-cart .count:before {
+  /*.skip-cart .count:before {
     content: '(';
   }
   .skip-cart .count:after {
     content: ')';
-  }
+  }*/
 
   .skip-cart .count,
   .skip-link.skip-active .count {
-    color: #3399cc;
+    color: #fff;
   }
 }
 .skip-cart .count.empty {

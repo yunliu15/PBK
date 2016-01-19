@@ -20,7 +20,8 @@
 
         </reference>
         <reference name="header">
-            <remove name="minicart_head"/>
+
+            <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="mini_wishlist_top" after="cart_sidebar" template="wishlist/top-mini.phtml" />
         </reference>
 
     </default>
