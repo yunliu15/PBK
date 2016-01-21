@@ -9,7 +9,9 @@
             <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Lato: 300, 300italic, 400, 400italic, 700, 700italic, 900,900italic</href></action>
 
             <!-- CSS -->
-            <action method="addItem"><type>skin_css</type><name>css/override-theme.css</name><params/></action>
+            <action method="addItem" after="-"><type>skin_css</type><name>css/override-theme.css</name><params/></action>
+
+            <action method="removeItem"><type>js</type>><name>js/jquery/jquery-min.js</name></action>
 
         </reference>
 
@@ -23,6 +25,13 @@
 
             <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="mini_wishlist_top" after="cart_sidebar" template="wishlist/top-mini.phtml" />
         </reference>
+
+       <!-- <reference name="footer">
+            <block type="cms/block" name="footer_bottom" after="-">
+                <action method="setBlockId"><block_id>footer_bottom</block_id></action>
+            </block>
+        </reference>-->
+
 
     </default>
 </layout>

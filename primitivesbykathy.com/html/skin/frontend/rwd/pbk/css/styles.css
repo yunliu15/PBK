@@ -493,13 +493,13 @@ select,
 table,
 textarea {
   font-family: "Lato", sans-serif !important;
-  color: #636363;
+  color: #333637;
   font-size: 14px;
   line-height: 1.5;
 }
 
 a {
-  color: #fff;
+  color: #333637;
   text-decoration: none;
 }
 
@@ -509,8 +509,8 @@ a:hover {
 }
 
 a:focus {
-  outline-color: #3091c2;
-  color: #143d52;
+outline:none;
+  color: #633125;
 }
 
 ol,
@@ -526,7 +526,7 @@ ul {
 h1, .h1 {
   margin: 0;
   margin-bottom: 0.7em;
-  color: #3399cc;
+  color: #333637;
   font-family: "Lato", sans-serif;
   font-size: 28px;
   font-weight: 400;
@@ -539,7 +539,7 @@ h1, .h1 {
 h2, .h2 {
   margin: 0;
   margin-bottom: 0.5em;
-  color: #636363;
+  color: #333637;
   font-family: font-family: "Lato", sans-serif;
   font-size: 24px;
   font-weight: 400;
@@ -552,7 +552,7 @@ h2, .h2 {
 h3, .h3 {
   margin: 0;
   margin-bottom: 10px;
-  color: #636363;
+  color: #333637;
   font-family: "Lato", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -565,7 +565,7 @@ h3, .h3 {
 h4, .h4 {
   margin: 0;
   margin-bottom: 10px;
-  color: #636363;
+  color: #333637;
   font-family: "Lato", sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -578,7 +578,7 @@ h4, .h4 {
 h5, .h5 {
   margin: 0;
   margin-bottom: 10px;
-  color: #636363;
+  color: #333637;
   font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
   font-size: 13px;
   font-weight: bold;
@@ -591,7 +591,7 @@ h5, .h5 {
 h6, .h6 {
   margin: 0;
   margin-bottom: 5px;
-  color: #636363;
+  color: #333637;
   font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
   font-size: 12px;
   font-weight: bold;
@@ -672,7 +672,7 @@ h6, .h6 {
 .block-title strong {
   margin: 0;
   margin-bottom: 10px;
-  color: #636363;
+  color: #333637;
   font-family: "Lato", sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -680,7 +680,7 @@ h6, .h6 {
   line-height: 1.4;
   text-rendering: optimizeSpeed;
   text-transform: uppercase;
-  color: #3399cc;
+
   margin-bottom: 0;
   text-transform: uppercase;
   font-weight: 600;
@@ -938,21 +938,21 @@ body:not(.customer-account) .block:first-child .block-title {
 .cart-table .product-cart-actions .button:hover,
 #co-shipping-method-form .buttons-set .button:hover,
 .footer .button:hover {
-  background: #2e8ab8;
+  background: #633125;
   cursor: pointer;
 }
 .button:active,
 .cart-table .product-cart-actions .button:active,
 #co-shipping-method-form .buttons-set .button:active,
 .footer .button:active {
-  background: #297aa3;
+  background: #633125;
   color: #FFFFFF;
 }
 .button:focus,
 .cart-table .product-cart-actions .button:focus,
 #co-shipping-method-form .buttons-set .button:focus,
 .footer .button:focus {
-  background-color: #297aa3;
+  background-color: #633125;
   outline: none;
   color: #FFFFFF;
 }
@@ -3169,7 +3169,7 @@ body {
   .page-header {
     max-width: 1260px;
     margin: 0 auto;
-    padding: 0 30px;
+
   }
 
   .page-header-container {
@@ -3388,7 +3388,7 @@ a.skip-link {
  * Global Header Navigation
  * ============================================ */
 @media only screen and (max-width: 770px) {
-  #header-account li a,
+  /*#header-account li a,
   .nav-primary a.level0 {
     padding: 0 15px 0 25px;
     border-bottom: 1px solid #cccccc;
@@ -3397,7 +3397,7 @@ a.skip-link {
     text-transform: uppercase;
     line-height: 30px;
   }
-
+*/
   #header-account li:last-child a,
   .nav-primary li.level0:last-child a.level0 {
     border-bottom: 0;
@@ -3530,8 +3530,8 @@ a.skip-link {
     border-left: 5px solid #cccccc;
     border-right: none;
     top: 50%;
-    left: 10px;
-    right: auto;
+    right: 10px;
+
     margin-top: -5px;
   }
   .nav-primary li.parent.sub-menu-active > a:after,
@@ -3567,7 +3567,7 @@ a.skip-link {
     /* Level 1+ */
   }
   .nav-primary a.level0 {
-    padding: 0 25px;
+    padding: 0 10px;
   }
   .nav-primary li.level0,
   .nav-primary a.level0 {
@@ -3658,7 +3658,7 @@ a.skip-link {
 }
 
 @media only screen and (min-width: 771px) {
-  #header-search {
+  #header-search-hide {
     display: block;
     /*position: absolute;*/
     top: 55px;
@@ -3695,7 +3695,7 @@ a.skip-link {
   width: 40px;
   height: 40px;
   border: 0;
-  background: none;
+
 }
 
 #search_mini_form .search-button:before {
@@ -3756,12 +3756,12 @@ a.skip-link {
   #header-account a {
     display: block;
     padding: 5px 10px;
-    color: #636363;
+    color: #333637;
     line-height: 2;
   }
 
   #header-account a:hover {
-    color: #3399cc;
+    color: #633125;
   }
 }
 /* -------------------------------------------- *
@@ -3774,13 +3774,13 @@ a.skip-link {
 #header-account a {
   position: relative;
   display: block;
-  padding: 5px 10px;
-  line-height: 23px;
+  padding: 0px 10px;
+  line-height: 14px;
   text-align: center;
 }
 
 #header-account a:hover {
-  color: #3399cc;
+  color: #633125;
 }
 
 /* ============================================ *
@@ -3818,7 +3818,7 @@ a.skip-link {
  * Skip Cart Notifier
  */
 .skip-cart .count {
-  -webkit-border-radius: 12px;
+ /* -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
@@ -3831,10 +3831,10 @@ a.skip-link {
   height: 22px;
   /*background: rgba(51, 153, 204, 0.9);*/
   color: #FFFFFF;
-  font-size: 11px;
+ /* font-size: 11px;
   line-height: 22px;
   text-align: center;
-  font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
+  font-family: "Helvetica Neue", Verdana, Arial, sans-serif;*/
 }
 
 .skip-link.skip-active .count {
@@ -3996,7 +3996,7 @@ a.skip-link {
 }
 .footer .block-title,
 .footer address {
-  color: #3399cc;
+  color: #333637;
 }
 .footer .links {
   float: left;
@@ -9264,9 +9264,9 @@ div.paypal-logo span > img {
   display: inline-block;
 }
 @media only screen and (max-width: 770px) {
-  .header-minicart {
+  /*.header-minicart {
     display: block;
-  }
+  }*/
 }
 .header-minicart .minicart-message {
   display: block;
@@ -9310,7 +9310,7 @@ div.paypal-logo span > img {
   display: none;
 }
 .header-minicart .block-subtitle {
-  color: #50A4CF;
+
   font-family: "Lato", sans-serif;
   font-size: 10px;
   font-weight: bold;
@@ -9351,9 +9351,7 @@ div.paypal-logo span > img {
   padding-top: 0px;
   font-weight: bold;
 }
-.header-minicart .product-details .product-name a {
-  color: #3399cc;
-}
+
 .header-minicart .info-wrapper {
   margin-bottom: 0.5em;
 }
@@ -9362,7 +9360,7 @@ div.paypal-logo span > img {
   padding-right: 10px;
 }
 .header-minicart .info-wrapper td {
-  color: #3399cc;
+
   clear: right;
 }
 .header-minicart .info-wrapper .qty-wrapper td {
@@ -9547,7 +9545,7 @@ div.paypal-logo span > img {
 }
 .search-autocomplete ul li {
   border-bottom: 1px solid #f4f4f4;
-  color: #3399cc;
+
   cursor: pointer;
   font-size: 12px;
   padding: 4px 6px;
@@ -9575,7 +9573,7 @@ div.paypal-logo span > img {
   display: block;
   border-right: 7px solid transparent;
   border-left: 7px solid transparent;
-  border-bottom: 7px solid #3399cc;
+  border-bottom: 7px solid #633125;
   border-top: none;
   left: 50%;
   top: -7px;

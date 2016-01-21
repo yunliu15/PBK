@@ -35,7 +35,13 @@
     <?php if($this->getTitle()): ?>
     <div class="block-title"><strong><span><?php echo $this->__($this->getTitle()); ?></span></strong></div>
     <?php endif; ?>
-    <ul<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?>>
+    <ul<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?> class="all-upper">
+        <li>
+            <a href="#">
+                <?php echo $this->__("Quick Order");?>
+            </a>
+        </li>
+
         <li>
             <div>
                 <?php if (Mage::helper('customer')->isLoggedIn() ): ?>

@@ -23,31 +23,14 @@
  * @copyright Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license http://www.magento.com/license/enterprise-edition
  */
-
-/**
- * Shoping cart sidebar
- *
- * @see Mage_Checkout_Block_Cart_Sidebar
- */
-
 ?>
 
-<?php
-    $_cartQty = $this->getSummaryCount();
-    if(empty($_cartQty)) {
-        $_cartQty = 0;
-    }
-$_cartTotal = Mage::getBlockSingleton('Checkout/Cart_Sidebar')->getSubtotal();
-$_cartTotal = number_format($_cartTotal, 2, '.', '');
-?>
-
-<a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-target-element="#header-cart" class="skip-link skip-cart <?php //if($_cartQty <= 0): ?> <?php //endif; ?>">
-    <span class="icon"></span>
-    <span class="total">$<?php echo $_cartTotal; ?></span>
-    <span class="count arrow-down"><?php echo $_cartQty; ?></span>
-
-</a>
-
-<div id="header-cart" class="block block-cart skip-content">
-    <?php echo $this->getChildHtml('minicart_content');?>
+<div class="footer-container">
+    <p class="footer-above no-bottom"></p>
+    <div class="footer">
+        <?php echo $this->getChildHtml() ?>
+        <!--<address class="copyright"><?php //echo $this->getCopyright() ?></address>-->
+    </div>
 </div>
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_bottom')->toHtml();?>
+

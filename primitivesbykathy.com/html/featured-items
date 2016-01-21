@@ -1,0 +1,48 @@
+<div class="toggle-content tabs">
+    <dl class="collateral-tabs">
+        <dt class="tab current"><span>best sellers</span></dt>
+        <dd class="tab-container current">
+            <div class="tab-content">
+                <div class="all-upper right">
+                    <span>Shop best sellers-</span>
+                    <a href="#" class="red-text">click here </a>
+                    <span class="icon"></span>
+                </div>
+                best seller test
+            </div>
+        </dd>
+        <dt class="tab last"><span>New Items</span></dt>
+        <dd class="tab-container last">
+            <div class="tab-content">
+                <div class="all-upper right">
+                    <span>Shop new items-</span>
+                    <a href="#" class="red-text">click here </a>
+                    <span class="icon"></span>
+                </div>
+                new items test
+            </div>
+        </dd>
+        <dt class="tab last"><span>Trending</span></dt>
+        <dd class="tab-container last">
+            <div class="tab-content">
+                <div class="all-upper right">
+                    <span>Shop trending-</span>
+                    <a href="#" class="red-text">click here </a>
+                    <span class="icon"></span>
+                </div>
+                trending test
+            </div>
+        </dd>
+        <dt class="tab last"><span>Sale Items</span></dt>
+        <dd class="tab-container last">
+            <div class="tab-content">
+                <div class="all-upper right">
+                    <span>Shop sale items-</span>
+                    <a href="#" class="red-text">click here </a>
+                    <span class="icon"></span>
+                </div>
+                sale items test
+            </div>
+        </dd>
+    </dl>
+</div>
