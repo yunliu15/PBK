@@ -505,7 +505,7 @@ a {
 
 a:hover {
   color:  #633125;
-  text-decoration: underline;
+
 }
 
 a:focus {
@@ -4012,9 +4012,7 @@ a.skip-link {
 .footer .links a {
   color: #636363;
 }
-.footer .links a:hover {
-  color: #3399cc;
-}
+
 .footer .block-subscribe {
   float: right;
   width: 320px;

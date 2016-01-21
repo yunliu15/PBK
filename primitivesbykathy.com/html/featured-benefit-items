@@ -1,0 +1,28 @@
+<div class="item">
+    <div class="img-wrapper"><img alt="" src="{{media url="wysiwyg/featured_collections/small_image.jpg"}}" /></div>
+    <div class="description">
+        <p class="title no-bottom">Title</p>
+        <p>description</p>
+        <p class="no-bottom">donate</p>
+        <a href="#" class="red-text">View Benefit Item. Click Here.</a>
+    </div>
+</div>
+<div class="item">
+    <div class="img-wrapper"><img alt="" src="{{media url="wysiwyg/featured_collections/small_image.jpg"}}" /></div>
+    <div class="description">
+        <p class="title no-bottom">Title</p>
+        <p>description</p>
+        <p class="no-bottom">donate</p>
+        <a href="#" class="red-text">View Benefit Item. Click Here.</a>
+    </div>
+</div>
+<div class="item">
+    <div class="img-wrapper"><img alt="" src="{{media url="wysiwyg/featured_collections/small_image.jpg"}}" /></div>
+    <div class="description">
+        <p class="title no-bottom">Title</p>
+        <p>description</p>
+        <p class="no-bottom">donate</p>
+        <a href="#" class="red-text">View Benefit Item. Click Here.</a>
+    </div>
+</div>
+<a href="#" class="red-button arrow-right all-upper">view all benefit items and community events</a>

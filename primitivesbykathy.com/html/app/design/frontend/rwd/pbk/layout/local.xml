@@ -31,6 +31,11 @@
                 <action method="setBlockId"><block_id>footer_bottom</block_id></action>
             </block>
         </reference>-->
+        <reference name="footer">
+            <block type="cms/block" name="footer_column1" before="-">
+                <action method="setBlockId"><block_id>footer_column1</block_id></action>
+            </block>
+        </reference>
 
 
     </default>

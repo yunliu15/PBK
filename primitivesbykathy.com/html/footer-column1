@@ -1,0 +1,10 @@
+<div class="links">
+    <div class="block-title"><strong><span>Customer Service</span></strong></div>
+    <ul>
+        <li><a href="{{store url=""}}">Request Catalog</a></li>
+        <li><a href="{{store url=""}}">Ordering Info</a></li>
+        <li><a href="{{store url=""}}">Contact Us</a></li>
+        <li><a href="{{store url=""}}">Returns</a></li>
+        <li><a href="{{store url=""}}">FAQ</a></li>
+    </ul>
+</div>

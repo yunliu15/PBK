@@ -46,7 +46,7 @@
     font-weight: 400;
     font-size: 12px;
 }
-
+.page .block-title {border:none;}
 
 a:hover {
     color: #633125;
@@ -243,7 +243,7 @@ p.no-bottom {margin-bottom:0!important;}
 #header .skip-links.search {left:80px;}
 #header .skip-search, #header .skip-nav {background:none;}
 #header-nav.skip-content {display:none;}
-#header-nav .nav-primary {margin-top:0;}
+#header-nav .nav-primary {margin-top:0; padding-left:10px;}
 
 /******* Home **************/
 
@@ -284,6 +284,9 @@ p.no-bottom {margin-bottom:0!important;}
 .featured .item img {max-width:100%;}
 .featured .item:last-of-type {margin-right:0;}
 .featured {text-align:center;}
+.featured .red-button {margin-top:20px;}
+/** Featured Collections **/
+.featured-collections .item .title {margin-top:10px;}
 
 /** Featured Items **/
 .featured-items .tabs .toggle-tabs {
@@ -365,10 +368,18 @@ p.no-bottom {margin-bottom:0!important;}
     top:8px;
 }
 
+/******* Benefit items ******/
+.featured-benefit .item {width:30%; margin-right:5%;display:table}
+.featured-benefit .item.last{margin-right:0;}
+.featured-benefit .description {text-align:left;display:table-cell;vertical-align:top;padding-left:20px;}
+.featured-benefit .img-wrapper {display:table-cell;}
+
 .cms-index-index .featured .products-grid .actions {display:block;}
+
 
     /********* Footer **********/
 .footer .block-title {text-align:left;}
+.footer-container .footer .links {width:25%;}
 
 .footer-container .footer .block-subscribe {
     float:none;
