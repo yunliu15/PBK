@@ -1,0 +1,18 @@
+<div class="links">
+    <div class="block-title"><strong><span>Helpful Links</span></strong></div>
+    <ul>
+        <li><a href="{{store url=""}}">What's New</a></li>
+        <li><a href="{{store url=""}}">Best Sellers</a></li>
+        <li><a href="{{store url=""}}">On Sale</a></li>
+        <li><a href="{{store url=""}}">Closeouts</a></li>
+        <li><a href="{{store url=""}}">Overstock</a></li>
+        <li><a href="{{store url=""}}">e-Catalogs</a></li>
+        <li><a href="{{store url=""}}">Site Map</a></li>
+
+    </ul>
+</div>
+
+
+
+
+

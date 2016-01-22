@@ -1,5 +1,6 @@
 <div class="links">
     <div class="block-title"><strong><span>Customer Service</span></strong></div>
+    <strong>{{config path="general/store_information/phone"}}</strong>
     <ul>
         <li><a href="{{store url=""}}">Request Catalog</a></li>
         <li><a href="{{store url=""}}">Ordering Info</a></li>

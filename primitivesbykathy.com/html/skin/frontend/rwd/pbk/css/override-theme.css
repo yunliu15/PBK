@@ -125,6 +125,14 @@ p.no-bottom {margin-bottom:0!important;}
     white-space: nowrap;
 }
 .wrapper .page-header {max-width:initial;}
+
+.col-4 {
+    float:left; width:22%;margin-right:4%;
+}
+.col-3 {
+    float:left; width:30%;margin-right:5%;
+}
+
 /****** Header ********/
 #header .skip-links,#header .skip-link {border:none;}
 
@@ -165,12 +173,13 @@ p.no-bottom {margin-bottom:0!important;}
 .store-language-container {display:none;}
 
 .page-header .wishlist-cart-wrapper {float:right;position:relative; overflow:initial;}
-.page-header .wishlist-cart-wrapper .block-wishlist {float:left;margin-bottom:0;}
+.page-header .wishlist-cart-wrapper .block-wishlist {float:left;margin-bottom:0;height:20px;}
 #header .wishlist-cart-wrapper .block-wishlist .block-title {
     width:auto;
     cursor:pointer;
     border-top:none;
     top:-6px;
+    padding-top:0;
 
 }
 #header .wishlist-cart-wrapper .skip-link {background:none;}
@@ -191,7 +200,7 @@ p.no-bottom {margin-bottom:0!important;}
     content: "\e90a";
     color:#fff;
 }
-
+#header .block-wishlist .block-title {margin:0;}
 .wishlist-cart-wrapper > .checkout-button {vertical-align: top;background-color:#633125;}
 
 
@@ -261,12 +270,12 @@ p.no-bottom {margin-bottom:0!important;}
     text-align:center;
 }
 
-.cms-home .block-title {
+.cms-home .std .block-title {
     border:none;
     margin:30px auto 0;
 
 }
-.cms-home .block-title > span {
+.cms-home .std .block-title > span {
     background-image:url("../images/bground.gif");
     position: relative;
     z-index: 1;
@@ -287,6 +296,7 @@ p.no-bottom {margin-bottom:0!important;}
 .featured .red-button {margin-top:20px;}
 /** Featured Collections **/
 .featured-collections .item .title {margin-top:10px;}
+
 
 /** Featured Items **/
 .featured-items .tabs .toggle-tabs {
@@ -359,6 +369,7 @@ p.no-bottom {margin-bottom:0!important;}
 .featured-items .tabs .toggle-tabs li.current {
     outline: 1px solid #d5d5db;
     border:none;
+    background-color:#fff;
 }
 
 .featured-items .tabs .toggle-tabs li > span {bottom:0;font-size:14px;}
@@ -370,7 +381,7 @@ p.no-bottom {margin-bottom:0!important;}
 
 /******* Benefit items ******/
 .featured-benefit .item {width:30%; margin-right:5%;display:table}
-.featured-benefit .item.last{margin-right:0;}
+
 .featured-benefit .description {text-align:left;display:table-cell;vertical-align:top;padding-left:20px;}
 .featured-benefit .img-wrapper {display:table-cell;}
 
@@ -378,8 +389,13 @@ p.no-bottom {margin-bottom:0!important;}
 
 
     /********* Footer **********/
+
+
 .footer .block-title {text-align:left;}
-.footer-container .footer .links {width:25%;}
+.footer .links .block-title strong {font-size:16px;}
+
+.footer .links .block-title + strong {font-size:14px; margin-bottom:10px;display:block;}
+.footer-container .footer .links {width:25%;margin:0;}
 
 .footer-container .footer .block-subscribe {
     float:none;
@@ -418,7 +434,7 @@ p.no-bottom {margin-bottom:0!important;}
 .footer-container .footer {
     max-width: 1260px;
     margin: 0 auto;
-    padding:0 30px;
+    padding:30px 30px 0;
     border: none;
 }
 .footer-bottom {clear:both;padding:10px 0;background-image:url("../images/nav_bground.gif");background-repeat: repeat;background-size:auto 100%;color:#fff;min-height:50px;}
@@ -470,6 +486,41 @@ p.no-bottom {margin-bottom:0!important;}
         margin-bottom:20px;
     }
 }
+
+@media only screen and (max-width:768px) {
+    .wrapper .col-4 {
+        width:45%;margin-right:10%;margin-bottom:20px;
+    }
+    .wrapper .col-3 {
+        width:100%;
+        margin-right:0;
+        margin-bottom:20px;
+    }
+
+    .featured-collections .col-4:nth-of-type(2n) {margin-right:0;}
+}
+
+@media only screen and (max-width:730px) {
+    .footer-container .footer .links {
+        width: 50%;
+        margin-right:0!important;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width:545px) {
+    .welcome-msg {border-right:none;}
+}
+
+@media only screen and (max-width: 499px){
+    #header .skip-cart .count {
+        margin-left: 0;
+    }
+    #header .skip-links.search {
+        left: 70px;
+    }
+}
+
 
 /******** clearfix ********/
 .clearfix:after {

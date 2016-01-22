@@ -1,0 +1,18 @@
+<div class="links">
+    <div class="block-title"><strong><span>My Account</span></strong></div>
+    <ul>
+        <li><a href="{{store url=""}}">View/Edit Account</a></li>
+        <li><a href="{{store url=""}}">My Cart</a></li>
+        <li><a href="{{store url=""}}">Favorites</a></li>
+        <li><a href="{{store url=""}}">Saved Orders</a></li>
+        <li><a href="{{store url=""}}">Order History</a></li>
+        <li><a href="{{store url=""}}">Track Package</a></li>
+        <li><a href="{{store url=""}}">Quick Order</a></li>
+
+    </ul>
+</div>
+
+
+
+
+

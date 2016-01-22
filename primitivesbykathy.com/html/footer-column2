@@ -1,0 +1,13 @@
+<div class="links">
+    <div class="block-title"><strong><span>Our Company</span></strong></div>
+    <ul>
+        <li><a href="{{store url=""}}">Our Story</a></li>
+        <li><a href="{{store url=""}}">Visit Us</a></li>
+        <li><a href="{{store url=""}}">Rep & Show Info</a></li>
+        <li><a href="{{store url=""}}">Career Opportunities</a></li>
+        <li><a href="{{store url=""}}">Testimonials</a></li>
+        <li><a href="{{store url=""}}">In The News</a></li>
+
+        <li><a href="{{store url=""}}">Benefit Products</a></li>
+    </ul>
+</div>

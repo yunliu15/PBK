@@ -32,8 +32,20 @@
             </block>
         </reference>-->
         <reference name="footer">
+            <remove name="footer_links"/>
+            <remove name="footer_links2"/>
+            <remove name="footer_links_company"/>
             <block type="cms/block" name="footer_column1" before="-">
                 <action method="setBlockId"><block_id>footer_column1</block_id></action>
+            </block>
+            <block type="cms/block" name="footer_column2" after="footer_column1">
+                <action method="setBlockId"><block_id>footer_column2</block_id></action>
+            </block>
+            <block type="cms/block" name="footer_column3" after="footer_column2">
+                <action method="setBlockId"><block_id>footer_column3</block_id></action>
+            </block>
+            <block type="cms/block" name="footer_column4" after="footer_column3">
+                <action method="setBlockId"><block_id>footer_column4</block_id></action>
             </block>
         </reference>
 
