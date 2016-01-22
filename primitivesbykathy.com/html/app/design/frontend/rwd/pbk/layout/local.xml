@@ -51,4 +51,78 @@
 
 
     </default>
+
+
+<!-- add breadcrumbs to my account -->
+    <customer_account translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Home</crumbname>
+                <crumbinfo>
+                    <label>Home</label>
+                    <title>Home</title>
+                    <link>{{baseUrl}}</link>
+                </crumbinfo>
+            </action>
+            <action method="addCrumb">
+                <crumbname>My Account</crumbname>
+                <crumbinfo>
+                    <label>My Account</label>
+                    <title>My Account</title>
+                    <link>{{baseUrl}}/customer/account</link>
+                </crumbinfo>
+            </action>
+        </reference>
+    </customer_account>
+
+    <customer_account_index translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Dashboard</crumbname>
+                <crumbinfo>
+                    <label>Dashboard</label>
+                    <title>Dashboard</title>
+                </crumbinfo>
+            </action>
+        </reference>
+    </customer_account_index>
+
+
+    <!-- add breadcrumbs to login page -->
+    <customer_account_login translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Home</crumbname>
+                <crumbinfo>
+                    <label>Home</label>
+                    <title>Home</title>
+                    <link>{{baseUrl}}</link>
+                </crumbinfo>
+            </action>
+            <action method="addCrumb">
+                <crumbname>Sign In</crumbname>
+                <crumbinfo>
+                    <label>Sign In</label>
+                    <title>Sign In</title>
+
+                </crumbinfo>
+            </action>
+        </reference>
+    </customer_account_login>
+
+    <!-- product layout -->
+    <catalog_product_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </catalog_product_view>
+
+    <!-- My account left nav -->
+    <customer_account>
+        <reference name="customer_account_navigation">
+
+
+        </reference>
+    </customer_account>
+
 </layout>

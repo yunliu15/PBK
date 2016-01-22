@@ -864,8 +864,8 @@ body:not(.customer-account) .block:first-child .block-title {
 }
 .block-account li strong,
 .block-cms-menu li strong {
-  font-weight: 400;
-  color: #3399cc;
+  font-weight: bold;
+  color: #633125;
 }
 .block-account li a,
 .block-cms-menu li a {
@@ -1198,7 +1198,7 @@ a.button:hover {
 
 .btn-remove:after {
   content: 'X';
-  color: #3399cc;
+  color:  #333637;
   height: 20px;
   line-height: 20px;
   width: 100%;
@@ -1763,7 +1763,7 @@ a.button:hover {
 }
 
 .price-box .price {
-  color: #3399cc;
+  color:  #333637;
   font-size: 16px;
 }
 
@@ -2864,10 +2864,9 @@ p.required,
 }
 
 form .form-instructions {
-  font-style: italic;
-  font-family: Georgia, Times, "Times New Roman", serif;
+
   font-size: 13px;
-  color: #a0a0a0;
+
 }
 
 /* ============================================ *
@@ -7809,7 +7808,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
  * My Account Global Styles
  * ============================================ */
 body.customer-account .my-account .page-title h1 {
-  border: 0;
+
   text-align: left;
 }
 body.customer-account .my-account .title-buttons {
@@ -9400,7 +9399,7 @@ div.paypal-logo span > img {
   text-transform: uppercase;
 }
 .header-minicart .subtotal .price {
-  color: #3399cc;
+  color: #333637;
 }
 .header-minicart .minicart-actions {
   padding: 10px;

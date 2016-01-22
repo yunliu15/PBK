@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <!-- <action method="removeLinkByName"><name>account</name></action> -->
+            <action method="removeLinkByName"><name>awrma</name></action>
+            <action method="removeLinkByName"><name>amxnotif.stock</name></action>
+            <action method="removeLinkByName"><name>amxnotif.price</name></action>
+
+            <action method="removeLinkByName"><name>account</name></action>
+            <action method="removeLinkByName"><name>account_edit</name></action>
+            <action method="removeLinkByName"><name>address_book</name></action>
+            <action method="removeLinkByName"><name>orders</name></action>
+            <action method="removeLinkByName"><name>reviews</name></action>
+            <action method="removeLinkByName"><name>wishlist</name></action>
+
+        </reference>
+    </customer_account>
+    <customer_account translate="label">
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="customer"><name>account</name><path>customer/account/</path><label>Account Dashboard</label></action>
+            <action method="addLink" translate="label" module="sales"><name>orders</name><path>sales/order/history/</path><label>My Orders</label></action>
+            <action method="addLink"><name>our_new_section</name><path>my-fitting-room</path><label>My Fitting Room</label></action>
+            <action method="addLink" translate="label" module="wishlist" ifconfig="wishlist/general/active"><name>wishlist</name><path>wishlist/</path><label>My Wish List</label></action>
+            <action method="addLink" translate="label" module="review"><name>reviews</name><path>review/customer</path><label>My Stories</label></action>
+            <action method="addLink" translate="label" module="customer"><name>address_book</name><path>customer/address/</path><label>Address Book</label></action>
+            <action method="addLink" translate="label" module="customer"><name>account_edit</name><path>customer/account/edit/</path><label>Change Password</label></action>
+        </reference>
+    </customer_account>
+</layout>

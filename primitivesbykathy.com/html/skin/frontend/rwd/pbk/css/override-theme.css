@@ -14,12 +14,13 @@
 
 
 /***  GENERAL ***/
-.page h1 {
+.page h1,.page .page-title h1 {
     font-weight: 700;
     font-size: 36px;
     color: #333637;
 }
 
+.page .page-title h1 {text-transform: none;border-bottom:1px solid #d5d5db;margin-bottom:20px;}
 .page h2 {
     font-weight: 400;
     font-size: 24px;
@@ -104,26 +105,41 @@ font-weight: 900;
 p.no-bottom {margin-bottom:0!important;}
 .red-text {color:#633125!important;font-weight:bold!important;}
 
-.page {
+.cms-home .page, #header {
     background-image: url("../images/bground.gif");
     background-repeat: repeat;
+}
+
+.red-link {
+    color:#633125!important;
+    text-decoration: underline!important;
+}
+.button.full-red-button {
+    background-color:#633125;
+}
+.button.full-red-button:hover {
+
+    background-color:#333;
 }
 
 .red-button {
     background: #fff;
     display: inline-block;
-    padding: 5px 25px;
+    padding: 5px 25px !important;
     border: 2px solid #633125;
     color:#633125;
     font-size: 13px;
     font-weight: bold;
-
-    line-height: 15px;
+    margin-top:20px;
+    line-height: 20px;
     text-align: center;
     text-transform: uppercase;
     vertical-align: middle;
     white-space: nowrap;
 }
+.red-button:hover {background:#633125;color:#fff;}
+.red-button.arrow-right:hover:after {border-color:transparent transparent transparent #fff;}
+
 .wrapper .page-header {max-width:initial;}
 
 .col-4 {
@@ -132,6 +148,25 @@ p.no-bottom {margin-bottom:0!important;}
 .col-3 {
     float:left; width:30%;margin-right:5%;
 }
+
+/* sidebar */
+.wrapper .sidebar .block-title {
+    background:#333;
+    color:#fff;
+    padding:10px 0 10px 10px;
+    text-align:left;
+    margin-bottom:0;
+}
+.wrapper .sidebar .block-title strong {color:#fff;font-size:18px;text-transform: capitalize;}
+.wrapper .sidebar {width:20%;}
+.wrapper .col-main {width:80%;}
+.wrapper .fieldset p.required {float:none;}
+.sidebar .block-content {
+    margin-top:0;
+    padding:10px;
+    border: 1px solid #d5d5db;
+}
+
 
 /****** Header ********/
 #header .skip-links,#header .skip-link {border:none;}
@@ -152,7 +187,7 @@ p.no-bottom {margin-bottom:0!important;}
 #header-account ul li,#header-account .links {
     display:inline-block;
 }
-.welcome-msg {text-transform: uppercase;
+#header .welcome-msg {text-transform: uppercase;
     border-right: 1px solid #333637;
     padding-right: 10px;
     height: 14px;
@@ -201,6 +236,7 @@ p.no-bottom {margin-bottom:0!important;}
     color:#fff;
 }
 #header .block-wishlist .block-title {margin:0;}
+#header .block-wishlist .block-title strong{color:#fff;}
 .wishlist-cart-wrapper > .checkout-button {vertical-align: top;background-color:#633125;}
 
 
@@ -387,8 +423,68 @@ p.no-bottom {margin-bottom:0!important;}
 
 .cms-index-index .featured .products-grid .actions {display:block;}
 
+/********* Sign In Page ************/
+.customer-account-login .account-login .col2-set .col-1, .customer-account-login .account-login .col2-set .col-2 {
+    background-color:#fbfbfb;
+    padding:30px;
+    border:1px solid #d5d5db;
+    width:49%;
+    height:400px;
+    position:relative;
+}
+.customer-account-login .account-login .col2-set .col-1 {margin-right:2%;}
+.login-bottom {margin-top:30px;}
 
-    /********* Footer **********/
+.customer-account-login .account-login .col2-set .buttons-set {
+    position:absolute;
+    bottom:30px;
+}
+.customer-account-login .col2-set .col-1 .benefits {
+
+    padding-left: 40px;
+    margin: 20px 0;
+    font-size:16px;
+}
+.customer-account-login .benefits li {margin-bottom:5px;}
+.customer-account-login .form-list {margin-top:30px;}
+.account-login .registered-users .f-left {
+    position: absolute;
+    bottom: 30px;
+    left: 150px;
+    text-decoration: underline;
+}
+
+/*** My Account **/
+
+.my-account .hello strong {
+    font-size:24px;
+
+}
+.wrapper .my-account .box-head {
+    background: #333;
+    padding:20px;
+}
+.wrapper .my-account .box-head h2 {color:#fff;text-transform: capitalize;font-size:18px;}
+.wrapper .my-account .box-head a {color:#fff;}
+.wrapper .my-account .box-info .col2-set {padding:0 10px 20px 40px; border: 1px solid #d5d5db;}
+.my-account .box-info .box-title {
+    background:#e8e8eb;
+    padding-left:20px;
+    position:relative;
+    left:-20px;
+    padding-top:10px;
+    margin-bottom:20px;
+}
+.wrapper .my-account .box-info .col2-set .box-title h3 {font-size:16px;}
+.wrapper .my-account .box-info {border:0;}
+.my-account .red-button {font-size:16px;line-height:25px;}
+.dashboard .box-account .red-link {font-style:initial;}
+
+/******* Shopping Cart ************/
+.cart .cart-table .btn-empty {float:none;}
+.cart .cart-table .btn-continue {float:left;}
+
+ /********* Footer **********/
 
 
 .footer .block-title {text-align:left;}
@@ -414,6 +510,9 @@ p.no-bottom {margin-bottom:0!important;}
 
 .footer-container .footer .block-subscribe .button {
     background-color:#633125;
+}
+.footer-container .footer .block-subscribe .button:hover {
+    background-color:#333;
 }
 
 .wrapper .footer-container {
@@ -464,6 +563,7 @@ p.no-bottom {margin-bottom:0!important;}
     #header #header-account {
         padding: 5px 0;
     }
+
 }
 
 @media only screen and (max-width:959px) {
@@ -478,6 +578,10 @@ p.no-bottom {margin-bottom:0!important;}
     #header .skip-search, #header .skip-nav {display:block;}
 
     #header #header-nav.skip-active {display:block;}
+
+    .customer-account-login .account-login .col2-set .col-1, .customer-account-login .account-login .col2-set .col-2{
+        height:510px;
+    }
 }
 
 @media only screen and (max-width:884px) {
@@ -498,6 +602,19 @@ p.no-bottom {margin-bottom:0!important;}
     }
 
     .featured-collections .col-4:nth-of-type(2n) {margin-right:0;}
+
+    .customer-account-login .account-login .col2-set .col-1, .customer-account-login .account-login .col2-set .col-2{
+        float:none;
+        width:100%;
+        margin-right:0;
+        margin-bottom:20px;
+        height:auto;
+    }
+    .customer-account-login .account-login .col2-set .buttons-set {position:static;}
+    .customer-account-login .account-login .registered-users {overflow:auto;}
+    .customer-account-login .account-login .registered-users .buttons-set {
+        float:left;
+    }
 }
 
 @media only screen and (max-width:730px) {
@@ -509,7 +626,7 @@ p.no-bottom {margin-bottom:0!important;}
 }
 
 @media only screen and (max-width:545px) {
-    .welcome-msg {border-right:none;}
+    #header .welcome-msg {border-right:none;}
 }
 
 @media only screen and (max-width: 499px){
