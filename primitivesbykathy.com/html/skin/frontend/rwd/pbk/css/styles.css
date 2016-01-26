@@ -619,7 +619,9 @@ h6, .h6 {
 }
 
 .availability.in-stock {
-  color: #11b400;
+  color: #333;
+  font-size:16px;
+  font-weight:bold;
 }
 
 .availability.available-soon,
@@ -995,16 +997,16 @@ a.button:hover {
 .button2 span span {
   line-height: 30px;
   height: 30px;
-  text-decoration: underline;
+
   text-transform: uppercase;
   display: inline-block;
-  color: #3399cc;
+  color: #633125;
   font-family: "Lato", sans-serif;
 }
 .button2 span:hover,
 .button2 span span:hover {
   text-decoration: none;
-  color: #246b8f;
+  color: #333637;
 }
 
 @media only screen and (max-width: 770px) {
@@ -2891,7 +2893,7 @@ form .form-instructions {
 
 .data-table th {
   background: #f4f4f4;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-family: "Lato", sans-serif;
   line-height: 1.4;
   white-space: nowrap;
@@ -4223,7 +4225,7 @@ h3.product-name a:hover,
 h4.product-name a:hover,
 h5.product-name a:hover,
 p.product-name a:hover {
-  color: #3399cc;
+
   text-decoration: none;
 }
 
@@ -4950,7 +4952,7 @@ p.product-name a:hover {
 }
 .product-view .product-shop .product-name .h1,
 .product-view .product-img-box .product-name h1 {
-  color: #3399cc;
+  color: #633125;
   margin-bottom: 10px;
   border: 0;
 }
@@ -4960,10 +4962,10 @@ p.product-name a:hover {
 }
 .product-view .product-shop .product-name {
   display: none;
-  float: left;
+  /*float: left;*/
 }
 .product-view .product-shop .product-name .h1 {
-  float: left;
+ /*float: left;*/
   margin-bottom: 5px;
 }
 .product-view .product-shop .extra-info {
@@ -4973,9 +4975,9 @@ p.product-name a:hover {
   width: 70%;
 }
 .product-view .product-shop .price-info {
-  float: right;
+  /*float: right;
   padding-left: 15px;
-  text-align: right;
+  text-align: right;*/
 }
 .product-view .product-shop .extra-info,
 .product-view .product-shop .price-info {
@@ -5004,7 +5006,7 @@ p.product-name a:hover {
 .product-view .product-shop .price-box .regular-price .price,
 .product-view .product-shop .price-box .special-price .price,
 .product-view .product-shop .price-box .full-product-price .price {
-  color: #3399cc;
+  color: #333;
   font-size: 24px;
 }
 .product-view .product-shop .price-box .special-price .price-label {
@@ -5397,7 +5399,7 @@ p.product-name a:hover {
   }
   .product-collateral .toggle-tabs li.current span,
   .product-collateral .toggle-tabs li:hover span {
-    color: #3399cc;
+    color: #633125;
   }
   .product-collateral .toggle-tabs li:first-child {
     border-left: none;
@@ -5740,9 +5742,9 @@ p.product-name a:hover {
 }
 
 .product-options-bottom {
-  background-color: #f4f4f4;
+  /*background-color: #f4f4f4;*/
   padding: 15px 20px;
-  border: 1px solid #cccccc;
+  /*border: 1px solid #cccccc;*/
   border-top: 0;
   margin-bottom: 10px;
 }
@@ -6322,7 +6324,7 @@ p.product-name a:hover {
 .cart-table thead th,
 .cart-table tbody td {
   background-color: transparent;
-  padding: 10px 5px;
+  padding: 10px 5px 10px 10px;
   font-family: "Lato", sans-serif;
 }
 .cart-table .product-cart-info,
@@ -6330,7 +6332,8 @@ p.product-name a:hover {
   padding-left: 15px;
 }
 .cart-table tr {
-  border-bottom: 1px solid silver;
+  border-bottom: 1px solid #d5d5db;
+  border-left: 1px solid #d5d5db;
 }
 .cart-table tfoot tr {
   background: none;
@@ -6411,14 +6414,14 @@ p.product-name a:hover {
 }
 .cart-table .cart-links > li {
   white-space: nowrap;
-  line-height: 1.3;
+  line-height: 25px;
   margin-bottom: 5px;
   min-width: 65px;
   font-size: 13px;
 }
-.cart-table .cart-links > li > a {
+/*.cart-table .cart-links > li > a {
   display: block;
-}
+}*/
 .cart-table .cart-links > li:last-child {
   margin-bottom: 0;
 }
