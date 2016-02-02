@@ -42,7 +42,15 @@
                 <?php echo $this->__("Quick Order");?>
             </a>
         </li>
-        <?php endif;?>
+             <?php
+        else: ?>
+            <li>
+                <a href="#">
+                    <?php echo $this->__("Wholesale Info");?>
+                </a>
+            </li>
+        <?php
+        endif;?>
 
         <?php if(!Mage::getSingleton('customer/session')->isLoggedIn() ): ?>
             <li class="last"><div><a href="<?php echo Mage::getUrl('customer/account/login/'); ?>">Create Account</a></div></li>

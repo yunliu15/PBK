@@ -540,7 +540,7 @@ h2, .h2 {
   margin: 0;
   margin-bottom: 0.5em;
   color: #333637;
-  font-family: font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 24px;
   font-weight: 400;
   font-style: normal;
@@ -1993,7 +1993,7 @@ span.weee {
 .product-image,
 .no-touch .product-img-box .product-image:not(.zoom-available):hover {
   position: relative;
-  display: block;
+  display: table;
   border: 1px solid #ededed;
 }
 
@@ -3778,6 +3778,7 @@ a.skip-link {
   padding: 0px 10px;
   line-height: 14px;
   text-align: center;
+  z-index: 20;
 }
 
 #header-account a:hover {
@@ -4952,7 +4953,7 @@ p.product-name a:hover {
 }
 .product-view .product-shop .product-name .h1,
 .product-view .product-img-box .product-name h1 {
-  color: #633125;
+  color: #333;
   margin-bottom: 10px;
   border: 0;
 }
@@ -5008,6 +5009,7 @@ p.product-name a:hover {
 .product-view .product-shop .price-box .full-product-price .price {
   color: #333;
   font-size: 24px;
+  font-weight:600;
 }
 .product-view .product-shop .price-box .special-price .price-label {
   font-size: 16px;

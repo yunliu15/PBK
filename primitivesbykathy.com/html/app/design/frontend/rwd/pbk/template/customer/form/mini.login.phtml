@@ -41,8 +41,12 @@
                     <?php echo $this->__('Forgot my log info?') ?>
                 </a>
 
+
                 <button type="submit" class="full-red-button button"><span><span><?php echo $this->__('Log in') ?></span></span></button>
             </div>
+            <?php //echo $this->getChildHtml('persistent.remember.me');
+            echo $this->getLayout()->createBlock('persistent/form_remember')->setTemplate("persistent/remember_me.phtml")->toHtml();
+            ?>
         </div>
     </form>
 </div>

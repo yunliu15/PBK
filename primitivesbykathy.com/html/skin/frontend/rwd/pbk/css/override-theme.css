@@ -1,5 +1,7 @@
 
 /* fonts */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,900,300,300italic,400italic,700,700italic,900italic);
+
 @font-face {
     font-family: 'icomoon';
     src:    url('icomoon.eot?6vthk3');
@@ -57,7 +59,7 @@ a:hover {
 }
 a:active {
     color: #633125;
-font-weight: 900;
+
 }
 
 .all-upper {text-transform: uppercase;}
@@ -173,6 +175,13 @@ p.no-bottom {margin-bottom:0!important;}
 
 .table-header {background:#333;color:#fff;padding:10px;text-transform: capitalize;font-size:16px;}
 
+.with-line {text-align:center;}
+.with-line span {
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+}
 
 /* sidebar */
 .wrapper .sidebar .block-title {
@@ -257,7 +266,7 @@ p.no-bottom {margin-bottom:0!important;}
     background: white;
     padding:10px;
 }
-#header .block-wishlist .block-title .icon:before {
+#header .block-wishlist .block-title .icon:before{
     content: "\e90a";
     color:#fff;
 }
@@ -312,6 +321,7 @@ p.no-bottom {margin-bottom:0!important;}
 .skip-link.skip-login {
     height:auto;
     background:none;
+    width:auto;
 }
 #header-login {
     position:absolute;
@@ -335,8 +345,12 @@ p.no-bottom {margin-bottom:0!important;}
 #header-login .block-title strong {float:left;}
 #header-login .block-title .right {float:right;}
 #header-login .block-title .right a {display:initial;}
-#mini-login,#mini-password {width:300px;margin-bottom:10px;}
-
+#mini-login,#mini-password {width:100%;margin-bottom:10px;}
+#header-login .remember-me-box {list-style:none;text-align:left;position: absolute;
+    bottom: 10px;}
+#header-login .remember-me-box .link-tip{display:none;}
+#header-login .remember-me-box .input-box {float:left;margin-right:5px;}
+#header-login .actions .red-link{padding-left:0;}
 /* for skip nav and search */
 .skip-wrapper {position:relative;}
 #header .skip-links.search, #header .skip-links.nav {position:absolute;top:2px;left:30px;z-index:9;}
@@ -588,6 +602,40 @@ p.no-bottom {margin-bottom:0!important;}
     position: relative;
     z-index: 1;
     padding:0 20px;}
+
+.product-img-box .product-image {
+    display: table;
+    width: 100%;
+}
+.catalog-product-view .product-img-box .product-image {
+    min-height:526px;
+}
+.product-img-box .product-image .product-image-gallery {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.product-view .title-line {top:-25px;}
+.ordering-info .title-line {top:-20px;}
+
+/* upsell */
+.product-view .products-grid .actions,.block-viewed .products-grid .actions {
+    position:static;
+}
+.link-wishlist.icon-moon:before {
+    content: "\e90a";
+    color:#fff;
+    position: relative;
+    top: 6px;
+    left:3px;
+}
+.link-wishlist.icon-moon {width:33px!important;height:33px!important;background:#333;}
+.product-view .box-collateral .add-to-links {
+    display:inline-block;
+    margin-right:0;
+    float:none;
+    vertical-align:middle;
+}
 
  /********* Footer **********/
 
