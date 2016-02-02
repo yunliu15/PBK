@@ -19,11 +19,14 @@
 
             <remove name="wishlist_link"/>
             <remove name="checkout_cart_link"/>
+            <block type="customer/form_login" name="header_customer_form_mini_login"  template="customer/form/mini.login.phtml"/>
 
         </reference>
         <reference name="header">
 
             <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="mini_wishlist_top" after="cart_sidebar" template="wishlist/top-mini.phtml" />
+            <block type="customer/form_login" name="header_customer_form_mini_login"  template="customer/form/mini.login.phtml"/>
+
         </reference>
 
        <!-- <reference name="footer">

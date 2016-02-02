@@ -2803,7 +2803,7 @@ p.required,
 #co-shipping-method-form .sp-methods dd label,
 .product-options ul.options-list label {
   color: #636363;
-  background-color: #f4f4f4;
+  /*background-color: #f4f4f4;*/
   padding: 5px 10px;
   display: inline-block;
   width: auto;
@@ -3664,7 +3664,7 @@ a.skip-link {
     /*position: absolute;*/
     top: 55px;
     right: 0;
-    width: 25%;
+    width: 30%;
     height: 50px;
     padding: 0;
   }
