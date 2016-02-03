@@ -28,15 +28,23 @@
 <?php if ($_products = $this->getRecentlyViewedProducts()): ?>
 <div class="block block-list block-viewed">
     <div class="block-title">
-        <strong><span><?php echo $this->__('Recently Viewed Products') ?></span></strong>
+        <h4 class="all-upper with-line"><span><?php echo $this->__('Recently Viewed Products') ?></span></h4>
+        <div class="title-line">&nbsp;</div>
     </div>
     <div class="block-content">
-        <ol id="recently-viewed-items" class="products-grid products-grid--max-6-col">
+        <ol id="recently-viewed-items" class="products-grid products-grid--max-5-col">
         <?php foreach ($_products as $_item): ?>
             <li class="item">
-                <a href="<?php echo $this->getProductUrl($_item) ?>" class="product-image">
-                    <img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(280) ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" />
-                </a>
+                <div class="amlabel-div">
+                    <?php echo Mage::helper('amlabel')->getLabels($_item) ?></div>
+                <div class="product-img-wrapper">
+
+                    <div class="product-image-div">
+                        <a href="<?php echo $this->getProductUrl($_item) ?>" class="product-image">
+                            <img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(280) ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" />
+                        </a>
+                    </div>
+                </div>
                 <h3 class="product-name"><a href="<?php echo $this->getProductUrl($_item) ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></h3>
                 <div class="product-sku">
                     <span>Item: </span>

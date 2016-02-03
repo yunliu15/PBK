@@ -2002,10 +2002,10 @@ span.weee {
     border-color: #ededed;
   }
 }
-.no-touch .product-image:hover {
+/*.no-touch .product-image:hover {
   border-color: #3399cc;
 }
-
+*/
 /* -------------------------------------------- *
  * Ratings
  */
@@ -4434,11 +4434,11 @@ p.product-name a:hover {
   }
 
   /* Set column config */
-  .products-grid--max-5-col > li {
+  .products-grid--max-5-col > li.item {
     margin-right: 2.22222%;
   }
 
-  .products-grid--max-5-col > li {
+  .products-grid--max-5-col > li.item {
     width: 18.22222%;
     margin-right: 2.22222%;
   }
@@ -5189,7 +5189,7 @@ p.product-name a:hover {
 .product-view .add-to-cart {
   padding-bottom: 3px;
   margin-bottom: 10px;
-  border-bottom: 1px solid #cccccc;
+
 }
 .product-view .add-to-cart .qty-wrapper,
 .product-view .product-options-bottom .price-box,

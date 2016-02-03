@@ -27,9 +27,16 @@
 $_item = $this->getItem();
 if ($_item):
 ?>
-    <a href="<?php echo $this->getProductUrl($_item) ?>" class="product-image">
-        <img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(280) ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" />
-    </a>
+    <div class="amlabel-div">
+        <?php echo Mage::helper('amlabel')->getLabels($_item) ?></div>
+    <div class="product-img-wrapper">
+
+        <div class="product-image-div">
+            <a href="<?php echo $this->getProductUrl($_item) ?>" class="product-image">
+                <img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(280) ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" />
+            </a>
+        </div>
+    </div>
     <h3 class="product-name"><a href="<?php echo $this->getProductUrl($_item) ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></h3>
     <div class="product-sku">
         <span>Item: </span>
