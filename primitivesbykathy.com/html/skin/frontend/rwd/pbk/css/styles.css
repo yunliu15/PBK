@@ -2251,10 +2251,10 @@ span.weee {
   background-color: transparent;
   position: relative;
 }
-.pages .next:hover,
+/*.pages .next:hover,
 .pages .previous:hover {
   border: 1px solid #3399cc;
-}
+}*/
 
 .pages .next:before {
   content: '';
@@ -2264,12 +2264,12 @@ span.weee {
   display: block;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-left: 4px solid #3399cc;
+  border-left: 4px solid #333637;
   border-right: none;
   top: 50%;
-  margin-top: -3px;
+  margin-top: -5px;
   left: 50%;
-  margin-left: -2px;
+  margin-left: 0;
 }
 .pages .next:hover:before {
   content: '';
@@ -2279,7 +2279,7 @@ span.weee {
   display: block;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-left: 4px solid #246b8f;
+  border-left: 4px solid #fff;
   border-right: none;
 }
 
@@ -2291,12 +2291,12 @@ span.weee {
   display: block;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-right: 4px solid #3399cc;
+  border-right: 4px solid #333637;
   border-left: none;
   top: 50%;
-  margin-top: -3px;
+  margin-top: -5px;
   left: 50%;
-  margin-left: -2px;
+  margin-left: 0;
 }
 .pages .previous:hover:before {
   content: '';
@@ -2306,7 +2306,7 @@ span.weee {
   display: block;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-right: 4px solid #246b8f;
+  border-right: 4px solid #fff;
   border-left: none;
 }
 
@@ -3579,7 +3579,7 @@ a.skip-link {
   }
   .nav-primary a:hover,
   .nav-primary li:hover > a {
-    color: #3399cc;
+    color: #633125;
   }
   .nav-primary .menu-active {
     z-index: 200;
@@ -4294,7 +4294,7 @@ p.product-name a:hover {
   padding-top: 10px;
   position: absolute;
   bottom: 0px;
-  min-height: 85px;
+  min-height: 45px;
   width: 100%;
 }
 

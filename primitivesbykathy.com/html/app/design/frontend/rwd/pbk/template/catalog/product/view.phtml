@@ -120,7 +120,7 @@
                 <?php elseif (!$_product->isSaleable()): ?>
                     <div class="add-to-box">
                         <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
+                        <span class="share">Share this item:</span><?php echo $this->getChildHtml('sharing') ?>
                     </div>
                 <?php endif; ?>
             </div>

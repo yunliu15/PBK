@@ -37,6 +37,7 @@
             <li class="item">
                 <div class="amlabel-div">
                     <?php echo Mage::helper('amlabel')->getLabels($_item) ?></div>
+                <div class="bd-layer">
                 <div class="product-img-wrapper">
 
                     <div class="product-image-div">
@@ -45,6 +46,8 @@
                         </a>
                     </div>
                 </div>
+                </div>
+                <div class="product-info no-bottom-p">
                 <h3 class="product-name"><a href="<?php echo $this->getProductUrl($_item) ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></h3>
                 <div class="product-sku">
                     <span>Item: </span>
@@ -54,7 +57,7 @@
                 </div>
                 <?php echo $this->getPriceHtml($_item, true, '-upsell') ?>
                 <?php echo $this->getReviewsSummaryHtml($_item) ?>
-
+                </div>
                 <div class="actions">
                     <?php if ($_item->isSaleable()): ?>
 
