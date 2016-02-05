@@ -45,6 +45,8 @@
                 <action method="setBlockId"><block_id>footer_bottom</block_id></action>
             </block>
         </reference>-->
+
+
         <reference name="footer">
             <remove name="footer_links"/>
             <remove name="footer_links2"/>
@@ -108,7 +110,46 @@
             </action>
         </reference>
     </customer_account_index>
+<!-- add breadcrumb for my orders-->
+    <sales_order_history translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>My Orders</crumbname>
+                <crumbinfo>
+                    <label>My Orders</label>
+                    <title>My Orders</title>
+                    <link>{{baseUrl}}/sales/order/history/</link>
+                </crumbinfo>
+            </action>
+        </reference>
+    </sales_order_history>
 
+    <!-- add breadcrumb for individual order item -->
+    <sales_order_view translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>My Orders</crumbname>
+                <crumbinfo>
+                    <label>My Orders</label>
+                    <title>My Orders</title>
+                    <link>{{baseUrl}}/sales/order/history/</link>
+                </crumbinfo>
+            </action>
+            <action method="addCrumb">
+                <crumbname>Order View</crumbname>
+                <crumbinfo>
+                    <label>Order View</label>
+                    <title>Order View</title>
+                </crumbinfo>
+            </action>
+        </reference>
+    </sales_order_view>
+
+    <!-- remove my order from account sidebar -->
+    <customer_account translate="label">
+
+        <remove name="sale.reorder.sidebar"/>
+    </customer_account>
 
     <!-- add breadcrumbs to login page -->
     <customer_account_login translate="label">
@@ -139,10 +180,14 @@
         </reference>
     </catalog_product_view>
 
-    <!-- My account left nav -->
+    <!-- add links to My account left nav -->
     <customer_account>
         <reference name="customer_account_navigation">
-
+            <action method="addLink" translate="label" module="checkout">
+                <name>cart</name>
+                <path>checkout/cart/</path>
+                <label>My Cart/Checkout</label>
+            </action>
 
         </reference>
     </customer_account>
@@ -156,5 +201,14 @@
             </block>
         </reference>
     </catalog_product_view>
+
+    <!--update layout of quickview -->
+    <amquickview_ajax_view>
+        <update handle="PRODUCT_QUICKVIEW"/>
+
+        <remove name="product.recently.viewed"/>
+        <remove name="ordering_info_pdp"/>
+
+    </amquickview_ajax_view>
 
 </layout>

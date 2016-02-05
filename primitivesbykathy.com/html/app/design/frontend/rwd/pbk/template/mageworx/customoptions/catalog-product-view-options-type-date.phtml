@@ -21,7 +21,7 @@ $helper = Mage::helper('mageworx_customoptions');
 </dt>
 
 <dd<?php if ($_option->decoratedIsLast){?> class="last"<?php }?>>
-    Requested Ship Date:<br/>
+    <strong>Requested Ship Date:</strong><br/>
 <?php if ($_option->getType() == Mage_Catalog_Model_Product_Option::OPTION_TYPE_DATE_TIME || $_option->getType() == Mage_Catalog_Model_Product_Option::OPTION_TYPE_DATE): ?>
 
     <?php echo $this->getDateHtml() ?>
@@ -101,35 +101,38 @@ if ($helper->isDependentEnabled() && $_option->getIsDependent()) { ?>
         // toggle options
 
         var dateOptionWrapper = $("#product-options-wrapper").find('.ship-date');
+        if (dateOptionWrapper.length) {
+            //append text and click link
+            var hideOptionSpanWrapper = document.createElement('span');
+            var hideOptionSpan = document.createElement('span');
+            var clickSpan = document.createElement('span');
+            $(clickSpan).addClass('red-link close');
+            clickSpan.innerHTML = " click here.";
+            hideOptionSpan.innerHTML=' Enter a future ship date,';
+            hideOptionSpanWrapper.appendChild(hideOptionSpan);
+            hideOptionSpanWrapper.appendChild(clickSpan);
+            var optionTitle = dateOptionWrapper.find('label');
+            optionTitle.append(hideOptionSpanWrapper);
 
-        //append text and click link
-        var hideOptionSpanWrapper = document.createElement('span');
-        var hideOptionSpan = document.createElement('span');
-        var clickSpan = document.createElement('span');
-        $(clickSpan).addClass('red-link open');
-        clickSpan.innerHTML = " click here.";
-        hideOptionSpan.innerHTML=' Hide future ship date,';
-        hideOptionSpanWrapper.appendChild(hideOptionSpan);
-        hideOptionSpanWrapper.appendChild(clickSpan);
-        var optionTitle = dateOptionWrapper.find('label');
-        optionTitle.append(hideOptionSpanWrapper);
+            // click event
+            var dateOption = dateOptionWrapper.find('dd');
 
-        // click effect
-        var dateOption = dateOptionWrapper.find('dd');
-        $(clickSpan).click(function(){
-            if ($(this).hasClass('open')) {
-                dateOption.hide();
-                $(this).removeClass('open');
-                $(this).addClass('close');
-                hideOptionSpan.innerHTML=' Request future ship date,';
-            }
-            else {
-                dateOption.show();
-                $(this).removeClass('close');
-                $(this).addClass('open');
-                hideOptionSpan.innerHTML=' Hide future ship date,';
-            }
-        })
+            $(clickSpan).click(function(){
+                if ($(this).hasClass('open')) {
+                    dateOption.hide();
+                    $(this).removeClass('open');
+                    $(this).addClass('close');
+                    hideOptionSpan.innerHTML=' Enter a future ship date,';
+                }
+                else {
+                    dateOption.show();
+                    $(this).removeClass('close');
+                    $(this).addClass('open');
+                    hideOptionSpan.innerHTML=' Hide future ship date,';
+                }
+            })
+
+        }
 
     });
 </script>

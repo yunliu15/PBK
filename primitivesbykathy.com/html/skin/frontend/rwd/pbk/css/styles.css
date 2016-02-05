@@ -7933,11 +7933,11 @@ body.customer-account .sidebar .block-reorder ol#cart-sidebar-reorder p.product-
   text-transform: uppercase;
   font-size: 12px;
 }
-.dashboard .box-account {
+/*.dashboard .box-account {
   padding-bottom: 40px;
   border-bottom: 1px solid #cccccc;
   margin-bottom: 45px;
-}
+}*/
 .dashboard .box-account p,
 .dashboard .box-account address {
   font-family: Georgia, Times, "Times New Roman", serif;
