@@ -335,11 +335,11 @@ Additional block dependant on product type
         </reference>
     </PRODUCT_TYPE_virtual>
 
-    <PRODUCT_QUICKVIEW>
+    <!--<PRODUCT_QUICKVIEW>
         <reference name="product.info">
             <action method="setTemplate"><template>catalog/product/view_quickview.phtml</template></action>
         </reference>
-    </PRODUCT_QUICKVIEW>
+    </PRODUCT_QUICKVIEW>-->
 
 <!--
 Product send to friend
