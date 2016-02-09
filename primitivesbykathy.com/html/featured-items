@@ -5,10 +5,10 @@
             <div class="tab-content">
                 <div class="all-upper right">
                     <span>Shop best sellers-</span>
-                    <a href="#" class="red-text">click here </a>
-                    <span class="icon"></span>
+                    <a href="#" class="red-text">click here <span class="icon-moon"></a>
+
                 </div>
-                best seller test
+                {{widget type="catalog/product_widget_new" display_type="new_products" products_count="5" template="catalog/product/widget/new/content/new_grid.phtml"}}
             </div>
         </dd>
         <dt class="tab last"><span>New Items</span></dt>
@@ -16,8 +16,8 @@
             <div class="tab-content">
                 <div class="all-upper right">
                     <span>Shop new items-</span>
-                    <a href="#" class="red-text">click here </a>
-                    <span class="icon"></span>
+                    <a href="#" class="red-text">click here <span class="icon-moon"></a>
+
                 </div>
                 new items test
             </div>
@@ -27,8 +27,8 @@
             <div class="tab-content">
                 <div class="all-upper right">
                     <span>Shop trending-</span>
-                    <a href="#" class="red-text">click here </a>
-                    <span class="icon"></span>
+                    <a href="#" class="red-text">click here <span class="icon-moon"></a>
+
                 </div>
                 trending test
             </div>
@@ -38,8 +38,8 @@
             <div class="tab-content">
                 <div class="all-upper right">
                     <span>Shop sale items-</span>
-                    <a href="#" class="red-text">click here </a>
-                    <span class="icon"></span>
+                    <a href="#" class="red-text">click here<span class="icon-moon"> </a>
+
                 </div>
                 sale items test
             </div>

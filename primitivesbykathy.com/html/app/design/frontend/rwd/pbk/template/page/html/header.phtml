@@ -60,7 +60,7 @@
 
                     <div id="header-account">
                         <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
-                        <span class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?> <?php //echo $this->getChildHtml('accountLinks') ?></span>
+                        <span class="welcome-msg">Wholesale - <?php echo $this->getChildHtml('welcome') ?> <?php //echo $this->getChildHtml('accountLinks') ?></span>
                         <?php endif;?>
                         <?php echo $this->getChildHtml('topLinks') ?>
                     </div>
