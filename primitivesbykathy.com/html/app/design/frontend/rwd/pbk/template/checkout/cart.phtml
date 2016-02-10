@@ -40,6 +40,13 @@
     <?php if($this->getContinueShoppingUrl()): ?>
         <button type="button" title="<?php echo $this->quoteEscape($this->__('Continue Shopping')) ?>" class="white-button btn-continue" onclick="setLocation('<?php echo Mage::helper('core')->quoteEscape($this->getContinueShoppingUrl()) ?>')"><span><span class="icon-moon"></span><span><?php echo $this->__(' Continue Shopping') ?></span></span></button>
     <?php endif; ?>
+    <div class="total-top">
+        <div>
+            <span class="all-upper"><?php echo $this->__('Order Subtotal'); ?></span><br>
+            <span class="view-details">View <a class="red-link" href="#">Order Details </a> Below</span>
+        </div>
+        <?php //subtotal goes here?>
+    </div>
 
     <?php if(!$this->hasError()): ?>
         <ul class="checkout-types top">
