@@ -3382,7 +3382,7 @@ a.skip-link {
 
 .skip-content.skip-active {
   display: block;
-  background: #EDEDED;
+  background: #fff;
 }
 
 /* ============================================ *
@@ -9401,7 +9401,7 @@ div.paypal-logo span > img {
   line-height: 2em;
 }
 .header-minicart .subtotal .label {
-  color: white;
+
   text-transform: uppercase;
 }
 .header-minicart .subtotal .price {

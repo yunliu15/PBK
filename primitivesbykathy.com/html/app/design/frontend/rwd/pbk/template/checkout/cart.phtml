@@ -34,30 +34,32 @@
 <?php $_priceDisplay = ($this->helper('tax')->displayCartBothPrices()) ? 'display-both-prices' : 'display-single-price'; ?>
 <div class="cart <?php echo $_priceDisplay; ?>">
     <div class="page-title title-buttons">
-        <h1><?php echo $this->__('Your Shopping Cart') ?></h1>
+        <h1><?php echo $this->__('My Shopping Cart') ?></h1>
 
     </div>
-    <?php if($this->getContinueShoppingUrl()): ?>
-        <button type="button" title="<?php echo $this->quoteEscape($this->__('Continue Shopping')) ?>" class="white-button btn-continue" onclick="setLocation('<?php echo Mage::helper('core')->quoteEscape($this->getContinueShoppingUrl()) ?>')"><span><span class="icon-moon"></span><span><?php echo $this->__(' Continue Shopping') ?></span></span></button>
-    <?php endif; ?>
-    <div class="total-top">
-        <div>
-            <span class="all-upper"><?php echo $this->__('Order Subtotal'); ?></span><br>
-            <span class="view-details">View <a class="red-link" href="#">Order Details </a> Below</span>
+    <div class="above-table clearfix">
+        <?php if($this->getContinueShoppingUrl()): ?>
+            <button type="button" title="<?php echo $this->quoteEscape($this->__('Continue Shopping')) ?>" class="white-button btn-continue" onclick="setLocation('<?php echo Mage::helper('core')->quoteEscape($this->getContinueShoppingUrl()) ?>')"><span><span class="icon-moon"></span><span><?php echo $this->__(' Continue Shopping') ?></span></span></button>
+        <?php endif; ?>
+
+
+        <?php if(!$this->hasError()): ?>
+            <ul class="checkout-types top">
+                <?php foreach ($this->getMethods('top_methods') as $method): ?>
+                    <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                        <li><?php echo $methodHtml; ?></li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+        <div class="total-top">
+            <div>
+                <span class="all-upper"><?php echo $this->__('Order Subtotal'); ?></span><br>
+                <span class="view-details">View <a class="red-link" href="#">Order Details </a> Below</span>
+            </div>
+            <?php //subtotal goes here?>
         </div>
-        <?php //subtotal goes here?>
     </div>
-
-    <?php if(!$this->hasError()): ?>
-        <ul class="checkout-types top">
-            <?php foreach ($this->getMethods('top_methods') as $method): ?>
-                <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
-                    <li><?php echo $methodHtml; ?></li>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
-
     <?php echo $this->getMessagesBlock()->toHtml() ?>
     <?php echo $this->getChildHtml('form_before') ?>
     <form action="<?php echo $this->getFormActionUrl() ?>" method="post">
@@ -197,6 +199,8 @@
                 <?php endif; ?>
             </div>
         </div>
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('accepted-payment')->toHtml(); ?>
     </div>
+
     <?php echo $this->getChildHtml('crosssell') ?>
 </div>
