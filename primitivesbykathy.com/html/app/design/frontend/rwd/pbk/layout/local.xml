@@ -26,7 +26,6 @@
 
             <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="mini_wishlist_top" after="cart_sidebar" template="wishlist/top-mini.phtml" />
 
-
         </reference>
 
         <!-- reset the template for wishlist in sidebar -->
@@ -34,7 +33,6 @@
             <action method="unsetChild">
                 <alias>wishlist</alias>
             </action>
-            <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="wishlist" after="cart_sidebar" template="wishlist/sidebar.phtml" />
 
         </reference>
 
@@ -74,6 +72,15 @@
            </action>
          </reference>
     </catalog_category_layered>
+
+    <!--add slider to homepage -->
+    <cms_index_index>
+        <reference name="header">
+            <block type="cms/block" name="slider" after="-">
+                <action method="setBlockId"><block_id>slider</block_id></action>
+            </block>
+        </reference>
+    </cms_index_index>
 
 <!-- add breadcrumbs to my account -->
     <customer_account translate="label">
@@ -191,6 +198,7 @@
                 </crumbinfo>
             </action>
         </reference>
+
     </checkout_cart_index>
 
     <!-- product layout -->

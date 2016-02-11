@@ -31,12 +31,17 @@
  * @var $this Mage_Checkout_Block_Cart
  */
 ?>
+
+dirtan begu
+
+<?php Mage::getModel("ajaxcart/helper")->show_ok(); ?>
 <?php $_priceDisplay = ($this->helper('tax')->displayCartBothPrices()) ? 'display-both-prices' : 'display-single-price'; ?>
 <div class="cart <?php echo $_priceDisplay; ?>">
     <div class="page-title title-buttons">
         <h1><?php echo $this->__('My Shopping Cart') ?></h1>
 
     </div>
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('cart-banners')->toHtml();?>
     <div class="above-table clearfix">
         <?php if($this->getContinueShoppingUrl()): ?>
             <button type="button" title="<?php echo $this->quoteEscape($this->__('Continue Shopping')) ?>" class="white-button btn-continue" onclick="setLocation('<?php echo Mage::helper('core')->quoteEscape($this->getContinueShoppingUrl()) ?>')"><span><span class="icon-moon"></span><span><?php echo $this->__(' Continue Shopping') ?></span></span></button>
@@ -52,16 +57,27 @@
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>
-        <div class="total-top">
-            <div>
-                <span class="all-upper"><?php echo $this->__('Order Subtotal'); ?></span><br>
-                <span class="view-details">View <a class="red-link" href="#">Order Details </a> Below</span>
+        <div class="total-top-wrapper">
+            <div class="total-top">
+                <div class="total-left">
+                    <span class="all-upper"><?php echo $this->__('Order Subtotal'); ?></span><br>
+                    <span class="view-details">View <a class="red-link" href="#table">Order Details </a> Below</span>
+                </div>
+                <?php //subtotal goes here?>
+                <?php
+                $quote = Mage::getModel('checkout/session')->getQuote();
+                $quoteData= $quote->getData();
+                $grandTotal=number_format($quoteData['grand_total'], 2);
+                ?>
+                <div class="total-right">$<?php echo $grandTotal; ?></div>
+
             </div>
-            <?php //subtotal goes here?>
         </div>
     </div>
     <?php echo $this->getMessagesBlock()->toHtml() ?>
     <?php echo $this->getChildHtml('form_before') ?>
+
+    <a name="table"></a>
     <form action="<?php echo $this->getFormActionUrl() ?>" method="post">
         <?php echo $this->getBlockHtml('formkey'); ?>
         <table id="shopping-cart-table" class="cart-table data-table">
