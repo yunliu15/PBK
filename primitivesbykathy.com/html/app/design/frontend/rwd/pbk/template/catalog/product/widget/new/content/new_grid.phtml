@@ -35,19 +35,35 @@
         <?php $i=0; ?>
         <ul class="products-grid products-grid--max-<?php echo $_columnCount; ?>-col-widget">
             <?php foreach ($_products->getItems() as $_product): ?>
+
+
+                <?php
+
+                //we need to get the quantity increment value, so wi will get the model we need for this
+                $stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($_product->getId());
+                $product_quantity_increment = ($stockItem->getQtyIncrements()) + 0;
+                $product_max_quantity = ($stockItem->getQty()) + 0;
+                $product_min_quantity = ($stockItem->getMinSaleQty()) + 0; //max_sale_qty
+                $product_max_sale_quantity = ($stockItem->getMaxSaleQty()) + 0;
+
+                ?>
+
+
                 <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
                     <div class="amlabel-div">
                         <?php echo Mage::helper('amlabel')->getLabels($_product) ?></div>
-                    <div class="product-img-wrapper">
+                    <div class="bg-layer">
+                        <div class="product-img-wrapper">
 
-                        <div class="product-image-div">
-                    <?php $_imgSize = 210; ?>
-                    <?php // The image size is locked at 210 for this for display purposes. CSS has it at 75% which should equate to 278px?>
-                            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>" class="product-image">
-                                <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(210) ?>" alt="<?php echo $this->stripTags($_product->getName(), null, true) ?>" />
-                            </a>
-                        </div>
-                     </div>
+                            <div class="product-image-div">
+                        <?php $_imgSize = 210; ?>
+                        <?php // The image size is locked at 210 for this for display purposes. CSS has it at 75% which should equate to 278px?>
+                                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>" class="product-image">
+                                    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(210) ?>" alt="<?php echo $this->stripTags($_product->getName(), null, true) ?>" />
+                                </a>
+                            </div>
+                         </div>
+                    </div>
                     <div class="product-info">
                         <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $this->helper('catalog/output')->productAttribute($_product, $_product->getName() , 'name') ?></a></h3>
                         <div class="product-sku">
@@ -60,7 +76,19 @@
                         <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
                         <div class="actions">
                             <?php if ($_product->isSaleable()): ?>
-                                <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                                <input class="qty qty_increment_product_add input-text" type="text" pattern="\d*"
+                                       style="width: 41px; height: 33px; "
+                                       data-max="<?php echo $product_max_quantity; ?>"
+                                       data-min="<?php echo $product_min_quantity; ?>"
+                                       data-inc="<?php echo $product_quantity_increment; ?>"
+                                       data-max_allow="<?php echo $product_max_sale_quantity; ?>"
+                                       value="<?php echo  $product_quantity_increment >= $product_min_quantity ?  $product_quantity_increment :  $product_min_quantity; ?>"
+                                    >
+                                <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>"
+                                        class="button btn-cart"
+                                        onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"
+                                        data-url="<?php echo $this->getAddToCartUrl($_product) ?>"
+                                    ><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                             <?php else: ?>
                                 <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                             <?php endif; ?>
