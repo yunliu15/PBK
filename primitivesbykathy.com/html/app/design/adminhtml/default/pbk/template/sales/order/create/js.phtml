@@ -1,0 +1,157 @@
+<?php
+/**
+ * Magento Enterprise Edition
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Enterprise Edition End User License Agreement
+ * that is bundled with this package in the file LICENSE_EE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.magento.com/license/enterprise-edition
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license http://www.magento.com/license/enterprise-edition
+ */
+?>
+<script type="text/javascript">
+    order.sidebarHide();
+    Event.observe(window, 'load',  function() {
+        if (window.productConfigure) {
+            productConfigure.addListType('product_to_add', {
+                urlFetch: '<?php echo $this->getUrl('*/sales_order_create/configureProductToAdd') ?>'
+            });
+            productConfigure.addListType('quote_items', {
+                urlFetch: '<?php echo $this->getUrl('*/sales_order_create/configureQuoteItems') ?>'
+            });
+        }
+    });
+</script>
+
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>
+    jQuery(document).ready(function(){
+
+
+
+
+        /*jQuery("body").on("click",".zoom_images_backend",function(event){
+            //event.preventDefault = true;
+            event.stopImmediatePropagation();
+            console.log(event);
+            jQuery(this).closest("tr").removeClass("on-mouse");
+            var link = jQuery(this).attr("href");
+            var body_width = jQuery("body").width();
+            var body_height = jQuery("body").height();
+            var image_width = jQuery(this).attr("data-width");
+            var scroll_top = jQuery(document).scrollTop();// - jQuery(window).height();
+
+            jQuery(".zoom_images_backend_popup").show();
+            jQuery(".zoom_images_backend_popup").css({position:"absolute","z-index":"99999999999999999999999999999999",height:body_height});
+            jQuery(".zoom_images_backend_popup .zoom_div_image").css({"max-width":jQuery(this).attr("data-width")+"px"})
+            jQuery(".zoom_images_backend_popup .zoom_div_image").html("<img id='zoom_div_image_img' src='"+link+"' >");
+            jQuery(".zoom_images_backend_popup .zoom_div_image").append("<img src='<?php //echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>js/amasty/ampgrid/lightbox/images/closelabel.gif' class='zoom_div_image_img_close'>");
+            jQuery(".zoom_images_backend_popup_overlay").css({position:"absolute",hegiht:body_height,width:body_width,opacity:"0.6",background:"black"});
+            jQuery(".zoom_images_backend_popup .zoom_div_image #zoom_div_image_img").css({'margin-top':scroll_top+30+"px"});
+
+            if(body_width < image_width){
+                jQuery(".zoom_images_backend_popup .zoom_div_image").css({"max-width":"100%"})
+            }
+            event.stopImmediatePropagation = true;
+            return false;
+        });
+*/
+        jQuery(".zoom_images_backend").off().on("click",function(event){
+            //event.preventDefault = true;
+            event.stopImmediatePropagation();
+            console.log(event);
+            jQuery(this).closest("tr").removeClass("on-mouse");
+            var link = jQuery(this).attr("href");
+            var body_width = jQuery("body").width();
+            var body_height = jQuery("body").height();
+            var image_width = jQuery(this).attr("data-width");
+            var scroll_top = jQuery(document).scrollTop();// - jQuery(window).height();
+
+            jQuery(".zoom_images_backend_popup").show();
+            jQuery(".zoom_images_backend_popup").css({position:"absolute","z-index":"99999999999999999999999999999999",height:body_height});
+            jQuery(".zoom_images_backend_popup .zoom_div_image").css({"max-width":jQuery(this).attr("data-width")+"px"})
+            jQuery(".zoom_images_backend_popup .zoom_div_image").html("<img id='zoom_div_image_img' src='"+link+"' >");
+            jQuery(".zoom_images_backend_popup .zoom_div_image").append("<img src='<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>js/amasty/ampgrid/lightbox/images/closelabel.gif' class='zoom_div_image_img_close'>");
+            jQuery(".zoom_images_backend_popup_overlay").css({position:"absolute",hegiht:body_height,width:body_width,opacity:"0.6",background:"black"});
+            jQuery(".zoom_images_backend_popup .zoom_div_image #zoom_div_image_img").css({'margin-top':scroll_top+30+"px"});
+
+            if(body_width < image_width){
+                jQuery(".zoom_images_backend_popup .zoom_div_image").css({"max-width":"100%"})
+            }
+            event.stopImmediatePropagation = true;
+            return false;
+        });
+
+
+        jQuery(".zoom_images_backend_popup").not(".zoom_images_backend").click(function(e){
+
+            if(e.target.id != 'zoom_div_image_img'){
+                jQuery(".zoom_images_backend_popup").removeAttr("style");
+                jQuery(".zoom_images_backend_popup").hide();
+            }
+
+            return false;
+        });
+    })
+    jQuery.noConflict();
+</script>
+<style>
+    .zoom_images_backend_popup{
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    .zoom_images_backend_popup_overlay{
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+
+    .zoom_images_backend_popup .zoom_div_image{
+        margin: 3% auto;
+        display: block;
+        position: relative;
+    }
+
+    .zoom_images_backend_popup #zoom_div_image_img{
+        margin: 3% auto;
+        display: block;
+        width: 100%;
+    }
+
+    img.zoom_div_image_img_close {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        border: 1px solid;
+        cursor: pointer;
+    }
+</style>
+<div class="zoom_images_backend_popup" id="zoom_images_backend_popup">
+    <div class="zoom_div_image" id=""></div>
+    <div class="zoom_images_backend_popup_overlay"></div>
+
+</div>

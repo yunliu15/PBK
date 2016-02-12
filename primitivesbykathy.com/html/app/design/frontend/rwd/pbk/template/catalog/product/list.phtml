@@ -237,7 +237,23 @@
                         <?php endif; ?>
                         <ul class="add-to-links">
                             <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                                <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist icon icon-moon button"></a></li>
+                                <?php //add different class name for product that already in wish list?>
+
+                                <?php foreach (Mage::helper('wishlist')->getWishlistItemCollection() as $_wishlist_item): ?>
+                                    <?php $_in_wishlist = false; ?>
+                                    <?php if($_product->getId() == $_wishlist_item->getProduct()->getId()): ?>
+                                        <?php $_in_wishlist = true; break; ?>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+
+                                <?php if(!empty($_in_wishlist) && $_in_wishlist): ?>
+
+                                    <li><span class="in-wishlist icon icon-moon button"></span></li>
+                                <?php else: ?>
+                                    <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist icon icon-moon button"></a></li>
+                                <?php endif; ?>
+
+
                             <?php endif; ?>
                             <?php //if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
                                <!-- <li><span class="separator">|</span> <a href="<?php //echo $_compareUrl ?>" class="link-compare"><?php //echo $this->__('Add to Compare') ?></a></li>-->

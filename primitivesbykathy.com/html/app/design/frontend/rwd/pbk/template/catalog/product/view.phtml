@@ -114,13 +114,13 @@
                         </div>
                         <div class="wishlist-sharing clearfix">
                         <?php echo $this->getChildHtml('addto') ?>
-                        <span class="share">Share this item:</span><?php echo $this->getChildHtml('sharing') ?></div>
+                       <?php echo $this->getChildHtml('sharing') ?></div>
                     </div>
                     <?php echo $this->getChildHtml('extra_buttons') ?>
                 <?php elseif (!$_product->isSaleable()): ?>
                     <div class="add-to-box">
                         <?php echo $this->getChildHtml('addto') ?>
-                        <span class="share">Share this item:</span><?php echo $this->getChildHtml('sharing') ?>
+                       <?php echo $this->getChildHtml('sharing') ?>
                     </div>
                 <?php endif; ?>
             </div>

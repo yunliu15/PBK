@@ -34,6 +34,21 @@
     <div class="block-content">
         <ol id="recently-viewed-items" class="products-grid products-grid--max-5-col">
         <?php foreach ($_products as $_item): ?>
+
+
+            <?php
+
+            //we need to get the quantity increment value, so wi will get the model we need for this
+            $stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($_item->getId());
+            $product_quantity_increment = ($stockItem->getQtyIncrements()) + 0;
+            $product_max_quantity = ($stockItem->getQty()) + 0;
+            $product_min_quantity = ($stockItem->getMinSaleQty()) + 0; //max_sale_qty
+            $product_max_sale_quantity = ($stockItem->getMaxSaleQty()) + 0;
+
+            ?>
+
+
+
             <li class="item">
                 <div class="amlabel-div">
                     <?php echo Mage::helper('amlabel')->getLabels($_item) ?></div>
@@ -60,10 +75,19 @@
                 </div>
                 <div class="actions">
                     <?php if ($_item->isSaleable()): ?>
-
-
-
-                        <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                        <input class="qty qty_increment_product_add input-text" type="text" pattern="\d*"
+                               style="width: 41px; height: 33px; "
+                               data-max="<?php echo $product_max_quantity; ?>"
+                               data-min="<?php echo $product_min_quantity; ?>"
+                               data-inc="<?php echo $product_quantity_increment; ?>"
+                               data-max_allow="<?php echo $product_max_sale_quantity; ?>"
+                               value="<?php echo  $product_quantity_increment >= $product_min_quantity ?  $product_quantity_increment :  $product_min_quantity; ?>"
+                            >
+                        <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>"
+                                class="button btn-cart"
+                                onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"
+                                data-url="<?php echo $this->getAddToCartUrl($_item) ?>"
+                            ><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                     <?php else: ?>
                         <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
                     <?php endif; ?>

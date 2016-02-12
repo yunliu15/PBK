@@ -1142,7 +1142,7 @@ a.button:hover {
  */
 .breadcrumbs {
   overflow: hidden;
-  margin: -15px 0 15px;
+  margin: -15px 0 25px;
 }
 
 .breadcrumbs li {
@@ -4009,7 +4009,7 @@ a.skip-link {
 .footer .links li {
   word-break: break-all;
   line-height: 1.4;
-  padding: 4px 0;
+  padding: 4px 0 0;
 }
 .footer .links a {
   color: #636363;
@@ -4361,7 +4361,7 @@ p.product-name a:hover {
   display: block;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 485px) {
   /* Config: Three columns + flexible gutter */
   .products-grid {
     /* Undo two-column config */
@@ -5008,7 +5008,7 @@ p.product-name a:hover {
 .product-view .product-shop .price-box .special-price .price,
 .product-view .product-shop .price-box .full-product-price .price {
   color: #333;
-  font-size: 24px;
+  font-size: 28px;
   font-weight:600;
 }
 .product-view .product-shop .price-box .special-price .price-label {
@@ -5162,11 +5162,11 @@ p.product-name a:hover {
 .product-view .product-shop,
 .product-view .add-to-cart-wrapper,
 .product-view .block-related {
-  padding-left: 15px;
+  padding-left: 25px;
 }
 
 .product-img-box {
-  padding-right: 15px;
+  padding-right: 25px;
 }
 
 .product-view .product-shop,
@@ -5179,6 +5179,7 @@ p.product-name a:hover {
 
 .product-view {
   /* Set a min-height so that the floated elements break appropriately */
+  margin-bottom:80px;
 }
 .product-view .add-to-box:after,
 .product-view .add-to-cart:after {
@@ -5248,7 +5249,7 @@ p.product-name a:hover {
   min-height: 40px;
   line-height: 40px;
   font-size: 16px;
-  padding: 0px 50px;
+  padding: 0px 55px;
   float: left;
   min-width: 160px;
   width: 100%;
@@ -5316,7 +5317,7 @@ p.product-name a:hover {
 }
 .product-view .sharing-links li {
   float: left;
-  padding: 0px 7px 7px;
+  padding: 0px 3px 7px;
 }
 .product-view .sharing-links a {
   text-indent: -9999px;
@@ -5387,7 +5388,7 @@ p.product-name a:hover {
     line-height: 40px;
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 14px;
     position: relative;
     bottom: -1px;
   }
@@ -5401,7 +5402,7 @@ p.product-name a:hover {
   }
   .product-collateral .toggle-tabs li.current span,
   .product-collateral .toggle-tabs li:hover span {
-    color: #633125;
+    color: #333637;
   }
   .product-collateral .toggle-tabs li:first-child {
     border-left: none;
@@ -5421,6 +5422,7 @@ p.product-name a:hover {
     width: 100%;
     display: none;
     padding: 15px;
+    padding-left: 30px;
     border: 1px solid #cccccc;
     border-top: 0;
   }
@@ -5822,9 +5824,9 @@ p.product-name a:hover {
 .block-related .block-title h2 {
   margin: 0;
   margin-bottom: 0.5em;
-  color: #636363;
+
   font-family: "Lato", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.2;
@@ -5879,7 +5881,7 @@ p.product-name a:hover {
  * Upsell Products
  */
 .box-up-sell {
-  margin-top: 20px;
+  margin-top: 80px;
 }
 .box-up-sell .ratings {
   display: none;
