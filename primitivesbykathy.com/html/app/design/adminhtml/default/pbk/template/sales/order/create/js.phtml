@@ -46,6 +46,9 @@
 
 
         /*jQuery("body").on("click",".zoom_images_backend",function(event){
+
+            jQuery(this).stop();
+
             //event.preventDefault = true;
             event.stopImmediatePropagation();
             console.log(event);
@@ -69,34 +72,34 @@
             }
             event.stopImmediatePropagation = true;
             return false;
-        });
-*/
-        jQuery(".zoom_images_backend").off().on("click",function(event){
-            //event.preventDefault = true;
-            event.stopImmediatePropagation();
-            console.log(event);
-            jQuery(this).closest("tr").removeClass("on-mouse");
-            var link = jQuery(this).attr("href");
-            var body_width = jQuery("body").width();
-            var body_height = jQuery("body").height();
-            var image_width = jQuery(this).attr("data-width");
-            var scroll_top = jQuery(document).scrollTop();// - jQuery(window).height();
+        });*/
 
-            jQuery(".zoom_images_backend_popup").show();
-            jQuery(".zoom_images_backend_popup").css({position:"absolute","z-index":"99999999999999999999999999999999",height:body_height});
-            jQuery(".zoom_images_backend_popup .zoom_div_image").css({"max-width":jQuery(this).attr("data-width")+"px"})
-            jQuery(".zoom_images_backend_popup .zoom_div_image").html("<img id='zoom_div_image_img' src='"+link+"' >");
-            jQuery(".zoom_images_backend_popup .zoom_div_image").append("<img src='<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>js/amasty/ampgrid/lightbox/images/closelabel.gif' class='zoom_div_image_img_close'>");
-            jQuery(".zoom_images_backend_popup_overlay").css({position:"absolute",hegiht:body_height,width:body_width,opacity:"0.6",background:"black"});
-            jQuery(".zoom_images_backend_popup .zoom_div_image #zoom_div_image_img").css({'margin-top':scroll_top+30+"px"});
+        var body = document.getElementById('html-body');
 
-            if(body_width < image_width){
-                jQuery(".zoom_images_backend_popup .zoom_div_image").css({"max-width":"100%"})
+        body.addEventListener('click',function(e){
+            if(jQuery(e.target).hasClass('zoom_images_backend_img')||jQuery(e.target).hasClass('zoom_images_backend')){
+                console.log("target-img");
+                jQuery('.zoom_images_backend').closest("tr").removeClass("on-mouse");
+                var link = jQuery('.zoom_images_backend').attr("href");
+                var body_width = jQuery("body").width();
+                var body_height = jQuery("body").height();
+                var image_width = jQuery('.zoom_images_backend').attr("data-width");
+                var scroll_top = jQuery(document).scrollTop();// - jQuery(window).height();
+
+                jQuery(".zoom_images_backend_popup").show();
+                jQuery(".zoom_images_backend_popup").css({position:"absolute","z-index":"99999999999999999999999999999999",height:body_height});
+                jQuery(".zoom_images_backend_popup .zoom_div_image").css({"max-width":jQuery(this).attr("data-width")+"px"})
+                jQuery(".zoom_images_backend_popup .zoom_div_image").html("<img id='zoom_div_image_img' src='"+link+"' >");
+                jQuery(".zoom_images_backend_popup .zoom_div_image").append("<img src='<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>js/amasty/ampgrid/lightbox/images/closelabel.gif' class='zoom_div_image_img_close'>");
+                jQuery(".zoom_images_backend_popup_overlay").css({position:"absolute",hegiht:body_height,width:body_width,opacity:"0.6",background:"black"});
+                jQuery(".zoom_images_backend_popup .zoom_div_image #zoom_div_image_img").css({'margin-top':scroll_top+30+"px"});
+
+                if(body_width < image_width){
+                    jQuery(".zoom_images_backend_popup .zoom_div_image").css({"max-width":"100%"})
+                }
+                e.stopPropagation();
             }
-            event.stopImmediatePropagation = true;
-            return false;
-        });
-
+        },true);
 
         jQuery(".zoom_images_backend_popup").not(".zoom_images_backend").click(function(e){
 

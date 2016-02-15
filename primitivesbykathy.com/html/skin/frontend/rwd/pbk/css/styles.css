@@ -5304,7 +5304,7 @@ p.product-name a:hover {
   margin-left: 0px;
 }
 .product-view .add-to-links li:last-child a {
-  border-right: 0px;
+  /*border-right: 0px;*/
 }
 
 .product-view .sharing-links {
@@ -6434,7 +6434,7 @@ p.product-name a:hover {
   text-align: center;
 }
 .cart-table .product-cart-actions .qty {
-  height: 30px;
+  height: 45px;
   border-color: silver;
   border-radius: 0;
   margin-bottom: 10px;
@@ -6972,7 +6972,7 @@ p.product-name a:hover {
 }
 
 .opc .section.allow .step-title .number {
-  background-color: #99cce5;
+  background-color: #ccc;
 }
 
 .opc .section.allow .step-title h2 {

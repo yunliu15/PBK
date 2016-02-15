@@ -250,4 +250,10 @@
 
     </amquickview_ajax_view>
 
+    <!--<checkout_onepage_index>
+
+        <remove name="widget"/>
+
+    </checkout_onepage_index>-->
+
 </layout>

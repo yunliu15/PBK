@@ -27,11 +27,9 @@
 
 <?php $_product = $this->getProduct(); ?>
 <?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
-<span class="share">Share this item:</span>
+<span class="share">Share this:</span>
 <ul class="sharing-links">
-    <?php if ($this->canEmailToFriend()): ?>
-        <li><div class="social-wrapper"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>" class="link-email-friend" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Email to a Friend')) ?>"><?php echo $this->__('Email to a Friend') ?></a></div></li>
-    <?php endif; ?>
+
 
     <?php $_helper = $this->helper('catalog/output'); ?>
     <?php $_productName = urlencode(trim($_helper->productAttribute($_product, $_product->getName(), 'name')))?>
@@ -48,10 +46,6 @@
         <div class="social-wrapper">
         <a href="<?php echo 'http://twitter.com/home?status=' . $_productName . '+' . $_productUrl; ?>" target="_blank" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Share on Twitter')) ?>" class="link-twitter"><?php echo $this->__('Share on Twitter') ?></a></div>
     </li>
-    <li>
-        <div class="social-wrapper">
-        <a href="<?php echo 'https://plus.google.com/share?url=' . $_productName . '+' . $_productUrl; ?>" target="_blank" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Share on Google+')) ?>" class="g-plus" ><?php echo $this->__('Share on Google+') ?> </a></div>
-    </li>
 
     <li>
         <div class="social-wrapper">
@@ -60,8 +54,17 @@
 
     <li>
         <div class="social-wrapper">
+            <a href="<?php echo 'https://plus.google.com/share?url=' . $_productName . '+' . $_productUrl; ?>" target="_blank" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Share on Google+')) ?>" class="g-plus" ><?php echo $this->__('Share on Google+') ?> </a></div>
+    </li>
+
+    <li>
+        <div class="social-wrapper">
         <a href="<?php echo 'http://pinterest.com/pin/create/button/?url=' . $_productName . '+' . $_productUrl; ?>" target="_blank" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Share on Pinterest')) ?>" class="link-pinterest" ><?php echo $this->__('Share on Pinterest') ?> </a></div>
     </li>
+
+    <?php if ($this->canEmailToFriend()): ?>
+        <li><div class="social-wrapper"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>" class="link-email-friend" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Email to a Friend')) ?>"><?php echo $this->__('Email to a Friend') ?></a></div></li>
+    <?php endif; ?>
 </ul>
 
 
