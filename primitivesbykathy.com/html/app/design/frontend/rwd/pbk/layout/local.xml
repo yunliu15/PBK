@@ -115,6 +115,34 @@
             </action>
         </reference>
     </customer_account_index>
+
+    <!-- add breadcrumb for account information-->
+    <customer_account_edit translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Account Information</crumbname>
+                <crumbinfo>
+                    <label>Account Information</label>
+                    <title>Account Information</title>
+
+                </crumbinfo>
+            </action>
+        </reference>
+    </customer_account_edit>
+    <!-- add breadcrumb for address-->
+    <customer_address_index translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Address Book</crumbname>
+                <crumbinfo>
+                    <label>Address Book</label>
+                    <title>Address Book</title>
+
+                </crumbinfo>
+            </action>
+        </reference>
+    </customer_address_index>
+
 <!-- add breadcrumb for my orders-->
     <sales_order_history translate="label">
         <reference name="breadcrumbs">
@@ -123,7 +151,7 @@
                 <crumbinfo>
                     <label>My Orders</label>
                     <title>My Orders</title>
-                    <link>{{baseUrl}}/sales/order/history/</link>
+
                 </crumbinfo>
             </action>
         </reference>
@@ -132,6 +160,7 @@
     <!-- add breadcrumb for individual order item -->
     <sales_order_view translate="label">
         <reference name="breadcrumbs">
+            <action method="setTemplate"><template>page/html/breadcrumbs_order.phtml</template></action>
             <action method="addCrumb">
                 <crumbname>My Orders</crumbname>
                 <crumbinfo>
@@ -143,7 +172,7 @@
             <action method="addCrumb">
                 <crumbname>Order View</crumbname>
                 <crumbinfo>
-                    <label>Order View</label>
+                    <label>Order </label>
                     <title>Order View</title>
                 </crumbinfo>
             </action>
@@ -194,7 +223,7 @@
                 <crumbinfo>
                     <label>My Shopping Cart</label>
                     <title>My Shopping Cart</title>
-                    <link>{{baseUrl}}/checkout/cart/</link>
+
                 </crumbinfo>
             </action>
         </reference>

@@ -78,23 +78,23 @@
     <form action="<?php echo $this->getFormActionUrl() ?>" method="post">
         <?php echo $this->getBlockHtml('formkey'); ?>
         <table id="shopping-cart-table" class="cart-table data-table">
-            <!--<col width="1" />
             <col width="1" />
-            <col width="1" />
-            <col width="1" />
-            <col width="1" />
-            <col width="1" />
+            <col width="500" />
+            <col width="120" />
+            <col width="200" />
+            <col width="150" />
+            <col width="120" />
             <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
-            <col width="1" />
-            <col width="1" />
-            <?php endif; ?>-->
+            <col width="120" />
+            <col width="120" />
+            <?php endif; ?>
 
         <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
             <thead>
                 <tr>
                     <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Item Details') ?></span></th>
 
-                    <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
+                   <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
 
                     <th rowspan="<?php echo $mergedCells; ?>" class="a-center">
                         <?php echo $this->__('Quantity') ?>

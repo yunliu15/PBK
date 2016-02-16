@@ -27,6 +27,9 @@
 <?php /** @var $this Mage_Sales_Block_Order_Info */ ?>
 <?php $_order = $this->getOrder() ?>
 <?php echo $this->getMessagesBlock()->toHtml() ?>
+
+
+
 <div class="page-title title-buttons">
     <div class="buttons all-upper"><?php echo $this->getChildHtml('buttons') ?></div>
     <h1><?php echo $this->__('Order #%s - %s', $_order->getRealOrderId(), $_order->getStatusLabel()) ?></h1>

@@ -504,13 +504,13 @@ a {
 }
 
 a:hover {
-  color:  #633125;
+  color: #781c0f;
 
 }
 
 a:focus {
 outline:none;
-  color: #633125;
+  color: #781c0f;
 }
 
 ol,
@@ -867,7 +867,7 @@ body:not(.customer-account) .block:first-child .block-title {
 .block-account li strong,
 .block-cms-menu li strong {
   font-weight: bold;
-  color: #633125;
+  color: #781c0f;
 }
 .block-account li a,
 .block-cms-menu li a {
@@ -875,7 +875,7 @@ body:not(.customer-account) .block:first-child .block-title {
 }
 .block-account li a:hover,
 .block-cms-menu li a:hover {
-  color:  #633125;
+  color: #781c0f;
 }
 
 /* ============================================ *
@@ -940,21 +940,21 @@ body:not(.customer-account) .block:first-child .block-title {
 .cart-table .product-cart-actions .button:hover,
 #co-shipping-method-form .buttons-set .button:hover,
 .footer .button:hover {
-  background: #633125;
+  background: #6f281e;
   cursor: pointer;
 }
 .button:active,
 .cart-table .product-cart-actions .button:active,
 #co-shipping-method-form .buttons-set .button:active,
 .footer .button:active {
-  background: #633125;
+  background: #6f281e;
   color: #FFFFFF;
 }
 .button:focus,
 .cart-table .product-cart-actions .button:focus,
 #co-shipping-method-form .buttons-set .button:focus,
 .footer .button:focus {
-  background-color: #633125;
+  background-color: #6f281e;
   outline: none;
   color: #FFFFFF;
 }
@@ -1000,7 +1000,7 @@ a.button:hover {
 
   text-transform: uppercase;
   display: inline-block;
-  color: #633125;
+  color: #781c0f;
   font-family: "Lato", sans-serif;
 }
 .button2 span:hover,
@@ -1158,7 +1158,7 @@ a.button:hover {
 }
 
 .breadcrumbs a:hover {
-  color:  #633125;
+  color:  #781c0f;
 }
 
 .breadcrumbs strong {
@@ -2795,7 +2795,7 @@ p.required,
   float: left;
   margin-right: -40px;
   margin-top: 10px;
-  margin-left: 15px;
+  /*margin-left: 15px;*/
 }
 .form-list .control label,
 .sp-methods dt label,
@@ -2804,13 +2804,14 @@ p.required,
 .product-options ul.options-list label {
   color: #636363;
   /*background-color: #f4f4f4;*/
-  padding: 5px 10px;
+
   display: inline-block;
   width: auto;
   max-width: none;
   min-width: 250px;
   float: none;
-  padding: 6px 10px 6px 40px;
+  /*padding: 6px 10px 6px 40px;*/
+  padding: 6px 10px 6px 20px;
 }
 .form-list .control label:hover,
 .sp-methods dt label:hover,
@@ -3579,7 +3580,7 @@ a.skip-link {
   }
   .nav-primary a:hover,
   .nav-primary li:hover > a {
-    color: #633125;
+    color: #781c0f;
   }
   .nav-primary .menu-active {
     z-index: 200;
@@ -3683,7 +3684,7 @@ a.skip-link {
 
 #search {
   width: 100%;
-  height: 40px;
+  height: 50px;
   padding-right: 40px;
   font-family: "Lato", sans-serif;
 }
@@ -3693,8 +3694,8 @@ a.skip-link {
   position: absolute;
   top: 0;
   right: 0;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border: 0;
 
 }
@@ -3762,7 +3763,7 @@ a.skip-link {
   }
 
   #header-account a:hover {
-    color: #633125;
+    color: #781c0f;
   }
 }
 /* -------------------------------------------- *
@@ -3782,7 +3783,7 @@ a.skip-link {
 }
 
 #header-account a:hover {
-  color: #633125;
+  color: #781c0f;
 }
 
 /* ============================================ *
@@ -5363,7 +5364,7 @@ p.product-name a:hover {
   clear: both;
 }
 
-@media only screen and (min-width: 771px) {
+@media only screen and (min-width: 953px) {
   .product-collateral .toggle-tabs {
     display: block;
     width: 100%;
@@ -5398,7 +5399,7 @@ p.product-name a:hover {
   }
   .product-collateral .toggle-tabs li.current > span {
     background-color: #FFFFFF;
-    z-index: 5;
+    /*z-index: 5;*/
   }
   .product-collateral .toggle-tabs li.current span,
   .product-collateral .toggle-tabs li:hover span {
@@ -5430,7 +5431,7 @@ p.product-name a:hover {
     display: block;
   }
 }
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 952px) {
   .product-collateral .toggle-tabs {
     display: none;
   }
@@ -6119,6 +6120,7 @@ p.product-name a:hover {
   clear: right;
   width: 40%;
   padding-left: 20px;
+  max-width:425px;
 }
 
 .cart-totals,
@@ -6171,7 +6173,7 @@ p.product-name a:hover {
     width: 100%;
   }
   .display-single-price .cart-forms {
-    float: left;
+    float: right;
     padding-right: 0;
     padding-left: 10px;
   }
@@ -6205,6 +6207,7 @@ p.product-name a:hover {
     padding-right: 0;
     float: none;
     width: 100%;
+    max-width:100%;
   }
 }
 .display-single-price:after {
@@ -7782,7 +7785,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 }
 .customer-account-create .fieldset,
 .customer-account-create .buttons-set {
-  margin-left: 30px;
+  /*margin-left: 30px;*/
 }
 @media only screen and (max-width: 479px) {
   .customer-account-create .fieldset,
@@ -9578,7 +9581,7 @@ div.paypal-logo span > img {
   display: block;
   border-right: 7px solid transparent;
   border-left: 7px solid transparent;
-  border-bottom: 7px solid #633125;
+  border-bottom: 7px solid #6f281e;
   border-top: none;
   left: 50%;
   top: -7px;
