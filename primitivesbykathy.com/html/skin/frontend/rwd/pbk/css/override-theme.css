@@ -638,6 +638,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 /*** My Account **/
 
+.my-account li h3 {font-size:16px;}
 
 .my-account li {list-style:none;}
 .my-account .hello strong {
@@ -671,28 +672,36 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .orders.data-table thead th,.orders.data-table tbody td {border:1px solid #d5d5db;}
 .orders.data-table thead th {text-transform: uppercase;}
 .orders.data-table tbody tr {background-color:#fff;}
-.orders.data-table tbody tr:nth-child(even) {background-color:#f4f4f4;}
+.orders.data-table tbody tr:nth-child(even) {background-color:#FEFCED;}
 .my-account .title-buttons .buttons {float:right;position:relative;top:20px;}
 
+
+.my-account .order-details h2 {font-size:20px;font-weight:bold;}
 .my-account dl.order-info dd {float:right;}
-.my-account dl.order-info dt {font-size:24px; text-transform: uppercase;font-weight:bold;}
+.my-account dl.order-info dt {font-size:20px; text-transform: uppercase;font-weight:bold;}
 .my-account .order-info {border-bottom:none;}
 .my-account #order-info-tabs li {
     border: 1px solid #d5d5db;
     padding: 10px 20px;
     background:#fff;
     color: #781c0f;
-    cursor:pointer;
+
     font-weight:bold;
     text-transform: uppercase;
     margin-left:-4px;
 }
+.my-account h3.table-caption {font-size:20px;margin-top:20px;}
 .my-account #order-info-tabs li a {color: #781c0f;}
 .my-account #order-info-tabs li.current a,.my-account #order-info-tabs li.current{color:#333637;}
 .order-details .data-table thead th, .data-table tbody td {
     border:1px solid #d5d5db;
 }
+.my-account .order-info-box .box-title {clear:both;}
+.my-account .order-info-box .box{overflow:hidden;margin-bottom:10px;}
+.my-account .order-info-box {margin-bottom:30px;}
+.order-info-box .box-title h2 {text-transform: capitalize;}
 .order-details .data-table tbody tr {background-color:#fff;}
+.order-details .data-table tbody.even tr {background-color:#FEFCED;}
 .order-details .data-table tbody tr:nth-child(even) {background-color:#f4f4f4;}
 .order-details tfoot {background:#fff;border:1px solid #d5d5db;}
 .wrapper .data-table tfoot tr {background:none;}
@@ -703,12 +712,49 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     position: relative;
     top: -30px;
 }
+
+.my-account #my-orders-table .product-info-wrapper {display:table;}
+.my-account #my-orders-table .product-info,.my-account #my-orders-table .product-img {display:table-cell;vertical-align:top;}
+.my-account #my-orders-table .product-info {padding-left:20px;}
+.my-account #my-orders-table th {text-transform: uppercase;}
+
 .order-details .discount td.last {color:green;}
+.my-account .order-details .order-totals-wrapper {float:right;margin:20px 0;background:#fff;border:1px solid #d5d5db;}
+.my-account .order-details .order-totals-wrapper h4 {
+    background: #f2f2f2;
+    padding: 15px 25px;
+    font-size: 16px;
+    border-bottom: 1px solid #d5d5db;
+    margin-bottom:0;
+}
+.my-account .order-details .order-totals-table-box {padding:10px 20px;}
+.my-account .order-details table.order-totals td {padding:5px 10px;}
+.my-account .order-details table.order-totals td.last {text-align:left;}
+.my-account .order-details table.order-totals tr td:first-of-type:after {
+    content:":";
+}
+.my-account .order-details table.order-totals tr td:first-of-type {font-weight:bold;}
+.my-account .order-details table.order-totals tr.grand_total {
+    border-top:1px solid #d5d5db;
+}
+.my-account .order-details table.order-totals tr.grand_total td:first-of-type:after {
+    content:"Order Total:";
+    font-size:20px;
+    text-transform: uppercase;
+}
+.my-account .order-details table.order-totals tr.grand_total td:first-of-type > strong {
+    display:none;
+}
+.my-account .order-details table.order-totals tr.grand_total strong{font-size:20px;}
+
 .buttons a,.back-link a,.buttons .separator {color: #781c0f;}
 .buttons a:hover, .back-link a:hover{
     color:#333637;
 }
 #change_password + label {padding-top:3px;}
+.my-account .back-link small {display:none;}
+.my-account .back-link a {text-transform: uppercase;}
+
     /******* Shopping Cart ************/
 .cart .btn-continue .icon-moon:before{
     content:"\f104";
@@ -788,7 +834,11 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .cart-forms #discount-coupon-form label {display:block; padding:15px 25px; background:#f2f2f2;margin-right:0;font-size:16px;border-bottom:1px solid #d5d5db;}
 .cart-forms #discount-coupon-form .discount {background-color:#fff;padding:0;}
 .cart-forms #discount-coupon-form .field-wrapper {padding:15px 25px;width:100%;}
-.cart-forms #discount-coupon-form .input-text {margin:10px -4px 10px;height:43px;width:calc(100% - 96px);}
+.cart-forms #discount-coupon-form .input-text {
+    margin:10px -4px 10px;height:43px;
+    width: calc(100% - 105px);
+    position: relative;
+    left: 3px;}
 .cart-forms #discount-coupon-form .button-wrapper {margin-bottom:10px;}
 
 .cart .cart-forms {padding-left:0;}
@@ -848,14 +898,34 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .wrapper .button.button-secondary:hover {background:#333;}
 .wrapper .button.button-secondary:hover span {color:#fff;}
 #wishlist-table.clean-table thead th {background:#f2f2f2;padding: 10px 0;}
-#wishlist-table.clean-table {border:1px solid #d5d5db;}
+#wishlist-table.clean-table tbody,#wishlist-table.clean-table thead{border:1px solid #d5d5db;}
 .my-wishlist .buttons-set{border:none;}
+.my-wishlist .buttons-set button {height:35px;}
 .my-wishlist .btn-cart:before,.sidebar .btn-cart:before {content:'';}
-.my-wishlist .btn-remove2 {
+.my-wishlist .btn-remove2:before {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
 
-
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size:16px;
+    content:'\e929';
+    color:#333637;
 }
-
+.my-wishlist .btn-remove2{
+    font-size:16px;
+    background:none;
+    text-indent: 0;
+}
+.my-wishlist .btn-remove2 {
+    color:transparent;
+}
 
 
     /*********** Product Page ***************/
@@ -1333,6 +1403,10 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     }
     .product-view .product-img-box .view-detail {display:none;}
 
+    .wrapper .sidebar .block:not(.block-layered-nav) .block-content {
+        padding-left:30px;
+    }
+
 }
 
 @media only screen and (max-width:768px) {
@@ -1374,6 +1448,21 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     }
 }
 
+@media only screen and (max-width:688px) {
+    .my-account #my-orders-table td {
+        display:block;
+    }
+    .my-account #my-orders-table thead th:nth-child(1n+2) {
+        display: none;
+    }
+    .my-account #my-orders-table td {border:0;text-align:left;}
+    .my-account #my-orders-table tbody tr {
+        border-left: 1px solid #d5d5db;
+        border-right: 1px solid #d5d5db;
+        border-bottom: 1px solid #d5d5db;
+    }
+}
+
 @media only screen and (max-width:619px) {
     .footer-container .footer .block-subscribe .block-title, .footer-bottom-right span {display:initial;}
     .footer-container .footer .block-subscribe {position:static;}
@@ -1383,6 +1472,8 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 }
 
 @media only screen and (max-width:599px) {
+
+
     .cart .ordering-info {
         float:none;
         width:100%;
@@ -1405,6 +1496,12 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     .data-table.cart-table .cart-footer-actions .btn-continue{margin-bottom:10px;}
     .product-cart-actions .btn-update {display:initial;position:relative;top:-3px;}
     .cart .cart-table .product-cart-actions .qty {height:30px;}
+
+    .my-account .order-details .order-totals-wrapper {width:100%;}
+    .my-account .title-buttons .buttons {
+        float: none;
+        position: static;
+    }
 }
 
 @media only screen and (max-width:545px) {
@@ -1427,6 +1524,13 @@ body.cms-home .page .main-container {padding-bottom:65px;}
         left: 50px;
     }
     .top-container {padding-left:15px;padding-right:15px;}
+
+    #wishlist-table tr {
+        padding: 20px;
+    }
+    .my-wishlist .btn-remove2 {right:20px;}
+    #wishlist-table .item-manage .button {margin-top:10px;}
+    .my-wishlist #wishlist-table.clean-table td {padding:0 10px 4px;}
 }
 
 @media only screen and (max-width: 466px){

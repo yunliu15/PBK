@@ -177,7 +177,22 @@
                 </crumbinfo>
             </action>
         </reference>
+
     </sales_order_view>
+
+    <!-- add breadcrumb for my wishlist-->
+    <wishlist_index_index translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>My Wish List</crumbname>
+                <crumbinfo>
+                    <label>My Wish List</label>
+                    <title>My Wish List</title>
+
+                </crumbinfo>
+            </action>
+        </reference>
+    </wishlist_index_index>
 
     <!-- remove my order from account sidebar -->
     <customer_account translate="label">

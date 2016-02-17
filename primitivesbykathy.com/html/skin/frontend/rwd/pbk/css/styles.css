@@ -770,11 +770,11 @@ body:not(.customer-account) .block:first-child .block-title {
     font-weight: normal;
     margin-bottom: 0px;
     padding: 7px 10px 7px 24px;
-    border-width: 1px;
+    /*border-width: 1px;
     border-style: solid;
-    border-color: #cccccc;
+    border-color: #cccccc;*/
     position: relative;
-    background-color: #f4f4f4;
+    /*background-color: #f4f4f4;*/
     display: block;
     width: 100%;
     cursor: pointer;
@@ -794,9 +794,9 @@ body:not(.customer-account) .block:first-child .block-title {
     top: 50%;
     margin-top: -3px;
   }
-  .sidebar .block:not(.block-layered-nav) .block-title > strong:hover {
+  /*.sidebar .block:not(.block-layered-nav) .block-title > strong:hover {
     background-color: #ececec;
-  }
+  }*/
   .sidebar .block:not(.block-layered-nav) .block-title.active > strong {
     margin: 0;
     margin-bottom: 10px;
@@ -816,11 +816,11 @@ body:not(.customer-account) .block:first-child .block-title {
     font-weight: normal;
     margin-bottom: 0px;
     padding: 7px 10px 7px 24px;
-    border-width: 1px;
+    /*border-width: 1px;
     border-style: solid;
-    border-color: #cccccc;
+    border-color: #cccccc;*/
     position: relative;
-    background-color: #f4f4f4;
+    /*background-color: #f4f4f4;*/
   }
   .sidebar .block:not(.block-layered-nav) .block-title.active > strong:after {
     content: '';
@@ -837,7 +837,7 @@ body:not(.customer-account) .block:first-child .block-title {
     margin-top: -3px;
   }
   .sidebar .block:not(.block-layered-nav) .block-title.active > strong:hover {
-    background-color: #ececec;
+    /*background-color: #ececec;*/
   }
   .sidebar .block:not(.block-layered-nav) .block-content {
     padding: 10px;
@@ -847,7 +847,8 @@ body:not(.customer-account) .block:first-child .block-title {
     border-color: #cccccc;
   }
   .sidebar .block:last-of-type {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid #d5d5db;
+    border-top: 1px solid #d5d5db;
   }
 }
 /* -------------------------------------------- *
@@ -8154,7 +8155,7 @@ ol#cart-sidebar-reorder p.product-name {
   display: inline;
 }
 
-@media only screen and (max-width: 599px) {
+@media only screen and (max-width: 688px) {
   #my-orders-table .option-label {
     margin-left: 20px;
   }
@@ -8985,9 +8986,9 @@ div.paypal-logo span > img {
   text-transform: uppercase;
   width: 100%;
 }
-#wishlist-table.clean-table th {
-  border-bottom: 1px solid silver;
-}
+/*#wishlist-table.clean-table th {
+ border-bottom: 1px solid silver;
+}*/
 #wishlist-table.clean-table td {
   padding: 15px;
   vertical-align: top;
