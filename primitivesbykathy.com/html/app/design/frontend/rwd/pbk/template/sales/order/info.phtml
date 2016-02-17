@@ -32,7 +32,7 @@
 
 <div class="page-title title-buttons">
     <div class="buttons all-upper"><?php echo $this->getChildHtml('buttons') ?></div>
-    <h1><?php echo $this->__('Order #%s - %s', $_order->getRealOrderId(), $_order->getStatusLabel()) ?></h1>
+    <h1><?php echo $this->__('Order #%s', $_order->getRealOrderId()) ?></h1>
 
 </div>
 <?php echo $this->getStatusHistoryRssUrl($_order) ?>
@@ -42,20 +42,59 @@
         <?php $_links = $this->getLinks(); ?>
         <ul id="order-info-tabs">
         <?php foreach ($_links as $_link): ?>
+            <?php
+            $label = $_link->getLabel();
+            if ($label == "Shipments"){
+                $label = "Shipped Items";
+            }
+
+            ?>
             <?php if($_link->getUrl()): ?>
-                <li><a href="<?php echo $_link->getUrl() ?>"><?php echo $_link->getLabel() ?></a></li>
+                <li><a href="<?php echo $_link->getUrl() ?>"><?php echo $label ?></a></li>
             <?php else: ?>
-                <li class="current"><?php echo $_link->getLabel() ?></li>
+                <li class="current"><?php echo $label ?></li>
             <?php endif; ?>
         <?php endforeach; ?>
         </ul>
         <script type="text/javascript">decorateGeneric($('order-info-tabs').select('LI'),['first','last']);</script>
     </dd>
 </dl>
-<p class="order-date"><?php echo $this->__('Order Date: %s', $this->formatDate($_order->getCreatedAtStoreDate(), 'long')) ?></p>
-<?php if (!$_order->getIsVirtual()): ?>
+
+
 <div class="col2-set order-info-box">
     <div class="col-1">
+        <!-- order date -->
+        <div class="box">
+            <div class="box-title">
+                <h2><?php echo $this->__('Order Date') ?></h2>
+            </div>
+            <div class="box-content">
+                <div><?php echo $this->formatDate($_order->getCreatedAtStoreDate(), 'long') ?></div>
+            </div>
+        </div><!--end of order date-->
+
+        <!-- order status -->
+        <div class="box">
+            <div class="box-title">
+                <h2><?php echo $this->__('Order Status') ?></h2>
+            </div>
+            <div class="box-content">
+                <div><?php echo $this->__($_order->getStatusLabel())?></div>
+            </div>
+        </div><!--end of order status-->
+
+        <!-- sales rep -->
+        <div class="box">
+            <div class="box-title">
+                <h2><?php echo $this->__('Sales Rep') ?></h2>
+            </div>
+            <div class="box-content">
+                <div></div>
+            </div>
+        </div><!--end of order status-->
+
+        <?php if (!$_order->getIsVirtual()): ?>
+        <!-- shipping address -->
         <div class="box">
             <div class="box-title">
                 <h2><?php echo $this->__('Shipping Address') ?></h2>
@@ -63,9 +102,42 @@
             <div class="box-content">
                 <address><?php echo $_order->getShippingAddress()->format('html') ?></address>
             </div>
-        </div>
+        </div><!--end of shipping address-->
+        <?php endif; ?>
+
+        <!-- billing address -->
+        <div class="box">
+            <div class="box-title">
+                <h2><?php echo $this->__('Billing Address') ?></h2>
+            </div>
+            <div class="box-content">
+                <address><?php echo $_order->getBillingAddress()->format('html') ?></address>
+            </div>
+        </div><!--end of billing address-->
     </div>
     <div class="col-2">
+        <!-- placed by -->
+        <div class="box">
+            <div class="box-title">
+                <h2><?php echo $this->__('Order Placed By') ?></h2>
+            </div>
+            <div class="box-content">
+                <div></div>
+            </div>
+        </div><!--end of placed by-->
+
+        <!-- customer po# -->
+        <div class="box">
+            <div class="box-title">
+                <h2><?php echo $this->__('Customer PO#') ?></h2>
+            </div>
+            <div class="box-content">
+                <div></div>
+            </div>
+        </div><!--end of PO#-->
+
+        <?php if (!$_order->getIsVirtual()): ?>
+        <!-- shipping method -->
         <div class="box">
             <div class="box-title">
                 <h2><?php echo $this->__('Shipping Method') ?></h2>
@@ -77,22 +149,10 @@
                     <p><?php echo $this->helper('sales')->__('No shipping information available'); ?></p>
                 <?php endif; ?>
             </div>
-        </div>
-    </div>
-</div>
-<?php endif; ?>
-<div class="col2-set order-info-box">
-    <div class="col-1">
-        <div class="box">
-            <div class="box-title">
-                <h2><?php echo $this->__('Billing Address') ?></h2>
-            </div>
-            <div class="box-content">
-                <address><?php echo $_order->getBillingAddress()->format('html') ?></address>
-            </div>
-        </div>
-    </div>
-    <div class="col-2">
+        </div><!--end: shipping method -->
+        <?php endif; ?>
+
+        <!-- payment -->
         <div class="box box-payment">
             <div class="box-title">
                 <h2><?php echo $this->__('Payment Method') ?></h2>
@@ -100,6 +160,8 @@
             <div class="box-content">
                 <?php echo $this->getPaymentInfoHtml() ?>
             </div>
-        </div>
+        </div><!--end:payment -->
     </div>
 </div>
+
+
