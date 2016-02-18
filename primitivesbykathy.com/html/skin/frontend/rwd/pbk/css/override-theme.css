@@ -708,7 +708,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .my-account .order-info-box {margin-bottom:30px;}
 .order-info-box .box-title h2 {text-transform: capitalize;}
 .order-details .data-table tbody tr {background-color:#fff;}
-.order-details .data-table tbody.even tr {background-color:#FEFCED;}
+
 .order-details .data-table tbody tr:nth-child(even) {background-color:#f4f4f4;}
 .order-details tfoot {background:#fff;border:1px solid #d5d5db;}
 .wrapper .data-table tfoot tr {background:none;}
