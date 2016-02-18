@@ -30,6 +30,7 @@
     </div>
     <?php echo $this->getMessagesBlock()->toHtml() ?>
     <?php echo $this->getChildHtml('hello') ?>
+    <?php echo $this->getChildHtml('widgets_content_top') ?>
     <?php echo $this->getChildHtml('top') ?>
     <div class="box-account box-info">
         <div class="box-head">
@@ -43,16 +44,3 @@
     <?php echo $this->getChildHtml('info1') ?>
     <?php echo $this->getChildHtml('info2') ?>
 </div>
-
-<script>
-    var colors = ["pink","light-green","white","light-yellow"];
-    jQuery(function($){
-        $(document).ready(function(){
-            var orderTable = $('#my-orders-table');
-            orderTable.find("tbody").find("tr").each(function(){
-                var index = Math.floor( (Math.random() * colors.length));
-                $(this).addClass(colors[index]);
-            })
-        })
-    })
-</script>
