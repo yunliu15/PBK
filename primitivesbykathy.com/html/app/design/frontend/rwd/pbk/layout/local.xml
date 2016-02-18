@@ -1,10 +1,7 @@
 <?xml version="1.0"?>
-<!-- this sucker just opens the doc -->
 
-<layout version="0.1.0"><!-- everything goes in here -->
-    <default> <!-- this container tells you what your default layout is. like 'header' and 'footer' -->
-        <!-- code goes here -->
-
+<layout version="0.1.0">
+    <default>
         <reference name="head">
             <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Lato: 300, 300italic, 400, 400italic, 700, 700italic, 900,900italic</href></action>
 
@@ -33,7 +30,17 @@
             <action method="unsetChild">
                 <alias>wishlist</alias>
             </action>
+            <!-- add a new wishlist block using desired template here-->
 
+        </reference>
+
+        <!--add a custom position for inserting widget: top in the main content area -->
+        <reference name="content">
+            <block type="core/text_list" name="widgets_content_top" as="widgets_content_top" translate="label" before="-"> <label>Widgets Content Top</label> </block>
+        </reference>
+        <!--add a custom position for inserting widget: top container -->
+        <reference name="top.container">
+            <block type="core/text_list" name="widgets_page_top" as="widgets_page_top" translate="label"> <label>Widgets Page Top</label> </block>
         </reference>
 
 
@@ -104,6 +111,12 @@
         </reference>
     </customer_account>
 
+    <customer_account>
+        <reference name="content">
+            <action method="unsetChild"><alias>widgets_content_top</alias></action>
+        </reference>
+
+    </customer_account>
     <customer_account_index translate="label">
         <reference name="breadcrumbs">
             <action method="addCrumb">
@@ -114,6 +127,17 @@
                 </crumbinfo>
             </action>
         </reference>
+
+        <!-- move widget banners down after welcome messages -->
+
+        <reference name="customer_account_dashboard">
+            <action method="insert">
+                <blockName>widgets_content_top</blockName>
+                <alias>widgets_content_top</alias>
+            </action>
+        </reference>
+
+
     </customer_account_index>
 
     <!-- add breadcrumb for account information-->
@@ -142,6 +166,25 @@
             </action>
         </reference>
     </customer_address_index>
+    <customer_address_form translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Address Book</crumbname>
+                <crumbinfo>
+                    <label>Address Book</label>
+                    <title>Address Book</title>
+                    <link>{{baseUrl}}/customer/address</link>
+                </crumbinfo>
+            </action>
+            <action method="addCrumb">
+                <crumbname>Edit Address</crumbname>
+                <crumbinfo>
+                    <label>Edit Address</label>
+                    <title>Address Book</title>
+                </crumbinfo>
+            </action>
+        </reference>
+    </customer_address_form>
 
 <!-- add breadcrumb for my orders-->
     <sales_order_history translate="label">
@@ -176,6 +219,11 @@
                     <title>Order View</title>
                 </crumbinfo>
             </action>
+        </reference>
+
+
+        <reference name="order_items">
+            <action method="addItemRender"><type>default</type><block>sales/order_item_renderer_default</block><template>sales/order/items/renderer/default_account.phtml</template></action>
         </reference>
 
     </sales_order_view>
@@ -290,14 +338,19 @@
 
         <remove name="product.recently.viewed"/>
         <remove name="ordering_info_pdp"/>
-
+        <!-- remove widgets from quick view -->
+        <remove name="widgets_content_top"/>
 
     </amquickview_ajax_view>
 
-    <!--<checkout_onepage_index>
 
-        <remove name="widget"/>
+  <checkout_onepage_index>
 
-    </checkout_onepage_index>-->
+
+      <!-- remove widgets from checkout page -->
+      <remove name="widgets_content_top"/>
+      <remove name="widgets_page_top"/>
+
+    </checkout_onepage_index>
 
 </layout>

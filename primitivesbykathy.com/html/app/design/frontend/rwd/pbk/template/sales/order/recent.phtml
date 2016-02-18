@@ -50,7 +50,7 @@
         </thead>
         <tbody>
             <?php foreach ($_orders as $_order): ?>
-                <tr>
+                <tr class="<?php echo $_order->getStatusLabel() ?>">
                     <td class="number"><?php echo $_order->getRealOrderId() ?></td>
                     <td class="date"><span class="nobr"><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></span></td>
                     <td class="ship"><?php echo $_order->getShippingAddress() ? $this->escapeHtml($_order->getShippingAddress()->getName()) : '&nbsp;' ?></td>
