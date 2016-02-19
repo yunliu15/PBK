@@ -1238,8 +1238,16 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .cms-customer-service tr > td:first-of-type {width:60%;}
 .cms-customer-service  td > form table table tr > td:first-of-type {width:100px;}
 .cms-customer-service  td > form input {width:auto;}
-    /********* Footer **********/
 
+.cms-career-opportunities h2{margin-top:20px;}
+.cms-career-opportunities tbody {background:none;}
+/* store locator */
+.ustorelocator-location-map #store_locator_form .fieldset {padding-left:0;}
+
+    /********* Footer **********/
+.newsletter-message {
+    max-width: 1200px;
+    margin: auto;}
 
 .footer .block-title {text-align:left;}
 .footer .links .block-title strong {font-size:18px;}
@@ -1254,6 +1262,8 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     bottom:-43px;
     width:auto;
 }
+
+.footer .block-subscribe .input-box .validation-advice {position:absolute;top:-40px;background:rgba(255,255,255,0.5);}
 .footer-container .footer .block-subscribe .block-title {
     display:inline-block;
     margin:5px 5px 0 0;
@@ -1464,6 +1474,12 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     }
 }
 
+@media (min-width:560px ) and (max-width:768px) {
+    .featured-benefit .img-wrapper {
+        width:270px;
+    }
+}
+
 @media only screen and (max-width:730px) {
     .footer-container .footer .links {
         width: 50%;
@@ -1490,6 +1506,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
         border-right: 1px solid #d5d5db;
         border-bottom: 1px solid #d5d5db;
     }
+    .ustorelocator-location-map #store_locator_form .fieldset .location-search li {float:none;}
 }
 
 @media only screen and (max-width:619px) {
@@ -1563,6 +1580,10 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     .my-wishlist .btn-remove2 {right:20px;}
     #wishlist-table .item-manage .button {margin-top:10px;}
     .my-wishlist #wishlist-table.clean-table td {padding:0 10px 4px;}
+
+    #storelocator-results td{width:100%;display:block;}
+    #storelocator-results #storelocator-container #sidebar {height:auto;width:100%;}
+    #storelocator-results #sidebar .featured {text-align:left;}
 }
 
 @media only screen and (max-width: 466px){
