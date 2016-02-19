@@ -1219,6 +1219,25 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 
 .wrapper .products-grid .actions {bottom:2px;}
+
+
+/********* CMS Pages **************/
+.cms-customer-service tbody {background: none;}
+.cms-customer-service tbody tbody,.cms-customer-service tbody form{background: #fff;}
+.cms-customer-service td > table td{padding:5px 10px; border:1px solid #d5d5db;vertical-align: top;}
+.cms-customer-service  td > form td {border:none;vertical-align:top;}
+.cms-customer-service  td > form {padding:5px 10px;border: 1px solid #d5d5db; border-top:none;}
+.cms-customer-service table b a {color:#6f281e; text-decoration: underline;}
+.cms-customer-service table b a:hover {color:#333637;}
+.cms-customer-service  td > form table {width:100%;}
+.cms-customer-service td > form textarea {
+    max-width: 700px;
+    min-height: 100px;
+    margin-bottom:10px;
+}
+.cms-customer-service tr > td:first-of-type {width:60%;}
+.cms-customer-service  td > form table table tr > td:first-of-type {width:100px;}
+.cms-customer-service  td > form input {width:auto;}
     /********* Footer **********/
 
 
@@ -1512,6 +1531,9 @@ body.cms-home .page .main-container {padding-bottom:65px;}
         float: none;
         position: static;
     }
+
+
+    .cms-customer-service td {display:block;width:100%!important;}
 }
 
 @media only screen and (max-width:545px) {
