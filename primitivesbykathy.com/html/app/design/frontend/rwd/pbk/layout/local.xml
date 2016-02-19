@@ -268,6 +268,10 @@
                 </crumbinfo>
             </action>
         </reference>
+<!--remove banner from login page -->
+        <reference name="content">
+            <action method="unsetChild"><alias>widgets_content_top</alias></action>
+        </reference>
     </customer_account_login>
 
     <!-- add breadcrumbs to shopping cart -->
