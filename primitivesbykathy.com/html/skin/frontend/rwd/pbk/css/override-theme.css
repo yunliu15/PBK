@@ -1247,7 +1247,11 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     /********* Footer **********/
 .newsletter-message {
     max-width: 1200px;
-    margin: auto;}
+    margin: auto;
+    clear:both;
+    position:relative;
+    top:20px;
+}
 
 .footer .block-title {text-align:left;}
 .footer .links .block-title strong {font-size:18px;}
@@ -1515,6 +1519,11 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     .footer .block-subscribe .block-title strong {color:#333637;}
     .footer-bottom-right {text-align:center;}
     .dashboard .box-account.box-recent {overflow-x:scroll;}
+    .footer .block-subscribe .input-box .validation-advice {
+        position: absolute;
+        top: -30px;
+        background: none;}
+    .newsletter-message {top:0;}
 }
 
 @media only screen and (max-width:599px) {
@@ -1562,6 +1571,12 @@ body.cms-home .page .main-container {padding-bottom:65px;}
         margin-left: 0;
     }
 
+}
+
+@media only screen and (max-width:481px){
+    .footer .block-subscribe .input-box .validation-advice {
+        position: static;
+        }
 }
 
 @media only screen and (max-width: 479px){

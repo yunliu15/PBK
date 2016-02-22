@@ -44,23 +44,30 @@
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
 <div class="wrapper">
-
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
         <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col1-layout">
+        <div class="main-container col3-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="col-main">
-                    <?php // move newsletter subscription message down to the footer
-                    $message = strip_tags($this->getChildHtml('global_messages'));
-                    if  ($message!= $this->__('Confirmation request has been sent.') && strpos($message,$this->__('subscription')) === false):
-                        ?>
-                        <div class='top-message'><?php echo $this->getChildHtml('global_messages') ?></div>
-                    <?php endif;?>
-                    <?php //echo $this->getChildHtml('global_messages') ?>
-                    <?php echo $this->getChildHtml('content') ?>
+                <div class="col-wrapper">
+                    <?php // This left_first block will display above the main content on smaller viewports ?>
+                    <?php if ($_leftContent = $this->getChildHtml('left_first')): ?>
+                        <div class="col-left sidebar col-left-first"><?php echo $_leftContent;   ?></div>
+                    <?php endif; ?>
+                    <div class="col-main">
+                        <?php // move newsletter subscription message down to the footer
+                        $message = strip_tags($this->getChildHtml('global_messages'));
+                        if  ($message!= $this->__('Confirmation request has been sent.') && strpos($message,$this->__('subscription')) === false):
+                            ?>
+                            <div class='top-message'><?php echo $this->getChildHtml('global_messages') ?></div>
+                        <?php endif;?>
+                        <?php //echo $this->getChildHtml('global_messages') ?>
+                        <?php echo $this->getChildHtml('content') ?>
+                    </div>
+                    <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
                 </div>
+                <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
             </div>
         </div>
 
@@ -77,6 +84,7 @@
             </script>
         <?php endif;?>
 
+
         <?php echo $this->getChildHtml('footer_before') ?>
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('global_cookie_notice') ?>
@@ -86,4 +94,3 @@
 <?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>
-

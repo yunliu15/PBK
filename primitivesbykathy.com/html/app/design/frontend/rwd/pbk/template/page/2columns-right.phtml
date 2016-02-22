@@ -44,11 +44,10 @@
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
 <div class="wrapper">
-
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
         <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col1-layout">
+        <div class="main-container col2-right-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <div class="col-main">
@@ -61,6 +60,7 @@
                     <?php //echo $this->getChildHtml('global_messages') ?>
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
+                <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
             </div>
         </div>
 
@@ -76,7 +76,6 @@
                 })
             </script>
         <?php endif;?>
-
         <?php echo $this->getChildHtml('footer_before') ?>
         <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('global_cookie_notice') ?>
@@ -86,4 +85,3 @@
 <?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>
-
