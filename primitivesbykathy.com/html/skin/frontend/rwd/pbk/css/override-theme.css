@@ -298,7 +298,7 @@ tr.Canceled {background:#FAF3F1!important;}
 
 .header-top p {text-align:center;}
 .logo {margin:auto;}
-.store-language-container {display:none;}
+.store-language-container {/*display:none;*/}
 
 .page-header .wishlist-cart-wrapper {float:right;position:relative; overflow:initial;}
 .page-header .wishlist-cart-wrapper .block-wishlist {float:left;margin-bottom:0;height:20px;}
@@ -1193,6 +1193,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     border-radius:0;
     padding: 2px 10px;
     background: #fff;
+    border:1px solid #d5d5db;
 }
 .wrapper .toolbar {background:none;border:none;padding-left:0;}
 .sort-by, .limiter {position:relative;}
@@ -1269,7 +1270,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     width:auto;
 }
 
-.footer .block-subscribe .input-box .validation-advice {position:absolute;top:-40px;background:rgba(255,255,255,0.5);}
+.footer .block-subscribe .input-box .validation-advice {position:absolute;top:-46px;/*background:rgba(255,255,255,0.5);*/}
 .footer-container .footer .block-subscribe .block-title {
     display:inline-block;
     margin:5px 5px 0 0;
