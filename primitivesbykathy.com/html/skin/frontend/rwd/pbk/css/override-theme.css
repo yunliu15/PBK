@@ -63,8 +63,7 @@ a:active {
 
 }
 
-.button span span {padding:0;}
-.button span { font-family: "Lato" !important;}
+
 
 tbody {background:#fff;}
 .amlabel-div tbody {background:none;}
@@ -1664,6 +1663,8 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 
 /****** b2b ******/
+.b2b-wrapper .button span span {padding:0;}
+.b2b-wrapper .button span { font-family: "Lato" !important;}
 
 /** dashboard **/
 .wrapper .b2b-wrapper * {
@@ -1753,7 +1754,9 @@ body[class^=" b2b"] .temp-wrapper {background:none;}
     color: #7f0101;
     text-decoration: underline;
     font-size: 12px;
-
+}
+.wrapper .b2b-wrapper .b2b-sub-header .b2b-logout:hover {
+    color: #333637;
 }
 .b2b-dashboard-index .b2b-wrapper .b2b-dashboard-container .place-to-order h3 {
     margin-top:0;
@@ -1771,6 +1774,28 @@ body[class^=" b2b"] .footer-bottom {
 .register-actions .b2b-button:hover {background:#fff; border: 1px solid #d5d5db; color:#333637;}
 .register-actions .b2b-button {background:#333; border: 1px solid #333; color:#fff;padding: 10px 20px;
     margin: 20px 0;}
+.wrapper .b2b-wrapper .register-page h5,
+.wrapper .b2b-wrapper .register-page .register-title p,
+.wrapper .b2b-wrapper .register-page label {
+    font-family: "Lato" !important;
+    color: #333637;
+}
+.wrapper .b2b-wrapper .register-page .register-actions .b2b-button span span {
+    font-family: "lato" !important;
+    background: #333;
+    border: 1px solid #333;
+}
+.wrapper .b2b-wrapper .register-page .register-actions .b2b-button:hover span span {
+    background-color: #fff;
+    color:#333637;
+    border: 1px solid #d5d5db;
+}
+.wrapper .b2b-wrapper .register-page select {
+    color: #333637;
+}
+.b2b-account-register .wrapper .footer-bottom {
+    margin-bottom: 0;
+}
 
 /*login*/
 .wrapper .b2b-input-wrapper label,
@@ -1837,6 +1862,8 @@ body[class^=" b2b"] .footer-bottom {
     background: none;
     border-bottom: 1px solid #d5d5db;
 }
+
+
 .wrapper .b2b-wrapper .div-table {
     width: 100%;
 }
@@ -1845,6 +1872,11 @@ body[class^=" b2b"] .footer-bottom {
     background: #fff !important;
     color: #333637;
 }
+.b2b-wrapper .b2b-shopping-cart-action .btn-large-gray {
+    height: 40px;
+    line-height: 23px !important;
+}
+
 .wrapper .btn-large-gray:hover {
     border: 1px solid #333 !important;
     background: #333 !important;
@@ -1868,8 +1900,17 @@ body[class^=" b2b"] .footer-bottom {
     background:#fff;
     border: 1px solid #d5d5db;
 }
-#shopping-cart-totals-table thead {display: none;}
-#shopping-cart-totals-table td {padding: 5px 10px;}
+#shopping-cart-totals-table thead {margin-bottom: 10px;}
+#shopping-cart-totals-table thead th {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: #f2f2f2;
+    border-bottom: 1px solid #dbdbd5;
+}
+
+#shopping-cart-totals-table td {padding: 5px 15px;}
 .wrapper .b2b-wrapper .b2b-cart-total tbody tr td:last-child,
 .wrapper .b2b-wrapper .b2b-cart-total tfoot tr td:last-child {
     text-align: left;
@@ -1878,6 +1919,18 @@ body[class^=" b2b"] .footer-bottom {
     font-weight: bold;
 }
 
+.wrapper .b2b-wrapper .b2b-cart-total {
+    widtH: auto;
+}
+#shopping-cart-totals-table tbody tr td:last-child,
+#shopping-cart-totals-table tfoot tr td:last-child {
+    padding-left:5px;
+}
+#shopping-cart-totals-table tbody tr td:first-child,
+#shopping-cart-totals-table tfoot tr td:first-child {
+    padding-right: 5px;
+}
+td.Discount + td .price {color: green !important;}
 /** reorder **/
 .wrapper .b2b-wrapper .b2b-selected-items {
     border: 1px solid #d5d5db;
@@ -1903,7 +1956,56 @@ body[class^=" b2b"] .footer-bottom {
     color: #7f0101;
 }
 
+@media only screen and (max-width: 980px) {
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-name {
+        width: 181px;
+        margin-right: 10px;
+    }
+    .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-price {
+        width: 69px;
+        margin-right: 20px;
+        text-align: center;
+    }
+    .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-product {
+        width: 290px;
+        margin-right: 10px;
+    }
+    .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-qty {
+        width: 92px;
+        margin-right: 10px;
+        text-align: center;
+    }
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-price {
+        width: 69px;
+        margin-right: 20px;
+        text-align: center !important;
+    }
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-qty {
+        width: 92px;
+        margin-right: 10px;
+    }
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-subtotal {
+        width: 102px;
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width:959px) {
+    .b2b-account-register .b2b-wrapper .right,
+    .b2b-account-register .b2b-wrapper .left {
+        float: none;
+    }
+    .wrapper .b2b-wrapper .register-page .register-actions {
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+    .wrapper .b2b-wrapper .register-page .register-actions .b2b-button.right {margin-top:10px;}
+}
+
 @media screen and (max-width: 767px) {
+    .wrapper .b2b-quick-order {
+       width: auto;
+    }
     .wrapper .b2b-wrapper {width:100%;}
     .wrapper .b2b-wrapper .b2b-dashboard-container .download-center {
         max-width: 100%;
@@ -1916,16 +2018,57 @@ body[class^=" b2b"] .footer-bottom {
         width: 100%;
     }
     .b2b-dashboard-index .b2b-wrapper .b2b-dashboard-container .b2b-steps .item a {
-        font-size:16px;
+        font-size: 16px;
     }
     .b2b-dashboard-index .b2b-wrapper .b2b-dashboard-container .place-to-order h3,
     .b2b-dashboard-index .b2b-wrapper .b2b-dashboard-container .download-center h3 {
-        font-size:28px;
+        font-size: 28px;
     }
     body[class^="b2b"] .footer-bottom,
     body[class^=" b2b"] .footer-bottom {
         margin-bottom: 0;
     }
     body[class^=" b2b"] .temp-limiter {max-width:1200px;}
+    .wrapper .b2b-wrapper .register-page select,
+    .wrapper .b2b-wrapper .register-page input[type="text"],
+    .wrapper .b2b-wrapper .register-page input[type="password"] {
+        width: 90%;
+    }
+    .wrapper .b2b-wrapper .register-page .left-column,
+    .wrapper .b2b-wrapper .register-page .right-column {
+       width: auto;
+    }
 
+    .wrapper .b2b-wrapper .b2b-quick-order .input-wrapper input {
+        width: 390px;
+    }
+
+    .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-product{width:325px;margin-right: 10px;}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-price{display:none}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-qty{display:none}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-subtotal{display:none}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-name{margin-right: 0;width: 245px;}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-name .b2b-cart-sku{margin-bottom: 16px;}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .item-options{margin-bottom:18px}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-price{float: right !important;margin-right: 0;width: 275px;text-align: left !important;margin-bottom:21px;padding: 0 !important;}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-price label{color: #636262;display: inline !important;font-size: 14px;margin-left: 1px;margin-right: 6px;text-transform: uppercase;}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-qty{float: right !important;margin-right: 0;width: 275px;text-align: left !important;padding:0}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-qty label{color: #636262;display: inline !important;font-size: 14px;margin-left: 1px;margin-right: 14px;text-transform: uppercase;}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .table-row .left.b2b-cart-subtotal{display:none !important}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .table-row{position:relative}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-remove{padding: 4px 0 0 !important;position: absolute;right: 0;top: 16px;}
+
+}
+
+@media only screen and (max-width: 479px) {
+    .wrapper .b2b-wrapper .b2b-quick-order .input-wrapper input {
+        width: 240px;
+    }
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-price,
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-qty {
+        float: left !important;
+    }
+    #b2b-clear-cart {
+        margin-bottom: 10px;
+    }
 }

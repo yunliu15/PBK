@@ -358,4 +358,25 @@
 
     </checkout_onepage_index>
 
+    <!-- missing head content for b2b register page -->
+    <b2b_account_register>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/iwd/b2b/styles.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/iwd/b2b/bootstrap.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/iwd/b2b/media/signin.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/iwd/b2b/media/register.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/iwd/b2b/media/global.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/iwd/b2b/datepicker3.css</stylesheet></action>
+
+            <!--<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/jquery-1.11.1.min.js</name></action>-->
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/bootstrap.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/bootstrap-datepicker.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/application.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/login.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/decorator.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/register.js</name></action>
+        </reference>
+
+    </b2b_account_register>
+
 </layout>
