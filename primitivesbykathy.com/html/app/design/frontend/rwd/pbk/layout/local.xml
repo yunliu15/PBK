@@ -9,7 +9,6 @@
             <action method="addItem" after="-"><type>skin_css</type><name>css/override-theme.css</name><params/></action>
 
             <action method="removeItem"><type>js</type>><name>js/jquery/jquery-min.js</name></action>
-            <action method="removeItem"><type>skin_css</type><name>css/iwd/b2b/styles.css</name></action>
         </reference>
 
         <reference name="top.links">
@@ -345,6 +344,7 @@
         <remove name="ordering_info_pdp"/>
         <!-- remove widgets from quick view -->
         <remove name="widgets_content_top"/>
+        <remove name="b2b.sticky.footer" />
 
     </amquickview_ajax_view>
 
