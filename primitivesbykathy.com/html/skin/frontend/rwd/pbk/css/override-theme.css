@@ -18,7 +18,7 @@
 /***  GENERAL ***/
 button {border:none;outline:none;background:none;}
 
-
+.page {min-height:100%;}
 .page h1,.page .page-title h1 {
     font-weight: 700;
     font-size: 36px;
@@ -1287,6 +1287,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .footer-container .footer .block-subscribe .button:hover {
     background-color:#333;
 }
+.footer .block-subscribe .button span span {padding:0;}
 
 .wrapper .footer-container {
     max-width:100%;
@@ -1896,12 +1897,12 @@ body[class^=" b2b"] .footer-bottom {
 .wrapper .b2b-wrapper .b2b-cart-total tfoot tr td:first-child strong:after {
     content: ':'
 }
-#shopping-cart-totals-table {
+.b2b-wrapper #shopping-cart-totals-table {
     background:#fff;
     border: 1px solid #d5d5db;
 }
-#shopping-cart-totals-table thead {margin-bottom: 10px;}
-#shopping-cart-totals-table thead th {
+.b2b-wrapper #shopping-cart-totals-table thead {margin-bottom: 10px;}
+.b2b-wrapper #shopping-cart-totals-table thead th {
     padding: 10px 20px;
     text-align: center;
     font-size: 16px;
@@ -1910,7 +1911,7 @@ body[class^=" b2b"] .footer-bottom {
     border-bottom: 1px solid #dbdbd5;
 }
 
-#shopping-cart-totals-table td {padding: 5px 15px;}
+.b2b-wrapper #shopping-cart-totals-table td {padding: 5px 15px;}
 .wrapper .b2b-wrapper .b2b-cart-total tbody tr td:last-child,
 .wrapper .b2b-wrapper .b2b-cart-total tfoot tr td:last-child {
     text-align: left;
@@ -1922,12 +1923,12 @@ body[class^=" b2b"] .footer-bottom {
 .wrapper .b2b-wrapper .b2b-cart-total {
     widtH: auto;
 }
-#shopping-cart-totals-table tbody tr td:last-child,
-#shopping-cart-totals-table tfoot tr td:last-child {
+.b2b-wrapper #shopping-cart-totals-table tbody tr td:last-child,
+.b2b-wrapper #shopping-cart-totals-table tfoot tr td:last-child {
     padding-left:5px;
 }
-#shopping-cart-totals-table tbody tr td:first-child,
-#shopping-cart-totals-table tfoot tr td:first-child {
+.b2b-wrapper #shopping-cart-totals-table tbody tr td:first-child,
+.b2b-wrapper #shopping-cart-totals-table tfoot tr td:first-child {
     padding-right: 5px;
 }
 td.Discount + td .price {color: green !important;}
@@ -1954,6 +1955,64 @@ td.Discount + td .price {color: green !important;}
 }
 .wrapper .b2b-wrapper .div-table .table-body .name-product h3:hover {
     color: #7f0101;
+}
+
+/* for global pages */
+.b2b-sticky-footer, .b2b-sticky-footer * {
+    margin: 0;
+    padding: 0;
+    line-height: 1.25em;
+    text-decoration: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.wrapper .b2b-sticky-footer {
+    position: fixed;
+    height: 57px;
+    background: #fff;
+    border-top: 2px solid #4c433d;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1001;
+    padding: 0 30px;
+}
+.b2b-sticky-footer .b2b-sticky-footer-container {
+    width: auto;
+    max-width:1200px;
+    margin: 13px auto 0;
+}
+
+.b2b-sticky-footer .btn-checkout {
+    background: #6f281e;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-right: -2px;
+    padding: 8px 25px 7px;
+}
+.b2b-sticky-footer .right {
+    float: right;
+}
+.b2b-sticky-footer .b2b-price-box {
+    color: #4c433d;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+.b2b-sticky-footer .btn-dashboard, .b2b-sticky-footer .btn-view-cart {
+    color: #ffffff;
+    background: #333;
+    border: 1px solid #333;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 7px 27px 7px;
+    margin-right: 24px;
 }
 
 @media only screen and (max-width: 980px) {
@@ -2024,8 +2083,7 @@ td.Discount + td .price {color: green !important;}
     .b2b-dashboard-index .b2b-wrapper .b2b-dashboard-container .download-center h3 {
         font-size: 28px;
     }
-    body[class^="b2b"] .footer-bottom,
-    body[class^=" b2b"] .footer-bottom {
+   div.wrapper .footer-bottom {
         margin-bottom: 0;
     }
     body[class^=" b2b"] .temp-limiter {max-width:1200px;}
@@ -2072,3 +2130,4 @@ td.Discount + td .price {color: green !important;}
         margin-bottom: 10px;
     }
 }
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<div class="wrapper">
+    <?php echo $this->getChildHtml('global_notices') ?>
+    <div class="page">
+        <?php echo $this->getChildHtml('header') ?>
+        <div class="temp-wrapper">
+            <div class="temp-limiter b2b-wrapper"><?php //todo remove temp-wrapper class after finish dev?>
+                <?php // move newsletter subscription message down to the footer
+                $message = strip_tags($this->getChildHtml('global_messages'));
+                if  ($message!= $this->__('Confirmation request has been sent.') && strpos($message,$this->__('subscription')) === false):
+                    ?>
+                    <div class='top-message'><?php echo $this->getChildHtml('global_messages') ?></div>
+                <?php endif;?>
+                <?php //echo $this->getChildHtml('global_messages') ?>
+                <?php echo $this->getChildHtml('content') ?>
+            </div>        
+        </div>
+        <?php // move newsletter subscription message down to the footer?>
+        <?php if ($message == $this->__('Confirmation request has been sent.') || strpos($message,$this->__('subscription')) !== false):?>
+            <div class='newsletter-message'><?php echo $this->getChildHtml('global_messages') ?></div>
+            <script type="text/javascript">
+                jQuery(function($){
+                    $(document).ready(function() {
+                        $('.newsletter-message').insertBefore(".block-subscribe");
+                        $(window).scrollTop($(document).height());
+                    })
+                })
+            </script>
+        <?php endif;?>
+
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+    </div>
+</div>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>

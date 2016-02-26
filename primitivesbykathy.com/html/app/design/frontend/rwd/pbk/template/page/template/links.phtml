@@ -38,7 +38,7 @@
     <ul<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?> class="all-upper">
         <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
         <li>
-            <a href="#">
+            <a href="<?php echo  Mage::helper('b2b')->getQuickOrderUrl()?>">
                 <?php echo $this->__("Quick Order");?>
             </a>
         </li>
