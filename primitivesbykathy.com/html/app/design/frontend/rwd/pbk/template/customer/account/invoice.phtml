@@ -1,0 +1,45 @@
+<?php
+
+$invoices = $this->get_user_invoices();
+
+?>
+
+<div class="page-title">
+    <h1><?php echo $this->__('My Invoices') ?></h1>
+</div>
+<?php echo $this->getLayout()->createBlock('page/html_pager')->setCollection($invoices)->toHtml(); ?>
+<?php if($invoices->getSize()): ?>
+    <table class="data-table" id="my-orders-table" >
+        <thead>
+        <tr>
+            <th><?php echo $this->__('Invoice #') ?></th>
+            <th><?php echo $this->__('Date') ?></th>
+            <th><?php echo $this->__('Bill To') ?></th>
+            <th><?php echo $this->__('Invoice Total') ?></th>
+            <th><?php echo $this->__('View') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($invoices as $invoice): ?>
+            <tr>
+                <td><?php echo $invoice->getIncrementId() ?>&nbsp;</td>
+                <td><?php echo date("n/j/Y", strtotime($invoice->getCreatedAt())) ?>&nbsp;</td>
+                <td><?php
+                    $customer = Mage::getModel("customer/customer")->load($invoice->getCustomerId());
+                        echo ucwords($customer->getName());
+
+                    ?></td>
+                <td><?php echo Mage::app()->getLocale()->currency($invoice->getCurrencyCode())->getSymbol().(number_format($invoice->getGrandTotal(),2)); ?>&nbsp;</td> <?php  ?>
+                <td><a href="<?php echo $this->getUrl('sales/order/view', array('order_id'=>$invoice->getOrderId())) ?>"><?php echo $this->__('View Invoice') ?></a>&nbsp;</td>
+            </tr>
+        <?php endforeach ?>
+        </tbody>
+    </table>
+    <script type="text/javascript">decorateTable('my-orders-table')</script>
+<?php else: ?>
+    <p><?php echo $this->__('You have no invoice yet.') ?></p>
+<?php endif ?>
+<div class="buttons-set">
+    <p class="back-link"><a href="<?php echo $this->getUrl('customer/account') ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+</div>
+
