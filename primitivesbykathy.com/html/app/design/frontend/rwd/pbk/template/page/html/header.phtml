@@ -48,10 +48,6 @@
            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header_top')->toHtml();?>
        </div>
 
-        <?php // In order for the language switcher to display next to logo on smaller viewports, it will be moved here.
-              // See app.js for details ?>
-        <div class="store-language-container"></div>
-
 
             <div class="nav-top-wrapper">
                 <div class="nav-top clearfix">
@@ -69,6 +65,12 @@
                 </div>
 
             </div>
+
+
+        <?php // In order for the language switcher to display next to logo on smaller viewports, it will be moved here.
+        // See app.js for details ?>
+        <div class="store-language-container"></div>
+
            <div class="header-middle">
             <!-- Search -->
 
