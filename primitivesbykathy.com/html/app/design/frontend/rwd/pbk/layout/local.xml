@@ -116,6 +116,18 @@
             <action method="unsetChild"><alias>widgets_content_top</alias></action>
         </reference>
 
+        <!-- move account side navigation into left_first block -->
+        <reference name="left">
+            <action method="unsetChild"><name>customer_account_navigation</name></action>
+
+
+        </reference>
+        <reference name="left_first">
+            <action method="insert"><name>customer_account_navigation</name></action>
+
+
+        </reference>
+
     </customer_account>
     <customer_account_index translate="label">
         <reference name="breadcrumbs">
