@@ -18,7 +18,10 @@
 /***  GENERAL ***/
 button {border:none;outline:none;background:none;}
 
-.page {min-height:100%;}
+body .wrapper h1, body .wrapper h2, body .wrapper h3, body .wrapper h4, body .wrapper h5, body .wrapper h6 {
+    font-family: "Lato" !important;
+}
+
 .page h1,.page .page-title h1 {
     font-weight: 700;
     font-size: 36px;
@@ -160,6 +163,9 @@ p.no-bottom {margin-bottom:0!important;}
 .button.full-red-button:hover {
 
     background-color:#333;
+}
+.wrapper button span span {
+    padding: 0;
 }
 .products-grid .button {border-width:1px;border-style:solid;border-color:#333;box-sizing: border-box;  }
 .products-grid .button.btn-cart{padding-top:6px; padding-bottom:6px;}
@@ -642,7 +648,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .account-login .registered-users .f-left {
     position: absolute;
     bottom: 30px;
-    left: 180px;
+    left: 230px;
     text-decoration: underline;
 }
 
@@ -769,6 +775,20 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 #change_password + label {padding-top:3px;}
 .my-account .back-link small {display:none;}
 .my-account .back-link a {text-transform: uppercase;}
+
+/* invoce */
+.showinvoice-history-index .data-table th {
+    text-transform: uppercase;
+}
+.showinvoice-history-index .data-table thead th, .my-account .data-table tbody td {
+    border: 1px solid #d5d5db;
+}
+.showinvoice-history-index .back-link small {
+    display: none;
+}
+.showinvoice-history-index .back-link a {
+    text-transform: uppercase;
+}
 
     /******* Shopping Cart ************/
 .cart .btn-continue .icon-moon:before{
@@ -1455,6 +1475,12 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 }
 @media only screen and (max-width:770px) {
+    .no-touch .wrapper #header-account a:hover {
+        background: none;
+    }
+    #header-account .skip-link.skip-active {
+        background: none;
+    }
     .top-container {padding-left:30px;padding-right:30px;}
     .product-view .product-essential .amlabel-div {top:50px;}
     .product-view .product-collateral-wrapper {
@@ -1634,7 +1660,25 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     .featured-collections .red-button {padding:10px 15px!important;}
 
 }
+
+@media only screen and (max-width: 436px) {
+    #header-login {
+        left: 0;
+        top: 55px;
+    }
+    #header-login .arrow-up:before{
+        display:none;
+    }
+}
+
 @media only screen and (max-width: 380px) {
+    .red-button {
+        padding: 10px 15px !important;
+    }
+    .account-login .registered-users .f-left {
+        left: 180px;
+    }
+
     .wishlist-cart-wrapper > .checkout-button {
         display: none;
     }
@@ -2010,6 +2054,27 @@ td.Discount + td .price {color: green !important;}
     border-bottom: 1px solid #d5d5db;
     border-bottom: 1px solid #d5d5db;
 }
+.b2b-wrapper .div-table .table-header.fixed-header .fixed-wrapper {
+    width: auto;
+    max-width: 1200px;
+    padding: 0 35px;
+}
+.b2b-modal .btn-large {
+     background: #6f281e !important;
+    color: #fff;
+ }
+.b2b-modal .btn-large:hover {
+    background: #333 !important;
+}
+.b2b-modal.b2b-product-dialog .b2b-dialog-title {
+    padding-bottom: 0;
+}
+.b2b-modal-dialog {
+    width: 768px;
+    margin: 279px auto 0 auto;
+    z-index: 1060;
+}
+
 /* download center */
 .wrapper .b2b-download .b2b-download-title h3 {
     color: #333637;
@@ -2167,10 +2232,21 @@ td.Discount + td .price {color: green !important;}
 .wrapper .b2b-ajax-loader {
    /* background: url("../images/ajax-loader.gif") no-repeat scroll center center rgba(0, 0, 0, 0.65);*/
 }
+@media only screen and (max-width: 1054px) {
+    .wrapper .b2b-wrapper .div-table .table-header .th-product {
+        width: 399px;
+    }
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-name {
+        width: 308px;
+    }
+    .wrapper .b2b-wrapper .div-table {
+        width: 100%;
+    }
+}
 
 @media only screen and (max-width: 980px) {
     .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-name {
-        width: 181px;
+        width: 201px;
         margin-right: 10px;
     }
     .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-price {
@@ -2260,20 +2336,32 @@ td.Discount + td .price {color: green !important;}
         width: 390px;
     }
 
-    .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-product{width:325px;margin-right: 10px;}
+    .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-product{width:100%;margin-right: 10px;}
     .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-price{display:none}
     .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-qty{display:none}
     .wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-subtotal{display:none}
     .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-name{margin-right: 0;width: 245px;}
     .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-name .b2b-cart-sku{margin-bottom: 16px;}
     .wrapper .b2b-wrapper .b2b-shopping-cart .item-options{margin-bottom:18px}
-    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-price{float: right !important;margin-right: 0;width: 275px;text-align: left !important;margin-bottom:21px;padding: 0 !important;}
-    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-price label{color: #636262;display: inline !important;font-size: 14px;margin-left: 1px;margin-right: 6px;text-transform: uppercase;}
-    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-qty{float: right !important;margin-right: 0;width: 275px;text-align: left !important;padding:0}
-    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-qty label{color: #636262;display: inline !important;font-size: 14px;margin-left: 1px;margin-right: 14px;text-transform: uppercase;}
-    .wrapper .b2b-wrapper .b2b-shopping-cart .table-row .left.b2b-cart-subtotal{display:none !important}
-    .wrapper .b2b-wrapper .b2b-shopping-cart .table-row{position:relative}
-    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-remove{padding: 4px 0 0 !important;position: absolute;right: 0;top: 16px;}
+
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-price{
+        width: calc( 100% - 102px);
+        text-align: left !important;
+        margin-right: 0;
+    }
+
+    .wrapper .b2b-wrapper .b2b-shopping-cart .b2b-cart-qty{
+        width: calc( 100% - 102px);
+        margin-right: 0;
+    }
+
+
+    .b2b-modal.b2b-product-dialog .b2b-modal-action .btn-small {
+        padding: 8px 28px !important;
+    }
+    .b2b-modal.b2b-product-dialog .b2b-option-available {
+        text-align: left;
+    }
 
 }
 
@@ -2333,3 +2421,12 @@ td.Discount + td .price {color: green !important;}
     }
 }
 
+@media only screen and (max-width: 478px) {
+    #b2b-ajaxcart-modal,
+    #b2b-ajaxcart-modal .b2b-modal-dialog {
+        width: 100%;
+    }
+    #b2b-ajaxcart-modal {
+        padding-left: 15px;
+    }
+}
