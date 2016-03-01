@@ -184,8 +184,8 @@ p.no-bottom {margin-bottom:0!important;}
     vertical-align: middle;
     /*white-space: nowrap;*/
 }
-.red-button:hover {background:#7E221B;color:#fff;}
-.red-button.arrow-right:hover:after {border-color:transparent transparent transparent #fff;}
+.red-button:hover {color: #333637; border-color: #d5d5db;}
+.red-button.arrow-right:hover:after {border-color:transparent transparent transparent #333637;}
 
 .button-small{
     border:1px solid #d5d5db;
@@ -1244,15 +1244,28 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     margin-right: 2px;
     color:#333637;
 }
-.toolbar .pages li:not(.current):hover {background:#333;}
-.toolbar .pages li:not(.current):hover a {color:#fff;}
+.toolbar .pages li:not(.current):hover {color: #7E221B; border-color: #7E221B;}
+.toolbar .pages li:not(.current):hover a {color: #7E221B;}
 .toolbar .pages a {color:#333637;}
 .toolbar .pages .current {color:#fff;background:#333;}
 .toolbar-bottom .sort-by, .toolbar-bottom .limiter {display:none;}
 
 
 .wrapper .products-grid .actions {bottom:2px;}
-.products-grid .split-button .change:after {
+
+/* dropdown wishlist */
+.products-grid .split-button.wishlist-selector .change {
+    text-indent: -9999px;
+    padding: 0;
+    width: 33px;
+    height: 33px;
+    background: #333;
+}
+.products-grid .split-button.wishlist-selector .change:hover,
+.products-grid .split-button.wishlist-selector .change.active {
+    background: #676B6C;
+}
+ .split-button.wishlist-selector .change:after {
     font-family: 'icomoon' !important;
     speak: none;
     font-style: normal;
@@ -1265,8 +1278,23 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     border: none;
-    content: "\f004";;
+    content: "\f004";
+    color: #fff;
+    top: 10px;
+    right: 9px;
+    text-indent: 0;
 
+}
+.products-grid .split-button.wishlist-selector .change.active:after {
+    content: "\f004";
+    border: none;
+}
+.split-button.wishlist-selector .list-container li span, .split-button.wishlist-selector .list-container li a {
+    color: #333637;
+    font-family: "Lato", Arial, sans-serif;
+}
+.split-button.wishlist-selector .list-container li span:hover, .split-button.wishlist-selector .list-container li a:hover {
+    color: #7E221B;
 }
 
 /********* CMS Pages **************/
@@ -1770,9 +1798,11 @@ body[class^=" b2b"] .temp-wrapper {background:none;}
 
 .wrapper .b2b-wrapper .b2b-sub-header .b2b-to-store:hover,
 .b2b-dashboard-index .b2b-wrapper .b2b-dashboard-container .download-center a:hover {
-    background: #333;
-    color:#fff;
-    border: 1px solid #333;
+    color: #7E221B;
+    border-color: #7E221B;
+}
+.wrapper .b2b-wrapper .b2b-dashboard-container .download-center .b2b-iwd-brand-download a:hover {
+    color: #7E221B !important;
 }
 
 .b2b-dashboard-index .b2b-wrapper .b2b-dashboard-container .download-center h3 {
@@ -1859,9 +1889,8 @@ body[class^=" b2b"] .footer-bottom {
     border: 1px solid #333;
 }
 .wrapper .b2b-wrapper .register-page .register-actions .b2b-button:hover span span {
-    background-color: #fff;
-    color:#333637;
-    border: 1px solid #d5d5db;
+    background-color: #676B6C;
+    border: 1px solid #676B6C;
 }
 .wrapper .b2b-wrapper .register-page select {
     color: #333637;
@@ -1879,9 +1908,8 @@ body[class^=" b2b"] .footer-bottom {
 }
 .wrapper .b2b-logout-form .back-close:hover,
 .wrapper .b2b-logout-form .logout-close:hover {
-    background: #333;
-    border: 1px solid #333;
-    color: #ffffff;
+    border-color: #7E221B;
+    color: #7E221B;
 }
 .wrapper .b2b-logout-form .back-close,
 .wrapper .b2b-logout-form .logout-close {
@@ -1900,15 +1928,25 @@ body[class^=" b2b"] .footer-bottom {
     font-family: "Lato", Arial, sans-serif !important;
     color: #333637;
 }
+
 .wrapper .b2b-login-form .b2b-wholesale-login button {
     background: #fff;
-    border: 1px solid #7E221B;
-    color: #7f0101;
+    border: 1px solid #d5d5db;
+    color: #333637;
 }
 .wrapper .b2b-login-form .b2b-wholesale-login button:hover {
-    background: #7E221B;
+
     border: 1px solid #7E221B;
-    color: #ffffff;
+    color: #7E221B;
+}
+
+.wrapper .b2b-retail-login .b2b-register {
+    font-family: "Lato" !important;
+    background: #333;
+}
+.wrapper .b2b-retail-login .b2b-register:hover {
+
+    background: #676B6C;
 }
 /* Quick order */
 .wrapper .b2b-wrapper .div-table {
@@ -1943,11 +1981,11 @@ body[class^=" b2b"] .footer-bottom {
     line-height: 14px;
 }
 .wrapper .b2b-wrapper .b2b-quick-order .input-wrapper .quick-order-search:hover {
-    background: #fff;
-    border: 1px solid #d5d5db;
+    background-color: #676B6C;
+    border-color: #676B6C;
 }
 .b2b-wrapper .b2b-quick-order .input-wrapper .quick-order-search:hover:after {
-    color:#333;
+    color: #fff;
 }
 .wrapper .b2b-wrapper .b2b-quick-order .input-wrapper input {
     border: 1px solid #d5d5db;
@@ -1978,15 +2016,14 @@ body[class^=" b2b"] .footer-bottom {
 }
 
 .wrapper .btn-large-gray:hover {
-    border: 1px solid #333 !important;
-    background: #333 !important;
-    color: #fff;
+    border-color: #7E221B !important;
+    color: #7E221B;
 }
 .wrapper .b2b-wrapper .b2b-cart-total .btn-checkout {
     background: #7E221B;
 }
 .wrapper .b2b-wrapper .b2b-cart-total .btn-checkout:hover {
-    background: #333;
+    background: #B0564F;
 }
 .wrapper .b2b-wrapper .b2b-cart-total tbody tr td:first-child {
     color: #333637;
@@ -2076,7 +2113,7 @@ td.Discount + td .price {color: green !important;}
 }
 .wrapper #b2b-view-modal .btn-continue:hover {
 
-    background-color: #7E221B !important;
+    background-color: #676B6C !important;
 }
 #b2b-view-modal .b2b-modal-dialog {
     max-width: 100%;
@@ -2113,7 +2150,7 @@ td.Discount + td .price {color: green !important;}
     color: #fff;
  }
 .b2b-modal .btn-large:hover {
-    background: #333 !important;
+    background: #B0564F !important;
 }
 .b2b-modal.b2b-product-dialog .b2b-dialog-title {
     padding-bottom: 0;
@@ -2188,9 +2225,8 @@ td.Discount + td .price {color: green !important;}
 }
 .b2b-wrapper .btn-small:hover,
 .b2b-modal .btn-small:hover {
-    background: #333 !important;
-    border: 1px solid #333 !important;
-    color: #fff;
+    border-color: #7E221B !important;
+    color: #7E221B;
 }
 .wrapper .b2b-download-product-footer .selected-item {
     color: #333637;
@@ -2199,7 +2235,7 @@ td.Discount + td .price {color: green !important;}
     background: #333 !important;
 }
 .b2b-wrapper .btn-download:hover {
-    background: #7E221B !important;
+    background: #676B6C !important;
 }
 .b2b-wrapper .btn-download:active {
     color: #fff;

@@ -2237,10 +2237,9 @@ span.weee {
 
 .pages .current,
 .pages .current:hover {
-  color: #636363;
-  border: 1px solid #cccccc;
+  border: 1px solid #676B6C;
   width: 30px;
-  background-color: #FFFFFF;
+  background-color: #676B6C;
   cursor: default;
 }
 
@@ -2280,7 +2279,7 @@ span.weee {
   display: block;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-left: 4px solid #fff;
+  border-left: 4px solid #7E221B;
   border-right: none;
 }
 
