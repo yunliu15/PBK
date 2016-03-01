@@ -41,13 +41,13 @@ $_cartTotal = Mage::getBlockSingleton('Checkout/Cart_Sidebar')->getSubtotal();
 $_cartTotal = number_format($_cartTotal, 2, '.', '');
 ?>
 
-<a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-target-element="#header-cart" class="skip-link-hover skip-cart <?php //if($_cartQty <= 0): ?> <?php //endif; ?>">
+<a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-target-element="#header-cart" class="skip-link skip-cart <?php //if($_cartQty <= 0): ?> <?php //endif; ?>">
     <span class="icon-moon"></span>
     <span class="total">$<?php echo $_cartTotal; ?></span>
     <span class="count arrow-down"><?php echo $_cartQty; ?></span>
 
 </a>
 
-<div id="header-cart" class="block block-cart skip-content skip-hover">
+<div id="header-cart" class="block block-cart skip-content">
     <?php echo $this->getChildHtml('minicart_content');?>
 </div>

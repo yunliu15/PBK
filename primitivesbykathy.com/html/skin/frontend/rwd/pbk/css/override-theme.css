@@ -274,7 +274,7 @@ tr.Canceled {background:#FAF3F1!important;}
 
 .header-top {background-color: #7E221B; color:#fff;padding:5px;letter-spacing: 0.05em;}
 .header-top p {color:#fff;}
-.header-middle,.nav-top {max-width:1260px; margin:0 auto;padding:5px 30px;}
+.header-middle,.nav-top {max-width:1260px; margin:0 auto;padding:0 30px;}
 .nav-top-wrapper {
     background-image: url("../images/nav_top_bground.gif");
     background-repeat: repeat-x;
@@ -302,7 +302,7 @@ tr.Canceled {background:#FAF3F1!important;}
 #header-nav-hide {clear:both;}
 #header #header-account {padding:0;}
 
-.nav-top {text-align:center;}
+.nav-top {text-align:center; font-size: 12px;}
 
 .header-top p {text-align:center;}
 .logo {margin:auto;}
@@ -365,7 +365,7 @@ tr.Canceled {background:#FAF3F1!important;}
 }
 .nav-wishlist-cart {position:relative;top:9px;}
 
-.header-minicart {margin-top:-7px;}
+.header-minicart {/*margin-top:-7px;*/}
 .header-minicart .icon-moon:before {
     content:"\e901";
     color:#fff;
@@ -385,6 +385,31 @@ tr.Canceled {background:#FAF3F1!important;}
 .skip-link.skip-cart {width:100%;padding: 0 10px;}
 .skip-cart .total {color:#fff;}
 #header-cart.skip-active {
+
+    border: solid 1px #cccccc;
+    display: block;
+    position: absolute;
+    z-index: 200;
+    top: 40px;
+    right: 0;
+    width: 320px;
+    background: white;
+}
+.header-minicart:before {
+    content: '';
+    height: 50px;
+    width: 110px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+
+}
+.header-minicart .block-subtitle a.close {display: none;}
+.header-minicart:hover #header-cart,
+#header-cart:hover,
+.header-minicart:before:hover #header-cart {
 
     border: solid 1px #cccccc;
     display: block;
@@ -420,6 +445,7 @@ tr.Canceled {background:#FAF3F1!important;}
 }
 #header-login .button{padding:7px 30px;}
 #header-login .block-login {margin-bottom:0;}
+.minilogin .skip-link {position: relative; top: 2px;}
 .minilogin.arrow-down:after {
     border-color: #333 transparent transparent;
     margin-top: 5px;
@@ -436,6 +462,20 @@ tr.Canceled {background:#FAF3F1!important;}
 #header-login .remember-me-box .link-tip{display:none;}
 #header-login .remember-me-box .input-box {float:left;margin-right:5px;}
 #header-login .actions .red-link{padding-left:0;}
+
+/* change minicart from click open to hover open */
+.header-minicart:hover #header-cart {
+    border: solid 1px #cccccc;
+    display: block;
+    position: absolute;
+    z-index: 200;
+    top: 40px;
+    right: 0;
+    width: 320px;
+    background: white;
+}
+
+
 /* for skip nav and search */
 .skip-wrapper {position:relative;}
 #header .skip-links.search, #header .skip-links.nav {position:absolute;top:8px;left:30px;z-index:9;}
@@ -1440,7 +1480,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 @media only screen and (min-width: 950px) {
     #header #header-account {float:right;padding-top:2px;}
-    header .need-help {float:left;padding-top:5px;}
+    header .need-help {float:left;padding-top:8px;}
     #header #header-account {
         padding: 5px 0;
     }
