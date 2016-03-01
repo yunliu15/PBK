@@ -365,7 +365,33 @@ tr.Canceled {background:#FAF3F1!important;}
     background: white;
     padding: 10px;
 }
-
+.wrapper .btn-remove:after {
+    content: '\e929';
+    color: #333637;
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    width: 15px!important;
+    height: 15px!important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+    position: relative;
+    top: 3px;
+}
+.wrapper .btn-remove {
+    border: none;
+}
+.wrapper .btn-remove:hover:after {
+    color: #676B6C;
+}
+.wrapper .btn-remove:hover {
+    background: none;
+}
 
 
 #header #header-nav-hide {
@@ -844,6 +870,17 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .my-account .back-link small {display:none;}
 .my-account .back-link a {text-transform: uppercase;}
 
+.wrapper .pages .current {
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
+}
+
+/* datepicker on order history page */
+.wrapper .input-daterange input {
+    width: 130px;
+}
+
 /* invoce */
 .showinvoice-history-index .data-table th {
     text-transform: uppercase;
@@ -1142,7 +1179,12 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 .wrapper .products-grid > li.item {
     margin-left:0;
-    border:1px solid #d5d5db;
+
+}
+
+.wrapper .products-grid .product-info {
+   border: 1px solid #d5d5db;
+    border-top: none;
 }
 .wrapper .products-grid > li.item:hover .bg-layer {background-color:black;}
 .products-grid > li.item:hover .bg-layer .product-img-wrapper,.category-products .products-grid > li.item:hover .amlabel-div,.widget-new-products .products-grid > li.item:hover .amlabel-div {opacity:0.5;}
@@ -1170,7 +1212,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .products-grid .product-info {background-color:#fff!important;}
 /* labels */
 .product-img-box {position:relative;}
-.product-img-wrapper {background-color:#f2f2f2;border-bottom: 1px solid #d5d5db;}
+.product-img-wrapper {background-color:#f2f2f2;border: 1px solid #d5d5db;}
 .product-view .product-essential .product-img-wrapper{border: 1px solid #d5d5db;}
 .product-image .amlabel-table2 {display:none;}
 .amlabel-div {position:absolute;top:10px;left:10px;z-index:1;text-align:left!important;text-transform: uppercase;}
@@ -1255,6 +1297,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .product-view .add-to-links {
     position: relative;
     top: 3px;
+    margin-left: 5px;
 }
 .product-view .split-button .change:before {
     font-family: 'icomoon' !important;
@@ -1273,7 +1316,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     color: #333637;
     position: relative;
     top: 2px;
-    right: 9px;
+    right: 5px;
     text-indent: 0;
 }
 .product-view .split-button .change:after
@@ -1286,7 +1329,13 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     border-bottom: 4px solid #676B6C;
     top: 12px;
 }
+.product-view .box-related .split-button .change:after
+{
+    top: 8px;
 
+}
+.product-view .box-related .split-button {margin-left: 5px;}
+.wrapper .product-view .block-related .product-details .price-box span {padding-left: 0;}
     /*** recently viewed ***/
 #recently-viewed-items .link-wishlist {float:none;}
 #recently-viewed-items .actions .button {float:none;}
@@ -1358,6 +1407,18 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 
 .wrapper .products-grid .actions {bottom:2px;}
+.products-grid .item > p {margin-top: 5px;}
+.wrapper .split-button {
+    position: static;
+}
+.wrapper .products-grid .split-button .list-container {
+    width: calc(100% + 2px);
+    max-width: calc(100% + 2px);
+    left: -1px;
+    top: 100%;
+    min-width: initial;
+
+}
 
 /* dropdown wishlist */
 .products-grid .split-button.wishlist-selector .change {
@@ -1402,6 +1463,8 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .split-button.wishlist-selector .list-container li span:hover, .split-button.wishlist-selector .list-container li a:hover {
     color: #7E221B;
 }
+
+
 
 /********* CMS Pages **************/
 .cms-customer-service tbody {background: none;}

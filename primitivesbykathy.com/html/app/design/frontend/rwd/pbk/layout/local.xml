@@ -210,6 +210,14 @@
                 </crumbinfo>
             </action>
         </reference>
+        <reference name="head">
+            <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params></params></action>
+        <action method="addItem"><type>js</type><name>calendar/calendar.js</name></action>
+    <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name></action>
+<block type="core/html_calendar" name="head.calendar" as="calendar" template="page/js/calendar.phtml" />
+
+        </reference>
+
     </sales_order_history>
 
     <!-- add breadcrumb for individual order item -->
@@ -390,5 +398,16 @@
         </reference>
 
     </b2b_account_register>
+
+    <!-- Search Results page -->
+    <catalogsearch_result_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="search_result_list">
+            <action method="setColumnCount"><columns>4</columns></action>
+        </reference>
+    </catalogsearch_result_index>
+
 
 </layout>
