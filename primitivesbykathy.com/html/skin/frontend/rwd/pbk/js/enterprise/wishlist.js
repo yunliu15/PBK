@@ -284,14 +284,17 @@ Event.observe(document, 'dom:loaded', function() {
         && (Enterprise.Wishlist.list.length || Enterprise.Wishlist.canCreate)) {
 
         var buildUrl = function(url, wishlist) {
-            var glue = url.indexOf('?') == -1 ? '?' : '&';
-            var wishlistInfo = '';
-            if (typeof wishlist.serializedData != 'undefined') {
-                wishlistInfo = wishlist.serializedData;
-            } else {
-                wishlistInfo = Hash.toQueryString({'wishlist_id': wishlist});
+            if (url) {
+                var glue = url.indexOf('?') == -1 ? '?' : '&';
+                var wishlistInfo = '';
+                if (typeof wishlist.serializedData != 'undefined') {
+                    wishlistInfo = wishlist.serializedData;
+                } else {
+                    wishlistInfo = Hash.toQueryString({'wishlist_id': wishlist});
+                }
+                return url + glue + wishlistInfo;
             }
-            return url + glue + wishlistInfo;
+
         }
 
         $$('.link-wishlist').each(function(link) {
@@ -300,7 +303,7 @@ Event.observe(document, 'dom:loaded', function() {
                 setLocation(this.href);
             }
 
-            var wishlistSplitButton = new Enterprise.Widget.SplitButton(link.innerHTML, Translator.translate('Add to Wishlist'), 'light clickable wishlist-selector');
+            var wishlistSplitButton = new Enterprise.Widget.SplitButton(link.innerHTML, Translator.translate('Save for later'), 'light clickable wishlist-selector');
             wishlistSplitButton.onClick = onclick.bind({href: url});
 
             Enterprise.Wishlist.list.each(function(wishlist) {

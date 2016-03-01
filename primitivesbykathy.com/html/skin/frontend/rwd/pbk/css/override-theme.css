@@ -1217,9 +1217,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     top: 6px;
     left:3px;
 }
-.link-wishlist.button.icon-moon:hover:before {
 
-}
 .product-essential .link-wishlist.icon-moon:before {
     color:#333637;
     top: 2px;
@@ -1245,7 +1243,51 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     margin-top:0;
 }
 
-/*** recently viewed ***/
+#recently-viewed-items .split-button {
+    height: 33px;
+}
+
+.product-view .box-up-sell .add-to-links {
+    top: 0;
+}
+
+/* multiple wishlists */
+.product-view .add-to-links {
+    position: relative;
+    top: 3px;
+}
+.product-view .split-button .change:before {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    width: 15px!important;
+    height: 15px!important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border: none;
+    content: "\f004";
+    color: #333637;
+    position: relative;
+    top: 2px;
+    right: 9px;
+    text-indent: 0;
+}
+.product-view .split-button .change:after
+{
+    top: 12px;
+    border-top: 4px solid #676B6C;
+
+}
+.product-view .split-button .change.active:after {
+    border-bottom: 4px solid #676B6C;
+    top: 12px;
+}
+
+    /*** recently viewed ***/
 #recently-viewed-items .link-wishlist {float:none;}
 #recently-viewed-items .actions .button {float:none;}
 #recently-viewed-items .add-to-links a {padding: 2px 7px 2px 0;}
@@ -1329,7 +1371,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .products-grid .split-button.wishlist-selector .change.active {
     background: #676B6C;
 }
- .split-button.wishlist-selector .change:after {
+.products-grid .split-button.wishlist-selector .change:after {
     font-family: 'icomoon' !important;
     speak: none;
     font-style: normal;
