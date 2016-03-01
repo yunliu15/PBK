@@ -309,12 +309,12 @@ tr.Canceled {background:#FAF3F1!important;}
 .store-language-container {/*display:none;*/}
 
 .page-header .wishlist-cart-wrapper {float:right;position:relative; overflow:initial;}
-.page-header .wishlist-cart-wrapper .block-wishlist {float:left;margin-bottom:0;height:20px;}
+.page-header .wishlist-cart-wrapper .block-wishlist {float:left;margin-bottom:0;height: 50px;}
 #header .wishlist-cart-wrapper .block-wishlist .block-title {
     width:auto;
     cursor:pointer;
     border-top:none;
-    top:-6px;
+    top: 6px;
     padding-top:0;
 
 }
@@ -337,11 +337,35 @@ tr.Canceled {background:#FAF3F1!important;}
     content: "\f004";
     color:#fff;
     position: relative;
-    top: -1px;
+    top: 1px;
 }
 #header .block-wishlist .block-title {margin:0;}
 #header .block-wishlist .block-title strong{color:#fff;}
 .wishlist-cart-wrapper > .checkout-button {vertical-align: top;background-color: #7E221B;}
+/* change from click-open to hover-open */
+/*.wishlist-cart-wrapper .block-wishlist:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 40px;
+}*/
+.wishlist-cart-wrapper .block-wishlist:hover #wishlist-top-content,
+.wishlist-cart-wrapper .block-wishlist:before:hover #wishlist-top-content,
+#wishlist-top-content:hover  {
+    border: solid 1px #cccccc;
+    display: block;
+    position: absolute;
+    z-index: 200;
+    top: 40px;
+    right: 0;
+    width: 320px;
+    background: white;
+    padding: 10px;
+}
+
 
 
 #header #header-nav-hide {
@@ -365,7 +389,7 @@ tr.Canceled {background:#FAF3F1!important;}
 }
 .nav-wishlist-cart {position:relative;top:9px;}
 
-.header-minicart {/*margin-top:-7px;*/}
+.header-minicart {height: 50px;/*margin-top:-7px;*/}
 .header-minicart .icon-moon:before {
     content:"\e901";
     color:#fff;
@@ -395,17 +419,17 @@ tr.Canceled {background:#FAF3F1!important;}
     width: 320px;
     background: white;
 }
-.header-minicart:before {
+/*.header-minicart:before {
     content: '';
     height: 50px;
     width: 110px;
     display: block;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 140px;
     cursor: pointer;
 
-}
+}*/
 .header-minicart .block-subtitle a.close {display: none;}
 .header-minicart:hover #header-cart,
 #header-cart:hover,

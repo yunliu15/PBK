@@ -29,11 +29,11 @@
 
 
 <div class="block block-wishlist">
-    <div class="block-title skip-link-hover" data-target-element="#wishlist-top-content">
+    <div class="block-title skip-link" data-target-element="#wishlist-top-content">
         <span class="icon icon-moon"></span>
         <strong class="arrow-down"><span><?php echo $this->getItemCount(); ?></span></strong>
     </div>
-    <div id="wishlist-top-content" class="block-content skip-content skip-hover">
+    <div id="wishlist-top-content" class="block-content skip-content">
     <p class="block-subtitle"><?php echo $this->__('Last Added Items') ?></p>
     <?php if ($this->hasWishlistItems()): ?>
     <ol class="mini-products-list" id="wishlist-top-mini">
