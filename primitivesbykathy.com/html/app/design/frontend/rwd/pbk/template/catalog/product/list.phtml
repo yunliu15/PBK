@@ -162,9 +162,10 @@ $quote = Mage::getSingleton('checkout/session')->getQuote();
             ?>
 
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+                <div class="bg-layer">
                 <div class="amlabel-div">
                     <?php echo Mage::helper('amlabel')->getLabels($_product) ?></div>
-                <div class="bg-layer">
+
                 <div class="product-img-wrapper">
 
                     <div class="product-image-div">

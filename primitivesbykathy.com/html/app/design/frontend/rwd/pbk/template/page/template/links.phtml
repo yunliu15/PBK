@@ -53,9 +53,23 @@
         endif;?>
 
         <?php if(!Mage::getSingleton('customer/session')->isLoggedIn() ): ?>
-            <li class="last"><div><a href="<?php echo Mage::getUrl('customer/account/login/'); ?>">Create Account</a></div></li>
+            <li class="last"><div><a href="<?php echo Mage::getUrl('customer/account/login/'); ?>"><?php echo $this->__('Create Account');?></a></div></li>
         <?php  else: ?>
-            <li class="last"><div><a href="<?php echo Mage::getUrl('customer/account/'); ?>">My Account</a></div></li>
+            <li class="last">
+                <div class="account-dropdown">
+                    <a class="arrow-down" href="<?php echo Mage::getUrl('customer/account/'); ?>"> <?php echo $this->__("My Account");?></a>
+                    <div class="account-content">
+                        <ul>
+                            <li>
+                                <a href="<?php echo Mage::getUrl('customer/account/'); ?>"><?php echo $this->__('Dashboard');?></a>
+                            </li>
+                            <li>
+                                <a href="#">Other Links</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
         <?php endif; ?>
         <li>
             <div>
