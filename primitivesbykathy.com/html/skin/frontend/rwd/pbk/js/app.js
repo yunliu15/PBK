@@ -924,15 +924,23 @@ $j(document).ready(function () {
                 wrapper.addClass('accordion-open');
             }
             toggleClasses(jQuery(this), dts);
+
         });
 
         //Toggle on tab (li) click.
         if (hasTabs) {
             lis.on('click', function (e) {
                 toggleClasses(jQuery(this), lis);
+
+                //for homepage featured items
+                if ($j('.featured-items').length) {
+                    alignProductGridActions();
+                }
+
             });
             //Open the first tab.
             lis.eq(0).trigger('click');
+
         }
 
         //Open the first accordion if desired.
@@ -1064,7 +1072,8 @@ $j(document).ready(function () {
 
     if ($j('.products-grid').length) {
 
-        var alignProductGridActions = function () {
+        function alignProductGridActions() {
+
             // Loop through each product grid on the page
             $j('.products-grid').each(function(){
                 var gridRows = []; // This will store an array per row
@@ -1104,7 +1113,6 @@ $j(document).ready(function () {
                         var actionSpacing = 10;
                         // The height of the absolutely positioned .actions element
                         var actionHeight = $j(this).find('.product-info .actions').height();
-
                         // Add height of two elements. This is necessary since .actions is absolutely positioned and won't
                         // be included in the height of .product-info
                         var totalHeight = productInfoHeight + actionSpacing + actionHeight;
@@ -1124,6 +1132,10 @@ $j(document).ready(function () {
             });
         }
         alignProductGridActions();
+
+
+
+
 
         // Since the height of each cell and the number of columns per page may change when the page is resized, we are
         // going to run the alignment function each time the page is resized.
