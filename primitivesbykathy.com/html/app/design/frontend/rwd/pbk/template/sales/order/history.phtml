@@ -76,25 +76,10 @@
     <p><?php echo $this->__('You have placed no orders.'); ?></p>
 <?php endif ?>
 <?php $paramsFilter = Mage::getModel('customer/session')->getPrevParams();?>
-<div id="order-range-test">
-    <div class="input-daterange input-group" data-provide="datepicker" id="datepicker">
-        <input type="text" id="order-from" class="input-sm form-control" name="start" value="<?php echo $paramsFilter['from']?>"/>
-        <span class="input-group-addon">to</span>
-        <input type="text" id="order-to"  class="input-sm form-control" name="end" value="<?php echo $paramsFilter['to']?>"/>
-    </div>
-</div>
 
-<!--<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>-->
 <script>
-    jQuery(function($){
-
-        /*$("#datepicker").datepicker({
-            onSelect: function(dateText) {
-                console.log(dateText);
-            }
-        });
-*/
-
+   // jQuery(function($){
+/*
         $(document).on('change dp.change','#datepicker input', function(e){
             var form = $('#my-orders-table').serializeArray();
 
@@ -109,7 +94,7 @@
                 $('#order-to').val("Choose date...")
             }
 
-console.log('form: '+ form);
+console.log('form: '+ form);*/
 
            /* if (IWD.Filter.timeoutRequest != null) {
                 clearTimeout(IWD.Filter.timeoutRequest);
@@ -119,7 +104,7 @@ console.log('form: '+ form);
                 IWD.Decorator.lockBlock($ji('.b2b-selected-items'));
                 $ji.post(IWD.App.config.loadReorder,form, IWD.List.parseResponseFilterReorder,'json')
             },0);*/
-        });
+       /* });
 
         $(document).on('keyup','#datepicker input', function(e){
             var form = $('#my-orders-table').serializeArray();
@@ -129,16 +114,16 @@ console.log('form: '+ form);
 
             console.log($('#order-from').val());
         });
-
-    });
+*/
+    //});
 
 
 </script>
 
 <div class="field">
-    <label for="delivery_date"><?php echo $this->__("From") ?></label>
+    <label for="order_from"><?php //echo $this->__("From") ?></label>
     <div class="input-box">
-        <input type="text" id="_dob" name="delivery_date" class="input-text required-entry" /><em>*</em>
+        <input type="text" id="order_from" name="order_from" class="input-text" value="Choose a date" style="width: 130px;"/>
 
     </div>
 </div>
@@ -146,12 +131,32 @@ console.log('form: '+ form);
 //<![CDATA[
 
 Calendar.setup({
-inputField : '_dob',
+inputField : 'order_from',
 ifFormat : '%m/%e/%y',
-button : '_dob_trig',
 align : 'Bl',
 singleClick : true
 });
 
 //]]>
 </script>
+<div class="field">
+    <label for="order_to"><?php echo $this->__("To") ?></label>
+    <div class="input-box">
+
+        <input type="text" id="order_to" name="order_to" class="input-text" value="Choose a date" style="width: 130px;"/>
+
+    </div>
+</div>
+<script>
+    //<![CDATA[
+
+    Calendar.setup({
+        inputField : 'order_to',
+        ifFormat : '%m/%e/%y',
+        align : 'Bl',
+        singleClick : true
+    });
+
+    //]]>
+</script>
+

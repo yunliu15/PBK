@@ -208,7 +208,7 @@ p.no-bottom {margin-bottom:0!important;}
 .white-button:hover {color: #7E221B;border-color: #7E221B;}
 .white-button:hover span{color: #7E221B;}
 
-.wrapper .page-header {max-width:initial;}
+.wrapper .page-header {max-width:100%;}
 
 .col-4 {
     float:left; width:22%;margin-right:4%;
@@ -308,7 +308,7 @@ tr.Canceled {background:#FAF3F1!important;}
 .logo {margin:auto;}
 .store-language-container {/*display:none;*/}
 
-.page-header .wishlist-cart-wrapper {float:right;position:relative; overflow:initial;}
+.page-header .wishlist-cart-wrapper {float:right;position:relative; overflow:visible;}
 .page-header .wishlist-cart-wrapper .block-wishlist {float:left;margin-bottom:0;height: 50px;}
 #header .wishlist-cart-wrapper .block-wishlist .block-title {
     width:auto;
@@ -1613,6 +1613,9 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     #header #header-account {
         padding: 5px 0;
     }
+    #header .minilogin {line-height: 12px;}
+    #header-account .minilogin a {float: none; display: inline-block}
+
 
 }
 
