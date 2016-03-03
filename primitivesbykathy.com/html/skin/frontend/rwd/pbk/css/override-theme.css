@@ -436,6 +436,57 @@ tr.Canceled {background:#FAF3F1!important;}
 }
 
 
+/* minicart dropdown */
+.minicart-wrapper .product-details .product-info {
+    float: left;
+    width: 80%;
+    padding-right: 10px;
+    border-right: 1px solid #d5d5db;
+}
+.minicart-wrapper .product-details .product-action {
+    float: right;
+    width: 20%;
+    padding-left: 10px;
+}
+.minicart-wrapper .split-button.wishlist-selector .change {
+    text-indent: -9999px;
+    padding: 0;
+    display: block;
+}
+.minicart-wrapper .product-details .product-action .btn-remove {
+    float: none;
+}
+.minicart-wrapper .split-button.wishlist-selector .change:after {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    width: 15px!important;
+    height: 15px!important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border: none;
+    content: "\f004";
+    color: #333637;
+    text-indent: 0;
+    position: relative;
+    top: -10px;
+    left: 8px;
+}
+.minicart-wrapper .split-button .list-container {
+    left: -12.5%;
+    top: 90%;
+}
+.cart .split-button .list-container {
+    top: 90px;
+    left: 13px;
+    max-width: 200px;
+}
+
+
 #header #header-nav-hide {
     display:inline-block;
     border-bottom:none;

@@ -35,11 +35,12 @@
     <?php else: ?>
         <span class="product-image"><img src="<?php echo $this->getProductThumbnail()->resize(50, 50)->setWatermarkSize('30x10'); ?>" width="50" height="50" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" /></span>
     <?php endif; ?>
-    <div class="product-details">
-        <p class="product-name"><?php if ($this->hasProductUrl()): ?><a href="<?php echo $this->getProductUrl() ?>"><?php endif; ?><?php echo $this->escapeHtml($this->getProductName()) ?><?php if ($this->hasProductUrl()): ?></a><?php endif; ?></p>
+    <div class="product-details clearfix">
+        <div class="product-info">
+            <p class="product-name"><?php if ($this->hasProductUrl()): ?><a href="<?php echo $this->getProductUrl() ?>"><?php endif; ?><?php echo $this->escapeHtml($this->getProductName()) ?><?php if ($this->hasProductUrl()): ?></a><?php endif; ?></p>
 
-        <table class="info-wrapper">
-            <tbody>
+            <table class="info-wrapper">
+                <tbody>
                 <tr>
                     <th><?php echo $this->__('Price'); ?></th>
                     <td>
@@ -134,7 +135,7 @@
                             class="qty cart-item-quantity input-text" name=""
                             value="<?php echo $this->getQty()?>"
                             <?php if ($this->isOnCheckoutPage()) echo 'disabled'; ?>
-                            />
+                        />
 
                         <button id="qbutton-<?php echo $_item->getId(); ?>"
                                 data-item-id="<?php echo $_item->getId(); ?>"
@@ -146,24 +147,34 @@
                         </button>
                     </td>
                 </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
 
-        <?php if ($isVisibleProduct): ?>
-        <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Edit item')) ?>" class="btn-edit">
-            <?php echo $this->__('Edit item')?>
-        </a>
-            |
-            <?php if (!$this->isOnCheckoutPage()): ?>
-                <a href="<?php echo $this->getAjaxDeleteUrl() ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Remove This Item')) ?>"
-                   data-confirm="<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?') ?>"
-                   class="remove">
-                    <?php echo $this->__('Remove Item') ?>
+        <div class="product-action">
+            <?php if ($isVisibleProduct): ?>
+                <a href="<?php echo $this->getConfigureUrl() ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Edit item')) ?>" class="btn-edit">
+                    <?php echo $this->__('Edit item')?>
                 </a>
-            <?php else: ?>
-                <span><?php echo $this->__('Remove Item') ?></span>
-            <?php endif; ?>
-        <?php endif ?>
+
+                <?php if ($this->helper('wishlist')->isAllow()) : ?>
+
+               <!-- <a href="<?php /*echo $this->helper('wishlist')->getAddUrl($_item) */?>" class="link-wishlist"></a>-->
+                    <a href="<?php echo $this->helper('wishlist')->getMoveFromCartUrl($_item->getId()); ?>" class="link-wishlist use-ajax" ></a>
+                <?php endif; ?>
+
+                <?php if (!$this->isOnCheckoutPage()): ?>
+                    <a href="<?php echo $this->getAjaxDeleteUrl() ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Remove This Item')) ?>"
+                       data-confirm="<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?') ?>"
+                       class="remove btn-remove">
+                        <?php echo $this->__('Remove Item') ?>
+                    </a>
+                <?php else: ?>
+                    <span><?php echo $this->__('Remove Item') ?></span>
+                <?php endif; ?>
+            <?php endif ?>
+        </div>
+
 
 
 
