@@ -30,7 +30,7 @@
             <?php echo $dashobard;?>
             <?php echo $viewcart?>
             <?php echo $checkout;?>
-            <div class="right b2b-price-box"><?php echo $_total?></div>       
+            <div class="right b2b-price-box"><?php echo $_total?> | <span class="qty_footer"><?php echo Mage::getSingleton('checkout/cart')->getSummaryQty() ?></span></div>
         </div>
     </div>
 

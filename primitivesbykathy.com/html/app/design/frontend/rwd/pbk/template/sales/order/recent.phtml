@@ -58,9 +58,9 @@
                     <td class="status"><em><?php echo $_order->getStatusLabel() ?></em></td>
                     <td class="view">
                         <span class="nobr">
-                        <a class="red-link" href="<?php echo $this->getViewUrl($_order) ?>"><?php echo $this->__('View Details') ?></a>
+                        <a class="link-view" href="<?php echo $this->getViewUrl($_order) ?>"><?php echo $this->__('View Details') ?></a>
                         <?php if ($this->helper('sales/reorder')->canReorder($_order)) : ?>
-                            <br> <a class="red-link" href="<?php echo $this->getReorderUrl($_order) ?>" class="link-reorder"><?php echo $this->__('Reorder') ?></a>
+                            <a href="<?php echo $this->getReorderUrl($_order) ?>" class="link-reorder"><?php echo $this->__('Reorder') ?></a>
                         <?php endif ?>
                         </span>
                     </td>

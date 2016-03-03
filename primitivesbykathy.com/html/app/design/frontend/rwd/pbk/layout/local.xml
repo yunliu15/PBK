@@ -8,7 +8,7 @@
             <!-- CSS -->
             <action method="addItem" after="-"><type>skin_css</type><name>css/override-theme.css</name><params/></action>
 
-            <action method="removeItem"><type>js</type>><name>js/jquery/jquery-min.js</name></action>
+            <action method="removeItem"><type>js</type><name>js/jquery/jquery-min.js</name></action>
         </reference>
 
         <reference name="top.links">

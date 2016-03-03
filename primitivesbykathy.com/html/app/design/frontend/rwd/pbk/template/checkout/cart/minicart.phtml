@@ -37,13 +37,15 @@
     if(empty($_cartQty)) {
         $_cartQty = 0;
     }
-$_cartTotal = Mage::getBlockSingleton('Checkout/Cart_Sidebar')->getSubtotal();
-$_cartTotal = number_format($_cartTotal, 2, '.', '');
+$currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
+$currency_symbol = Mage::app()->getLocale()->currency( $currency_code )->getSymbol();
+
+$_cartTotal = $currency_symbol.number_format(Mage::getSingleton('checkout/cart')->getQuote()->getData("grand_total"),2);
 ?>
 
 <a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-target-element="#header-cart" class="skip-link-hover skip-cart <?php //if($_cartQty <= 0): ?> <?php //endif; ?>">
     <span class="icon-moon"></span>
-    <span class="total">$<?php echo $_cartTotal; ?></span>
+    <span class="total"><?php echo $_cartTotal; ?></span>
     <span class="count arrow-down"><?php echo $_cartQty; ?></span>
 
 </a>
