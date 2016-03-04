@@ -1413,7 +1413,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 .breadcrumbs li a {color: #7E221B;}
 
-/******* Wish List *********/
+/******* Wish List Page*********/
 .wrapper .button.button-secondary {
     background:#fff;
     border: 1px solid #d5d5db;
@@ -1449,7 +1449,31 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .my-wishlist .btn-remove2 {
     color:transparent;
 }
-
+.wrapper #wishlist-table td.customer-wishlist-item-cart .btn-cart {
+    padding-left: 20px;
+    line-height: 23px;
+}
+#wishlist-table .price-box {
+    margin: 0;
+}
+.my-wishlist .buttons-set button.button {
+    margin: 0 0 10px 5px !important;
+}
+.wrapper .split-button .list-container li span, .wrapper .split-button .list-container li a {
+    color: #333637;
+    font-family: "Lato", Arial, sans-serif;
+}
+.wrapper .wishlist-management .split-button .change:after,
+.wrapper .wishlist-management .split-button .change.active:after {
+    top: 8px;
+}
+#wishlist-table.clean-table thead th.customer-wishlist-item-selector {
+    text-align: left;
+    padding-left: 15px;
+}
+.wrapper .split-button .list-container li span:hover, .wrapper .split-button .list-container li a:hover {
+    color: #7E221B;
+}
 
     /*********** Product Page ***************/
 .button.btn-cart {position:relative;padding-left:30px;}
@@ -1711,14 +1735,19 @@ body.amquickview-ajax-view {
 }
 
 /* multiple wishlists */
-.product-essential .add-to-links li {
+.product-essential .add-to-links > li {
     padding: 4px;
     padding-left: 15px;
     background: #fff;
     border: 1px solid #d5d5db;
 }
-.product-essential .add-to-links li:hover {
+.product-essential .add-to-links > li:hover {
     border-color: #7E221B;
+}
+.product-essential .split-button .list-container {
+    top: calc(100% + 4px);
+    min-width: 136px;
+    left: -16px;
 }
 
 .wrapper .product-view .add-to-links a {
@@ -1750,14 +1779,12 @@ body.amquickview-ajax-view {
     color: #7E221B;
 }
 
-.product-view .split-button .change:after,
-.cart .split-button .change:after {
+.wrapper .split-button .change:after {
     top: 12px;
     border-top: 4px solid #676B6C;
 
 }
-.product-view .split-button .change.active:after,
-.cart .split-button .change.active:after {
+.wrapper .split-button .change.active:after {
     border-bottom: 4px solid #676B6C;
     top: 12px;
 }
@@ -1849,7 +1876,7 @@ body.amquickview-ajax-view {
 
 .wrapper .products-grid .actions {bottom:2px;}
 
-.wrapper .split-button {
+.products-grid .split-button {
     position: static;
 }
 .wrapper .products-grid .split-button .list-container {
