@@ -160,7 +160,7 @@
                 <?php if ($this->helper('wishlist')->isAllow()) : ?>
 
                <!-- <a href="<?php /*echo $this->helper('wishlist')->getAddUrl($_item) */?>" class="link-wishlist"></a>-->
-                    <a href="<?php echo $this->helper('wishlist')->getMoveFromCartUrl($_item->getId()); ?>" class="link-wishlist use-ajax" ></a>
+                    <a href="<?php #echo $this->helper('wishlist')->getMoveFromCartUrl($_item->getId()); ?>" class="link-wishlist use-ajax" ></a>
                 <?php endif; ?>
 
                 <?php if (!$this->isOnCheckoutPage()): ?>

@@ -486,6 +486,13 @@ tr.Canceled {background:#FAF3F1!important;}
     max-width: 200px;
 }
 
+.header-minicart .minicart-actions .cart-link {
+    display: block;
+    border: 1px solid #d5d5db;
+}
+.header-minicart  .checkout-types.minicart {
+    float: right;
+}
 
 #header #header-nav-hide {
     display:inline-block;
