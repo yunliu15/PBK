@@ -47,7 +47,7 @@ if ($_item):
             </a>
         </div>
     </div>
-    <div class="product-info no-bottom-p">
+    <div class="product-info">
         <h3 class="product-name"><a href="<?php echo $this->getProductUrl($_item) ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></h3>
         <div class="product-sku">
             <span>Item: </span>
@@ -57,29 +57,30 @@ if ($_item):
         </div>
         <?php echo $this->getPriceHtml($_item, true, '-upsell') ?>
         <?php echo $this->getReviewsSummaryHtml($_item) ?>
-    </div>
-    <div class="actions">
-        <?php if ($_item->isSaleable()): ?>
-            <input class="qty qty_increment_product_add input-text" type="text" pattern="\d*"
-                   style="width: 41px; height: 33px; "
-                   data-max="<?php echo $product_max_quantity; ?>"
-                   data-min="<?php echo $product_min_quantity; ?>"
-                   data-inc="<?php echo $product_quantity_increment; ?>"
-                   data-max_allow="<?php echo $product_max_sale_quantity; ?>"
-                   value="<?php echo  $product_quantity_increment >= $product_min_quantity ?  $product_quantity_increment :  $product_min_quantity; ?>"
-            >
+        <div class="actions">
+            <?php if ($_item->isSaleable()): ?>
+                <input class="qty qty_increment_product_add input-text" type="text" pattern="\d*"
+                       style="width: 41px; height: 33px; "
+                       data-max="<?php echo $product_max_quantity; ?>"
+                       data-min="<?php echo $product_min_quantity; ?>"
+                       data-inc="<?php echo $product_quantity_increment; ?>"
+                       data-max_allow="<?php echo $product_max_sale_quantity; ?>"
+                       value="<?php echo  $product_quantity_increment >= $product_min_quantity ?  $product_quantity_increment :  $product_min_quantity; ?>"
+                >
 
 
-            <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
-        <?php else: ?>
-            <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
-        <?php endif; ?>
-        <ul class="add-to-links">
-            <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                <li><a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="link-wishlist icon icon-moon button"></a></li>
+                <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+            <?php else: ?>
+                <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
             <?php endif; ?>
+            <ul class="add-to-links">
+                <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                    <li><a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="link-wishlist icon icon-moon button"></a></li>
+                <?php endif; ?>
 
-        </ul>
+            </ul>
+        </div>
     </div>
+
     
 <?php endif;?>

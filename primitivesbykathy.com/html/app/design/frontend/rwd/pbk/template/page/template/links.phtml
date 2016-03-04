@@ -61,10 +61,31 @@
                     <div id="account-dropdow-content" class="account-content">
                         <ul>
                             <li>
-                                <a href="<?php echo Mage::getUrl('customer/account/'); ?>"><?php echo $this->__('Dashboard');?></a>
+                                <a href="<?php echo Mage::getUrl('customer/account/'); ?>"><?php echo $this->__('My Dashboard');?></a>
                             </li>
                             <li>
-                                <a href="#">Other Links</a>
+                                <a href="<?php echo Mage::getUrl('customer/account/'); ?>"><?php echo $this->__('Track Package');?></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Mage::getUrl('sales/order/history/'); ?>"><?php echo $this->__('Order Status and History');?></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Mage::getUrl('sales/order/history/'); ?>"><?php echo $this->__('All Items Ordered');?></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Mage::getUrl('invoice/history/'); ?>"><?php echo $this->__('My Invoices');?></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Mage::getUrl('customer/account/edit/'); ?>"><?php echo $this->__('Update Email/Password');?></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Mage::getUrl('customer/address/'); ?>"><?php echo $this->__('Manage Address Book');?></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Mage::getUrl('wishlist'); ?>"><?php echo $this->__('My Wishlist');?></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Mage::getUrl('checkout/cart/'); ?>"><?php echo $this->__('My Shopping Cart');?></a>
                             </li>
                         </ul>
                     </div>

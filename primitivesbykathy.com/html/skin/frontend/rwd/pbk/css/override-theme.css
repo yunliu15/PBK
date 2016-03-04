@@ -319,9 +319,19 @@ tr.Canceled {background:#FAF3F1!important;}
     background: #fff;
     border: 1px solid #d5d5db;
     width: 120%;
+    min-width: 200px;
     padding: 10px;
     top: 20px;
-    left: -10px;
+    left: -14px;
+    z-index: 10;
+    text-align: left;
+    text-transform: capitalize;
+}
+.account-dropdown .account-content li {
+    margin-bottom: 5px;
+}
+#header-account .account-dropdown .account-content a {
+    text-align: left;
 }
 .account-dropdown:hover #account-dropdow-content, .account-dropdown:before:hover .account-content, .account-dropdown:before .account-content:hover {
     display: block;
@@ -753,7 +763,15 @@ tr.Canceled {background:#FAF3F1!important;}
 
 .wrapper .top-container {margin-top:20px;}
 /******* Home **************/
-
+.slider {
+    max-height: 400px;
+    overflow: hidden;
+}
+.slider img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
 .home-top > div {
     float:left;
     background-color: #fff;
@@ -936,10 +954,42 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .account-login .registered-users .f-left {
     position: absolute;
     bottom: 30px;
-    left: 230px;
+    left: 200px;
     text-decoration: underline;
 }
+.btn-create-account span span {position: relative; margin-left: 20px;}
+.btn-create-account span span:before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-image: url("../images/icon_sprite_new.png");
+    background-position: -0px -70px;
+    position: absolute;
+    left: -25px;
+}
+.btn-create-account:hover span span:before {
+    background-position: -46px -70px;
+}
 
+.btn-login span span:after {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    content: "\f105";
+    color: #7E221B;
+    position: relative;
+    left: 6px;
+    top: 3px;
+    font-size: 20px;
+    line-height: 8px;
+}
+.btn-login:hover span span:after {
+    color: #333637;
+}
 /****** Create Account *********/
 .wrapper .account-create select {
    height:32px;
@@ -1579,7 +1629,7 @@ body.amquickview-ajax-view {
 .products-grid .product-info {background-color:#fff!important;}
 /* labels */
 .product-img-box {position:relative;}
-.product-img-wrapper {background-color:#f2f2f2;border: 1px solid #d5d5db;}
+.product-img-wrapper {background-color:#fff;border: 1px solid #d5d5db;border-bottom: none;}
 .product-view .product-essential .product-img-wrapper{border: 1px solid #d5d5db;}
 .product-image .amlabel-table2 {display:none;}
 .amlabel-div {position:absolute;top:10px;left:10px;z-index:1;text-align:left!important;text-transform: uppercase;}
@@ -1661,10 +1711,18 @@ body.amquickview-ajax-view {
 }
 
 /* multiple wishlists */
-.product-view .add-to-links {
-    position: relative;
-    top: 3px;
-    margin-left: 5px;
+.product-essential .add-to-links li {
+    padding: 4px;
+    padding-left: 15px;
+    background: #fff;
+    border: 1px solid #d5d5db;
+}
+.product-essential .add-to-links li:hover {
+    border-color: #7E221B;
+}
+
+.wrapper .product-view .add-to-links a {
+    border-right: none;
 }
 .product-view .split-button .change:before,
 .cart .split-button .change:before{
@@ -1687,6 +1745,11 @@ body.amquickview-ajax-view {
     right: 5px;
     text-indent: 0;
 }
+.product-view .add-to-links li:hover .change:before,
+.product-essential .add-to-links li:hover .change {
+    color: #7E221B;
+}
+
 .product-view .split-button .change:after,
 .cart .split-button .change:after {
     top: 12px;
@@ -2290,7 +2353,7 @@ body.amquickview-ajax-view {
         padding: 10px 15px !important;
     }
     .account-login .registered-users .f-left {
-        left: 180px;
+        left: 150px;
     }
 
     .wishlist-cart-wrapper > .checkout-button {
@@ -2886,6 +2949,7 @@ td.Discount + td .price {color: green !important;}
 .wrapper .b2b-ajax-loader {
    /* background: url("../images/ajax-loader.gif") no-repeat scroll center center rgba(0, 0, 0, 0.65);*/
 }
+
 
 
 
