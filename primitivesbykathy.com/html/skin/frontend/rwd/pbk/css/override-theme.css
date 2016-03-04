@@ -2008,6 +2008,82 @@ body.amquickview-ajax-view {
 .footer .links a {text-transform: capitalize;font-size:14px;}
 .footer .links a:hover {color:#7E221B;}
 
+/* New Footer */
+.footer-top .block-title strong {
+    font-size: 16px;
+    padding-right: 10px;
+}
+.footer-top li {
+    display: inline-block;
+    padding: 0px 10px;
+    border-right: 1px solid #666;
+    line-height: 12px;
+}
+.footer-top-links {
+    margin-bottom: 10px;
+}
+.footer-top li:last-of-type {
+    border-right: none;
+}
+.footer-top .block-title,
+.footer-top ul {
+    display: inline-block;
+}
+.footer-top .help {
+    font-size: 16px;
+}
+.footer-top .help strong {
+    color: #7E221B;
+}
+.footer .social-logo {
+    display: inline-block;
+}
+.footer .social-media-links div {
+    margin-right: 4px;
+    display: inline-block;
+}
+.footer .social-media-links div:last-of-type {
+    margin-right: 0;
+}
+.footer .links.last {
+    padding-right: 0;
+}
+.footer .store-link {
+    width: 130px;
+    margin-top: 30px;
+}
+.footer .store-link img {
+    max-width: 100%;
+}
+.footer-top {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d5d5db;
+    margin-bottom: 20px;
+}
+.footer-bottom {
+    clear:both;
+    padding:0;
+    background-image:url("../images/nav_bground.gif");
+    background-repeat: repeat;
+    background-size:auto;
+    min-height:10px;
+}
+
+@media only screen and (min-width: 950px){
+    .footer-top-links {
+        float: left;
+        width: 70%;
+        margin-bottom: 0;
+    }
+    .footer-top .help {
+        float: right;
+        width: 30%;
+        text-align: right;
+    }
+
+}
+
+
 /****** Media Query ******/
 @media only screen and (min-width: 959px) {
     /*** Navigation **/
@@ -2199,7 +2275,7 @@ body.amquickview-ajax-view {
         margin-right:0!important;
         margin-bottom: 20px;
     }
-    .footer-container .footer > div:nth-of-type(3) {clear:left;}
+    .footer-container .footer > div:nth-of-type(4) {clear:left;}
     .cart-table .product-cart-info .cart-links {position:static;}
     .cart-table .cart-footer-actions .btn-update, .cart-table .cart-footer-actions span.or {
         display: none;
@@ -2269,6 +2345,10 @@ body.amquickview-ajax-view {
 
 
     .cms-customer-service td {display:block;width:100%!important;}
+
+    .wrapper .footer .links:nth-child(odd) {
+        clear: none;
+    }
 }
 
 @media only screen and (max-width:545px) {
