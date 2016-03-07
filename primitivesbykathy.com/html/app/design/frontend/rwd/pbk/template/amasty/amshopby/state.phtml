@@ -12,8 +12,8 @@
     <div class="currently">
         <ol>
             <?php foreach ($_filters as $_filter):?>
-                <li>
-                    <span class="label"><?php echo Mage::helper('catalog')->__($_filter->getName()) ?>:</span>
+                <li class="current-filter">
+                    <span class="label <?php echo Mage::helper('catalog')->__($_filter->getName()) ?> "><?php echo Mage::helper('catalog')->__($_filter->getName()) ?>:</span>
                     <?php if ($_filter->hasData('children')): ?>
                         <?php foreach ($_filter->getData('children') as $child): ?>
                             <span class="multiselect-child">
@@ -34,4 +34,26 @@
             <div class="actions"><a href="<?php echo $this->getParentBlock()->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
         <?php endif; ?>
     </div>
+
+
+    <script>
+        jQuery(function($) {
+            var currentFilter = $('.current-filter');
+            var filters = $('.amshopby-item-top');
+
+            currentFilter.each(function(){
+                for (var i= 0; i < filters.length; i++) {
+                    var filter = $(filters[i]);
+                    if ($(this).find('.label').text() == (filter.find('dt').text() + ":")) {
+                        $(this).appendTo(filter);
+
+                    }
+                }
+
+            })
+
+        });
+
+    </script>
+
 <?php endif; ?>

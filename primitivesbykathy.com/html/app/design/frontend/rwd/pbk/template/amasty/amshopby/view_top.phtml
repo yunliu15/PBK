@@ -26,7 +26,8 @@
                                     <dl id="narrow-by-list" class="amshopby-narrow-by-list" data-position="<?php echo $position;?>">
                                         <?php if ($_filter->getAttributeCode() == 'price') : ?>
                                             <?php $_filter->addData(array('amprice-position' => 'top')); ?>
-                                        <?php endif; ?>
+                                        <?php
+                                        endif; ?>
                                         <dt><?php echo $this->__($_filter->getName()) ?></dt>
                                         <dd style="display: none; "><?php echo $_filter->getHtml() ?></dd>
                                     </dl>

@@ -1964,7 +1964,56 @@ body.amquickview-ajax-view {
 .block-layered-nav .block-title {
     text-align: left;
 }
+.current-filter {
+    list-style: none;
+    background: #fff;
+    border: 1px solid #d5d5db;
+    margin-top: 5px;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.current-filter .label {
+    display: none;
+}
+.current-filter .multiselect-child {
+    display: block;
+    border-bottom: 1px solid #d5d5db;
+    position: relative;
+}
+.current-filter span:last-of-type.multiselect-child {
+    border-bottom: none;
+}
+.amshopby-filters-top p.block-subtitle {
+    display: none;
+}
+.amshopby-filters-top .btn-remove {
+    position: absolute;
+    right: 5px;
+}
 
+.amshopby-filters-top .btn-remove:after,
+.amshopby-filters-top  .btn-remove-inline:after {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    width: 15px!important;
+    height: 15px!important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border: none;
+    content: '\e90d';
+    color: #676B6C;
+    position: absolute;
+    right: 5px;
+    top: 35%;
+    font-size: 8px;
+}
+.amshopby-filters-top  .btn-remove-inline img {display: none;}
 /********* CMS Pages **************/
 .cms-customer-service tbody {background: none;}
 .cms-customer-service tbody tbody,.cms-customer-service tbody form{background: #fff;}
