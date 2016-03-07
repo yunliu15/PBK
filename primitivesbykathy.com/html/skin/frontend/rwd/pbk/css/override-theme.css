@@ -2014,7 +2014,34 @@ body.amquickview-ajax-view {
     font-size: 8px;
 }
 .amshopby-filters-top  .btn-remove-inline img {display: none;}
-/********* CMS Pages **************/
+.amshopby-cat.level0 > ol {display: none;}
+.wrapper .amshopby-slider-ui .ui-slider-handle {
+    background-color: #333;
+    border: 1px solid #333;
+    box-sizing: border-box;
+    outline: none;
+}
+.amshopby-filters-left .actions {display: none;}
+.amshopby-filters-left dl dt {display: none !important;}
+.amshopby-filters-left dl dd {border: none !important;}
+.amshopby-cat.level0 {position: relative;}
+.amshopby-cat.level0 > ol:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: block;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-top: 4px solid #333637;
+    border-bottom: none;
+    top: 20px;
+    margin-top: -3px;
+}
+
+
+
+    /********* CMS Pages **************/
 .cms-customer-service tbody {background: none;}
 .cms-customer-service tbody tbody,.cms-customer-service tbody form{background: #fff;}
 .cms-customer-service td > table td{padding:5px 10px; border:1px solid #d5d5db;vertical-align: top;}
