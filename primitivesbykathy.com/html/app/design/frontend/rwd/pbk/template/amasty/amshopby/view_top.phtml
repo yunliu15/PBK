@@ -8,7 +8,7 @@
 <?php if($this->canShowBlock()): ?>
     <div class="block block-layered-nav">
         <div class="block-title">
-            <strong><span><?php echo $this->__('Shop By') ?></span></strong>
+            <strong><span><?php echo $this->__('Narrow Your Search') ?></span></strong>
         </div>
         <div class="block-content">
             <?php echo $this->getStateHtml() ?>
@@ -28,16 +28,37 @@
                                             <?php $_filter->addData(array('amprice-position' => 'top')); ?>
                                         <?php endif; ?>
                                         <dt><?php echo $this->__($_filter->getName()) ?></dt>
-                                        <dd style="background:none"><?php echo $_filter->getHtml() ?></dd>
+                                        <dd style="display: none; "><?php echo $_filter->getHtml() ?></dd>
                                     </dl>
                                 </div>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
                 <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+
+                <script type="text/javascript">
+                    jQuery(function($) {
+                          $('body').off().on('click','.amshopby-narrow-by-list > dt', function(){
+
+                                var filterContent = $(this).siblings('dd');
+                                if (filterContent.hasClass('open')) {
+                                    filterContent.removeClass('open');
+                                    filterContent.hide();
+
+                                }
+                                else {
+                                    filterContent.show();
+                                    filterContent.addClass('open');
+                                }
+                              return false;
+                            })
+                        });
+
+                </script>
             <?php endif; ?>
         </div>
     </div>
 <?php else: ?>
     <div style="display:none" class="<?php echo $this->getBlockId()?>"></div>
 <?php endif; ?>
+

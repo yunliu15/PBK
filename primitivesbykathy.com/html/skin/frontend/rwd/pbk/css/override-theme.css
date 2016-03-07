@@ -1939,7 +1939,31 @@ body.amquickview-ajax-view {
     color: #7E221B;
 }
 
-
+/*********Layered Navigation ************/
+.block-layered-nav .block-content > dl.amshopby-narrow-by-list > dt:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: block;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-top: 4px solid #333637;
+    border-bottom: none;
+    top: 50%;
+    margin-top: -3px;
+    right: 10px;
+    left: auto;
+}
+.block-layered-nav .block-content > dl.amshopby-narrow-by-list dd {
+    background: #fff;
+}
+.block-layered-nav .block-content > dl.amshopby-narrow-by-list > dt {
+    background: #fff;
+}
+.block-layered-nav .block-title {
+    text-align: left;
+}
 
 /********* CMS Pages **************/
 .cms-customer-service tbody {background: none;}
