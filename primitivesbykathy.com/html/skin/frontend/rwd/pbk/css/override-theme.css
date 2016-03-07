@@ -1475,6 +1475,13 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     color: #7E221B;
 }
 
+@media only screen and (min-width: 480px) and (max-width: 512px) {
+    #wishlist-table .item-manage .split-button {
+        float: right;
+        margin-left: 20px;
+        margin-bottom: 3px;
+    }
+}
     /*********** Product Page ***************/
 .button.btn-cart {position:relative;padding-left:30px;}
 /*.btn-cart:before {
