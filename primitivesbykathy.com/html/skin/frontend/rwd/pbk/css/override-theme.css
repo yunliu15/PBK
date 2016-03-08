@@ -2149,6 +2149,9 @@ body.amquickview-ajax-view {
 .wrapper .amshopby-item-top div.amshopby-column {
     width: 50%;
 }
+.wrapper .amshopby-item-top .columns-4 div.amshopby-column {
+    width: 25%;
+}
 /*.wrapper .amshopby-item-top li {float: left;}*/
 .wrapper .amshopby-filters-top .block-content ol {
     max-width: 100%;

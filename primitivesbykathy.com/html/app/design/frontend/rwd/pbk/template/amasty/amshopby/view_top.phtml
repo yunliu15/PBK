@@ -40,14 +40,17 @@
                 <script type="text/javascript">
                     jQuery(function($) {
                           $('body').off().on('click','.amshopby-narrow-by-list > dt', function(){
+                              $(".amshopby-narrow-by-list > dd").hide();
 
-                                var filterContent = $(this).siblings('dd');
-                                if (filterContent.hasClass('open')) {
+                              var filterContent = $(this).siblings('dd');
+
+                               if (filterContent.hasClass('open')) {
                                     filterContent.removeClass('open');
                                     filterContent.hide();
 
                                 }
                                 else {
+                                    $(".amshopby-narrow-by-list > dd").removeClass('open');
                                     filterContent.show();
                                     filterContent.addClass('open');
                                 }
