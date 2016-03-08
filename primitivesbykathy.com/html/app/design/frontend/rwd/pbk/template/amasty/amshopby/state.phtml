@@ -13,7 +13,7 @@
         <ol>
             <?php foreach ($_filters as $_filter):?>
                 <li class="current-filter">
-                    <span class="label <?php echo Mage::helper('catalog')->__($_filter->getName()) ?> "><?php echo Mage::helper('catalog')->__($_filter->getName()) ?>:</span>
+                    <span class="label" data-title="<?php echo str_replace(' ', '', strtolower(Mage::helper('catalog')->__($_filter->getName()))); ?>"><?php echo Mage::helper('catalog')->__($_filter->getName()) ?>:</span>
                     <?php if ($_filter->hasData('children')): ?>
                         <?php foreach ($_filter->getData('children') as $child): ?>
                             <span class="multiselect-child">
@@ -44,7 +44,8 @@
             currentFilter.each(function(){
                 for (var i= 0; i < filters.length; i++) {
                     var filter = $(filters[i]);
-                    if ($(this).find('.label').text() == (filter.find('dt').text() + ":")) {
+
+                    if ($(this).find('.label').data('title') == (filter.find('dl').data('title'))) {
                         $(this).appendTo(filter);
 
                     }
