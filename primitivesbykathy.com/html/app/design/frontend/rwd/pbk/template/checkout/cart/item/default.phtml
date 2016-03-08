@@ -124,10 +124,16 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 
     </td>
 
+    <?php
+    $stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($_item->getProductId());
+    $product_quantity_increment = ($stockItem->getQtyIncrements()) + 0;
+    ?>
+
     <td class="product-cart-actions" data-rwd-label="<?php echo $this->__('Qty'); ?>">
 
         <input type="text" pattern="\d*" name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4"
                data-cart-item-id="<?php echo $this->jsQuoteEscape($_item->getSku()) ?>"
+               data-inc="<?php echo $product_quantity_increment; ?>"
 
                title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty qty-input" maxlength="12" />
         <div class="qty-btn">
