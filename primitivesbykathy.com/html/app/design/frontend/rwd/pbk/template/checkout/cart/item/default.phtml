@@ -157,7 +157,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
                 var qtyInput = $(this).parent().siblings('.qty-input');
                 var currentQty = parseInt(qtyInput.val());
                 var inc = parseInt(qtyInput.data('inc')) || 1;
-                qtyInput.val(currentQty+inc);
+                qtyInput.val(currentQty + inc);
                 return false;
             });
             qtyBtnD.off().click(function() {
@@ -165,7 +165,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
                 var currentQty = parseInt(qtyInput.val());
                 var inc = parseInt(qtyInput.data('inc')) || 1;
                 if (currentQty > 0) {
-                    qtyInput.val(currentQty-inc);
+                    qtyInput.val(currentQty - inc);
                 }
 
                 return false;

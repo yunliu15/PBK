@@ -11,7 +11,6 @@ $_multiselectEnabled = Mage::helper('amshopby')->getCategoriesMultiselectMode();
 $_showCount = !$this->getData('hide_counts');
 ?>
 
-<a href="<?php echo Mage::getUrl('allpro/index/index');?>"> Shop All Products</a>
 
 <ol <?php if ($this->getCollapsed() && !$this->getHasSelection()) echo 'class="no-display-current"'?>  >
     <?php if (in_array($_displayType, array(
@@ -124,6 +123,7 @@ $_showCount = !$this->getData('hide_counts');
             if ($(this).children('li').hasClass('active')) {
                 $(this).show();
                 $(this).addClass('open');
+                $(this).parents('.amshopby-cat').addClass('open');
             }
         })
         $('.amshopby-cat.level0.has-child > a').off().on('click', function(){
@@ -131,34 +131,20 @@ $_showCount = !$this->getData('hide_counts');
             var subCat = $(this).siblings('ol');
             if (subCat.hasClass('open')) {
                 subCat.removeClass('open');
+                $(this).parent().removeClass('open');
                 subCat.hide();
 
             }
             else {
                 subCat.show();
                 subCat.addClass('open');
+                $(this).parent().addClass('open');
             }
 
 
             return false;
         });
 
-        /*$('body').off().on('click','.amshopby-cat.level0.has-child > a', function(){
-
-                var subCat = $(this).siblings('ol');
-                if (subCat.hasClass('open')) {
-                    subCat.removeClass('open');
-                    subCat.hide();
-
-                }
-                else {
-                    subCat.show();
-                    subCat.addClass('open');
-                }
-
-
-            return false;
-        });*/
 
     });
 </script>

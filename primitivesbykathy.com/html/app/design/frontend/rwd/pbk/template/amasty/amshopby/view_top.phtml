@@ -6,7 +6,7 @@
  */
 ?>
 <?php if($this->canShowBlock()): ?>
-    <div class="block block-layered-nav">
+    <div id="am-top-nav" class="block block-layered-nav">
         <div class="block-title">
             <strong><span><?php echo $this->__('Narrow Your Search') ?></span></strong>
         </div>
@@ -23,7 +23,7 @@
                             <?php if($_filter->getItemsCount()): ?>
                                 <?php  $position = Mage::helper('amshopby')->getAttributePosition($_filter); ?>
                                 <div class="amshopby-item-top block-content am-toggle-content">
-                                    <dl id="narrow-by-list" class="amshopby-narrow-by-list" data-position="<?php echo $position;?>">
+                                    <dl id="narrow-by-list" class="amshopby-narrow-by-list" data-title="<?php echo str_replace(' ', '', strtolower($this->__($_filter->getName())))?>" data-position="<?php echo $position;?>">
                                         <?php if ($_filter->getAttributeCode() == 'price') : ?>
                                             <?php $_filter->addData(array('amprice-position' => 'top')); ?>
                                         <?php
@@ -56,9 +56,30 @@
                         });
 
                 </script>
+
+            <?php // to move top layered nav and fix a bug that in some page the position of top layered nav is not correct?>
+                <script>
+                    jQuery(function($){
+
+                        $(document).ready(function(){
+                            var toolBar = $('#amshopby-page-container').find('toolbar');
+                            var topNav = $('#am-top-nav');
+                            if (toolBar.length){
+                                topNav.insertAfter(toolBar);
+                            }
+                            else {
+                                topNav.insertAfter($('#amshopby-page-container .category-title'));
+                            }
+
+                        });
+
+                    });
+                </script>
+
             <?php endif; ?>
         </div>
     </div>
+
 <?php else: ?>
     <div style="display:none" class="<?php echo $this->getBlockId()?>"></div>
 <?php endif; ?>
