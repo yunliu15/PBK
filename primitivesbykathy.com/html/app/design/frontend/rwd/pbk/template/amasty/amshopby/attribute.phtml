@@ -85,24 +85,60 @@ switch ($this->getDisplayType()){
     break;
     
     case Amasty_Shopby_Model_Source_Attribute::DT_LABELS_IN_2_COLUMNS:
-        $items = $this->getItemsAsArray(); 
+        $items = $this->getItemsAsArray();
         $size  = sizeof($items);
         $half  =  ceil($size/2);
-        
-        echo '<li>';
-        echo '<div class="amshopby-column">';
-        for ($i=0; $i<$half; $i++){
-            $item = $items[$i];
-            echo '<a class="'.$item['css'].'" '.$item['rel'].' href="'.$item['url'].'" data-text="' . htmlspecialchars($item['label']) . '">'. $item['label'] . $item['count'] . '</a>' . '<br/>';
+        $third = ceil($size/3);
+        $quarter = ceil($size/4);
+        $breakPoint = 20;
+
+        if ($size < $breakPoint) {
+            echo '<li>';
+            echo '<div class="amshopby-column">';
+            for ($i=0; $i<$half; $i++){
+                $item = $items[$i];
+                echo '<a class="'.$item['css'].'" '.$item['rel'].' href="'.$item['url'].'" data-text="' . htmlspecialchars($item['label']) . '">'. $item['label'] . '</a>' . '<br/>';
+            }
+            echo '</div>';
+            echo '<div class="amshopby-column">';
+            for ($i=$half; $i<$size; $i++){
+                $item = $items[$i];
+                echo '<a class="'.$item['css'].'" '.$item['rel'].' href="'.$item['url'].'" data-text="' . htmlspecialchars($item['label']) . '">'. $item['label'] . '</a>' . '<br/>';
+            }
+            echo '</div>';
+            echo '</li>';
         }
-        echo '</div>';
-        echo '<div class="amshopby-column">';
-        for ($i=$half; $i<$size; $i++){
-            $item = $items[$i];
-            echo '<a class="'.$item['css'].'" '.$item['rel'].' href="'.$item['url'].'" data-text="' . htmlspecialchars($item['label']) . '">'. $item['label'] . $item['count'] . '</a>' . '<br/>';
+        else {
+            echo '<li class="columns-4">';
+            echo '<div class="amshopby-column">';
+            for ($i=0; $i<$quarter; $i++){
+                $item = $items[$i];
+                echo '<a class="'.$item['css'].'" '.$item['rel'].' href="'.$item['url'].'" data-text="' . htmlspecialchars($item['label']) . '">'. $item['label'] . '</a>' . '<br/>';
+            }
+            echo '</div>';
+
+            echo '<div class="amshopby-column">';
+            for ($i=$quarter; $i<2*$quarter; $i++){
+                $item = $items[$i];
+                echo '<a class="'.$item['css'].'" '.$item['rel'].' href="'.$item['url'].'" data-text="' . htmlspecialchars($item['label']) . '">'. $item['label'] . '</a>' . '<br/>';
+            }
+            echo '</div>';
+
+            echo '<div class="amshopby-column">';
+            for ($i=2*$quarter; $i<3*$quarter; $i++){
+                $item = $items[$i];
+                echo '<a class="'.$item['css'].'" '.$item['rel'].' href="'.$item['url'].'" data-text="' . htmlspecialchars($item['label']) . '">'. $item['label'] . '</a>' . '<br/>';
+            }
+            echo '</div>';
+
+            echo '<div class="amshopby-column">';
+            for ($i=3*$quarter; $i<$size; $i++){
+                $item = $items[$i];
+                echo '<a class="'.$item['css'].'" '.$item['rel'].' href="'.$item['url'].'" data-text="' . htmlspecialchars($item['label']) . '">'. $item['label'] . '</a>' . '<br/>';
+            }
+            echo '</div>';
+            echo '</li>';
         }
-        echo '</div>';
-        echo '</li>';
     break;
 }
 
