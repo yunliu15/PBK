@@ -92,7 +92,19 @@ switch ($this->getDisplayType()){
         $quarter = ceil($size/4);
         $breakPoint = 20;
 
-        if ($size < $breakPoint) {
+
+        if ($size <= 5) {
+            echo '<li>';
+            echo '<div>';
+            for ($i=0; $i< $size; $i++){
+                $item = $items[$i];
+                echo '<a class="'.$item['css'].'" '.$item['rel'].' href="'.$item['url'].'" data-text="' . htmlspecialchars($item['label']) . '">'. $item['label'] . '</a>' . '<br/>';
+            }
+            echo '</div>';
+            echo '</li>';
+        }
+
+        else if ($size < $breakPoint) {
             echo '<li>';
             echo '<div class="amshopby-column">';
             for ($i=0; $i<$half; $i++){

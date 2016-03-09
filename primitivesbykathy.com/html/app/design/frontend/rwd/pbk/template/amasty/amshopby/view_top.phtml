@@ -47,12 +47,15 @@
                                if (filterContent.hasClass('open')) {
                                     filterContent.removeClass('open');
                                     filterContent.hide();
+                                   $(this).removeClass('open'); 
 
                                 }
                                 else {
                                     $(".amshopby-narrow-by-list > dd").removeClass('open');
+                                    $('.amshopby-narrow-by-list > dt').removeClass('open');
                                     filterContent.show();
                                     filterContent.addClass('open');
+                                    $(this).addClass('open');
                                 }
                               return false;
                             })
@@ -62,21 +65,25 @@
 
             <?php // to move top layered nav and fix a bug that in some page the position of top layered nav is not correct?>
                 <script>
-                    jQuery(function($){
+                    /*jQuery(function($){
 
                         $(document).ready(function(){
-                            var toolBar = $('#amshopby-page-container').find('toolbar');
+
+                            var toolBar = $('#amshopby-page-container').find('.toolbar');
                             var topNav = $('#am-top-nav');
+                            /!*console.log(toolBar);
                             if (toolBar.length){
                                 topNav.insertAfter(toolBar);
                             }
                             else {
                                 topNav.insertAfter($('#amshopby-page-container .category-title'));
-                            }
+                            }*!/
+                            console.log($('#amshopby-page-container .category-title'))
+                            topNav.insertAfter($('#amshopby-page-container .category-title'));
 
                         });
 
-                    });
+                    });*/
                 </script>
 
             <?php endif; ?>
