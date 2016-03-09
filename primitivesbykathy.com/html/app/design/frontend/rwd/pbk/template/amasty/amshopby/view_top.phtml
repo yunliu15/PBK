@@ -13,9 +13,11 @@
         <div class="block-content">
             <?php echo $this->getStateHtml() ?>
             <?php if ($this->getLayer()->getState()->getFilters() && method_exists('Mage', 'getEdition')): // CE 1.7+, EE 1.12+?>
+
                 <div class="actions"><a href="<?php echo Mage::helper('amshopby/url')->getFullUrl(array(), 1) ?>">
-                        <?php echo Mage::helper('catalog')->__('Clear All') ?></a>
+                        <?php echo Mage::helper('catalog')->__('Clear All Filters') ?></a>
                 </div>
+                <div class="hide-nav"><?php echo $this->__('Hide Filters');?></div>
             <?php endif; ?>
             <?php if($this->canShowOptions()): ?>
                     <div class="amshopby-container-top block-layered-nav">
@@ -29,7 +31,7 @@
                                         <?php
                                         endif; ?>
                                         <dt><?php echo $this->__($_filter->getName()) ?></dt>
-                                        <dd style="display: none; "><?php echo $_filter->getHtml() ?></dd>
+                                        <dd><?php echo $_filter->getHtml() ?></dd>
                                     </dl>
                                 </div>
                             <?php endif; ?>
@@ -38,28 +40,40 @@
                 <script type="text/javascript">decorateDataList('narrow-by-list')</script>
 
                 <script type="text/javascript">
-                    jQuery(function($) {
+                   jQuery(function($) {
+                       // hide filters
+                       //$('body').off().on('click', '.hide-filter', function(){
+
+
+                      // });
+
+
+                       // toggle filters
                           $('body').off().on('click','.amshopby-narrow-by-list > dt', function(){
-                              $(".amshopby-narrow-by-list > dd").hide();
+                              // for desktop only
+                              if (!window.matchMedia('(max-width: 770px)').matches ) {
+                                  $(".amshopby-narrow-by-list > dd").hide();
 
-                              var filterContent = $(this).siblings('dd');
+                                  var filterContent = $(this).siblings('dd');
 
-                               if (filterContent.hasClass('open')) {
-                                    filterContent.removeClass('open');
-                                    filterContent.hide();
-                                   $(this).removeClass('open'); 
+                                  if (filterContent.hasClass('open')) {
+                                      filterContent.removeClass('open');
+                                      filterContent.hide();
+                                      $(this).removeClass('open');
 
-                                }
-                                else {
-                                    $(".amshopby-narrow-by-list > dd").removeClass('open');
-                                    $('.amshopby-narrow-by-list > dt').removeClass('open');
-                                    filterContent.show();
-                                    filterContent.addClass('open');
-                                    $(this).addClass('open');
-                                }
+                                  }
+                                  else {
+                                      $(".amshopby-narrow-by-list > dd").removeClass('open');
+                                      $('.amshopby-narrow-by-list > dt').removeClass('open');
+                                      filterContent.show();
+                                      filterContent.addClass('open');
+                                      $(this).addClass('open');
+                                  }
+                              }
+
                               return false;
-                            })
-                        });
+                           });
+                    });
 
                 </script>
 

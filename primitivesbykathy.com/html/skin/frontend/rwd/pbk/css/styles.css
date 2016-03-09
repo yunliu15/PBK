@@ -2407,7 +2407,7 @@ body.customer-account .data-table .summary-collapse:hover:before {
   display: block;
   border-right: 7px solid transparent;
   border-left: 7px solid transparent;
-  border-top: 7px solid #246b8f;
+  border-top: 7px solid #676B6C;
   border-bottom: none;
   position: static;
   display: inline-block;
@@ -2439,7 +2439,7 @@ body.customer-account .data-table .show-details .summary-collapse:hover:before {
   display: block;
   border-right: 7px solid transparent;
   border-left: 7px solid transparent;
-  border-bottom: 7px solid #246b8f;
+  border-bottom: 7px solid #676B6C;
   border-top: none;
   position: static;
   display: inline-block;

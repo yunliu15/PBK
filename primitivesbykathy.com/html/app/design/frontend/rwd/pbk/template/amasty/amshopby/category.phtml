@@ -118,6 +118,7 @@ $_showCount = !$this->getData('hide_counts');
 
 <script>
     jQuery(function($) {
+
         var subCatLi = $('.amshopby-cat.level0 > ol');
         subCatLi.each(function(){
 
@@ -126,7 +127,8 @@ $_showCount = !$this->getData('hide_counts');
                 $(this).addClass('open');
                 $(this).parents('.amshopby-cat').addClass('open');
             }
-        })
+        });
+
         $('.amshopby-cat.level0.has-child > a').off().on('click', function(){
 
             var subCat = $(this).siblings('ol');
@@ -142,9 +144,9 @@ $_showCount = !$this->getData('hide_counts');
                 $(this).parent().addClass('open');
             }
 
-
             return false;
         });
+
 
 
     });

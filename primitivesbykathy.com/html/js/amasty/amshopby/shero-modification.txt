@@ -1,0 +1,21 @@
+modified amshopby.js
+in order to move top filters after toolbar, changed code around line 448
+<<<<<<<<
+function amshopby_move_top_filter() {
+....
+
+if( categoryProducts ){
+            //change top filter's position
+            //var parent = categoryProducts.parentNode;
+            //parent.insertBefore(amshopbyFiltersTop, categoryProducts);
+
+            //move top filter after toolbar
+            var grid= categoryProducts.select('.products-grid').first();
+            categoryProducts.insertBefore(amshopbyFiltersTop, grid);
+
+
+            amshopby_rwd_toggle_content();
+        }
+
+}
+>>>>>>>>>>

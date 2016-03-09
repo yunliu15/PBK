@@ -16,7 +16,7 @@
                     <span class="label" data-title="<?php echo str_replace(' ', '', strtolower(Mage::helper('catalog')->__($_filter->getName()))); ?>"><?php echo Mage::helper('catalog')->__($_filter->getName()) ?>:</span>
                     <?php if ($_filter->hasData('children')): ?>
                         <?php foreach ($_filter->getData('children') as $child): ?>
-                            <span class="multiselect-child">
+                            <span class="multiselect-child <?php echo $child['label']  ?>">
                                 <?php echo $child['label']  ?>
                                 <a href="<?php echo $child['url'] ?>" class="btn-remove-inline">
                                     <img src="<?php echo Mage::getDesign()->getSkinUrl('images/spacer.gif') ?>" width="13" height="12" alt="<?php echo $_removeTxt ?>" />
@@ -25,7 +25,7 @@
                         <?php endforeach ?>
                     <?php else: ?>
                         <a href="<?php echo $_filter->getRemoveUrl() ?>" class="btn-remove" title="<?php echo $_removeTxt ?>"><?php echo $_removeTxt ?></a>
-                        <?php echo $_filter->getLabel() ?>
+                        <span <?php if(Mage::helper('catalog')->__($_filter->getName()) == "Color"): ?>class="<?php echo $_filter->getLabel(); ?> " <?php endif;?>><?php echo $_filter->getLabel() ?></span>
                     <?php endif ?>
                 </li>
             <?php endforeach; ?>
@@ -38,21 +38,51 @@
 
     <script>
         jQuery(function($) {
+            // variable currentFilter need to be defined here because amshopby-item-top div is removed and rebuilt on resizing
             var currentFilter = $('.current-filter');
-            var filters = $('.amshopby-item-top');
 
-            currentFilter.each(function(){
-                for (var i= 0; i < filters.length; i++) {
-                    var filter = $(filters[i]);
+            move_result();
 
-                    if ($(this).find('.label').data('title') == (filter.find('dl').data('title'))) {
-                        $(this).appendTo(filter);
-                        $(this).find('.label').hide();
 
-                    }
+            function move_result() {
+                // variable filters has to be defined inside of this function because the amshopby-item-top div is rebuilt on resizing
+                var filters = $('.amshopby-item-top');
+                // desktop only
+                if (!window.matchMedia('(max-width: 770px)').matches ) {
+
+                   currentFilter.each(function(){
+
+                        for (var i= 0; i < filters.length; i++) {
+                            var filter = $(filters[i]);
+
+                            // can not use data attributes, because the amshopby item div is rebuilt when resizing and the data attributes added in template no longer exist
+
+                            //if ($(this).find('.label').data('title') == (filter.find('dl').data('title')))
+
+                            if ($(this).find('.label').text() == (filter.find('dt').text() + ":")){
+                                $(this).appendTo(filter);
+                                $(this).find('.label').hide();
+
+                            }
+                        }
+
+                    });
                 }
 
+
+
+            }
+
+            // for window resize
+            $(window).resize(function(){
+
+                move_result();
+                if (window.matchMedia('(max-width: 770px)').matches) {
+                    currentFilter.appendTo($('.currently ol'));
+                    currentFilter.find('.label').show();
+                }
             })
+
 
         });
 

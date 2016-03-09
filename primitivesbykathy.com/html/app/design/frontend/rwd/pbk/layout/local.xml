@@ -95,6 +95,9 @@
                 <action method="setBlockId"><block_id>slider</block_id></action>
             </block>
         </reference>
+       <!-- <reference name="content">
+            <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml" />
+        </reference>-->
 
     </cms_index_index>
 

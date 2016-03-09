@@ -1503,6 +1503,9 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 .breadcrumbs li a {color: #7E221B;}
 
+#shopping-cart-totals-table .summary-collapse {display: inline;}
+#shopping-cart-totals-table .summary-details br {display: none;}
+
 /******* Wish List Page*********/
 .wrapper .button.button-secondary {
     background:#fff;
@@ -1713,6 +1716,9 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .wrapper .products-grid .product-info {
    border: 1px solid #d5d5db;
     border-top: none;
+}
+.products-grid .product-info .product-name {
+    padding: 0 5px;
 }
 .wrapper .products-grid .bg-layer:hover {background-color:black;}
 .wrapper .products-grid .bg-layer:hover .product-img-wrapper,
@@ -2068,11 +2074,55 @@ body.amquickview-ajax-view {
     cursor: pointer;
 }
 .block-layered-nav .block-content > dl.amshopby-narrow-by-list > dt.open {
-    background: #f2f2f2;
+    padding-bottom: 9px;
+    position: relative;
 }
-.block-layered-nav .block-title {
-    text-align: left;
+
+.current-filter .Black:before {
+    content:'';
+    width: 15px;
+    height: 15px;
+    background: black;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
 }
+
+@media only screen and (min-width: 771px) {
+    .block-layered-nav .block-content > dl.amshopby-narrow-by-list > dt.open:before {
+        content:'';
+        width: 100%;
+        height: 5px;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        z-index: 21;
+        background: #fff;
+    }
+
+    .amshopby-filters-top.block-layered-nav .block-title {
+        text-align: left;
+
+        top: -7px;
+    }
+    .amshopby-filters-top.block-layered-nav .actions {
+        float: right;
+        margin-top: 0;
+        padding-left: 10px;
+        border-left: 1px solid #7E221B;
+    }
+    .amshopby-filters-top.block-layered-nav .hide-nav {
+        float: right;
+        padding-right: 10px;
+    }
+    .amshopby-container-top {clear: both;}
+
+}
+
+
+
+
 .amshopby-item-top .current-filter {
     list-style: none;
     background: #fff;
@@ -2085,19 +2135,10 @@ body.amquickview-ajax-view {
 /*.current-filter .label {
     display: none;
 }*/
-@media only screen and (max-width: 770px) {
-    /* fix the issue that the click-open function not working on mobile size*/
-    .block-layered-nav .block-content.accordion-open > dl > dd.current {
-        display: block !important;
-    }
-    .wrapper .block-layered-nav .block-subtitle--filter:hover {
-        background-color: #333;
-        color: #FFFFFF;
-    }
-    .amshopby-filters-left.block-layered-nav .block-content {
-        padding: 0;
-    }
-}
+.block-layered-nav .block-content.amshopby-item-top > dl > dd {display: none;border: 1px solid #d5d5db !important;}
+/*.block-layered-nav .block-content.accordion-open > dl > dd.current {
+    display: block;
+}*/
 
 
 
@@ -2210,6 +2251,33 @@ body.amquickview-ajax-view {
     max-width: 300px;
     margin: auto;
 }
+
+
+@media only screen and (max-width: 770px) {
+    /* fix the issue that the click-open function not working on mobile size*/
+    .block-layered-nav .block-content.accordion-open > dl > dd.current {
+        display: block !important;
+    }
+    .wrapper .block-layered-nav .block-subtitle--filter:hover {
+        background-color: #333;
+        color: #FFFFFF;
+    }
+    .amshopby-filters-left.block-layered-nav .block-content {
+        padding: 0;
+    }
+    .amshopby-filters-left.block-layered-nav dl ol > li > a {
+        background: none;
+        padding: 0 15px;
+    }
+    .wrapper #narrow-by-list {
+        border: none;
+    }
+    .amshopby-filters-left.block-layered-nav .block-content > dl > dt.last {
+        border: none;
+    }
+
+}
+
 
     /********* CMS Pages **************/
 .cms-customer-service tbody {background: none;}
