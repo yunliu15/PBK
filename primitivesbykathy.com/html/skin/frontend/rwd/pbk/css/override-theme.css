@@ -323,7 +323,7 @@ tr.Canceled {background:#FAF3F1!important;}
     padding: 10px;
     top: 20px;
     left: -14px;
-    z-index: 10;
+    z-index: 223;
     text-align: left;
     text-transform: capitalize;
 }
@@ -476,6 +476,9 @@ tr.Canceled {background:#FAF3F1!important;}
 }
 .minicart-wrapper .product-details .product-action .btn-remove {
     float: none;
+}
+.minicart-wrapper .product-details .product-action .btn-edit {
+    display: none;
 }
 .wrapper .minicart-wrapper .split-button.wishlist-selector .change:after {
     font-family: 'icomoon' !important;
@@ -674,7 +677,7 @@ tr.Canceled {background:#FAF3F1!important;}
 }
 #header-login {
     position:absolute;
-    z-index: 19;
+    z-index: 223;
     right: 0;
     top:30px;
     padding: 20px;
@@ -723,6 +726,55 @@ tr.Canceled {background:#FAF3F1!important;}
 #header-nav.skip-content {display:none;}
 #header-nav .nav-primary {margin-top:0; padding-left:10px;}
 /*.nav-wishlist-cart-wrapper {padding:5px 30px;}*/
+
+/** Mega Menu **/
+.ms-featured img {
+    display: block;
+    margin: auto;
+}
+.nav-wishlist-cart-wrapper {height: 50px;}
+.wrapper .ms-topmenu .ms-label {
+    height: 42px;
+    position: relative;
+}
+.ms-topmenu .ms-level0:hover .ms-label:after {
+    content: "";
+    border-style: none solid solid solid;
+    border-width: 0 12px 12px 12px;
+    border-color: transparent transparent #fff transparent;
+    position: absolute;
+    left: 40%;
+    top: 29px;
+}
+.ms-topmenu .ms-level0:hover .anchor_text:after {
+    display: none;
+}
+
+#header #header-nav-hide {
+    width: 100%;
+}
+.wrapper .ms-megamenu .ms-topmenu {
+    width: 100%;
+}
+.page-header .wishlist-cart-wrapper {
+
+    position: absolute;
+    right: 30px;
+    z-index: 222;
+}
+
+.ms-submenu .col-category .level1 {
+    font-weight: 900;
+    border-bottom: 4px double #d5d5db;
+}
+
+/* dyanamic listing */
+small.glyphicon.glyphicon-th-large {display: none;}
+.wrapper .ms-category-dynamic .col-level .form-group.parent {
+    border-bottom: none;
+    border-right: none;
+}
+
 
 /* banner widget */
 .widget-banner li{
@@ -1256,6 +1308,14 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 }
 
     /******* Shopping Cart ************/
+.cart-empty a {
+    color: #7E221B;
+    text-decoration: underline;
+}
+.cart-empty a:hover {
+    color: #333637;
+}
+
 .cart .btn-continue .icon-moon:before{
     content:"\f104";
     font-size:20px;
@@ -1615,8 +1675,25 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     left: 20px;
     top: 5px;
 }
+.product-essential .amcart-ignore.btn-cart:before {
+    display: none;
+}
+.product-essential .amcart-ignore.btn-cart {
+    padding-left: 15px;
+    top: -2px;
+}
+.amxnotif-block .input-text {
+    height: 33px;
+    max-width: 220px;
+}
 
-
+.link-stock-alert a {
+    color: #7E221B;
+    text-decoration: underline;
+}
+.link-stock-alert a:hover {
+    color: #333637;
+}
 
 .full-red-button.btn-cart:before {
     font-size:22px;
@@ -3107,9 +3184,27 @@ body[class^=" b2b"] .footer-bottom {
     border-color: #7E221B !important;
     color: #7E221B;
 }
-.wrapper .b2b-wrapper .b2b-cart-total .btn-checkout {
+.wrapper .b2b-wrapper .b2b-cart-total .btn-checkout,
+.wrapper .b2b-wrapper .b2b-cart-total .btn-view-cart {
     background: #7E221B;
+    width: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 0;
+    margin-top: 30px;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+
 }
+.wrapper .b2b-wrapper .b2b-cart-total .btn-view-cart:hover {
+    background-color: #B0564F;
+}
+
+
 .wrapper .b2b-wrapper .b2b-cart-total .btn-checkout:hover {
     background: #B0564F;
 }
@@ -3124,6 +3219,7 @@ body[class^=" b2b"] .footer-bottom {
 .b2b-wrapper #shopping-cart-totals-table {
     background:#fff;
     border: 1px solid #d5d5db;
+    width: 100%;
 }
 .b2b-wrapper #shopping-cart-totals-table thead {margin-bottom: 10px;}
 .b2b-wrapper #shopping-cart-totals-table thead th {
@@ -3650,4 +3746,9 @@ td.Discount + td .price {color: green !important;}
     .wrapper .b2b-wrapper .b2b-quick-order .input-wrapper input::-webkit-input-placeholder{
         font-size: 14px;
     }
+}
+
+.product-img.b2b_quick_order_product_image img {
+    border: 1px solid #e1e1e1;
+    margin: 15px 0;
 }
