@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<theme>
+    <parent>rwd/pbk</parent>
+
+    <layout>
+        <updates>
+            <wholesale_default>
+                <file>wholesale/default.xml</file>
+            </wholesale_default>
+        </updates>
+    </layout>
+
+
+</theme>
