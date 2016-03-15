@@ -264,12 +264,20 @@ tr.Canceled {background:#FAF3F1!important;}
 .wrapper .fieldset p.required {float:none;}
 .sidebar .block-content {
     margin-top:0;
-    padding:10px;
+    padding:10px 20px;
     border: 1px solid #d5d5db;
     background-color:#fff;
 }
 
-
+.sidebar strong {
+    font-weight: normal;
+}
+.sidebar ul.level1 {
+    padding-left: 10px;
+}
+.sidebar li.current strong{
+    font-weight: bold;
+}
 /****** Header ********/
 #header .skip-links,#header .skip-link {border:none;}
 

@@ -25,8 +25,10 @@
 /* ============================================ *
  * General Styles
  * ============================================ */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,900,300,300italic,400italic,700,700italic,900italic);
+
 body, table.body, th, h1, h2, h3, h4, h5, h6, td, p, strong {
-  font-family: Verdana, Arial;
+  font-family: "Lato", Verdana, Arial !important;
   font-weight: normal;
 }
 
@@ -69,7 +71,7 @@ table td {
 }
 
 a {
-  color: #3696c2;
+  color: #7E221B;
 }
 
 .cell-content.product-info,
@@ -82,7 +84,7 @@ a {
 
 html,
 #background-table {
-  background-color: #ebebeb;
+  background-color: #fff;
 }
 
 #background-table {
@@ -107,6 +109,7 @@ html,
   border: 1px solid #ebebeb;
   background: #FFF;
   padding: 5px;
+  border: 0;
 }
 
 table.logo-container {
@@ -129,7 +132,7 @@ td.logo img {
 
 td.email-heading {
   padding: 0 1%;
-  background: #e1f0f8;
+  background: #f2f2f2;
   border-right: 1px dashed #c3ced4;
   text-align: center;
   width: 58%;
@@ -150,7 +153,7 @@ td.email-heading p {
 
 td.store-info {
   padding: 2%;
-  background: #e1f0f8;
+  background: #f2f2f2;
   width: 40%;
 }
 
@@ -167,7 +170,7 @@ td.store-info p {
 
 td.store-info a {
   text-decoration: underline;
-  color: #3696c2;
+  color: #7E221B;
 }
 
 /* ============================================ *
@@ -228,7 +231,7 @@ td.order-details p {
 .product-info a.product-name {
   font-weight: 700;
   text-transform: uppercase;
-  color: #3696c2;
+  color: #333;
   text-decoration: none;
   vertical-align: middle;
   float: left;
@@ -238,7 +241,7 @@ td.order-details p {
 
 .table-totals {
   width: 100%;
-  background: #e1f0f8;
+  background: #f2f2f2;
 }
 
 .padding-totals {
@@ -261,7 +264,7 @@ td.order-details p {
 }
 
 .grand-total {
-  border-top: 1px solid #c3ced4;
+  border-top: 1px solid #d5d5db;
   padding-top: 5px;
   font-weight: 700;
   font-size: 15px;
@@ -360,7 +363,7 @@ td.order-details p {
   margin: 15px 0;
   width: 100%;
   background-color: #fffdd9;
-  border: 1px solid #fff74c;
+  border: 1px solid #d5d5db;
 }
 
 .message-container,
@@ -418,7 +421,7 @@ td.order-details p {
 }
 
 .action-button td {
-  background-color: #3696c2;
+  background-color: #333;
   color: #FFF;
   width: 100%;
   height: 40px;
@@ -580,7 +583,7 @@ table.social-button td a {
 }
 
 .panel a {
-  color: #3696c2;
+  color: #7E221B;
   text-decoration: none;
 }
 
@@ -687,7 +690,7 @@ p.sku {
 }
 
 .price-box .price {
-  color: #3399cc;
+  color: #333637;
   font-size: 16px;
 }
 
@@ -704,7 +707,7 @@ p.sku {
 
 .price-box .minimal-price-link {
   padding-left: 1em;
-  color: #3399cc;
+  color: #7E221B;
   display: block;
   /* We want this to show on its own line, otherwise the layout looks funky */
 }

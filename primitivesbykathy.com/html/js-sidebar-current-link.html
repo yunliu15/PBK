@@ -1,0 +1,23 @@
+<p>
+    <script type="text/javascript">// <![CDATA[
+    jQuery(function($){
+        $(document).ready(function(){
+            var links = $('.sidebar').find('li');
+            links.each(function(){
+                var anchor = $(this).children('a').first();
+                if (anchor.length) {
+                    var href = anchor.attr("href");
+                    var array = href.split('/');
+                    var n = array.length;
+                    var last = array[n-1] == ''? array[n-2] : array[n-1];
+                    var className = 'cms-' + last;
+                    if ($('body').hasClass(className)) {
+                        $(this).addClass('current');
+                    }
+                }
+
+            });
+        });
+    });
+    // ]]></script>
+</p>
