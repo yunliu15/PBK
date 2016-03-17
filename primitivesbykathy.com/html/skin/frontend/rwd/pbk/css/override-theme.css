@@ -70,6 +70,11 @@ a:active {
     padding: 15px;
 }
 
+.wrapper .breadcrumbs span,
+.wrapper .breadcrumbs a {
+    float: none;
+}
+
 tbody {background:#fff;}
 .amlabel-div tbody {background:none;}
 .wrapper select {
@@ -275,8 +280,9 @@ tr.Canceled {background:#FAF3F1!important;}
 .sidebar ul.level1 {
     padding-left: 10px;
 }
-.sidebar li.current strong{
-    font-weight: bold;
+.sidebar li.current strong
+{
+    font-weight: 900;
 }
 /****** Header ********/
 #header .skip-links,#header .skip-link {border:none;}
@@ -3429,7 +3435,8 @@ td.Discount + td .price {color: green !important;}
 .b2b-wrapper .btn-download:hover {
     background: #676B6C !important;
 }
-.b2b-wrapper .btn-download:active {
+.b2b-wrapper .btn-download:active,
+.b2b-wrapper .btn-download:focus {
     color: #fff;
 }
 .wrapper .b2b-wrapper .div-table .table-header input {

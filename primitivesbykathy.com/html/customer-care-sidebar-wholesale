@@ -1,48 +1,33 @@
 <div class="block block-customer-care">
-    <div class="block-title">
-        <strong><span>Customer Care</span></strong>
-    </div>
+    <div class="block-title"><strong><span>Customer Care</span></strong></div>
     <div class="block-content">
         <ul class="level0">
-            <li class="level0">
-                <strong class="all-upper">Contatct Us</strong>
+            <li class="level0"><strong class="all-upper">Contatct Us</strong>
                 <ul class="level1">
                     <li><a href="{{store url='customer-service'}}"><strong>Customer Service</strong></a></li>
-                    <li><a href="{{store url=''}}"><strong>Returns & Exchanges</strong></a></li>
-                    <li><a href="{{store url=''}}"><strong>Press Inquires</strong></a></li>
-                    <li><a href="{{store url=''}}"><strong>Product Ideas</strong></a></li>
-
+                    <li><a href="{{store url='returns-exchanges'}}"><strong>Returns &amp; Exchanges</strong></a></li>
+                    <li><a href="{{store url='press-inquires'}}"><strong>Press Inquires</strong></a></li>
+                    <li><a href="{{store url='product-ideas'}}"><strong>Product Ideas</strong></a></li>
                 </ul>
             </li>
-            <li class="level0">
-                <strong class="all-upper">Trade Shows</strong>
+            <li class="level0"><strong class="all-upper">Trade Shows</strong>
                 <ul class="level1">
-                    <li><a href="{{store url=''}}"><strong>Rep Shows</strong></a></li>
-                    <li><a href="{{store url=''}}"><strong>Permanet Showrooms</strong></a></li>
-
+                    <li><a href="{{store url='rep-shows'}}"><strong>Rep Shows</strong></a></li>
+                    <li><a href="{{store url='permanet-showrooms'}}"><strong>Permanet Showrooms</strong></a></li>
                 </ul>
             </li>
-
-            <li class="level0">
-                <a href="{{store url=''}}"><strong class="all-upper">Find a Rep</strong></a></strong>
-            </li>
-            <li class="level0">
-                <a href="{{store url=''}}"><strong class="all-upper">Visit Us</strong></a></strong>
-            </li>
-            <li class="level0">
-                <a href="{{store url=''}}"><strong class="all-upper">Catalog request</strong></a></strong>
-            </li>
-            <li class="level0">
-                <a href="{{store url=''}}"><strong class="all-upper">FAQS</strong></a></strong>
-            </li>
-            <li class="level0">
-                <strong class="all-upper">Ordering Info</strong>
+            <li class="level0"><a href="{{store url='find-a-rep'}}"><strong class="all-upper">Find a Rep</strong></a></li>
+            <li class="level0"><a href="{{store url='visit-us'}}"><strong class="all-upper">Visit Us</strong></a></li>
+            <li class="level0"><a href="{{store url='request-catalog'}}"><strong class="all-upper">Catalog request</strong></a></li>
+            <li class="level0"><a href="{{store url='faq'}}"><strong class="all-upper">FAQS</strong></a></li>
+            <li class="level0"><strong class="all-upper">Ordering Info</strong>
                 <ul class="level1">
-                    <li><a href="{{store url=''}}"><strong>Shipping Information</strong></a></li>
-                    <li><a href="{{store url=''}}"><strong>Payment & Terms</strong></a></li>
+                    <li><a href="{{store url='ordering-info'}}"><strong>Shipping Information</strong></a></li>
+                    <li><a href="{{store url='ordering-info'}}"><strong>Payment &amp; Terms</strong></a></li>
                     <li><a href="{{store url=''}}"><strong>International Customers</strong></a></li>
                 </ul>
             </li>
         </ul>
     </div>
+</div>iv>
 </div>
