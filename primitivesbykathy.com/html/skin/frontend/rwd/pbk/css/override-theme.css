@@ -175,6 +175,9 @@ p.no-bottom {margin-bottom:0!important;}
     padding: 0;
 }
 .products-grid .button {border-width:1px;border-style:solid;border-color:#333;box-sizing: border-box;  }
+.products-grid a.button {
+    padding: 6px 10px;
+}
 .products-grid .button.btn-cart{padding-top:6px; padding-bottom:6px;}
 .red-button {
     background: #fff;
@@ -2180,6 +2183,10 @@ body.amquickview-ajax-view {
     top: 2px;
 }
 
+.wrapper .amshopby-item-top {
+    min-width: 190px;
+}
+
 @media only screen and (min-width: 771px) {
     .block-layered-nav .block-content > dl.amshopby-narrow-by-list > dt.open:before {
         content:'';
@@ -3767,3 +3774,4 @@ td.Discount + td .price {color: green !important;}
     border: 1px solid #e1e1e1;
     margin: 15px 0;
 }
+
