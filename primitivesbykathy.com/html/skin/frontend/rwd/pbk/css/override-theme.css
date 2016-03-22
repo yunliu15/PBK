@@ -373,7 +373,7 @@ tr.Canceled {background:#FAF3F1!important;}
 .account-dropdown:hover .account-content {display: block;}
 
 .account-dropdown .arrow-down:after {
-    border-color: #676B6C transparent transparent;
+    border-color: #646263 transparent transparent;
 }
 #header-account .links .account-dropdown .account-content a {border-right: none;}
 
@@ -498,7 +498,7 @@ tr.Canceled {background:#FAF3F1!important;}
     border: none;
 }
 .wrapper .btn-remove:hover:after {
-    color: #676B6C;
+    color: #646263;
 }
 .wrapper .btn-remove:hover {
     background: none;
@@ -582,7 +582,7 @@ tr.Canceled {background:#FAF3F1!important;}
 
 }
 .wrapper .header-minicart .minicart-actions .cart-link:hover {
-    background: #676B6C;
+    background: #646263;
 }
 .header-minicart .minicart-actions .cart-link:before {
     content: "";
@@ -751,7 +751,7 @@ tr.Canceled {background:#FAF3F1!important;}
 #header-login .block-login {margin-bottom:0;}
 .minilogin .skip-link {position: relative;}
 .minilogin.arrow-down:after {
-    border-color: #676B6C transparent transparent;
+    border-color: #646263 transparent transparent;
     margin-top: 3px;
     margin-left: -5px;
     float:right;
@@ -1558,7 +1558,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 }
 .cart .qty-btn-up:hover,
 .cart .qty-btn-down:hover {
-    background: #676B6C;
+    background: #646263;
 }
 .cart .qty-btn-up {
     margin-bottom: 5px;
@@ -2018,13 +2018,13 @@ body.amquickview-ajax-view {
     min-height:0;
 }
 .products-grid .button.btn-cart:hover {
-    background: #676B6C;
-    border-color: #676B6C;
+    background: #646263;
+    border-color: #646263;
 }
 
 .link-wishlist.button.icon-moon:hover {
-    background: #676B6C;
-    border-color: #676B6C;
+    background: #646263;
+    border-color: #646263;
 }
 .link-wishlist.icon-moon:before {
     content: "\f004";
@@ -2114,11 +2114,11 @@ body.amquickview-ajax-view {
 
 .wrapper .split-button .change:after {
     top: 12px;
-    border-top: 4px solid #676B6C;
+    border-top: 4px solid #646263;
 
 }
 .wrapper .split-button .change.active:after {
-    border-bottom: 4px solid #676B6C;
+    border-bottom: 4px solid #646263;
     top: 12px;
 }
 .cart .split-button .change.active:after {
@@ -2243,7 +2243,7 @@ body.amquickview-ajax-view {
 }
 .products-grid .split-button.wishlist-selector .change:hover,
 .products-grid .split-button.wishlist-selector .change.active {
-    background: #676B6C;
+    background: #646263;
 }
 .products-grid .split-button.wishlist-selector .change:after {
     font-family: 'icomoon' !important;
@@ -2463,6 +2463,7 @@ body.amquickview-ajax-view {
     border: 1px solid #333;
     box-sizing: border-box;
     outline: none;
+
 }
 
 
@@ -2475,11 +2476,11 @@ body.amquickview-ajax-view {
     width: 0;
     height: 0;
     display: block;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
     border-bottom: 4px solid #B1B4B7;
     border-top: none;
-    top: 13px;
+    top: 14px;
 }
 .amshopby-cat.level0.has-child.open:before {
     content: '';
@@ -2487,8 +2488,8 @@ body.amquickview-ajax-view {
     width: 0;
     height: 0;
     display: block;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
     border-top: 4px solid #B1B4B7;
     border-bottom: none;
 
@@ -2566,6 +2567,36 @@ body.amquickview-ajax-view {
 .cms-find-a-store #store_locator_form .fieldset {
     padding: 10px 0;
 }
+
+.wrapper .col2-right-layout #map, .wrapper .col2-left-layout #map {
+    width: 100%;
+}
+.location-search .input-box {
+    padding-top: 0;
+}
+.location-search .input-box select {
+    height: 30px;
+    padding: 5px;
+}
+#store_locator_form .button-set button{
+    padding: 6px 15px 5px;
+}
+#store_locator_form .button-set {
+    position: relative;
+    top: 2px;
+}
+.wrapper #store_locator_form .location-search li.first {
+    width: 310px;
+}
+
+@media (max-width: 611px) {
+    #store_locator_form .button-set {
+        clear: left;
+        margin-bottom: 10px;
+        top: 10px;
+    }
+}
+
     /********* Footer **********/
 .newsletter-message {
     max-width: 1200px;
@@ -3191,8 +3222,8 @@ body[class^=" b2b"] .temp-wrapper {background:none;}
 }
 .wrapper .b2b-sticky-footer .btn-dashboard:hover,
 .wrapper .b2b-sticky-footer .btn-view-cart:hover {
-    background: #676B6C;
-    border: 1px solid #676B6C;
+    background: #646263;
+    border: 1px solid #646263;
 }
 
 .b2b-dashboard-index .b2b-wrapper .b2b-dashboard-container .b2b-iwd-brand-download a {
@@ -3240,8 +3271,8 @@ body[class^=" b2b"] .footer-bottom {
     border: 1px solid #333;
 }
 .wrapper .b2b-wrapper .register-page .register-actions .b2b-button:hover span span {
-    background-color: #676B6C;
-    border: 1px solid #676B6C;
+    background-color: #646263;
+    border: 1px solid #646263;
 }
 .wrapper .b2b-wrapper .register-page select {
     color: #333637;
@@ -3297,7 +3328,7 @@ body[class^=" b2b"] .footer-bottom {
 }
 .wrapper .b2b-retail-login .b2b-register:hover {
 
-    background: #676B6C;
+    background: #646263;
 }
 /* Quick order */
 .wrapper .b2b-wrapper .div-table {
@@ -3333,8 +3364,8 @@ body[class^=" b2b"] .footer-bottom {
     line-height: 14px;
 }
 .wrapper .b2b-wrapper .b2b-quick-order .input-wrapper .quick-order-search:hover {
-    background-color: #676B6C;
-    border-color: #676B6C;
+    background-color: #646263;
+    border-color: #646263;
 }
 .b2b-wrapper .b2b-quick-order .input-wrapper .quick-order-search:hover:after {
     color: #fff;
@@ -3421,7 +3452,7 @@ body[class^=" b2b"] .footer-bottom {
 }
 
 .wrapper .b2b-wrapper .b2b-cart-total .btn-view-cart:hover {
-    background-color: #676B6C;
+    background-color: #646263;
 }
 
 
@@ -3517,7 +3548,7 @@ td.Discount + td .price {color: green !important;}
 }
 .wrapper #b2b-view-modal .btn-continue:hover {
 
-    background-color: #676B6C !important;
+    background-color: #646263 !important;
 }
 #b2b-view-modal .b2b-modal-dialog {
     max-width: 100%;
@@ -3643,7 +3674,7 @@ td.Discount + td .price {color: green !important;}
     background: #333 !important;
 }
 .b2b-wrapper .btn-download:hover {
-    background: #676B6C !important;
+    background: #646263 !important;
 }
 .b2b-wrapper .btn-download:active,
 .b2b-wrapper .btn-download:focus {

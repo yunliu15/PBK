@@ -941,21 +941,21 @@ body:not(.customer-account) .block:first-child .block-title {
 .cart-table .product-cart-actions .button:hover,
 #co-shipping-method-form .buttons-set .button:hover,
 .footer .button:hover {
-  background: #676B6C;
+  background: #646263;
   cursor: pointer;
 }
 .button:active,
 .cart-table .product-cart-actions .button:active,
 #co-shipping-method-form .buttons-set .button:active,
 .footer .button:active {
-  background: #676B6C;
+  background: #646263;
   color: #FFFFFF;
 }
 .button:focus,
 .cart-table .product-cart-actions .button:focus,
 #co-shipping-method-form .buttons-set .button:focus,
 .footer .button:focus {
-  background-color: #676B6C;
+  background-color: #646263;
   outline: none;
   color: #FFFFFF;
 }
@@ -2237,9 +2237,9 @@ span.weee {
 
 .pages .current,
 .pages .current:hover {
-  border: 1px solid #676B6C;
+  border: 1px solid #646263;
   width: 30px;
-  background-color: #676B6C;
+  background-color: #646263;
   cursor: default;
 }
 
@@ -2407,7 +2407,7 @@ body.customer-account .data-table .summary-collapse:hover:before {
   display: block;
   border-right: 7px solid transparent;
   border-left: 7px solid transparent;
-  border-top: 7px solid #676B6C;
+  border-top: 7px solid #646263;
   border-bottom: none;
   position: static;
   display: inline-block;
@@ -2439,7 +2439,7 @@ body.customer-account .data-table .show-details .summary-collapse:hover:before {
   display: block;
   border-right: 7px solid transparent;
   border-left: 7px solid transparent;
-  border-bottom: 7px solid #676B6C;
+  border-bottom: 7px solid #646263;
   border-top: none;
   position: static;
   display: inline-block;
