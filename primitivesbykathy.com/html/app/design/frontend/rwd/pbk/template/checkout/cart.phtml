@@ -31,6 +31,26 @@
  * @var $this Mage_Checkout_Block_Cart
  */
 ?>
+<?php
+
+//$quote2 = Mage::getSingleton('checkout/session')->getQuote();
+//$discountTotal = 0;
+//foreach ($quote2->getAllItems() as $item){
+//    //var_dump($item);
+//    //$discountTotal += $item->getDiscountAmount();
+//}
+
+//$rules = Mage::getResourceModel('salesrule/rule_collection')->load();
+//
+//$couponCode = Mage::getSingleton('checkout/session')
+//    ->getQuote()
+//    ->getData();
+//var_dump($couponCode);
+
+
+
+?>
+
 
 <?php $_priceDisplay = ($this->helper('tax')->displayCartBothPrices()) ? 'display-both-prices' : 'display-single-price'; ?>
 <div class="cart <?php echo $_priceDisplay; ?>">
@@ -57,7 +77,7 @@
         <div class="total-top-wrapper">
             <div class="total-top">
                 <div class="total-left">
-                    <span class="all-upper"><?php echo $this->__('Order Subtotal'); ?></span><br>
+                    <span class="all-upper"><?php echo $this->__('Order Total'); ?></span><br>
                     <span class="view-details">View <a class="red-link" href="#table">Order Details </a> Below</span>
                 </div>
                 <?php //subtotal goes here?>
@@ -172,6 +192,7 @@
             </tfoot>
             <tbody>
             <?php foreach($this->getItems() as $_item): ?>
+                <?php //var_dump($_item->getDiscountedAmount());   ?>
                 <?php echo $this->getItemHtml($_item) ?>
             <?php endforeach ?>
             </tbody>

@@ -628,6 +628,14 @@ tr.Canceled {background:#FAF3F1!important;}
 .wrapper .header-minicart .subtotal {
     background: none;
 }
+
+.header-minicart .mini-products-list > li {
+    z-index: 100;
+}
+.header-minicart .mini-products-list .split-button .list-container li {
+    z-index: 200;
+}
+
 @media only screen and (max-width: 770px) {
     .wrapper .header-minicart .minicart-actions {
         padding-bottom: 10px;
@@ -1520,7 +1528,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     max-width:120px;
     border: 1px solid #d5d5db;
     padding:20px;
-    background:#f2f2f2;
+    background:#fff;
 }
 .cart-table td.product-cart-image {width:150px;}
 .cart .cart-table .product-cart-image {padding-left:10px;}

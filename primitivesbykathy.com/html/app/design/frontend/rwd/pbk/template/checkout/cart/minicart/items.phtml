@@ -77,7 +77,7 @@ if(empty($_cartQty)) {
                 <?php if ($this->canApplyMsrp()): ?>
                     <span class="map-cart-sidebar-total"><?php echo $this->__('ORDER TOTAL WILL BE DISPLAYED BEFORE YOU SUBMIT THE ORDER'); ?></span>
                 <?php else: ?>
-                    <span class="label"><?php echo $this->__('Cart Subtotal:') ?></span> <?php
+                    <span class="label"><?php echo $this->__('Cart Total:') ?></span> <?php
 
                     $currency_code = Mage::app()->getStore()->getCurrentCurrencyCode();
                     $currency_symbol = Mage::app()->getLocale()->currency( $currency_code )->getSymbol();
