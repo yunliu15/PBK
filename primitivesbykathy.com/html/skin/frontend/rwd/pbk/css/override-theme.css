@@ -1543,7 +1543,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .cart .product-cart-actions {position: relative;}
 .cart .qty-btn {
     position: absolute;
-    top: 20px;
+    top: 19px;
     right: 30px;
 
 }
@@ -1552,7 +1552,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 }
 .cart .qty-btn-up,
 .cart .qty-btn-down {
-    padding: 5px 2px;
+    padding: 6px 5px;
     background: #333;
     cursor: pointer;
 }
@@ -1568,8 +1568,8 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     width: 0;
     height: 0;
     display: block;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
     border-bottom: 4px solid #fff;
     border-top: none;
 }
@@ -1578,8 +1578,8 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     width: 0;
     height: 0;
     display: block;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
     border-top: 4px solid #fff;
     border-bottom: none;
 }
@@ -2615,10 +2615,9 @@ body.amquickview-ajax-view {
 
 }
 .footer-above {
-    height:3px;
+    height:5px;
     background-image:url("../images/footer_top_bground.gif");
     background-repeat: repeat;
-    box-shadow: 1px -1px 5px #888;
 }
 
 .footer-container .footer {
