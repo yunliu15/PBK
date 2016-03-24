@@ -316,7 +316,7 @@ tr.Canceled {background:#FAF3F1!important;}
     background-repeat: repeat-x;
     background-position: center;
     background-size: auto 100%;
-    box-shadow: 1px 1px #cfcfcf;
+    padding: 1px 0;
 }
 
 
@@ -333,8 +333,8 @@ tr.Canceled {background:#FAF3F1!important;}
 }
 #header-account .welcome-msg a[title='Send Invitations'] {display:none;}
 #header-account .links li:not(:last-of-type) a {border-right: 1px solid #333637;}
-#header-account .links li {padding:5px 0;}
-#header-search-hide {float:right;margin-top:80px;}
+#header-account .links li {padding: 0;}
+#header-search-hide {float:right;margin-top:60px;}
 #header-nav-hide {clear:both;}
 #header #header-account {padding:0;}
 
@@ -563,8 +563,8 @@ tr.Canceled {background:#FAF3F1!important;}
     left: 8px;
 }
 .minicart-wrapper .split-button .list-container {
-    left: -12.5%;
-    top: 90%;
+    left: 100%;
+    top: 30%;
 }
 /*.minicart-wrapper .split-button .list-container {
     top: 90px;
@@ -629,11 +629,14 @@ tr.Canceled {background:#FAF3F1!important;}
     background: none;
 }
 
-.header-minicart .mini-products-list > li {
+.header-minicart .mini-products-list {
     z-index: 100;
+    position: relative;
 }
 .header-minicart .mini-products-list .split-button .list-container li {
     z-index: 200;
+    margin: 0;
+    padding: 0;
 }
 
 @media only screen and (max-width: 770px) {
@@ -667,7 +670,7 @@ tr.Canceled {background:#FAF3F1!important;}
 }
 .nav-wishlist-cart {position:relative;top:9px;}
 
-.header-minicart {height: 50px;/*margin-top:-7px;*/}
+.header-minicart {height: 43px;/*margin-top:-7px;*/}
 .header-minicart .icon-moon:before {
     content: "";
 
@@ -811,16 +814,9 @@ tr.Canceled {background:#FAF3F1!important;}
 .wrapper .ms-topmenu .ms-label {
     height: 43px;
     position: relative;
+    opacity: 1;
 }
-.ms-topmenu .ms-level0:hover .ms-label:after {
-    content: "";
-    border-style: none solid solid solid;
-    border-width: 0 12px 12px 12px;
-    border-color: transparent transparent #fff transparent;
-    position: absolute;
-    left: 40%;
-    top: 29px;
-}
+
 .ms-topmenu .ms-level0:hover .anchor_text:after {
     display: none;
 }
@@ -867,6 +863,49 @@ tr.Canceled {background:#FAF3F1!important;}
     font-weight: 700;
 }
 
+@media (min-width: 1065px) {
+    .ms-topmenu .ms-level0:hover .ms-label:after {
+        content: "";
+        border-style: none solid solid solid;
+        border-width: 0 12px 12px 12px;
+        border-color: transparent transparent #fff transparent;
+        position: absolute;
+        left: 40%;
+        top: 29px;
+    }
+}
+
+/* mobile size */
+.ms-megamenu .anchor_mbmenu, .ms-megamenu .anchor_lmbmenu {
+    background: none !important;
+}
+
+
+
+
+.skip-active .ms-topmenu .ms-level0 {
+    display: block;
+}
+.skip-active .ms-megamenu .anchor_mbmenu {
+    display: none !important;
+}
+
+/* made changes in megamenu/css/config/default.css: changed max-width: 767px to 1064px */
+@media (max-width: 1064px) {
+    .ms-megamenu .anchor_mbmenu .anchor_mbmenu_text {
+        position: absolute;
+        left: 0;
+        top: -23px;
+        font-size: 16px;
+    }
+    .ms-megamenu .ms-topmenu {
+        top: 30px;
+        margin-bottom: 40px;
+    }
+}
+#header .skip-links.nav {
+    display: none;
+}
     /* dyanamic listing */
 /*small.glyphicon.glyphicon-th-large {display: none;}
 .wrapper .ms-category-dynamic .col-level .form-group.parent {
@@ -1608,6 +1647,10 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .product-cart-info .wishlist-selector:hover {
     border-color: #7E221B;
 }
+.cart .split-button.wishlist-selector .change {
+    font-size: 12px;
+    text-transform: uppercase;
+}
 .cart .split-button.wishlist-selector .change:after {
     top: 8px;
 }
@@ -2298,7 +2341,7 @@ body.amquickview-ajax-view {
 /*********Layered Navigation ************/
 
 .sidebar .block-layered-nav > .block-title {
-    display: none;
+    display: none !important;
 }
 .sidebar .block-layered-nav .block-content {
     padding: 0;
@@ -2340,11 +2383,62 @@ body.amquickview-ajax-view {
     position: relative;
 }
 
-.current-filter .Black:before {
+/* color filters */
+.current-filter span[data-title="color"] ~ span:before {
     content:'';
     width: 15px;
     height: 15px;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+
+.current-filter .Black:before,
+.amshopby-narrow-by-list dd li[data-text="Black"] > a:before{
+
     background: black;
+
+}
+.current-filter .Blue:before,
+.amshopby-narrow-by-list dd li[data-text="Blue"] > a:before{
+    background: blue;
+}
+.current-filter .Red:before,
+.amshopby-narrow-by-list dd li[data-text="Red"] > a:before{
+    background: red;
+}
+
+.current-filter .Green:before,
+.amshopby-narrow-by-list dd li[data-text="Green"] > a:before {
+    background: Green;
+}
+.current-filter .Gold:before,
+.amshopby-narrow-by-list dd li[data-text="Gold"] > a:before {
+    background: Gold;
+}
+.current-filter .Gray:before,
+.amshopby-narrow-by-list dd li[data-text="Gray"] > a:before {
+    background: Gray;
+}
+.current-filter .Brown:before,
+.amshopby-narrow-by-list dd li[data-text="Brown"] > a:before{
+    background: brown;
+}
+.current-filter .Silver:before,
+.amshopby-narrow-by-list dd li[data-text="Silver"] > a:before{
+    background: silver;
+}
+.current-filter .Pink:before,
+.amshopby-narrow-by-list dd li[data-text="Pink"] > a:before{
+    background: pink;
+}
+
+
+.amshopby-narrow-by-list[data-title="color"] li > a:before {
+    content:'';
+    width: 15px;
+    height: 15px;
     display: inline-block;
     margin-right: 5px;
     position: relative;
@@ -2352,7 +2446,7 @@ body.amquickview-ajax-view {
 }
 
 .wrapper .amshopby-item-top {
-    min-width: 16.6%;
+    min-width: 16.3%;
 }
 
 @media only screen and (min-width: 771px) {
@@ -2800,9 +2894,9 @@ body.amquickview-ajax-view {
 
 @media only screen and (min-width: 950px) {
     #header #header-account {float:right;padding-top:2px;}
-    header .need-help {float:left;padding-top:8px;}
+    header .need-help {float:left;}
     #header #header-account {
-        padding: 5px 0;
+        padding: 0;
     }
     #header .minilogin {
         line-height: 12px;
@@ -3047,18 +3141,18 @@ body.amquickview-ajax-view {
 }
 
 @media only screen and (max-width: 479px){
-    .nav-wishlist-cart-wrapper {padding:5px 15px;}
+    .nav-wishlist-cart-wrapper {padding: 0 15px;}
     .nav-wishlist-cart {
         padding: 0;
     }
-
+    .page-header .wishlist-cart-wrapper {
+        right: 0;
+    }
     #header .skip-links.nav {
         left: 15px;
-        top: 10px;
     }
     #header .skip-links.search {
         left: 50px;
-        top: 10px;
     }
     .top-container {padding-left:15px;padding-right:15px;}
 

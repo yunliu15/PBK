@@ -75,8 +75,12 @@
             <!-- Search -->
 
             <div id="header-search-hide" class="hide-mobile">
-                    <?php echo $this->getChildHtml('topSearch') ?>
-                </div>
+<!--                    --><?php //echo $this->getChildHtml('top.search') ?>
+                    <?php echo $this->getLayout()
+                        ->createBlock("core/template")
+                        ->setTemplate("catalogsearch/form.mini.phtml")
+                        ->toHtml(); ?>
+            </div>
 
                 <!-- Logo -->
                 <a class="logo" href="<?php echo $this->getUrl('') ?>">
@@ -130,7 +134,7 @@
 
                 <!-- Navigation -->
 
-                <div id="header-nav-hide" class="hide-mobile">
+                <div id="header-nav-hid" class="">
                     <?php echo $this->getChildHtml('topMenu') ?>
                 </div>
 
@@ -141,7 +145,7 @@
                 <?php echo $this->getChildHtml('topSearch') ?>
             </div>
             <div id="header-nav" class="skip-content">
-                <?php echo $this->getChildHtml('topMenu') ?>
+                <?php //echo $this->getChildHtml('topMenu') ?>
             </div>
 
 
