@@ -774,7 +774,7 @@ body:not(.customer-account) .block:first-child .block-title {
     border-style: solid;
     border-color: #cccccc;*/
     position: relative;
-    /*background-color: #f4f4f4;*/
+    /*background-color: #EDEBEC;*/
     display: block;
     width: 100%;
     cursor: pointer;
@@ -820,7 +820,7 @@ body:not(.customer-account) .block:first-child .block-title {
     border-style: solid;
     border-color: #cccccc;*/
     position: relative;
-    /*background-color: #f4f4f4;*/
+    /*background-color: #EDEBEC;*/
   }
   .sidebar .block:not(.block-layered-nav) .block-title.active > strong:after {
     content: '';
@@ -1280,7 +1280,7 @@ a.button:hover {
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #cccccc;
-  background: #f4f4f4;
+  background: #EDEBEC;
 }
 
 /* -------------------------------------------- *
@@ -1580,7 +1580,7 @@ a.button:hover {
   position: relative;
   margin-bottom: 5px;
   padding: 7px 10px 7px 20px;
-  background: #f4f4f4;
+  background: #EDEBEC;
   font-size: 15px;
 }
 
@@ -1696,7 +1696,7 @@ a.button:hover {
   margin: 5px 15px 15px;
   padding: 15px;
   border: 1px solid #cccccc;
-  background: #f4f4f4;
+  background: #EDEBEC;
 }
 
 .payment-methods .form-list:before {
@@ -1721,7 +1721,7 @@ a.button:hover {
   display: block;
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
-  border-bottom: 10px solid #f4f4f4;
+  border-bottom: 10px solid #EDEBEC;
   border-top: none;
   top: -10px;
   left: 30px;
@@ -2084,7 +2084,7 @@ span.weee {
   margin-bottom: 15px;
   border-bottom: 1px solid #cccccc;
   border-top: 1px solid #cccccc;
-  background: #f4f4f4;
+  background: #EDEBEC;
   padding: 5px 10px 0px 10px;
 }
 .toolbar:after {
@@ -2803,7 +2803,7 @@ p.required,
 #co-shipping-method-form .sp-methods dd label,
 .product-options ul.options-list label {
   color: #636363;
-  /*background-color: #f4f4f4;*/
+  /*background-color: #EDEBEC;*/
 
   display: inline-block;
   width: auto;
@@ -2893,7 +2893,7 @@ form .form-instructions {
 }
 
 .data-table th {
-  background: #f4f4f4;
+  background: #EDEBEC;
   text-transform: capitalize;
   font-family: "Lato", sans-serif;
   line-height: 1.4;
@@ -2911,7 +2911,7 @@ form .form-instructions {
 }
 
 .data-table tfoot tr {
-  background: #f4f4f4;
+  background: #EDEBEC;
 }
 
 .data-table tbody td .item-options {
@@ -3407,7 +3407,7 @@ a.skip-link {
 
   .no-touch #header-account a:hover,
   .no-touch .nav-primary a:hover {
-    background-color: #f4f4f4;
+    background-color: #EDEBEC;
     text-decoration: none;
   }
 }
@@ -4678,7 +4678,7 @@ p.product-name a:hover {
   border-style: solid;
   border-color: #cccccc;
   position: relative;
-  background-color: #f4f4f4;
+  background-color: #EDEBEC;
   cursor: pointer;
 }
 .block-layered-nav .block-subtitle--filter:after {
@@ -4725,7 +4725,7 @@ p.product-name a:hover {
   border-style: solid;
   border-color: #cccccc;
   position: relative;
-  background-color: #f4f4f4;
+  background-color: #EDEBEC;
   display: block;
 }
 .block-layered-nav .block-content > dl > dt:after {
@@ -4889,7 +4889,7 @@ p.product-name a:hover {
 
   .block-layered-nav dl ol > li > a {
     color: #636363;
-    background-color: #f4f4f4;
+    background-color: #EDEBEC;
     padding: 5px 10px;
   }
   .block-layered-nav dl ol > li > a:hover {
@@ -5370,7 +5370,7 @@ p.product-name a:hover {
     width: 100%;
     position: relative;
     border: 1px solid #cccccc;
-    background-color: #f4f4f4;
+    background-color: #EDEBEC;
   }
   .product-collateral .toggle-tabs li {
     float: left;
@@ -5458,7 +5458,7 @@ p.product-name a:hover {
     border-style: solid;
     border-color: #cccccc;
     position: relative;
-    background-color: #f4f4f4;
+    background-color: #EDEBEC;
     display: block;
   }
   .product-collateral > dl > dt:after {
@@ -5747,7 +5747,7 @@ p.product-name a:hover {
 }
 
 .product-options-bottom {
-  /*background-color: #f4f4f4;*/
+  /*background-color: #EDEBEC;*/
   padding: 15px 20px;
   /*border: 1px solid #cccccc;*/
   border-top: 0;
@@ -6128,7 +6128,7 @@ p.product-name a:hover {
 .cart-forms .giftcard,
 .cart-forms .shipping {
   padding: 10px;
-  background-color: #f4f4f4;
+  background-color: #EDEBEC;
   border: 1px solid #d5d5db;
 }
 
@@ -6935,7 +6935,7 @@ p.product-name a:hover {
 
 /* Using .no-touch since touch devices emulate hover, thereby making steps look active that are not */
 .no-touch .opc .section.allow:not(.active) .step-title:hover {
-  background-color: #f4f4f4;
+  background-color: #EDEBEC;
 }
 
 .opc .section.active .step-title {
@@ -7513,7 +7513,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
   border: 1px solid #fff;
   margin: 0;
   white-space: nowrap;
-  background: #f4f4f4;
+  background: #EDEBEC;
 }
 
 .configurable-swatch-list {
@@ -7572,7 +7572,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
   border-color: #333637;
 }
 #narrow-by-list dd .swatch-label {
-  background: #f4f4f4;
+  background: #EDEBEC;
   border: 1px solid #cccccc;
   border-radius: 3px;
   display: block;
@@ -9401,7 +9401,7 @@ div.paypal-logo span > img {
   opacity: 1;
 }
 .header-minicart .subtotal {
-  background-color: #f2f2f2;
+  background-color: #EDEBEC;
   text-align: center;
   line-height: 2em;
 }
@@ -9552,7 +9552,7 @@ div.paypal-logo span > img {
   width: 100%;
 }
 .search-autocomplete ul li {
-  border-bottom: 1px solid #f4f4f4;
+  border-bottom: 1px solid #EDEBEC;
 
   cursor: pointer;
   font-size: 12px;
@@ -9591,7 +9591,7 @@ div.paypal-logo span > img {
  * Search - Advanced
  * ============================================ */
 .advanced-search {
-  background: #f4f4f4;
+  background: #EDEBEC;
   border: 1px solid #ededed;
   padding: 30px;
 }
@@ -9767,7 +9767,7 @@ div.paypal-logo span > img {
   border-style: solid;
   border-color: #cccccc;
   position: relative;
-  background-color: #f4f4f4;
+  background-color: #EDEBEC;
   display: block;
 }
 #accordion > dl > dt:after {
@@ -9947,7 +9947,7 @@ div.paypal-logo span > img {
 }
 
 .product-tags {
-  background-color: #f4f4f4;
+  background-color: #EDEBEC;
   border: 1px solid #cccccc;
   float: left;
   margin-bottom: 10px;
@@ -10394,7 +10394,7 @@ body[class*="checkout-multishipping-"] .checkout-progress > li {
   width: 20%;
   text-align: center;
   padding: 8px 1% 6px;
-  background: #f4f4f4;
+  background: #EDEBEC;
   text-transform: uppercase;
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
@@ -10492,7 +10492,7 @@ body[class*="checkout-multishipping-"] #review-buttons-container {
 .checkout-multishipping-overview .col-2 .box-title h4 {
   font-weight: normal;
   width: 100%;
-  background: #f4f4f4;
+  background: #EDEBEC;
   border-bottom: 1px solid #cccccc;
   padding: 10px;
   font-size: 14px;
@@ -10504,7 +10504,7 @@ body[class*="checkout-multishipping-"] #review-buttons-container {
 .checkout-multishipping-overview .col-2 > h4 {
   font-weight: normal;
   width: 100%;
-  background: #f4f4f4;
+  background: #EDEBEC;
   border-bottom: 1px solid #cccccc;
   padding: 10px;
   font-size: 14px;
