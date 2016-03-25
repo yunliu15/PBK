@@ -300,7 +300,7 @@ tr.Canceled {background:#FAF3F1!important;}
 .sidebar ul.level1 {
     padding-left: 10px;
 }
-.sidebar ul.level1 li.current strong
+.sidebar li.current > a > strong
 {
     font-weight: 900;
 }
@@ -1002,7 +1002,7 @@ tr.Canceled {background:#FAF3F1!important;}
     overflow: hidden;
     width: 100%;
     position: relative;
-    top: -16px;
+
 }
 .slider img {
     max-width: 100%;
@@ -1158,7 +1158,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 .featured-benefit .description {text-align:left;display:table-cell;vertical-align:top;padding-left:20px;}
 .featured-benefit .img-wrapper {display:table-cell;padding: 20px 30px;
-    background-color: #EDEBEC;}
+    background-color: #fff;}
 .featured-benefit > .widget > p {clear:both;}
 
 .cms-index-index .featured .products-grid .actions {display:block;}
@@ -1595,7 +1595,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .cart .qty-btn {
     position: absolute;
     top: 19px;
-    right: 30px;
+    right: 25%;
 
 }
 .cart .qty-input {
@@ -1717,7 +1717,22 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     margin: 10px -4px 10px;height:44px;
     width: calc(100% - 105px);
     left: 3px;}
-.cart-forms #discount-coupon-form .button-wrapper {margin-bottom:10px;}
+.cart-forms #discount-coupon-form .button-wrapper {margin-bottom:10px;position: relative;}
+.cart-forms #discount-coupon-form .button-wrapper .cancel-coupon {
+    position: absolute;
+    display: block;
+    left: 20px;
+    top: 90%;
+}
+
+
+/*.cart-forms #discount-coupon-form .button-wrapper button {
+    border: 1px solid #d5d5db;
+    padding: 10px 28px;
+    background: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+}*/
 
 .cart .cart-forms {padding-left:0;}
 .cart .cart-totals-wrapper h4 {background:#333;padding:15px 25px;font-size:16px;color: #fff;}
@@ -1728,6 +1743,10 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     padding-right:20px;
     font-weight:bold;
     width:64%;
+}
+
+.cart #shopping-cart-totals-table tr > td:first-of-type > br:last-of-type {
+    display:none;
 }
 .cart #shopping-cart-totals-table tr > td:first-of-type:after {
     content:":";
@@ -1770,6 +1789,36 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 #shopping-cart-totals-table .summary-collapse {display: inline;}
 #shopping-cart-totals-table .summary-details br {display: none;}
+.cart-bottom-right {
+    width: 40%;
+    float: right;
+    max-width: 425px;
+}
+.cart .cart-forms, .cart .cart-totals-wrapper, .crosssell {
+    float: none;
+    clear: none;
+    width: 100%;
+    padding-left: 0;
+
+}
+@media only screen and (max-width: 979px) {
+    .cart.display-single-price .cart-forms, .cart.display-single-price .cart-totals-wrapper, .cart.display-single-price .crosssell {
+        width: 100%;
+        float: none;
+        padding-left: 0;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .cart-bottom-right,
+    .cart .ordering-info {
+        width: 100%;
+        float: none;
+        max-width: 100%;
+    }
+    .cart .ordering-info {
+        margin-top: 20px;
+    }
+}
 
 /******* Wish List Page*********/
 .wrapper .button.button-secondary {
@@ -3828,6 +3877,23 @@ td.Discount + td .price {color: green !important;}
     margin-right: -2px;
     padding: 8px 25px 7px;
 }
+
+.b2b-sticky-footer .btn-checkout:after {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    content: "\f105";
+    color: #fff;
+    position: relative;
+    left: 4px;
+    top: 3px;
+    font-size: 20px;
+    line-height: 8px;
+}
+
 .b2b-sticky-footer .right {
     float: right;
 }

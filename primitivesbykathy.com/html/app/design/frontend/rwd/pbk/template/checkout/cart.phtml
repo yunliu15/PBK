@@ -200,9 +200,10 @@
         <script type="text/javascript">decorateTable('shopping-cart-table')</script>
     </form>
 
-    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('ordering_info')->toHtml();?>
+
 
     <?php echo $this->getChildHtml('shopping.cart.table.after'); ?>
+    <div class="cart-bottom-right">
     <div class="cart-forms">
         <?php /* Extensions placeholder */ ?>
         <?php echo $this->getChildHtml('checkout_cart_widget') ?>
@@ -235,6 +236,8 @@
         </div>
         <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('accepted-payment')->toHtml(); ?>
     </div>
+    </div>
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('ordering_info')->toHtml();?>
 
     <?php echo $this->getChildHtml('crosssell') ?>
 </div>
