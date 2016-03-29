@@ -2,6 +2,8 @@
 
 <layout version="0.1.0">
     <default>
+
+       
         <reference name="head">
             <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Lato: 300, 300italic, 400, 400italic, 700, 700italic, 900,900italic</href></action>
 
@@ -72,6 +74,9 @@
             </block>
             <block type="cms/block" name="footer_column5" after="footer_column4">
                 <action method="setBlockId"><block_id>footer_column5</block_id></action>
+            </block>
+            <block type="cms/block" name="footer_copyright" after="-">
+                <action method="setBlockId"><block_id>footer_copyright</block_id></action>
             </block>
 
         </reference>
