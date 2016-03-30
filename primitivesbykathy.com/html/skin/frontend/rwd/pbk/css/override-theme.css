@@ -1955,7 +1955,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     top: 5px;
 }
 .product-view .more-views {margin-top:5px;}
-.products-grid .product-name, .products-list .product-name {min-height:40px;padding-top: 10px;}
+.products-grid .product-name, .products-list .product-name {/*min-height:40px;*/padding-top: 10px;}
 .in-stock .value {color: #7E221B;}
 .in-stock .value:after {content:"!"; color: #7E221B;font-size: 16px;
     font-weight: bold;}
@@ -4196,3 +4196,76 @@ td.Discount + td .price {color: green !important;}
     margin: 15px 0;
 }
 
+
+/** update bg color for table/navigation headers **/
+.col-left .block-layered-nav .block-content > dl > dt,
+.wrapper .sidebar .block-title,
+.wrapper .cart .data-table th,
+.cart-forms #discount-coupon-form label,
+.cart .cart-totals-wrapper h4,
+.wrapper .data-table th,
+.my-account .order-details .order-totals-wrapper h4,
+#wishlist-table.clean-table thead th {
+    background-color: #333637;
+    background-image: url('../images/dark-graybg.gif');
+    color: #fff;
+}
+
+.wrapper .sidebar .block-title > strong span {
+    color: #fff;
+}
+
+.data-table .link-view, .data-table .link-reorder {
+    border: none;
+    background: none;
+    text-align: left;
+}
+#header-account .account-dropdown a {
+    font-size: 13px;
+}
+
+.products-grid h2.product-name a {
+    color: #333637;
+    font-weight: bold;
+
+}
+.products-grid .product-info .product-name{
+    margin-bottom: 0;
+}
+.products-grid .product-sku span {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.products-grid .button {
+    background-color: #333637;
+    border-color: #333637;
+    Font-size: 12px;
+    color: #fff;
+
+}
+
+.products-grid .split-button.wishlist-selector .change {
+    background-color: #333637;
+}
+.products-grid .split-button.wishlist-selector .change:after {
+    font-size: 12px;
+}
+.products-grid .availability {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.products-grid .price-box .price {
+    font-weight: bold;
+}
+.products-grid .actions {
+    background-color: transparent;
+}
+
+.product-collateral-wrapper .data-table th {
+    background-color: #EDEBEC;
+    background-image: none;
+    color: #333637;
+}
+#wishlist-table.clean-table thead {
+    border-top: none;
+}
