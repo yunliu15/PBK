@@ -362,8 +362,12 @@ tr.Canceled {background:#FAF3F1!important;}
     text-transform: capitalize;
 }
 .account-dropdown .account-content li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
+.account-dropdown .account-content li:last-of-type {
+    margin-bottom: 0;
+}
+
 #header-account .account-dropdown .account-content a {
     text-align: left;
 }
@@ -1603,7 +1607,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 }
 .cart .qty-btn-up,
 .cart .qty-btn-down {
-    padding: 6px 5px;
+    padding: 8px 5px 8px 6px;
     background: #333;
     cursor: pointer;
 }
@@ -4211,6 +4215,14 @@ td.Discount + td .price {color: green !important;}
     color: #fff;
 }
 
+.col-left .block-layered-nav .block-content > dl > dt,
+.wrapper .sidebar .block-title,
+.wrapper .sidebar .block-title > strong span {
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
 .wrapper .sidebar .block-title > strong span {
     color: #fff;
 }
@@ -4219,14 +4231,16 @@ td.Discount + td .price {color: green !important;}
     border: none;
     background: none;
     text-align: left;
+    padding: 0 10px;
 }
-#header-account .account-dropdown a {
+#header-account .account-content a {
     font-size: 13px;
 }
 
 .products-grid h2.product-name a {
     color: #333637;
     font-weight: bold;
+    text-transform: capitalize;
 
 }
 .products-grid .product-info .product-name{
@@ -4234,7 +4248,6 @@ td.Discount + td .price {color: green !important;}
 }
 .products-grid .product-sku span {
     font-size: 12px;
-    text-transform: uppercase;
 }
 .products-grid .button {
     background-color: #333637;
@@ -4268,4 +4281,71 @@ td.Discount + td .price {color: green !important;}
 }
 #wishlist-table.clean-table thead {
     border-top: none;
+}
+
+.header-minicart .product-details .product-name a {
+    color: #333637;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.cart .qty-btn {
+    top: 17px;
+    right: 22px;
+}
+.cart .qty-btn-up {
+    margin-bottom: 1px;
+}
+.cart .cart-table .product-cart-actions .qty {
+    height: 45px;
+    width: 100%;
+}
+.wrapper .cart-table .product-cart-actions {
+    padding: 15px 20px;
+}
+@media only screen and (max-width: 599px) {
+    .cart .qty-btn {
+        right: auto;
+        left: 108px;
+    }
+    .cart .cart-table .product-cart-actions .qty {
+        width: 74px;
+    }
+}
+
+.account-login .red-button {
+    background: #7E221B;
+    color: #fff;
+}
+.account-login .red-button:hover {
+    border-color: #B0564F;
+    background: #B0564F;
+}
+
+.btn-create-account span span:before {
+    background-position: -8px -5px;
+    background-image: url('../images/account.png');
+    left: -28px;
+}
+
+.btn-create-account:hover span span:before {
+    background-position: -8px -5px;
+}
+.btn-login span span:after,
+.btn-login:hover span span:after {
+    color: #fff;
+}
+
+/**** search by date **/
+input.search_by_date {
+    padding: 5px 10px 4px !important;
+    background: #333637;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    text-transform: uppercase;
+}
+input.search_by_date:hover {
+    background: #646263;
 }
