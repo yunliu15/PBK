@@ -4283,10 +4283,15 @@ td.Discount + td .price {color: green !important;}
     border-top: none;
 }
 
-.header-minicart .product-details .product-name a {
+.header-minicart .product-details .product-name a,
+.wishlist-cart-wrapper .block-wishlist .product-details .product-name a {
     color: #333637;
     font-size: 14px;
     font-weight: bold;
+    text-transform: capitalize;
+}
+
+.header-minicart .product-details .info-wrapper th {
     text-transform: capitalize;
 }
 
@@ -4348,4 +4353,9 @@ input.search_by_date {
 }
 input.search_by_date:hover {
     background: #646263;
+}
+
+/*** update for mega menu */
+.ms-submenu .col-category a.level1 {
+    color: #333637;
 }
