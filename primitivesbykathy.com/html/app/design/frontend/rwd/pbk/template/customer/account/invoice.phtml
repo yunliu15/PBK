@@ -1,13 +1,20 @@
 <?php
-
 $invoices = $this->get_user_invoices();
-
 ?>
+
+
 
 <div class="page-title">
     <h1><?php echo $this->__('My Invoices') ?></h1>
 </div>
 <?php echo $this->getLayout()->createBlock('page/html_pager')->setCollection($invoices)->toHtml(); ?>
+
+<div class="form-group form-group-filled" id="event_period">
+    <input type="text" name="start_date" class="date_time_picker_input input-text start_date" style="max-width: 130px" placeholder="Start Date" value="<?php  echo @ $_GET["start_date"]; ?>">
+    <input type="text" name="end_date" class="date_time_picker_input input-text end_date" style="max-width: 130px" placeholder="End Date" value="<?php  echo @ $_GET["end_date"]; ?>">
+    <input type="submit" name="search_date" class="link-reorder right search_by_date" value="Search By Date" style="padding: 3px;">
+</div>
+
 <?php if($invoices->getSize()): ?>
     <table class="data-table" id="my-orders-table" >
         <thead>
@@ -16,21 +23,23 @@ $invoices = $this->get_user_invoices();
             <th><?php echo $this->__('Date') ?></th>
             <th><?php echo $this->__('Bill To') ?></th>
             <th><?php echo $this->__('Invoice Total') ?></th>
-            <th><?php //echo $this->__('View') ?></th>
+            <th><?php echo $this->__('View') ?></th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($invoices as $invoice): ?>
             <tr>
-                <td><?php echo $invoice->getIncrementId() ?>&nbsp;</td>
-                <td><?php echo date("n/j/Y", strtotime($invoice->getCreatedAt())) ?>&nbsp;</td>
-                <td><?php
+                <td data-th="Invoice #">
+                    <?php echo $invoice->getIncrementId() ?>&nbsp;
+                </td>
+                <td data-th="Date" ><?php echo date("m/d/Y", strtotime($invoice->getCreatedAt())) ?>&nbsp;</td>
+                <td data-th="Bill To"><?php
                     $customer = Mage::getModel("customer/customer")->load($invoice->getCustomerId());
                         echo ucwords($customer->getName());
 
                     ?></td>
-                <td><?php echo Mage::app()->getLocale()->currency($invoice->getCurrencyCode())->getSymbol().(number_format($invoice->getGrandTotal(),2)); ?>&nbsp;</td> <?php  ?>
-                <td><a href="<?php echo $this->getUrl('sales/order/view', array('order_id'=>$invoice->getOrderId())) ?>"><?php echo $this->__('View Invoice') ?></a>&nbsp;</td>
+                <td data-th="Invoice Total"><?php echo Mage::app()->getLocale()->currency($invoice->getCurrencyCode())->getSymbol().(number_format($invoice->getGrandTotal(),2)); ?>&nbsp;</td> <?php  ?>
+                <td class="view no-header"><a class="link-view" href="<?php echo $this->getUrl('sales/order/invoice/', array('order_id'=>$invoice->getOrderId())) ?>"><?php echo $this->__('View Invoice') ?></a>&nbsp;</td>
             </tr>
         <?php endforeach ?>
         </tbody>
@@ -42,4 +51,5 @@ $invoices = $this->get_user_invoices();
 <div class="buttons-set">
     <p class="back-link"><a href="<?php echo $this->getUrl('customer/account') ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
 </div>
+
 

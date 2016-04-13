@@ -1921,7 +1921,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     background-image: url("../images/icon_sprite_new.png");
     background-position: -0px -208px;
     position: absolute;
-    left: 5px;
+    left: 3px;
     top: 7px;
 }
 
@@ -4378,3 +4378,342 @@ input.search_by_date:hover {
 .ms-submenu .col-category a.level1 {
     color: #333637;
 }
+
+
+.cart .buttons-set .button, .cart-table .button, .sidebar .actions .button, .button.button-secondary {
+    padding: 7px 24px !important;
+}
+@media only screen and (max-width: 1200px) {
+    .buttons-set button.button {
+
+        margin: 13px -80px 0 165px !important;
+    }
+}
+@media only screen and (max-width: 637px) {
+    .buttons-set button.button {
+        margin: 13px -40px 0 68px !important;
+    }
+}
+@media only screen and (max-width: 479px) {
+    .buttons-set {
+
+        margin: 10px 104px 21px -40px !important;
+
+    }
+}
+
+
+/** shero al fixed issues at header*/
+
+/**in=phone 5 */
+
+/* Portrait */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 320px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+    #header #header-account {
+        padding: 0;
+        width: 108% !important;
+        font-size: 10px!important;
+    }
+
+    .need-help {
+        width: 104% !important;
+        font-size: 11px !important;
+    }
+
+    #header .skip-search .icon-moon:before {
+        margin-left: 12px !important;
+    }
+
+    #header-cart {
+
+        width: 290px !important;
+
+    }
+
+    .nav-top-wrapper {
+        margin-left: -10px !important;
+
+    }
+    #header-login{
+        left:-9px!important;
+    }
+
+    .footer .social-media-links div {
+        margin-right: 1px!important;
+    }
+   /* date 13 april*/
+   #shipping_number input[type=email], input[type=search], input[type=number], input[type=password], input[type=tel], input[type=text] {
+        width: 112% !important;
+    }
+
+     .product-name
+    {
+        margin-left: 98px !important;
+    }
+
+
+    .single_image_load  img {
+
+        width: 53px !important;
+        margin-top: -8px !important;
+
+    }
+
+
+    #review-buttons-container .btn-checkout {
+        width: 78% !important;
+    }
+
+
+
+
+
+
+
+
+    .wrapper .my-account .box-info .col2-set .box-title h3 {
+        font-size: 11px !important;
+    }
+
+
+    .cart .qty-btn {
+        top: 2px !important;
+        left: 70px !important;
+    }
+
+    .cart-table .split-button .list-container {
+        width: auto;
+        bottom: 0;
+        left: 0 !important;
+    }
+
+
+
+
+    .wrapper .data-table td, .wrapper .data-table th {
+        padding: 0px !important;
+    }
+
+    .cart-table .product-cart-info, .cart-table td[data-rwd-label] {
+        float: none !important;
+
+    }
+
+    .cart-table .cart-links .remove {
+
+        margin-left: 5px !important;
+
+    }
+
+    .cart-table .cart-links > li:last-child {
+        margin-left: 77px;
+    }
+
+    .cart .cart-table .product-cart-actions .qty {
+        width: 27% !important;
+
+    }
+
+    .wrapper .cart-table .product-cart-actions {
+        margin-left: 27% !important;
+        margin-top: 3% !important;
+    }
+
+    .wishlist-cart-wrapper .block-wishlist:hover #wishlist-top-content {
+
+        width: 278px !important;
+    }
+
+    .buttons-set {
+        margin: 15px 95px 23px 14px !important;
+    }
+
+
+    .products-grid .product-name, .products-list .product-name {
+        margin-bottom: 33px !important;
+        margin-left: 8px !important;;
+    }
+}
+
+
+
+
+
+/**in=phone 6 */
+
+/* Portrait */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 375px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+    /* date 13 april*/
+    #shipping_number input[type=email], input[type=search], input[type=number], input[type=password], input[type=tel], input[type=text] {
+        width: 112% !important;
+    }
+
+
+    .product-name
+    {
+        margin-left: 98px !important;
+    }
+
+
+    .single_image_load  img {
+
+        width: 53px !important;
+        margin-top: -8px !important;
+
+    }
+
+
+    #review-buttons-container .btn-checkout {
+        width: 78% !important;
+    }
+
+
+    .wrapper .my-account .box-info .col2-set .box-title h3 {
+        font-size: 13px !important;
+    }
+
+    .cart-table .split-button .list-container
+    {
+        left: 0!important;
+    }
+
+
+    .cart .cart-table .product-cart-actions .qty {
+        height: 45px !important;
+        width: 37% !important;
+    }
+
+    #header .skip-search .icon-moon:before{
+        margin-left: 7px !important;
+    }
+}
+
+
+
+
+/**in=phone 6 + */
+
+/* Portrait */
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 414px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
+    .product-name
+    {
+        margin-left: 98px !important;
+    }
+
+
+    .single_image_load  img {
+
+        width: 53px !important;
+        margin-top: -8px !important;
+
+    }
+
+
+    #review-buttons-container .btn-checkout {
+        width: 78% !important;
+    }
+
+
+}
+
+.sidebar .actions .button.btn-cart {
+    background: #343636;
+    color: #fff;
+}
+.sidebar .actions .button.btn-cart:hover {
+    background: #646263;
+}
+/* order tables at mobile size */
+@media only screen and (max-width: 979px) {
+    #event_period {
+        clear: both;
+        margin-bottom: 20px;
+    }
+    #event_period input.search_by_date {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 688px) {
+    #my-orders-table {
+        margin-top: 20px;
+    }
+    #my-orders-table td {
+        display: block;
+        border: 0;
+        text-align: left;
+    }
+    #my-orders-table tbody {
+        border-top: 1px solid #d5d5db;
+    }
+    #my-orders-table thead {
+        display: none;
+    }
+    #my-orders-table td:before {
+        content: attr(data-th) ': ';
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    #my-orders-table td.no-header:before,
+    #my-orders-table td.view:before {
+        display: none;
+    }
+    #my-orders-table .cart-price br {
+        display: none;
+    }
+
+    #my-orders-table tbody tr {
+        border-left: 1px solid #d5d5db;
+        border-right: 1px solid #d5d5db;
+        border-bottom: 1px solid #d5d5db;
+    }
+
+}
+@media only screen and (max-width: 479px) {
+    .limiter select {
+        height: 30px;
+    }
+    .wrapper .data-table.orders .link-reorder, .data-table.orders .date {
+        display: block;
+    }
+
+    .order-details .data-table thead th, .data-table tbody td {
+        border: none;
+    }
+
+    #checkout-review-table .img-wrapper {
+        overflow: hidden;
+    }
+    #checkout-review-table tbody td {
+        text-align: left;
+    }
+    #checkout-review-table thead {
+        display: none;
+    }
+    #checkout-review-table tbody td:before {
+        content: attr(data-th) ': ';
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    #checkout-review-table tbody td.no-header:before {
+        display: none;
+    }
+}
+
+

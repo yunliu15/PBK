@@ -31,6 +31,13 @@
 </div>
 <?php echo $this->getChildHtml('info');?>
 <?php echo $this->getPagerHtml(); ?>
+
+<!--here we will show the inputs to filter the orders by date-->
+<div class="form-group form-group-filled" id="event_period">
+    <input type="text" name="start_date" class="date_time_picker_input input-text start_date" style="max-width: 130px" placeholder="Start Date" value="<?php  echo @ $_GET["start_date"]; ?>">
+    <input type="text" name="end_date" class="date_time_picker_input input-text end_date" style="max-width: 130px" placeholder="End Date" value="<?php  echo @ $_GET["end_date"]; ?>">
+    <input type="submit" name="search_date" class="link-reorder right search_by_date" value="Search By Date" style="padding: 3px;">
+</div>
 <?php if($_orders->getSize()): ?>
 <table class="data-table orders" id="my-orders-table">
     <col width="1" />
@@ -41,11 +48,11 @@
     <col width="1" />
     <thead>
         <tr>
-            <th class="number"><?php echo $this->__('Order #') ?></th>
-            <th class="date"><?php echo $this->__('Date') ?></th>
-            <th class="ship"><?php echo $this->__('Ship To') ?></th>
-            <th class="total"><span class="nobr"><?php echo $this->__('Order Total') ?></span></th>
-            <th class="status"><span class="nobr"><?php echo $this->__('Order Status') ?></span></th>
+            <th class="number" data-th="Order #"><?php echo $this->__('Order #') ?></th>
+            <th class="date" data-th="Date"><?php echo $this->__('Date') ?></th>
+            <th class="ship" data-th="Ship To" ><?php echo $this->__('Ship To') ?></th>
+            <th class="total" data-th="Order Total"><span class="nobr"><?php echo $this->__('Order Total') ?></span></th>
+            <th class="status" data-th="Order Status"><span class="nobr"><?php echo $this->__('Order Status') ?></span></th>
             <th class="view">&nbsp;</th>
         </tr>
     </thead>
@@ -53,11 +60,11 @@
         <?php $_odd = ''; ?>
         <?php foreach ($_orders as $_order): ?>
         <tr class="<?php echo $_order->getStatusLabel() ?>">
-            <td class="number"><?php echo $_order->getRealOrderId() ?></td>
-            <td class="date"><span class="nobr"><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></span></td>
-            <td class="ship"><?php echo $_order->getShippingAddress() ? $this->escapeHtml($_order->getShippingAddress()->getName()) : '&nbsp;' ?></td>
-            <td class="total"><?php echo $_order->formatPrice($_order->getGrandTotal()) ?></td>
-            <td class="status"><em><?php echo $_order->getStatusLabel() ?></em></td>
+            <td class="number" data-th="Order #"><?php echo $_order->getRealOrderId() ?></td>
+            <td class="date" data-th="Date"><span class="nobr"><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></span></td>
+            <td class="ship" data-th="Ship To"><?php echo $_order->getShippingAddress() ? $this->escapeHtml($_order->getShippingAddress()->getName()) : '&nbsp;' ?></td>
+            <td class="total" data-th="Order Total"><?php echo $_order->formatPrice($_order->getGrandTotal()) ?></td>
+            <td class="status" data-th="Order Status"><em><?php echo $_order->getStatusLabel() ?></em></td>
             <td class="a-center view">
                 <span class="nobr"><a class="link-view" href="<?php echo $this->getViewUrl($_order) ?>"><?php echo $this->__('View Order') ?></a>
                     <?php /*<span class="separator">|</span><a href="<?php echo $this->getTrackUrl($_order) ?>"><?php echo $this->__('Track Order') ?></a>&nbsp;*/ ?>
