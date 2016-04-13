@@ -57,6 +57,10 @@ body .wrapper h1, body .wrapper h2, body .wrapper h3, body .wrapper h4, body .wr
     font-size: 14px;
     color: #333637;
 }
+.page p.error {
+    color: #df280a;
+    font-weight: bold;
+}
 .page h4 {
     font-weight: 400;
     font-size: 20px;
@@ -4391,13 +4395,15 @@ input.search_by_date:hover {
 }
 @media only screen and (max-width: 637px) {
     .buttons-set button.button {
-        margin: 13px -40px 0 68px !important;
+        /*margin: 13px -40px 0 68px !important;*/
+        margin: 0 !important
     }
 }
 @media only screen and (max-width: 479px) {
     .buttons-set {
 
-        margin: 10px 104px 21px -40px !important;
+        /*margin: 10px 104px 21px -40px !important;*/
+        margin: 0;
 
     }
 }
