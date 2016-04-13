@@ -2441,6 +2441,8 @@ body.amquickview-ajax-view {
 }
 
 /* color filters */
+
+/*
 .current-filter span[data-title="color"] ~ span:before {
     content:'';
     width: 15px;
@@ -2457,6 +2459,7 @@ body.amquickview-ajax-view {
     background: black;
 
 }
+
 .current-filter .Blue:before,
 .amshopby-narrow-by-list dd li[data-text="Blue"] > a:before{
     background: blue;
@@ -2491,7 +2494,7 @@ body.amquickview-ajax-view {
     background: pink;
 }
 
-
+*/
 .amshopby-narrow-by-list[data-title="color"] li > a:before {
     content:'';
     width: 15px;
@@ -2503,7 +2506,23 @@ body.amquickview-ajax-view {
 }
 
 .wrapper .amshopby-item-top {
+    width: 16.3%;
+}
+.wrapper .amshopby-item-top {
     min-width: 16.3%;
+    width: 16.3%;
+}
+.wrapper .amshopby-filters-top > div:last-of-type.amshopby-item-top {
+    width: calc(100% - 81.5% - 14px);
+    min-width: calc(100% - 81.5% - 14px);
+}
+.wrapper .amshopby-filters-top > div:last-of-type.amshopby-item-top dd {
+    width: calc(100% - 1px);
+}
+.wrapper div.block-layered-nav dd a.amshopby-attr,
+.wrapper div.block-layered-nav dd a.amshopby-attr:hover {
+    background-image: url(../images/amshopby-cb1.png);
+    padding-left: 18px;
 }
 
 @media only screen and (min-width: 771px) {
