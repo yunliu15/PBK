@@ -1320,7 +1320,26 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .order-details h3.table-caption {
     font-size: 16px;
 }
-
+.order-details .order-links .link-print:before,
+.order-details .sub-title .link-print:before {
+    margin-right: 10px;
+}
+.order-details .data-table td h4.product-name {
+    margin-left: 20px;
+    margin-top: 10px;
+    max-width: 300px;
+}
+.wrapper .data-table tfoot td {
+    padding: 5px;
+}
+.wrapper .data-table tfoot td.a-right {
+    padding-right: 15px;
+}
+.wrapper .data-table tfoot td.a-right.last {
+    padding-left: 20px;
+    text-align: left;
+    padding-right: 0;
+}
 .order-details .data-table tbody tr {background-color:#fff;}
 
 .order-details .data-table tbody tr:nth-child(even) {background-color:#EDEBEC;}
@@ -1382,7 +1401,6 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     background-color: #333;
     color: #fff;
 }
-
 
 /* icons for my account */
 .link-edit:before {
@@ -1496,7 +1514,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 
 /* invoce */
 .showinvoice-history-index .col-main > p {
-    margin-top: 40px;
+    margin: 20px 0;
 }
 
 .showinvoice-history-index .data-table th {
@@ -1510,6 +1528,59 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 }
 .showinvoice-history-index .back-link a {
     text-transform: uppercase;
+}
+/* newsletter page */
+body.newsletter-manage-index .my-account ul.form-list {
+    border-top: none;
+    padding-top: 0;
+}
+body.newsletter-manage-index .my-account div.fieldset {
+    margin-bottom: 0;
+}
+body.newsletter-manage-index .my-account .poshte {
+    margin-bottom: 20px;
+}
+body.newsletter-manage-index .form-list .control input.checkbox {
+    margin-top: 12px;
+}
+body.newsletter-manage-index .buttons-set button.button {
+    margin: 0 0 0 223px !important;
+}
+@media (max-width: 540px) {
+    .my-account dl.order-info dd {
+        float: none;
+    }
+    .my-account dl.order-info dd li {
+        display: block;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+    .my-account dl.order-info {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    body.newsletter-manage-index .buttons-set button.button {
+        margin: 0 !important;
+    }
+    .my-account .order-details .buttons {
+        top: 0;
+    }
+    .my-account .data-table tbody td {
+        border: none;
+        clear: both;
+    }
+    .my-account .data-table.linearize-table tbody td[data-rwd-label] {
+        padding-left: 15px;
+    }
+    .my-account .data-table .link-reorder {
+        margin: 0 !important;
+        padding: 0;
+    }
+    .my-account .data-table .link-view {
+        padding: 0;
+    }
 }
 
     /******* Shopping Cart ************/
