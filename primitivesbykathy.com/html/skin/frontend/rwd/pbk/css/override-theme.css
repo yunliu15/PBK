@@ -1495,6 +1495,10 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 }
 
 /* invoce */
+.showinvoice-history-index .col-main > p {
+    margin-top: 40px;
+}
+
 .showinvoice-history-index .data-table th {
     text-transform: uppercase;
 }
@@ -2444,6 +2448,7 @@ body.amquickview-ajax-view {
     position: relative;
 }
 
+
 /* color filters */
 
 /*
@@ -2526,6 +2531,11 @@ body.amquickview-ajax-view {
 .wrapper div.block-layered-nav dd a.amshopby-attr,
 .wrapper div.block-layered-nav dd a.amshopby-attr:hover {
     background-image: url(../images/amshopby-cb1.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+div.block-layered-nav.amshopby-filters-top dd a.amshopby-attr,
+div.block-layered-nav.amshopby-filters-top dd a.amshopby-attr:hover {
     padding-left: 18px;
 }
 
@@ -2558,8 +2568,17 @@ body.amquickview-ajax-view {
     }
     .amshopby-container-top {clear: both;}
 
+    div.block-layered-nav.amshopby-filters-left dd a.amshopby-attr, div.block-layered-nav.amshopby-filters-left dd a.amshopby-attr:hover {
+        background-position: left 10px;
+    }
+
 }
 
+@media only screen and (max-width: 770px) {
+    .block-layered-nav.amshopby-filters-left .block-content > dl > dt:hover {
+        color: #fff;
+    }
+}
 
 
 

@@ -46,7 +46,7 @@ $invoices = $this->get_user_invoices();
     </table>
     <script type="text/javascript">decorateTable('my-orders-table')</script>
 <?php else: ?>
-    <p><?php echo $this->__('You have no invoice yet.') ?></p>
+    <p><?php echo $this->__('No invoices.') ?></p>
 <?php endif ?>
 <div class="buttons-set">
     <p class="back-link"><a href="<?php echo $this->getUrl('customer/account') ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
