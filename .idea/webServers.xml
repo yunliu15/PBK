@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="baa3ea47-067d-45c6-a41c-8f9fa9dd19b6" name="pbk new" url="http://mce232-lb1.nexcess.net">
+        <fileTransfer host="mce232-lb1.nexcess.net" port="22" privateKey="$USER_HOME$/.ssh/support.id_rsa" rootFolder="/chroot/home/primitiv" accessType="SFTP" username="primitiv" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

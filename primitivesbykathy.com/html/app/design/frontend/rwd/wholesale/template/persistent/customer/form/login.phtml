@@ -47,7 +47,15 @@
             <?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
             <div class="col-1 new-users">
                 <div class="content">
-                    <h2><?php echo $this->__('New Customers') ?></h2>
+                    <h2><?php echo $this->__('New Wholesale Customers') ?></h2>
+
+                    <?php //get retail store url
+                    $retailUrl = Mage::getUrl('customer/account/login/', array(
+                        '_store'=>'1'
+                    ));
+                    ?>
+
+                    <i>Not a wholesaler? If you do not have a tax ID#, <a href="<?php echo $retailUrl ?>" >click here</a></i>
                     <p class="form-instructions"><?php echo $this->__('By creating an account with our safe and secure online store, you will be able to
 have these great online tools at your fingertips!') ?></p>
                     <ul class="benefits">
@@ -63,17 +71,7 @@ other great promos.') ?></li>
                 <div class="buttons-set">
                     <a title="<?php echo $this->quoteEscape($this->__('Create an Account')) ?>" class="btn-create-account red-button" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><span><span><?php echo $this->__('Create an Account') ?></span></span></a>
                 </div>
-
-                <?php
-                $wholeSaleUrl = Mage::getUrl('customer/account/login/', array(
-                    '_store'=>'3'
-                ));
-                ?>
-                <div class="wholesale-account-link">
-                    <p class="all-upper">Interested In becoming a wholesaler?</p>
-                    <i>Tax ID# is required.</i>
-                    <div class="buttons-set"><a class="btn-create-account red-button" title="Create a wholesale account" href="<?php echo $wholeSaleUrl?>"><span><span>Create a Wholesale Account</span></span></a></div>
-                </div>
+                <i>Tax ID# is required to create a wholesale account. Not a wholesaler? <a href="<?php echo $retailUrl ?>">Click here</a></i>
 
             </div>
             <?php endif; ?>

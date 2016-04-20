@@ -1178,16 +1178,16 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     padding:30px;
     border:1px solid #d5d5db;
     width:49%;
-    height:400px;
+    /*height:500px;*/
     position:relative;
 }
 .customer-account-login .account-login .col2-set .col-1 {margin-right:2%;}
-.login-bottom {margin-top:30px;}
+.login-bottom {padding-top:30px;}
 
-.customer-account-login .account-login .col2-set .buttons-set {
+/*.customer-account-login .account-login .col2-set .buttons-set {
     position:absolute;
     bottom:30px;
-}
+}*/
 .customer-account-login .col2-set .col-1 .benefits {
 
     padding-left: 40px;
@@ -1197,9 +1197,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .customer-account-login .benefits li {margin-bottom:5px;}
 .customer-account-login .form-list {margin-top:30px;}
 .account-login .registered-users .f-left {
-    position: absolute;
-    bottom: 30px;
-    left: 200px;
+
     text-decoration: underline;
 }
 .btn-create-account span span {position: relative; margin-left: 20px;}
@@ -3136,13 +3134,13 @@ div.block-layered-nav.amshopby-filters-top dd a.amshopby-attr:hover {
 
 }
 
-@media only screen and (max-width:959px) {
+/*@media only screen and (max-width:959px) {
 
 
     .customer-account-login .account-login .col2-set .col-1, .customer-account-login .account-login .col2-set .col-2{
         height:510px;
     }
-}
+}*/
 @media only screen and (max-width:920px) {
     .cart .total-top-wrapper {
         float: none;
@@ -4811,5 +4809,60 @@ and (orientation: portrait) {
         display: none;
     }
 }
+.prod_status {
+    font-size:4px;
+}
 
+.search-autocomplete {
+    z-index: 253 !important;
+}
 
+.account-login .red-button {
+    margin-top: 0;
+}
+
+.account-login .buttons-set {
+    padding-top: 0;
+    margin-bottom: 20px;
+}
+.account-login .wholesale-account-link i {
+    color: #7E221B;
+}
+
+@media (min-width: 769px) {
+
+    .account-login .col2-set {
+        overflow: hidden;
+    }
+    .customer-account-login .account-login .col2-set .col-1, .customer-account-login .account-login .col2-set .col-2 {
+        margin-bottom: -99999px;
+        padding-bottom: 99999px;
+        height: 100%;
+    }
+    .login-bottom {
+       border-top: 1px solid #d5d5db;
+        position: relative;
+    }
+    .login-bottom:before {
+        content: '';
+        display: block;
+        width: 2%;
+        height: 1px;
+        background: #FAF8F6;
+        position:absolute;
+        left: 49%;
+        top: -1px;
+    }
+    .account-login .registered-users .f-left {
+        position: relative;
+        top: 15px;
+    }
+}
+@media (max-width: 768px) {
+    .account-login .registered-users .f-left {
+        position: absolute;
+        bottom: 50px;
+        left: 200px;
+        padding: 0;
+    }
+}
