@@ -1,2 +1,13 @@
 
-/********** Footer **************/
+/********** login page **************/
+.account-login .col-1.new-users i {
+    margin-bottom: 20px;
+    display: block;
+    color: #7E221B;
+}
+.account-login .col-1.new-users i a {
+    color: #7E221B;
+}
+.account-login .col-1.new-users i a:hover {
+    color: #333637;
+}
