@@ -2135,10 +2135,13 @@ body.newsletter-manage-index .buttons-set button.button {
 .products-grid .product-info .product-name a, .products-list .product-info .product-name a {
     font-weight: 700;
 }
-.wrapper .products-grid .bg-layer:hover {background-color:black;}
-.wrapper .products-grid .bg-layer:hover .product-img-wrapper,
+
+/*.wrapper .products-grid .bg-layer:hover {background-color:black;}*/
+
+/*.wrapper .products-grid .bg-layer:hover .product-img-wrapper,
 .wrapper .products-grid .bg-layer:hover .amlabel-div,
-.widget-new-products .products-grid .bg-layer:hover .amlabel-div {opacity:0.5;}
+.widget-new-products .products-grid .bg-layer:hover .amlabel-div {opacity:0.5;}*/
+
 .product-collateral .toggle-tabs li span {color: #7E221B;}
 .product-essential .product-sku span {font-size:18px;}
 .product-essential .product-name .h1{font-size:30px;}
@@ -2158,7 +2161,7 @@ body.amquickview-ajax-view {
     opacity:1;
     background-color:#fff;
     color:#333637;
-    display: none !important;
+    /*display: none !important;*/
     z-index: 100;
 }
 .wrapper .products-grid .bg-layer:hover .amquickview-hover {
@@ -2852,7 +2855,7 @@ div.block-layered-nav.amshopby-filters-top dd a.amshopby-attr:hover {
     padding: 6px 15px 5px;
 }
 #store_locator_form .button-set {
-    position: relative;
+    /*position: relative;*/
     top: 2px;
 }
 .wrapper #store_locator_form .location-search li.first {
@@ -4865,4 +4868,229 @@ and (orientation: portrait) {
         left: 200px;
         padding: 0;
     }
+}
+
+
+.prod_status p{
+    font-size:10px;
+}
+
+.stock-status-product-page{
+    color:#7E221B;
+}
+
+
+/*al shero */
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 320px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+    .products-grid .split-button.wishlist-selector .change {
+        text-indent: -9999px !important;
+        padding: 0 !important;
+        width: 136px !important;
+        height: 33px !important;
+        background: #333 !important;
+        margin-top: 2% !important;
+    }
+
+    .red-button {
+        padding: 8px 1px -1px !important;
+        font-size: 10px;
+        margin: 0px -57px 4px -13px;
+    }
+}
+
+
+
+@media only screen
+and (max-width: 1024px){
+    .products-list .action .button, .products-grid .actions .button {
+        white-space: normal !important;
+        font-size: 11px !important;
+    }
+
+    .products-grid .split-button.wishlist-selector .change {
+        text-indent: -9999px !important;
+        padding: 0 !important;
+        width: 146px ;
+        height: 33px !important;
+        background: #333 !important;
+        margin-top: 2% !important;
+    }
+
+
+    .products-grid .split-button.wishlist-selector .change:after {
+        font-size: 20px !important;
+        margin-right: 40% !important;
+        margin-top: -3px;
+    }
+
+
+
+    .products-grid .btn-cart:before {
+        left: 44%;
+    }
+
+}
+
+
+.case-discount-price{
+    color: #7E221B;
+    font-weight: 900;
+}
+.bold-case-discount{
+    font-weight: 900;
+    color: black;
+}
+
+.case-discount-price-bottom{
+    float:left;
+    width: 100%;
+    margin-top:-10px;
+    margin-bottom:10px
+}
+
+
+
+@media only screen
+and (max-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+    .products-list .action .button, .products-grid .actions .button{
+        width: 100% !important;
+
+        margin-top: 4%;
+    }
+}
+
+
+@media only screen
+and (max-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+    .products-list .action .button, .products-grid .actions .button{
+        width: 94% ;
+        margin-top: 4%;
+    }
+}
+
+@media only screen
+and (max-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+    .products-list .action .button, .products-grid .actions .button{
+        width: 79% ;
+        margin-top: 4%;
+    }
+}
+
+@media only screen
+and (max-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+    .products-list .action .button, .products-grid .actions .button{
+        width: 89% !important;
+
+        margin-top: 4%;
+    }
+}
+
+
+@media only screen
+and (max-width: 414px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+    .products-list .action .button, .products-grid .actions .button{
+        width: 70% !important;
+        margin-top: 43% !important;
+        margin-left: -21% !important;
+    }
+}
+
+@media only screen
+and (max-width: 414px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+    .products-list .action .button, .products-grid .actions .button{
+        width: 80% !important;
+
+        margin-top: 4%;
+    }
+}
+
+
+
+
+@media only screen
+and (max-width: 320px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    .cart-table .product-cart-info, .cart-table td[data-rwd-label] {
+        float: right;
+        width: 90%;
+    }
+
+    .cart .qty-btn {
+        top: 2px !important;
+        left: 72px !important;
+    }
+
+    .avability-cart-test{
+        margin-left: 45%;
+    }
+
+
+
+    .cart-table td.product-cart-price {
+        text-align: center !important;
+        margin-left: 5%;
+    }
+
+    .cart-table .cart-links .remove {
+        margin-top: 20px !important;
+        margin-left: 65% !important;
+    }
+
+
+}
+
+
+@media only screen
+and (max-width: 375px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    .product-name {
+        margin-left: 4px !important;
+    }
+}
+
+/* new quick view   also changes in 2139, 2160*/
+.wrapper .products-grid .amquickview-hover {
+    top: 170px !important;
+    width: calc(100% - 20px );
+    max-width: 100% !important;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 12px;
+    max-height: 50px;
+}
+.wrapper .products-grid .amquickview-hover a {
+    color: #fff;
+    font-size: 13px;
+}
+.wrapper .products-grid .amquickview-hover:hover {
+    background: #333637;
+}
+.wrapper .amquickview-hover img.am-quickview-icon {
+    display: none !important;
 }
