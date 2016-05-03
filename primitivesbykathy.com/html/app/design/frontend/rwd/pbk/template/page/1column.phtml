@@ -51,6 +51,7 @@
         <div class="main-container col1-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
+                <div class="before-main-content"><?php echo $this->getChildHtml('preface') ?></div>
                 <div class="col-main">
                     <?php // move newsletter subscription message down to the footer
                     $message = strip_tags($this->getChildHtml('global_messages'));

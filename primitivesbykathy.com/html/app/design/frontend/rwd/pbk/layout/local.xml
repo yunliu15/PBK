@@ -3,7 +3,10 @@
 <layout version="0.1.0">
     <default>
 
-       
+        <reference name="header">
+            <block type="core/template" name="footer.search" as="footerSearch" template="catalogsearch/form.mini.phtml"/>
+        </reference>
+
         <reference name="head">
             <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Lato: 300, 300italic, 400, 400italic, 700, 700italic, 900,900italic</href></action>
 
@@ -79,6 +82,12 @@
                 <action method="setBlockId"><block_id>footer_copyright</block_id></action>
             </block>
 
+        </reference>
+
+        <reference name="root">
+            <block type="page/text_list" name="before_content" as="preface" translate="label">
+                <label>Preface, full width</label>
+            </block>
         </reference>
 
     </default>
@@ -426,5 +435,15 @@
         </reference>
     </catalogsearch_result_index>
 
+    <!-- category page -->
+    <catalog_category_default>
+
+        <reference name="before_content">
+            <block type="cms/block" name="category_test">
+                <action method="setBlockId"><block_id>category_test</block_id></action>
+            </block>
+        </reference>
+
+    </catalog_category_default>
 
 </layout>
