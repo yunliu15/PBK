@@ -22,57 +22,110 @@ switch ($this->getDisplayType()){
         if ($this->getShowSearch()){
             echo '<li rel="search"><input type="text" class="amshopby_attr_search input-text" onkeyup="amshopby_attr_search(this)" /></li>';
         }
-        foreach ($this->getItemsAsArray() as $item){
-            echo
-				'<li '.
-				(isset($item['style']) ? $item['style'] : '') .
-				(isset($item['default_sort']) ? ' data-default_sort="' . $item['default_sort'] . '"': '') .
-				(isset($item['featured_sort']) ? ' data-featured_sort="' . $item['featured_sort'] . '"': '') .
-				'data-text="' . htmlspecialchars($item['label']) . '"> ' .
-				'<a class="'.$item['css'].'"' . $item['rel'] . ' href="'.$item['url'].'">'. $item['label'] . $item['count'] . '</a>' .
-				'</li>';
-        }
+        /* attribute groups code goes from here */
+        $items = $this->getItemsAsArray();
+
+            $item1 = $items[0];
+            $name1 = $item1['label'];
+            if (strpos($name1, '>') !== false) { // if attribute name contains '>', start grouping
+                $groups = array();
+                // group options based on the option names
+
+                foreach ($items as $item) {
+                    $name = $item['label'];
+                    $preName = array_shift(explode('>', $name));
+                    $item['preName'] = $preName;
+                    $item['opName'] = substr($name, strpos($name, ">")+1);
+                    if (array_key_exists($preName, $groups)){
+                        $groups[$preName][] = $item;
+                    }
+                    else {
+                        $groups[$preName] = array($item);
+                    }
+                }
+
+                // render filters
+                foreach ($groups as $groupName=>$groupItems) {
+                    echo '<li>'.
+                        '<div class="att-group-title">' .
+                        $groupName.
+                        '</div>'.
+                        '<ol class="att-group-items">';
+
+                    foreach($groupItems as $groupItem) {
+                        echo '<li '.
+                            (isset($groupItem['style']) ? $groupItem['style'] : '') .
+                            (isset($groupItem['default_sort']) ? ' data-default_sort="' . $groupItem['default_sort'] . '"': '') .
+                            (isset($groupItem['featured_sort']) ? ' data-featured_sort="' . $groupItem['featured_sort'] . '"': '') .
+                            'data-text="' . htmlspecialchars($groupItem['opName']) . '"> ' .
+                            '<a class="'.$groupItem['css'].'"' . $groupItem['rel'] . ' href="'.$groupItem['url'].'">'. $groupItem['opName'] . $groupItem['count'] . '</a>' .
+                            '</li>';
+                    }
+
+                    echo '</ol>'.
+                        '</li>';
+                }
+
+            }
+
+
+
+else {/* end of attribute groups code */
+    foreach ($this->getItemsAsArray() as $item) {
+        echo
+            '<li ' .
+            (isset($item['style']) ? $item['style'] : '') .
+            (isset($item['default_sort']) ? ' data-default_sort="' . $item['default_sort'] . '"' : '') .
+            (isset($item['featured_sort']) ? ' data-featured_sort="' . $item['featured_sort'] . '"' : '') .
+            'data-text="' . htmlspecialchars($item['label']) . '"> ' .
+            '<a class="' . $item['css'] . '"' . $item['rel'] . ' href="' . $item['url'] . '">' . $item['label'] . $item['count'] . '</a>' .
+            '</li>';
+    }
+
+}
     break;
-    
-    case Amasty_Shopby_Model_Source_Attribute::DT_IMAGES_ONLY:
+
+case
+    Amasty_Shopby_Model_Source_Attribute::DT_IMAGES_ONLY:
         echo '<li>';
-        foreach ($this->getItemsAsArray() as $item){
+        foreach ($this->getItemsAsArray() as $item) {
             if (isset($item['image_hover']) && $item['image_hover'] != '') {
                 echo '<img src="' . $item['image_hover'] . '" style="display: none;" />';
-                $onHover = 'onmouseover=this.src="' . $item['image_hover'] . '"'; 
+                $onHover = 'onmouseover=this.src="' . $item['image_hover'] . '"';
                 $onHover .= ' onmouseout=this.src="' . $item['image'] . '"';
             } else {
                 $onHover = '';
             }
-            echo '<a '.$item['style'].$item['rel'].' class="'.$item['css'].'" href="'.$item['url'].'"><img src="'.$item['image'].'" ' . $onHover . ' title="'. $item['label'] .'" alt="'. $item['label'] .'"></a>';
-            
+            echo '<a ' . $item['style'] . $item['rel'] . ' class="' . $item['css'] . '" href="' . $item['url'] . '"><img src="' . $item['image'] . '" ' . $onHover . ' title="' . $item['label'] . '" alt="' . $item['label'] . '"></a>';
+
         }
         echo '</li>';
     break;
     
     case Amasty_Shopby_Model_Source_Attribute::DT_IMAGES_AND_LABELS:
-        if ($this->getShowSearch()){
+        if ($this->getShowSearch()) {
             echo '<li rel="search"><input type="text" class="amshopby_attr_search" onkeyup="amshopby_attr_search(this)" /></li>';
         }
-        foreach ($this->getItemsAsArray() as $item){
-            echo '<li '.$item['style'].
-				(isset($item['default_sort']) ? ' data-default_sort="' . $item['default_sort'] . '"': '') .
-				(isset($item['featured_sort']) ? ' data-featured_sort="' . $item['featured_sort'] . '"': '') .
-				' data-text="' . htmlspecialchars($item['label']) . '"><a class="'.$item['css'].'" '.$item['rel'].' href="'.$item['url'].'">';
-            
+        foreach ($this->getItemsAsArray() as $item) {
+            echo '<li ' . $item['style'] .
+                (isset($item['default_sort']) ? ' data-default_sort="' . $item['default_sort'] . '"' : '') .
+                (isset($item['featured_sort']) ? ' data-featured_sort="' . $item['featured_sort'] . '"' : '') .
+                ' data-text="' . htmlspecialchars($item['label']) . '"><a class="' . $item['css'] . '" ' . $item['rel'] . ' href="' . $item['url'] . '">';
+
             if (isset($item['image_hover']) && $item['image_hover'] != '') {
                 echo '<img src="' . $item['image_hover'] . '" style="display: none;" />';
-                $onHover = 'onmouseover=this.src="' . $item['image_hover'] . '"'; 
+                $onHover = 'onmouseover=this.src="' . $item['image_hover'] . '"';
                 $onHover .= ' onmouseout=this.src="' . $item['image'] . '"';
             } else {
                 $onHover = '';
             }
-            
-            if (!empty($item['image'])){
-                echo '<img src="'.$item['image'].'" ' . $onHover . ' title="'. $item['label'] .'" alt="'. $item['label'] .'">';
+
+            if (!empty($item['image'])) {
+                echo '<img src="' . $item['image'] . '" ' . $onHover . ' title="' . $item['label'] . '" alt="' . $item['label'] . '">';
             }
             echo $item['label'] . $item['count'] . '</a>' . '</li>';
         }
+
     break;
     
     case Amasty_Shopby_Model_Source_Attribute::DT_DROPDOWN:

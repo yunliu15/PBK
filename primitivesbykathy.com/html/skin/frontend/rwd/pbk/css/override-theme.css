@@ -2715,19 +2715,19 @@ div.block-layered-nav.amshopby-filters-top dd a.amshopby-attr:hover {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     border: none;
-    content: '\e90d';
-    color: #d5d5db;
+    content: '\e90d' !important;
+    color: #d5d5db !important;
     position: absolute;
     right: 5px;
-    top: 35%;
-    font-size: 8px;
+    top: 35% !important;
+    font-size: 8px !important;
     padding-left: 8px;
     border-left: 1px solid #d5d5db;
 }
-.amshopby-filters-top .btn-remove:after {
+/*.amshopby-filters-top .btn-remove:after {
     padding-top: 3px;
     top: 20%;
-}
+}*/
 
 .amshopby-filters-top  .btn-remove-inline img {display: none;}
 .amshopby-cat.level0 > ol {display: none;}
@@ -4813,7 +4813,7 @@ and (orientation: portrait) {
     }
 }
 .prod_status {
-    font-size:4px;
+    font-size:10px;
 }
 
 .search-autocomplete {
