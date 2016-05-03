@@ -5094,3 +5094,13 @@ and (orientation: portrait) {
 .wrapper .amquickview-hover img.am-quickview-icon {
     display: none !important;
 }
+
+/* attribute groups */
+.att-group-items {
+    display: none;
+}
+.att-group-title {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
