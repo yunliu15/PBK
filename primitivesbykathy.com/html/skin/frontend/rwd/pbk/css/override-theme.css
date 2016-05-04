@@ -188,7 +188,9 @@ p.no-bottom {margin-bottom:0!important;}
 .button.full-red-button {
     background-color: #7E221B;
 }
-.button.full-red-button:hover {
+.button.full-red-button:hover,
+.button.full-red-button:active,
+.button.full-red-button:focus {
 
     background-color: #B0564F;
 }
@@ -5108,7 +5110,8 @@ and (orientation: portrait) {
 /* register form */
 .account-create .field {
     float: left;
-    width: 50%;
+    width: 48%;
+    margin-left: 1%;
 }
 .account-create .control {
     clear: both;
@@ -5117,11 +5120,12 @@ and (orientation: portrait) {
     border: none;
 }
 .wrapper .account-create select {
-    height: 40px;
+    height: 39px;
     border-radius: 0;
     outline: 1px solid #ababab;
     border: none;
     margin-top: 0;
+    margin-bottom: 10px;
 }
 .wrapper .account-create input[type=text],
 .wrapper .account-create input[type=password] {
@@ -5140,3 +5144,9 @@ and (orientation: portrait) {
     text-transform: capitalize;
 }
 
+.account-create .buttons-set .full-red-button {
+    float: none!important;
+    margin-left: 0 !important;
+    display: block;
+    clear: both;
+}

@@ -210,7 +210,7 @@
             <div class="divider"></div>
         <?php endif; ?>
         <div class="fieldset">
-            <h2 class="legend"><?php //echo $this->__('Login Information') ?></h2>
+            <!--<h2 class="legend"><?php //echo $this->__('Login Information') ?></h2>-->
             <ul class="form-list">
 <!--                <li class="fields">-->
 <!--                    <div class="field">-->
@@ -243,7 +243,7 @@
         </div>
         <div class="buttons-set form-buttons">
             <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-            <button type="submit" data-action="register-new-user" class="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Submit')) ?>"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+            <button type="submit" data-action="register-new-user" class="button full-red-button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Submit')) ?>"><span><span><?php echo $this->__('Create New Account') ?></span></span></button>
         </div>
 
         <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
