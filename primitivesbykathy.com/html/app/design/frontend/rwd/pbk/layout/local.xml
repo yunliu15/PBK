@@ -85,7 +85,7 @@
         </reference>
 
         <reference name="root">
-            <block type="page/text_list" name="before_content" as="preface" translate="label">
+            <block type="core/text_list" name="before_content" as="preface" translate="label">
                 <label>Preface, full width</label>
             </block>
         </reference>
