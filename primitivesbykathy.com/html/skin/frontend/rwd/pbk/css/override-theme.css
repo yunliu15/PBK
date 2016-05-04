@@ -5111,10 +5111,12 @@ and (orientation: portrait) {
 .account-create .field {
     float: left;
     width: 48%;
-    margin-left: 1%;
+    margin-right: 1%;
 }
 .account-create .control {
     clear: both;
+    width: 48%;
+    max-width: 380px;
 }
 .account-create form .legend {
     border: none;

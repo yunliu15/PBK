@@ -100,6 +100,17 @@
            </action>
          </reference>
 
+        <reference name="before_content">
+            <!--<block type="cms/block" name="category_test">
+                <action method="setBlockId"><block_id>category_test</block_id></action>
+            </block>-->
+            <!-- new position for category image, category title and toolbar-->
+            <block type="catalog/category_view" name="category_top" template="catalog/category/category-top.phtml">
+                <action method="append"><block>product_list</block></action>
+            </block>
+
+        </reference>
+
     </catalog_category_layered>
 
     <!--add slider to homepage -->
@@ -435,15 +446,5 @@
         </reference>
     </catalogsearch_result_index>
 
-    <!-- category page -->
-    <catalog_category_default>
-
-        <reference name="before_content">
-            <block type="cms/block" name="category_test">
-                <action method="setBlockId"><block_id>category_test</block_id></action>
-            </block>
-        </reference>
-
-    </catalog_category_default>
 
 </layout>
