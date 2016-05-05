@@ -100,16 +100,14 @@
            </action>
          </reference>
 
-        <reference name="before_content">
-            <!--<block type="cms/block" name="category_test">
-                <action method="setBlockId"><block_id>category_test</block_id></action>
-            </block>-->
-            <!-- new position for category image, category title and toolbar-->
+        <!--<reference name="before_content">
+
+            &lt;!&ndash; new position for category image, category title and toolbar&ndash;&gt;
             <block type="catalog/category_view" name="category_top" template="catalog/category/category-top.phtml">
                 <action method="append"><block>product_list</block></action>
             </block>
 
-        </reference>
+        </reference>-->
 
     </catalog_category_layered>
 
