@@ -147,11 +147,11 @@ tbody {background:#fff;}
     width: 0;
     height: 0;
     margin-bottom: 2px;
-    margin-left: 2px;
+    margin-left: 5px;
     vertical-align: middle;
     content: "";
     border-style: solid solid none;
-    border-width: 4px 4px 0;
+    border-width: 4px 3px 0;
     border-color: #fff transparent transparent;
 }
 
@@ -315,7 +315,7 @@ tr.Canceled {background:#FAF3F1!important;}
 
 
 .header-top {background-color: #7E221B; color:#fff;padding:5px;letter-spacing: 0.05em;}
-.header-top p {color:#fff;}
+.header-top p {color:#fff;font-size:12px;}
 .header-middle,.nav-top {max-width:1260px; margin:0 auto;padding:0 30px;}
 .nav-top-wrapper {
     background-image: url("../images/nav_top_bground.gif");
@@ -338,7 +338,7 @@ tr.Canceled {background:#FAF3F1!important;}
     line-height: 14px;
 }
 #header-account .welcome-msg a[title='Send Invitations'] {display:none;}
-#header-account .links li:not(:last-of-type) a {border-right: 1px solid #333637;}
+#header-account .links li:not(:last-of-type) {border-right: 1px solid #fff;}
 #header-account .links li {padding: 0;}
 #header-search-hide {float:right;margin-top:60px;}
 #header-nav-hide {clear:both;}
@@ -446,8 +446,8 @@ tr.Canceled {background:#FAF3F1!important;}
     color: #fff;
     position: relative;
     left: 4px;
-    top: 3px;
-    font-size: 20px;
+    top: 2px;
+    font-size: 17px;
     line-height: 8px;
 }
 /* change from click-open to hover-open */
@@ -774,7 +774,9 @@ tr.Canceled {background:#FAF3F1!important;}
 .minilogin.arrow-down:after {
     border-color: #646263 transparent transparent;
     margin-top: 3px;
-    margin-left: -5px;
+    margin-right: 2px;
+    position: relative;
+    left: -8px;
     float:right;
     cursor:pointer;
 }
@@ -5348,4 +5350,121 @@ img {
 }
 .header-top p {
     text-transform: uppercase;
+}
+.storeviews {
+    float: left;
+}
+.storeviews a {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 12px;
+}
+.storeviews > a:first-of-type {
+    padding-right: 10px;
+    border-right: 1px solid #fff;
+}
+.storeviews > a:last-of-type {
+    padding-left: 10px;
+}
+.header-language-background,
+.store-language-container {
+    display: none;
+}
+.nav-top-wrapper {
+    background-image: none;
+    background-color: #7E221B;
+}
+#header-account .links a {
+    color: #fff;
+}
+#header-account .links a:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+.nav-top-wrapper a:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+#header-account .links li:not(:last-of-type) a {
+    border-color: #fff;
+}
+.minilogin.arrow-down:after {
+    border-color: #fff transparent transparent;
+}
+
+/* new navigation bar */
+.nav-wishlist-cart-wrapper {
+    background-image: none;
+    border-top: 1px solid #d5d5db;
+    border-bottom: 1px solid #d5d5db;
+}
+#header .block-wishlist .block-title strong,
+#header .block-wishlist .block-title .icon:before,
+.ms-topmenu .ms-label,
+#header .skip-cart .total,
+#header .skip-cart .count,
+#header .skip-link.skip-active .count {
+    color: #333637;
+}
+.block-wishlist .arrow-down:after,
+.header-minicart .arrow-down:after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    vertical-align: middle;
+    content: "";
+    border-style: solid solid none;
+    border-width: 4px 3px 0;
+    border-color: #333637 transparent transparent;
+}
+.header-minicart .total {
+    border-color: #333637;
+}
+.header-minicart .skip-cart:before {
+    background-position: -46px -45px;
+}
+.page-header .wishlist-cart-wrapper .block-wishlist {
+    margin-right: 10px;
+}
+.nav-wishlist-cart .wishlist-cart-wrapper > .checkout-button {
+    background: none;
+    color: #7E221B;
+    font-weight: bold;
+}
+.wishlist-cart-wrapper > .checkout-button:after {
+    color: #7E221B;
+}
+.ms-topmenu .ms-level0.active .ms-label, .ms-topmenu .ms-level0:hover .ms-label, .ms-topmenu .ms-level0:active .ms-label, .ms-topmenu .ms-level0:focus .ms-label {
+    color: #333637;
+}
+.top-container .home-top > div:nth-of-type(1) {
+    background-color: #6F868C;
+}
+.top-container .home-top > div:nth-of-type(2) {
+    background-color: #333637;
+}
+
+.top-container .home-top > div:nth-of-type(3) {
+    background-color: #7E221B;
+}
+.top-container .home-top p {
+    color: #fff;
+    line-height: 16px;
+}
+
+@media only screen and (min-width: 771px) {
+    .top-container .widget {
+        max-width: 1260px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+    .page .top-container {
+        max-width: 100%;
+        background-color: #F0F1F3;
+        padding: 20px;
+        margin-top: 0;
+    }
 }

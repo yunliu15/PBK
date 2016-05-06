@@ -21,6 +21,19 @@
             <remove name="wishlist_link"/>
             <remove name="checkout_cart_link"/>
             <block type="customer/form_login" name="header_customer_form_mini_login"  template="customer/form/mini.login.phtml"/>
+            <!-- add links to top links -->
+            <!--<action method="addLink">
+                <label>Store Locator</label>
+                <url>find-a-store</url>
+                <title>Store Locator</title><prepare/><urlParams/>
+                <position>0</position>
+            </action>
+            <action method="addLink">
+                <label>Contact Us</label>
+                <url>customer-service</url>
+                <title>Contact Us</title>
+                <position>0</position>
+            </action>-->
 
         </reference>
         <reference name="header">

@@ -29,6 +29,11 @@
  * @see Mage_Page_Block_Template_Links
  */
 ?>
+<?php
+$wholesaleUrl = Mage::getUrl('', array('_store'=>'3'));
+$retailUrl = Mage::getUrl('', array('_store'=>'1'));
+
+?>
 <?php $_links = $this->getLinks(); ?>
 <?php if(count($_links)>0): ?>
 <div class="links">
@@ -44,13 +49,29 @@
         </li>
              <?php
         else: ?>
-            <li>
-                <a href="#">
-                    <?php echo $this->__("Wholesale Info");?>
-                </a>
-            </li>
+            <?php $website_id = Mage::app()->getWebsite()->getId(); ?>
+            <?php /*if($website_id == 2): */?><!--
+                    <li>
+                        <a href="#">
+                            <?php /*echo $this->__("Wholesale Info"); */?>
+                        </a>
+                    </li>
+                <?php /*elseif($website_id == 1 ): */?>
+                    <li>
+                        <a href="#">
+                            <?php /*echo $this->__("Retail Info");*/?>
+                        </a>
+                    </li>
+            --><?php /*endif; */?>
         <?php
         endif;?>
+
+        <li>
+            <a href="<?php echo Mage::getUrl('find-a-store');?>">Store Locator</a>
+        </li>
+        <li>
+            <a href="<?php echo Mage::getUrl('customer-service');?>">Contact Us</a>
+        </li>
 
         <?php if(!Mage::getSingleton('customer/session')->isLoggedIn() ): ?>
             <li class="last"><div><a href="<?php echo Mage::getUrl('customer/account/login/'); ?>"><?php echo $this->__('Create Account');?></a></div></li>
@@ -112,6 +133,10 @@
                 endif; ?>
             </div>
         </li>
+        <?php if ($website_id == 1): ?>
+            <li><a class="last" href="<?php echo $wholesaleUrl?>">Wholesale </a></li>
+        <?php endif;?>
+
     </ul>
     <div id="header-login" class="skip-content">
         <?php echo $this->getChildHtml('header_customer_form_mini_login');?>
