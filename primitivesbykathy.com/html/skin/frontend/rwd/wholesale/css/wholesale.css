@@ -11,3 +11,11 @@
 .account-login .col-1.new-users i a:hover {
     color: #333637;
 }
+
+.page .nav-top-wrapper {
+    background-color: #6F868C;
+}
+/* new footer top */
+.footer-container .footer-above {
+    background-color: #333637;
+}

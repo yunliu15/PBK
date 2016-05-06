@@ -32,7 +32,7 @@
 <?php
 $wholesaleUrl = Mage::getUrl('', array('_store'=>'3'));
 $retailUrl = Mage::getUrl('', array('_store'=>'1'));
-
+$website_id = Mage::app()->getWebsite()->getId();
 ?>
 <?php $_links = $this->getLinks(); ?>
 <?php if(count($_links)>0): ?>
@@ -41,15 +41,10 @@ $retailUrl = Mage::getUrl('', array('_store'=>'1'));
     <div class="block-title"><strong><span><?php echo $this->__($this->getTitle()); ?></span></strong></div>
     <?php endif; ?>
     <ul<?php if($this->getName()): ?> id="<?php echo $this->getName() ?>"<?php endif;?> class="all-upper">
-        <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
-        <li>
-            <a href="<?php echo  Mage::helper('b2b')->getQuickOrderUrl()?>">
-                <?php echo $this->__("Quick Order");?>
-            </a>
-        </li>
+
              <?php
-        else: ?>
-            <?php $website_id = Mage::app()->getWebsite()->getId(); ?>
+        //else: ?>
+
             <?php /*if($website_id == 2): */?><!--
                     <li>
                         <a href="#">
@@ -63,15 +58,23 @@ $retailUrl = Mage::getUrl('', array('_store'=>'1'));
                         </a>
                     </li>
             --><?php /*endif; */?>
-        <?php
-        endif;?>
 
-        <li>
-            <a href="<?php echo Mage::getUrl('find-a-store');?>">Store Locator</a>
-        </li>
+        <?php if ($website_id == 1): ?>
+            <li>
+                <a href="<?php echo Mage::getUrl('find-a-store');?>">Store Locator</a>
+            </li>
+        <?php endif ?>
         <li>
             <a href="<?php echo Mage::getUrl('customer-service');?>">Contact Us</a>
         </li>
+
+        <?php if (Mage::helper('customer')->isLoggedIn() && $website_id == 2 ): ?>
+        <li>
+            <a href="<?php echo  Mage::helper('b2b')->getQuickOrderUrl()?>">
+                <?php echo $this->__("Quick Order");?>
+            </a>
+        </li>
+        <?php endif ?>
 
         <?php if(!Mage::getSingleton('customer/session')->isLoggedIn() ): ?>
             <li class="last"><div><a href="<?php echo Mage::getUrl('customer/account/login/'); ?>"><?php echo $this->__('Create Account');?></a></div></li>
