@@ -17,7 +17,7 @@
                 <div class="actions"><a href="<?php echo Mage::helper('amshopby/url')->getFullUrl(array(), 1) ?>">
                         <?php echo Mage::helper('catalog')->__('Clear All Filters') ?></a>
                 </div>
-                <div class="hide-nav"><?php echo $this->__('Hide Filters');?></div>
+
             <?php endif; ?>
             <?php if($this->canShowOptions()): ?>
                     <div class="amshopby-container-top block-layered-nav">
@@ -100,13 +100,13 @@
                     });*/
                 </script>
                 <script>
-                   // jQuery(function($){
-                        //console.log($('#am-top-nav .currently'));
-                        //$('.before-main-content').empty();
+                    jQuery(function($){
+                        var filterContainer = $('#filter-results-container');
+                        filterContainer.empty();
 
-                        //$('#am-top-nav .currently').appendTo($('.before-main-content'));
-                        //$('#am-top-nav .actions').appendTo($('.before-main-content'));
-                   // })
+                        $('#am-top-nav .currently').appendTo(filterContainer);
+                        $('#am-top-nav .actions').appendTo(filterContainer);
+                    })
                 </script>
 
             <?php endif; ?>
