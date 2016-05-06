@@ -27,6 +27,9 @@
 
             <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="mini_wishlist_top" after="cart_sidebar" template="wishlist/top-mini.phtml" />
 
+            <!-- add storeview links -->
+            <block type="core/template" name="storeviews" as="storeviews" template="page/template/storeviews.phtml" />
+
         </reference>
 
         <!-- reset the template for wishlist in sidebar -->
