@@ -106,6 +106,18 @@
 
                         $('#am-top-nav .currently').appendTo(filterContainer);
                         $('#am-top-nav .actions').appendTo(filterContainer);
+
+                        // append title
+                        var pageTitle = $('#am-page-title');
+                        pageTitle.empty();
+                        $('#orig-page-title').appendTo(pageTitle);
+
+                        // append toolbar
+                       var topToolbar = $('#am-top-toolbar');
+
+                        topToolbar.empty();
+                        $('#orig-top-toolbar').appendTo(topToolbar);
+
                     })
                 </script>
 

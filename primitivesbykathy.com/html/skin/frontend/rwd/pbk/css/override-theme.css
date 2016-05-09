@@ -5595,3 +5595,21 @@ img {
     background-image: none;
     color: #333637;
 }
+
+.catalog-category-view .category-title h1 {
+    padding-left: 0;
+    text-transform: uppercase;
+}
+.before-main-content .toolbar {
+    background: #333637;
+    padding: 10px 10px 3px;
+}
+.before-main-content .pager p {
+    color: #fff;
+}
+.before-main-content .pages .current, .pages .current {
+    border: 1px solid #646263;
+    width: 30px;
+    background-color: #646263;
+    cursor: default;
+}

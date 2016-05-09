@@ -446,12 +446,12 @@ function amshopby_move_top_filter(){
     if( amshopbyFiltersTop ) {
         if( categoryProducts ){
             //change top filter's position
-            //var parent = categoryProducts.parentNode;
-            //parent.insertBefore(amshopbyFiltersTop, categoryProducts);
+            var parent = categoryProducts.parentNode;
+            parent.insertBefore(amshopbyFiltersTop, categoryProducts);
 
             //move top filter after toolbar
-            var grid= categoryProducts.select('.products-grid').first();
-            categoryProducts.insertBefore(amshopbyFiltersTop, grid);
+            //var grid= categoryProducts.select('.products-grid').first();
+            //categoryProducts.insertBefore(amshopbyFiltersTop, grid);
 
 
             amshopby_rwd_toggle_content();

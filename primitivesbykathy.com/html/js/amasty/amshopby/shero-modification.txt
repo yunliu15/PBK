@@ -19,3 +19,6 @@ if( categoryProducts ){
 
 }
 >>>>>>>>>>
+
+5/9/2016:
+reversed modification
