@@ -33,6 +33,14 @@
 ?>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
+
+<?php
+
+    $storeId = Mage::app()->getStore()->getStoreId();
+    $product_info = Mage::getModel('catalog/product')->setStoreId($storeId)->load($_product->getId());
+    $text = $product_info->getAttributeText('custom_stock_status');
+
+?>
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
@@ -71,12 +79,18 @@
                     </div>
                 <?php endif;?>
 
+                <?php
+                if(!Mage::getSingleton('customer/session')->isLoggedIn()){
+
+                }
+                else{
+                ?>
                 <div class="price-info">
                     <?php echo $this->getPriceHtml($_product); ?>
                     <?php echo $this->getChildHtml('bundle_prices') ?>
                     <?php echo $this->getTierPriceHtml() ?>
                 </div>
-
+<? }?>
 
                 <?php echo $this->getChildHtml('alert_urls') ?>
 
@@ -100,18 +114,44 @@
                 <?php if (!$this->hasOptions()):?>
                     <div class="add-to-box">
                         <?php if($_product->isSaleable()): ?>
+
+                            <?php
+                            if(!Mage::getSingleton('customer/session')->isLoggedIn()){ ?>
+                               <a class="button"  onclick="window.parent.setLocation('<?php echo Mage::getUrl('customer/account/login',array('_secure'=>true)) ?>')">
+                                          Login to Add to Cart</a></strong></a>
+
+                            <?php } else{
+                                ?>
                             <?php echo $this->getChildHtml('addtocart') ?>
+
+                                <?php } ?>
 
 
                             <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
                                 <span class="or"><?php echo $this->__('OR') ?></span>
                             <?php endif; ?>
                         <?php endif; ?>
+                        <?php
+                        if(!Mage::getSingleton('customer/session')->isLoggedIn()){
+
+                            ?>
+                            <div class="price-info" style="margin-top:10px">
+                                <?php echo $_helper->__('Avability:') ?>
+                                <p class="availability in-stock">
+
+                                    <span class="stock-status-product-page"><?php echo $text ?></span>
+                                </p>
+                            </div>
+                            <?php
+                        }
+                        else{
+                        ?>
                         <div class="extra-info">
                             <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
                             <div><?php echo $this->__("Availability")?></div>
                             <?php echo $this->getChildHtml('product_type_availability'); ?>
                         </div>
+                        <?php } ?>
                         <div class="wishlist-sharing clearfix">
                         <?php echo $this->getChildHtml('addto') ?>
                         <span class="share">Share this item:</span><?php echo $this->getChildHtml('sharing') ?></div>
