@@ -290,7 +290,7 @@ $quote = Mage::getSingleton('checkout/session')->getQuote();
 <?php } ?>
 
                                 <ul class="add-to-links">
-                                    <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                    <?php if ($this->helper('wishlist')->isAllow() && Mage::getSingleton('customer/session')->isLoggedIn()) : ?>
                                     <?php if(Mage::getSingleton('customer/session')->isLoggedIn()){ // this is when the user is not logged in  ?>
                                         <li><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist icon icon-moon button"></a></li>
                                     <?php }else { ?>
