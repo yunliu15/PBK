@@ -33,6 +33,17 @@
 ?>
 <?php if($this->getCollection()->getSize()): ?>
 <div class="toolbar" id="orig-top-toolbar">
+    <div class="limiter arrow-down">
+        <!--<label><?php //echo $this->__('Show') ?></label>-->
+        <select onchange="setLocation(this.value)" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Results per page')); ?>">
+            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
+                <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
+                    <?php echo $_limit . ' Items per Page'?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+
     <?php if( $this->isExpanded() ): ?>
         <div class="sorter">
             <?php if( $this->isEnabledViewSwitcher() ): ?>
@@ -71,16 +82,7 @@
             </div>
         </div>
     <?php endif; ?>
-    <div class="limiter arrow-down">
-        <!--<label><?php //echo $this->__('Show') ?></label>-->
-        <select onchange="setLocation(this.value)" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Results per page')); ?>">
-            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
-                <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
-                    <?php echo $_limit . ' Items per Page'?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-    </div>
+
     <div class="pager">
         <div class="count-container">
             <?php if($this->getLastPageNum()>1): ?>

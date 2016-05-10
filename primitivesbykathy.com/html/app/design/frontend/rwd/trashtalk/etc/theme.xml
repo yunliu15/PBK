@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<theme>
+    <parent>rwd/pbk</parent>
+    <layout>
+        <updates>
+            <trashtalk_default>
+                <file>trashtalk/default.xml</file>
+            </trashtalk_default>
+        </updates>
+    </layout>
+</theme>

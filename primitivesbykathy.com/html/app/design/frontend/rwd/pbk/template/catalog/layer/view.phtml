@@ -55,18 +55,28 @@
             <script type="text/javascript">decorateDataList('narrow-by-list')</script>
             <script>
                 jQuery(function($){
-                    var groupTitle = $('.att-group-title');
+                    /*var groupTitle = $('.att-group-title');
                     var groupOptions = $('.att-group-items');
                     groupOptions.each(function() {
                         if ($(this).find('a').hasClass('amshopby-attr-selected')) {
                             $(this).show();
                         }
-                    })
+                    });
                     groupTitle.click(function() {
                        var groupItems = $(this).parent('li').find('.att-group-items');
                         groupItems.toggle();
+                    })*/
+                    var wrapper = $('.amshopby-filters-left #narrow-by-list');
+
+                    var label = wrapper.find('dt');
+                    label.click(function() {
+                        var content = $(this).parent().find('dd');
+                        content.toggle();
                     })
                 });
+
+
+
             </script>
         <?php endif; ?>
     </div>

@@ -1,0 +1,55 @@
+.wrapper a:hover {
+    color: #BA83A0;
+}
+.wrapper .red-text {
+    color: #BA83A0 !important;
+}
+.wrapper .red-link {
+    color: #BA83A0 !important;
+}
+
+.cms-home .featured-collections .sale-inner {
+    border: 1px solid #BEA7B1;
+}
+.cms-home .collection.sale {
+    background-color: #BA83A0;
+}
+.page .nav-top-wrapper {
+    background-color: #80A39C;
+}
+
+.footer-container .footer-above {
+    background-color: #BA83A0;
+}
+.wrapper .footer-top .help strong,
+.wrapper .copyright a,
+.wrapper .ms-topmenu .ms-submenu .ms-content a:hover,
+.wrapper .breadcrumbs li a,
+.wrapper .block-account li strong,
+.wrapper .block-cms-menu li strong,
+.wrapper .block-account li a:hover,
+.wrapper .block-cms-menu li a:hover,
+.wrapper .footer .links a:hover {
+    color: #BA83A0;
+}
+
+.wrapper .nav-wishlist-cart .wishlist-cart-wrapper > .checkout-button {
+    background: #80A39C;
+    color: #fff;
+    height: 49px;
+    top: -9px;
+    padding-top: 14px;
+}
+.wrapper .wishlist-cart-wrapper > .checkout-button:after {
+    color: #fff;
+}
+
+/* footer */
+.wrapper div.footer-container {
+    background-image: url("../images/dark-graybg.gif");
+}
+div.footer .links a,
+.footer .block-title strong,
+.footer a, .footer span {
+    color: #fff;
+}

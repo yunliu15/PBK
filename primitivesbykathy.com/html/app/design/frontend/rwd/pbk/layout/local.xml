@@ -131,6 +131,13 @@
 
         </reference>
 
+        <reference name="left_first">
+            <block type="cms/block" name="catalog_banner" after="-">
+                <action method="setBlockId"><block_id>catalog_banner</block_id></action>
+            </block>
+
+        </reference>
+
     </catalog_category_layered>
 
     <!-- update layout of search result page -->
