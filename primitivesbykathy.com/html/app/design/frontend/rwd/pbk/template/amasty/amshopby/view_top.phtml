@@ -99,29 +99,31 @@
 
                     });*/
                 </script>
-                <script>
-                    jQuery(function($){
-                        var filterContainer = $('#filter-results-container');
-                        filterContainer.empty();
-
-                        $('#am-top-nav .currently').appendTo(filterContainer);
-                        $('#am-top-nav .actions').appendTo(filterContainer);
-
-                        // append title
-                        var pageTitle = $('#am-page-title');
-                        pageTitle.empty();
-                        $('#orig-page-title').appendTo(pageTitle);
-
-                        // append toolbar
-                       var topToolbar = $('#am-top-toolbar');
-
-                        topToolbar.empty();
-                        $('#orig-top-toolbar').appendTo(topToolbar);
-
-                    })
-                </script>
 
             <?php endif; ?>
+
+            <script>
+                jQuery(function($){
+                    var filterContainer = $('#filter-results-container');
+                    filterContainer.empty();
+
+                    $('#am-top-nav .currently').appendTo(filterContainer);
+                    $('#am-top-nav .actions').appendTo(filterContainer);
+
+                    // append title
+                    var pageTitle = $('#am-page-title');
+                    pageTitle.empty();
+                    $('#orig-page-title').appendTo(pageTitle);
+
+                    // append toolbar
+                    var topToolbar = $('#am-top-toolbar');
+
+                    topToolbar.empty();
+                    $('#orig-top-toolbar').appendTo(topToolbar);
+
+                })
+            </script>
+
         </div>
     </div>
 
