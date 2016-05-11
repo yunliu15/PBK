@@ -86,13 +86,13 @@
     <div class="pager">
         <div class="count-container">
             <?php if($this->getLastPageNum()>1): ?>
-                <p class="amount amount--has-pages all-upper">
+                <p class="amount amount--has-pages">
                     <!--<?php //echo $this->__('Showing %s to %s of %s ', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum())?><strong>Items</strong>-->
                     <?php echo $this->__('Showing ') .$this->getFirstNum() . $this->__(' to ') . $this->getLastNum() . $this->__(' of ') ?>
-                    <strong><?php echo $this->getTotalNum() . $this->__(' items')?></strong>
+                    <strong><?php echo $this->getTotalNum() . $this->__(' Items')?></strong>
                 </p>
             <?php else: ?>
-                <p class="amount amount--no-pages all-upper">
+                <p class="amount amount--no-pages">
                     <?php echo $this->__('Showing %s Item(s)', $this->getTotalNum()) ?>
                 </p>
             <?php endif; ?>

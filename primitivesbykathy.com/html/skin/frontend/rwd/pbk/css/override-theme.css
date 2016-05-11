@@ -430,7 +430,7 @@ tr.Canceled {background:#FAF3F1!important;}
     vertical-align: top;
     background-color: #7E221B;
     padding: 9px 15px 10px;
-    top: -3px;
+    top: -4px;
     position: relative;
 
 }
@@ -5567,7 +5567,7 @@ img {
 .currently .current-filter .btn-remove:after,
 .currently .current-filter  .btn-remove-inline:after {
     position: relative;
-    color: #333637;
+    color: #333637 !important;
     top: -1px;
 
 }
@@ -5599,7 +5599,7 @@ img {
     border: 1px solid #7E221B;
     background: #7E221B;
     color: #fff;
-    padding: 0 10px;
+    padding: 0 15px;
     border-top-right-radius: 2em;
     border-bottom-right-radius: 2em;
     border-top-left-radius: 2em;
@@ -5608,6 +5608,7 @@ img {
 }
 #filter-results-container .actions a {
     color: #fff;
+    font-size: 12px;
 }
 #am-top-nav > .block-title {
     display: none !important;
