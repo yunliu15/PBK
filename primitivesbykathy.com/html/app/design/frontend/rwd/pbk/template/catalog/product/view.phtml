@@ -175,14 +175,20 @@
                         <?php } ?>
                         <div class="wishlist-sharing clearfix">
                         <?php echo $this->getChildHtml('addto') ?>
-                       <?php echo $this->getChildHtml('sharing') ?></div>
-
+                        <?php if($websiteId == 1): ?>
+                           <?php echo $this->getChildHtml('sharing') ?>
+                        <?php endif; ?>
+                    </div>
                     </div>
                     <?php echo $this->getChildHtml('extra_buttons') ?>
                 <?php elseif (!$_product->isSaleable()): ?>
                     <div class="add-to-box">
                         <?php echo $this->getChildHtml('addto') ?>
-                       <?php echo $this->getChildHtml('sharing') ?>
+
+                        <?php if($websiteId == 1): ?>
+
+                           <?php echo $this->getChildHtml('sharing') ?>
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
             </div>
