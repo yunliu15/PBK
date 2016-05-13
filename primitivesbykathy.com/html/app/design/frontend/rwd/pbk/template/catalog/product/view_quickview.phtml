@@ -33,19 +33,15 @@
 ?>
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
+<?php $websiteId = Mage::app()->getWebsite()->getId(); ?>
+<?php $caseTest = $_product->getCaseTest(); ?>
 
-<?php
 
-    $storeId = Mage::app()->getStore()->getStoreId();
-    $product_info = Mage::getModel('catalog/product')->setStoreId($storeId)->load($_product->getId());
-    $text = $product_info->getAttributeText('custom_stock_status');
-
-?>
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
-<div class="product-view test">
+<div class="product-view">
     <div class="product-essential">
         <form action="<?php echo $this->getSubmitUrl($_product, array('_secure' => $this->_isSecure())) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
             <?php echo $this->getBlockHtml('formkey') ?>
@@ -81,16 +77,25 @@
 
                 <?php
                 if(!Mage::getSingleton('customer/session')->isLoggedIn()){
-
+                    echo '<a class="button"  target="_parent" href="'.Mage::getUrl('customer/account/login',array('_secure'=>true)).'">
+                                          Login to Add to Cart</a></strong></a>';
                 }
                 else{
-                ?>
-                <div class="price-info">
-                    <?php echo $this->getPriceHtml($_product); ?>
-                    <?php echo $this->getChildHtml('bundle_prices') ?>
-                    <?php echo $this->getTierPriceHtml() ?>
-                </div>
-<? }?>
+                    ?>
+                    <div class="price-info">
+                        <?php if($websiteId == '2'): ?>
+                            <div class="wholesale-price-product">
+                                <span>Wholesale Price:</span>
+                            </div>
+                        <?php endif; ?>
+                        <?php echo $this->getPriceHtml($_product); ?>
+                        <?php echo $this->getChildHtml('bundle_prices') ?>
+                        <?php echo $this->getTierPriceHtml() ?>
+                        <?php echo $this->getChildHtml('casediscount'); ?>
+                    </div>
+
+                <?php } ?>
+
 
                 <?php echo $this->getChildHtml('alert_urls') ?>
 
@@ -114,56 +119,78 @@
                 <?php if (!$this->hasOptions()):?>
                     <div class="add-to-box">
                         <?php if($_product->isSaleable()): ?>
-
                             <?php
-                            if(!Mage::getSingleton('customer/session')->isLoggedIn()){ ?>
-                               <a class="button"  onclick="window.parent.setLocation('<?php echo Mage::getUrl('customer/account/login',array('_secure'=>true)) ?>')">
-                                          Login to Add to Cart</a></strong></a>
-
-                            <?php } else{
+                            if(!Mage::getSingleton('customer/session')->isLoggedIn()){
+                            }
+                            else{
                                 ?>
-                            <?php echo $this->getChildHtml('addtocart') ?>
-
-                                <?php } ?>
+                                <?php echo $this->getChildHtml('addtocart') ?>
+                            <?php } ?>
 
 
                             <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
                                 <span class="or"><?php echo $this->__('OR') ?></span>
                             <?php endif; ?>
                         <?php endif; ?>
+
                         <?php
-                        if(!Mage::getSingleton('customer/session')->isLoggedIn()){
-
-                            ?>
-                            <div class="price-info" style="margin-top:10px">
-                                <?php echo $_helper->__('Avability:') ?>
+                        if(!Mage::getSingleton('customer/session')->isLoggedIn()){ ?>
+                            <div class="extra-info">
+                                <div><?php echo $this->__("Availability")?></div>
                                 <p class="availability in-stock">
+                                    <style>
+                                        .prod_status{
+                                            font-size: 16px !important;
+                                        }
+                                    </style>
 
-                                    <span class="stock-status-product-page"><?php echo $text ?></span>
+                                    <span class="stock-status-product-page"><?php echo Mage::helper('amstockstatus')->showStockStatus($_product); ?></span>
                                 </p>
                             </div>
-                            <?php
-                        }
+                        <?php }
                         else{
-                        ?>
-                        <div class="extra-info">
-                            <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
-                            <div><?php echo $this->__("Availability")?></div>
-                            <?php echo $this->getChildHtml('product_type_availability'); ?>
-                        </div>
+                            ?>
+
+                            <div class="extra-info">
+                                <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
+                                <div><?php echo $this->__("Availability")?></div>
+                                <?php //echo $this->getChildHtml('product_type_availability'); ?>
+                                <p class="availability in-stock">
+                                    <style>
+                                        .prod_status{
+                                            font-size: 16px !important;
+                                        }
+                                    </style>
+                                    <span class="stock-status-product-page"><?php echo Mage::helper('amstockstatus')->showStockStatus($_product); ?></span>
+                                </p>
+
+
+                            </div>
+                            <?php if(isset($caseTest) && is_numeric($caseTest)): ?>
+                                <div class="case-discount-price-bottom">
+                                    <p>Must purchase in quantities of 2.</p>
+                                    <p><em>Case discount is not valid with any other promos or sale offers.</em></p>
+                                </div>
+                            <?php endif; ?>
                         <?php } ?>
                         <div class="wishlist-sharing clearfix">
-                        <?php echo $this->getChildHtml('addto') ?>
-                        <span class="share">Share this item:</span><?php echo $this->getChildHtml('sharing') ?></div>
+                            <?php echo $this->getChildHtml('addto') ?>
+                            <?php if($websiteId == 1): ?>
+                                <?php echo $this->getChildHtml('sharing') ?>
+                            <?php endif; ?>
+                        </div>
                     </div>
                     <?php echo $this->getChildHtml('extra_buttons') ?>
                 <?php elseif (!$_product->isSaleable()): ?>
                     <div class="add-to-box">
                         <?php echo $this->getChildHtml('addto') ?>
-                        <span class="share">Share this item:</span><?php echo $this->getChildHtml('sharing') ?>
+
+                        <?php if($websiteId == 1): ?>
+
+                            <?php echo $this->getChildHtml('sharing') ?>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
-                <div class="red-link view-details">
+                <?php endif; ?>                <div class="red-link view-details">
                     <a target="_parent" href="<?php echo $_product->getProductUrl() ?>">View more details >></a>
                 </div>
             </div>

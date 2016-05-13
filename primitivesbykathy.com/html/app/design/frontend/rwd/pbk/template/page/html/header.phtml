@@ -80,24 +80,25 @@
         <?php // In order for the language switcher to display next to logo on smaller viewports, it will be moved here.
         // See app.js for details ?>
         <div class="store-language-container"></div>
+        <div class="header-middle-wrapper">
+            <div class="header-middle">
+                <!-- Search -->
 
-        <div class="header-middle">
-            <!-- Search -->
+                <div id="header-search-hide" class="hide-mobile">
+    <!--                                    --><?php //echo $this->getChildHtml('top.search') ?>
+                    <?php echo $this->getChildHtml('footerSearch') ?>
+    <!--                --><?php //echo $this->getLayout()
+    //                    ->createBlock("core/template")
+    //                    ->setTemplate("catalogsearch/form.mini.phtml")
+    //                    ->toHtml(); ?>
+                </div>
 
-            <div id="header-search-hide" class="hide-mobile">
-<!--                                    --><?php //echo $this->getChildHtml('top.search') ?>
-                <?php echo $this->getChildHtml('footerSearch') ?>
-<!--                --><?php //echo $this->getLayout()
-//                    ->createBlock("core/template")
-//                    ->setTemplate("catalogsearch/form.mini.phtml")
-//                    ->toHtml(); ?>
+                <!-- Logo -->
+                <a class="logo" href="<?php echo $this->getUrl('') ?>">
+                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
+                    <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
+                </a>
             </div>
-
-            <!-- Logo -->
-            <a class="logo" href="<?php echo $this->getUrl('') ?>">
-                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
-                <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
-            </a>
         </div>
 
         <div class="skip-wrapper">

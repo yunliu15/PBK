@@ -311,6 +311,7 @@ tr.Canceled {background:#FAF3F1!important;}
     font-weight: 900;
 }
 /****** Header ********/
+
 #header .skip-links,#header .skip-link {border:none;}
 
 
@@ -1612,8 +1613,12 @@ body.newsletter-manage-index .buttons-set button.button {
 .cart .btn-empty .icon-moon:before {content:"\e929";position:relative;left:-5px;font-size: 16px;
     top: 2px;}
 .cart .cart-table {margin-bottom:40px;}
-.cart .cart-table .btn-empty {float:none;}
+.cart .cart-table .btn-empty,
+.cart .cart-table .btn-update{float:right;}
 .cart .cart-table .btn-continue {float:left;}
+.wrapper .data-table.cart-table tfoot td.a-right.last {
+    padding-left: 0;
+}
 .cart .cart-table {float:none;width:100%;margin-top:10px;}
 .cart-table thead > tr th span,.cart-table thead > tr th{text-transform: uppercase;}
 .cart-table thead th {border:1px solid #d5d5db;}
@@ -4445,6 +4450,7 @@ td.Discount + td .price {color: green !important;}
 .account-login .red-button:hover {
     border-color: #B0564F;
     background: #B0564F;
+    color: #fff;
 }
 
 .btn-create-account span span:before {
@@ -5625,10 +5631,11 @@ img {
     display: inline-block;
     margin-right: 10px;
 }
-.col-left .block-layered-nav .block-content > dl > dt {
+.page .block-layered-nav .block-content > dl > dt {
     background: #fff;
     background-image: none;
     color: #333637;
+    font-weight: bold;
 }
 
 .catalog-category-view .category-title h1 {
@@ -5654,7 +5661,8 @@ img {
 
 .catalog-banner {
     background: #6F868C;
-    padding: 30px 10px;
+    padding: 30px;
+    margin-top: 20px;
 }
 .catalog-banner p {
     color: #fff;
@@ -5704,4 +5712,7 @@ img {
 
 .input-text.telephone_input {
     width: 26%;
+}
+.discount-percent {
+    color: #7E221B;
 }

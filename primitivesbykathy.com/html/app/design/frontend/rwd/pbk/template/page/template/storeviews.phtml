@@ -9,12 +9,10 @@ $ws_questionables = $domain . 'ws_questionables';
 
 $storeId = Mage::app()->getStore()->getStoreId();
 ?>
-    <?php if($storeId == 2 || $storeId == 5): // retail trashtalk or retail questionable
+    <?php if($storeId != 1 && $storeId != 3): // not retail or wholesale
         ?>
     <a href="<?php echo $domain?>"> Primitives by Kathy </a>
-    <?php elseif ($storeId == 4 || $storeId == 6): // wholesale trashtalk or wholesale questionalble
-        ?>
-    <a href="<?php echo $domain?>"> Wholesale </a>
+
     <?php endif; ?>
 
     <?php if($storeId == 1 || $storeId == 5): // retail or retail questionable
