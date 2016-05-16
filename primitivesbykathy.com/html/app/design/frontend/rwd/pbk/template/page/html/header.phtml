@@ -27,7 +27,7 @@
  * @var Mage_Page_Block_Html_Header $this
  */
 ?>
-
+<?php $website_id = Mage::app()->getWebsite()->getId(); ?>
 
 <div class="header-language-background">
     <div class="header-language-container">
@@ -41,7 +41,7 @@
     </div>
 </div>
 
-<header id="header" class="page-header">
+<header id="header" class="page-header <?php if($website_id == 2) echo 'wholesale'; ?>">
 
 
     <div class="page-header-container">
@@ -59,7 +59,7 @@
 
                 <!-- Account -->
 
-                <?php $website_id = Mage::app()->getWebsite()->getId(); ?>
+
                 <div id="header-account">
                     <?php if (Mage::helper('customer')->isLoggedIn() && $website_id == 2): ?>
                         <span class="welcome-msg">Wholesale - <?php echo $this->getChildHtml('welcome') ?> <?php //echo $this->getChildHtml('accountLinks') ?></span>

@@ -256,7 +256,7 @@ $quote = Mage::getSingleton('checkout/session')->getQuote();
                             <div class="actions">
                                 <?php
                                 if(!Mage::getSingleton('customer/session')->isLoggedIn()){
-                                    echo '<a class="button"  href="'.Mage::getUrl('customer/account/login',array('_secure'=>true)).'">
+                                    echo '<a class="button login"  href="'.Mage::getUrl('customer/account/login',array('_secure'=>true)).'">
                                           Login to Add to Cart</a></strong></a>';
 
                                 }

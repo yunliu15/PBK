@@ -1046,6 +1046,7 @@ tr.Canceled {background:#FAF3F1!important;}
     position: relative;
     z-index: 1;
     padding:0 20px;
+    font-weight: bold;
 }
 body.cms-home .page .main-container {padding-bottom:65px;}
 
@@ -1349,13 +1350,20 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .order-details tfoot {background:#fff;border:1px solid #d5d5db;}
 .wrapper .data-table tfoot tr {background:none;}
 .tracking-table.data-table tbody tr.first {background-color:#EDEBEC;}
-.tracking-table.data-table tbody tr.even th, .tracking-table.data-table tbody tr.even td{background-color:#fff;border:1px solid #d5d5db;}
+.tracking-table.data-table tbody tr.even th, .tracking-table.data-table tbody tr.even td{background-color:#fff;border:1px solid #d5d5db;background-image: none;color:#333637;}
 .order-details .buttons {
     float: right;
     position: relative;
     top: -30px;
 }
-
+.tracking-table.data-table tbody tr.first td {
+    background-color: #333637;
+    background-image: url('../images/dark-graybg.gif');
+    color: #fff;
+}
+.tracking-table.data-table tbody tr.first td a {
+    color: #fff;
+}
 
 .my-account #my-orders-table .product-info-wrapper {display:table;}
 .my-account #my-orders-table .product-info,.my-account #my-orders-table .product-img {display:table-cell;vertical-align:top;}
@@ -1412,10 +1420,14 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     width: 17px;
     height: 17px;
     background-image: url("../images/icon_sprite_new.png");
-    background-position: 0 -186px;
+    background-position: -32px -186px;
     position: relative;
     top: 4px;
     right: 3px;
+}
+.link-edit:hover:before {
+
+    background-position: 0 -186px;
 }
 
 .my-account .link-email:before {
@@ -3633,6 +3645,12 @@ body[class^=" b2b"] .footer-bottom {
     min-width: 100%;
     width: 1148px;
 }
+.wrapper .b2b-wrapper .b2b-shopping-cart .div-table {
+    width: 100%;
+}
+.wrapper .b2b-wrapper .b2b-shopping-cart .div-table .table-header .th-product {
+    margin-right: 0;
+}
 
 .wrapper .b2b-wrapper .b2b-quick-order h3,
 .wrapper .b2b-wrapper .b2b-shopping-cart h1,
@@ -5673,6 +5691,9 @@ img {
 }
 .toolbar .sorter {
     margin-left: 10px;
+}
+.products-grid .button.login {
+    width: calc(100% - 20px);
 }
 
 @media (max-width: 979px) {
