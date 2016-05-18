@@ -121,7 +121,25 @@
                     topToolbar.empty();
                     $('#orig-top-toolbar').appendTo(topToolbar);
 
-                })
+                    // remove category image when filters selected
+                    var img = $('.category-image');
+                    var currentFilter = $('.current-filter');
+                    var showImg = true;
+                    if (currentFilter.length > 0) {
+                        if ($('body').hasClass('category-everyday')) {
+                            for (var i = 0; i < currentFilter.length; i++) {
+                                if (currentFilter.eq(i).find('.label').data('title') != 'producttype') {
+                                    showImg = false;
+                                    break;
+                                }
+                            }
+                        }
+                        else showImg = false;
+                    }
+                    if (showImg){
+                        img.show();
+                    }else img.hide();
+                });
             </script>
 
         </div>

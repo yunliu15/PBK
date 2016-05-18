@@ -116,7 +116,7 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
     background-color:  #7ca09b;
 }
 .footer-container .footer-above {
-    background-color: #8D4C72;
+    background-color: #7ca09b;
 }
 .cms-home .collection-text {
     background: #333637;
@@ -129,8 +129,6 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
     color: #EFBED4 !important;
 }
 
-.wrapper .footer-top .help strong,
-.wrapper .copyright a,
 .wrapper .ms-topmenu .ms-submenu .ms-content a:hover,
 .wrapper .breadcrumbs li a,
 .wrapper .block-account li strong,
@@ -199,11 +197,15 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
     background: #7ca09b;
 }
 /* footer */
-/*.wrapper div.footer-container {
-    background-image: url("../images/dark-graybg.gif");
+.wrapper div.footer-container {
+    background-image: url("../images/Footer-BgroundTTALK.gif");
 }
 div.footer .links a,
 .footer .block-title strong,
 .footer a, .footer span {
     color: #fff;
-}*/
+}
+.wrapper .footer-top .help strong,
+.wrapper .copyright a {
+    color: #fff;
+}
