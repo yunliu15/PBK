@@ -838,7 +838,7 @@ tr.Canceled {background:#FAF3F1!important;}
     width: 100%;
 }
 .wrapper .ms-megamenu .ms-topmenu {
-    width: 100%;
+    width: calc(100% - 60px);
 }
 .page-header .wishlist-cart-wrapper {
 
@@ -887,6 +887,12 @@ tr.Canceled {background:#FAF3F1!important;}
         top: 29px;
     }
 }
+@media only screen and (max-width: 479px) {
+    .wrapper .ms-megamenu .ms-topmenu {
+        width: 100%;
+    }
+
+}
 
 /* mobile size */
 .ms-megamenu .anchor_mbmenu, .ms-megamenu .anchor_lmbmenu {
@@ -912,8 +918,10 @@ tr.Canceled {background:#FAF3F1!important;}
         font-size: 16px;
     }
     .ms-megamenu .ms-topmenu {
+        position: absolute;
         top: 30px;
         margin-bottom: 40px;
+        width: calc(100% - 30px);
     }
 }
 #header .skip-links.nav {
@@ -1011,7 +1019,6 @@ tr.Canceled {background:#FAF3F1!important;}
 .wrapper .top-container {margin-top:20px;}
 /******* Home **************/
 .slider {
-    max-height: 400px;
     overflow: hidden;
     width: 100%;
     position: relative;
@@ -1019,6 +1026,7 @@ tr.Canceled {background:#FAF3F1!important;}
 }
 .slider img {
     max-width: 100%;
+    width: 100%;
     display: block;
     margin: auto;
 }
@@ -3158,7 +3166,7 @@ div.footer .block-title strong {
     }
     #header .skip-search .icon-moon:before {
         content: "\e926";
-        color: #fff;
+        color: #333637;
         font-size: 16px;
     }
 
@@ -3380,6 +3388,7 @@ div.footer .block-title strong {
     #storelocator-results td{width:100%;display:block;}
     #storelocator-results #storelocator-container #sidebar {height:auto;width:100%;}
     #storelocator-results #sidebar .featured {text-align:left;}
+
 }
 
 @media only screen and (max-width: 466px){
@@ -5537,6 +5546,16 @@ img {
     line-height: 16px;
 }
 
+.wrapper .ms-megamenu .anchor_mbmenu .anchor_mbmenu_text {
+    color: #333637;
+}
+.wrapper .search-autocomplete:before {
+    border-bottom: 7px solid #7E221B;
+}
+.wrapper .ms-megamenu .anchor_mbmenu {
+    padding: 5px 0;
+}
+
 @media only screen and (min-width: 771px) {
     .top-container .widget {
         max-width: 1260px;
@@ -5742,4 +5761,34 @@ img {
 }
 .discount-percent {
     color: #7E221B;
+}
+
+@media (min-width: 901px) and (max-width: 1500px) {
+    .slider{
+        width: 100%;
+        overflow: hidden;
+    }
+    .slider img {
+        width: 1500px;
+        max-width: 1500px;
+        position: relative;
+        right: calc(750px - 50%);
+    }
+}
+@media (max-width: 900px){
+    .slider img {
+        max-width: 166.67%;
+        width: 166.67%;
+        position: relative;
+        right: 33.34%;
+    }
+}
+
+/* slider */
+button.slick-next {
+    right: 10px;
+}
+button.slick-prev {
+    left: 10px;
+    z-index: 999;
 }

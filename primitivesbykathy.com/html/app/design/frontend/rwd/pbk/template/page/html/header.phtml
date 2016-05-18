@@ -167,9 +167,11 @@
 </header>
 <?php
 $page= Mage::getSingleton('cms/page')->getIdentifier();
-if($page=='home'){
-    echo $this->getChildHtml('slider');
-}
 ?>
+<?php if($page=='home'): ?>
+    <?php echo $this->getChildHtml('slider');?>
+
+
+<?php endif; ?>
 
 <?php echo $this->getChildHtml('topContainer'); ?>

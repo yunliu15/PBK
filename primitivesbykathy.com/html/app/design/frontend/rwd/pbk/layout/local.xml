@@ -12,8 +12,12 @@
 
             <!-- CSS -->
             <action method="addItem" after="-"><type>skin_css</type><name>css/override-theme.css</name><params/></action>
-
+            <action method="addItem"><type>skin_css</type><name>css/slick.css</name><params/></action>
+            <action method="addItem"><type>skin_css</type><name>css/slick-theme.css</name><params/></action>
+            <!-- JS -->
             <action method="removeItem"><type>js</type><name>js/jquery/jquery-min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/slick.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/slick.min.js</name></action>
         </reference>
 
         <reference name="top.links">
