@@ -5792,3 +5792,28 @@ button.slick-prev {
     left: 10px;
     z-index: 999;
 }
+
+/* edit customer information form */
+.my-account .form-list .fields .field,
+.my-account .form-list > li:not(.fields),
+.my-account .customer-user-attributes .form-list .field {
+    width: 50%;
+    float: left;
+}
+.my-account .form-list > li:nth-of-type(2n+1) {
+    clear: left;
+}
+.clear-left {
+    clear: left;
+}
+.form-list:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.my-account .fieldset.change-pw {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ededed;
+}
