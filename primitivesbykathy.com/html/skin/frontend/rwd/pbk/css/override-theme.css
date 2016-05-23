@@ -860,9 +860,9 @@ tr.Canceled {background:#FAF3F1!important;}
 .ms-submenu .col-category a.level0 + a.level1 {
     margin-top: 20px;
 }
-.ms-submenu .col-category a.level1 + a.level2 {
+/*.ms-submenu .col-category a.level1 + a.level2 {
     border-top: 4px double #d5d5db;
-}
+}*/
 .ms-submenu .col-category a.level2 + a.level1 {
     margin-top: 20px;
 }
