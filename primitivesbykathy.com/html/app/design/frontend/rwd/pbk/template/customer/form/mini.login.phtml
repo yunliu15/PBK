@@ -24,18 +24,21 @@
  * @license http://www.magento.com/license/enterprise-edition
  */
 ?>
+<?php
+$wholesaleUrl = Mage::getUrl('', array('_store'=>'3'));
+?>
 <div class="block block-login">
     <div class="block-title clearfix arrow-up">
         <strong><span><?php echo $this->__('Log in') ?></span></strong>
-        <span class="right"><?php echo $this->__('Need an account?') ?> <a href="<?php echo Mage::getUrl('customer/account/create/'); ?>" class="red-link"> <?php echo $this->__('Click here!') ?>  </a></span>
+        <span class="right"><?php echo $this->__('Need an account?') ?> <a href="<?php echo $wholesaleUrl . 'customer/account/create/'; ?>" class="red-link"> <?php echo $this->__('Click here!') ?>  </a></span>
     </div>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post">
         <div class="block-content">
             <input name="form_key" type="hidden"
                    value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
 
-            <label for="mini-login"><?php //echo $this->__('Email:') ?></label><input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="login[username]" id="mini-login" class="input-text" placeholder="Enter email or username"/>
-            <label for="mini-password"><?php //echo $this->__('Password:') ?></label><input type="password" name="login[password]" id="mini-password" class="input-text" placeholder="Enter your password"/>
+            <label for="mini-login"><?php //echo $this->__('Email:') ?></label><input type="text" autocapitalize="off" autocorrect="off" spellcheck="false" name="login[username]" id="mini-login" class="input-text required-entry validate-length" placeholder="Enter email or username"/>
+            <label for="mini-password"><?php //echo $this->__('Password:') ?></label><input type="password" name="login[password]" id="mini-password" class="input-text required-entry validate-password" placeholder="Enter your password"/>
             <div class="actions">
                 <a href="<?php echo Mage::getUrl('customer/account/forgotpassword/'); ?>" class="red-link">
                     <?php echo $this->__('Forgot my log info?') ?>

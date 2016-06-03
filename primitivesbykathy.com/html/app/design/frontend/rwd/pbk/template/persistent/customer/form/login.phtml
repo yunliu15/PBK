@@ -32,6 +32,10 @@
  */
 /** @var $this Mage_Customer_Block_Form_Login */
 ?>
+
+<?php
+$retailUrl = Mage::getUrl('', array('_store'=>'1'));
+?>
 <div class="account-login<?php if (!$this->helper('customer')->isRegistrationAllowed()) echo ' login-only' ?>">
     <div class="page-title">
         <h1><?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
@@ -41,28 +45,33 @@
             <?php endif; ?></h1>
     </div>
     <?php echo $this->getMessagesBlock()->toHtml() ?>
+
+    <div class="change-pw">
+        <h2><?php echo $this->__('Existing Online Customers') ?></h2>
+        <strong>Have an online account on our old website?</strong>
+        <p>In order to take advantage of the new enhanced shopping experience on this new website - you will need to create a new password.</p>
+        <p>It's quick and easy! <a href="/customer/account/forgotpassword" class="red-link">Click here to reset your old password.</a></p>
+    </div>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form" class="scaffold-form">
         <?php echo $this->getBlockHtml('formkey'); ?>
         <div class="col2-set">
             <?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
             <div class="col-1 new-users">
                 <div class="content">
-                    <h2><?php echo $this->__('New Customers') ?></h2>
-                    <p class="form-instructions"><?php echo $this->__('By creating an account with our safe and secure online store, you will be able to
-have these great online tools at your fingertips!') ?></p>
+                    <h2><?php echo $this->__('New Online Customers') ?></h2>
+                    <p class="form-instructions"><?php echo $this->__('Welcome! Whether you are new to PBK or just ordering online, create an account to access an easy online shopping experience.') ?></p>
                     <ul class="benefits">
-                        <li><?php echo $this->__('Huge online savings!') ?></li>
-                        <li><?php echo $this->__('Get email reminders about our flash sales and
-other great promos.') ?></li>
-                        <li><?php echo $this->__('View all online orders and invoices.') ?></li>
-                        <li><?php echo $this->__(' Store multiuple shipping adresses.') ?></li>
-                        <li><?php echo $this->__('Track all orders and reorder from past orders.') ?></li>
-                        <li><?php echo $this->__('Add items to favorites list to view/order later.') ?></li>
+                        <li><?php echo $this->__('Easily browse our complete catalog to find your best sellers!') ?></li>
+                        <li><?php echo $this->__('Save with exclusive online-only offers.') ?></li>
+                        <li><?php echo $this->__('Track orders on the web.') ?></li>
+                        <li><?php echo $this->__(' View your online purchase history and place reorders.') ?></li>
+                        <li><?php echo $this->__('Create multiple "Save for Later" lists to help with your purchases.') ?></li>
+                        <li><?php echo $this->__('Receive email alerts for online only offers.') ?></li>
                     </ul>
                 </div>
-                <div class="buttons-set">
-                    <a title="<?php echo $this->quoteEscape($this->__('Create an Account')) ?>" class="btn-create-account red-button" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><span><span><?php echo $this->__('Create an Account') ?></span></span></a>
-                </div>
+                <!--<div class="buttons-set">
+                    <a title="<?php /*echo $this->quoteEscape($this->__('Create an Account')) */?>" class="btn-create-account red-button" href="<?php /*echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) */?>"><span><span><?php /*echo $this->__('Create an Account') */?></span></span></a>
+                </div>-->
 
                 <?php
                 $wholeSaleUrl = Mage::getUrl('customer/account/login/', array(
@@ -70,9 +79,13 @@ other great promos.') ?></li>
                 ));
                 ?>
                 <div class="wholesale-account-link">
-                    <p class="all-upper">Interested In becoming a wholesaler?</p>
-                    <i>Tax ID# is required.</i>
+
                     <div class="buttons-set"><a class="btn-create-account red-button" title="Create a wholesale account" href="<?php echo $wholeSaleUrl?>"><span><span>Create a Wholesale Account</span></span></a></div>
+                    <p><i>Business and Tax ID required for a wholesale account.</i></p>
+
+                    <strong>Don't Have a Business And Tax ID? </strong>
+                    <p>Create personal account, <a href="<?php echo $retailUrl . 'customer/account/create/'; ?>" class="red-link">click here</a></p>
+                    <p>or visit our <a href="/find-a-store" class="red-link">store locator</a> to find a store near you.</p>
                 </div>
 
             </div>
@@ -106,7 +119,8 @@ other great promos.') ?></li>
                 </div>
                 <div class="buttons-set">
                     <button type="submit" class="btn-login red-button" title="<?php echo $this->quoteEscape($this->__('Login')) ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
-                    <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left"><?php echo $this->__('Forgot Your Password?') ?></a>
+                    <p><strong>NEED HELP?</strong></p>
+                    <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="red-link"><?php echo $this->__('Click here if you forgot your email/username or password.') ?></a>
                 </div>
 
             </div>
@@ -116,16 +130,16 @@ other great promos.') ?></li>
         <?php endif; ?>
     </form>
     <div class="login-bottom">
-        <p class="title no-bottom">
-            <?php echo $this->__("Existing Primitive by Kathy customers without an online account log in.")?>
+       <!-- <p class="title no-bottom">
+            <?php /*echo $this->__("Existing Primitive by Kathy customers without an online account log in.")*/?>
          </p>
         <p class="no-bottom">
-            <?php echo $this->__("If you already have an account with us but have not registered online, please create an online account so you can.....")?>
+            <?php /*echo $this->__("If you already have an account with us but have not registered online, please create an online account so you can.....")*/?>
         </p>
         <p class="no-bottom">
-            <?php echo $this->__("what should customers be aware of when creating an online account so we do not have duplicate accounts?")?>
+            <?php /*echo $this->__("what should customers be aware of when creating an online account so we do not have duplicate accounts?")*/?>
         </p>
-        <a class="red-text" href="<?php echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) ?>"><?php echo $this->__("Click here to create an online account.")?></a>
+        <a class="red-text" href="<?php /*echo Mage::helper('persistent')->getCreateAccountUrl($this->getCreateAccountUrl()) */?>"><?php /*echo $this->__("Click here to create an online account.")*/?></a>-->
     </div>
 
     <script type="text/javascript">

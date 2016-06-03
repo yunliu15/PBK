@@ -120,13 +120,19 @@
 <!--                        </div>-->
 
                     </li>
+
                     <?php $_streetValidationClass = $this->helper('customer/address')->getAttributeValidationClass('street'); ?>
-<!--                    <li class="wide field">-->
-<!--                        <label for="street_1" class="required"><em>*</em>--><?php //echo $this->__('Street Address') ?><!--</label>-->
-<!--                        <div class="input-box">-->
-<!--                            <input type="text" name="street[]" value="--><?php //echo $this->escapeHtml($this->getFormData()->getStreet(0)) ?><!--" title="--><?php //echo Mage::helper('core')->quoteEscape($this->__('Street Address')) ?><!--" id="street_1" class="input-text --><?php //echo $_streetValidationClass ?><!--" />-->
-<!--                        </div>-->
-<!--                    </li>-->
+                    <li class="wide field">
+                        <label for="street_1" class="required"><em>*</em><?php echo $this->__('Street Address: ') ?></label>
+                        <div class="input-box">
+                            <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(0)) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Street Address')) ?>" id="street_1" class="input-text <?php echo $_streetValidationClass ?>" />
+                        </div>
+                    </li>
+                    <li class="field"><label for="po_box"><?php echo $this->__('PO Box #, Apartment #, Space or Suite #: ') ?></label>
+                        <div class="input-box">
+                            <input type="text" id="po_box" name="po_box" value="" class="input-text" autocomplete="off">
+                        </div>
+                    </li>
                     <?php $_streetValidationClass = trim(str_replace('required-entry', '', $_streetValidationClass)); ?>
                     <?php for ($_i = 2, $_n = $this->helper('customer/address')->getStreetLines(); $_i <= $_n; $_i++): ?>
 <!--                        <li class="add-field">-->
@@ -155,24 +161,20 @@
                                     $regions     =   $this->getRegionCollection();
                                     foreach($regions as $region)
                                     {
-                                        echo "<option value=$region[name]>".$region['name'] . "</option>";
+                                        echo "<option value='".$region['region_id']."'>".$region['name'] . "</option>";
                                     }
                                     ?>
 
                                 </select>
-                                <script type="text/javascript">
-                                    //<![CDATA[
-                                    $('region_id').setAttribute('defaultValue', "<?php echo $this->getFormData()->getRegionId() ?>");
-                                    //]]>
-                                </script>
-
-                                <input type="text" id="region" name="region" value="<?php echo $this->escapeHtml($this->getRegion()) ?>" title="<?php echo $this->__('State/Province') ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('region') ?>" style="display:none;"   />
                             </div>
                         </div>
                         <div class="field odd">
                             <label for="zip" class="required"><em>*</em><?php echo $this->__('Zip/Postal Code') ?></label>
                             <div class="input-box">
-                                <input type="text" name="postcode" value="<?php echo $this->escapeHtml($this->getFormData()->getPostcode()) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Zip/Postal Code')) ?>" id="zip" class="input-text validate-zip-international <?php echo $this->helper('customer/address')->getAttributeValidationClass('postcode') ?>" />
+                                <input type="text" name="postcode" value="<?php echo $this->escapeHtml($this->getFormData()->getPostcode()) ?>"
+                                       title="<?php echo Mage::helper('core')->quoteEscape($this->__('Zip/Postal Code')) ?>" id="zip"
+                                       class="input-text validate-zip-international <?php echo $this->helper('customer/address')->getAttributeValidationClass('postcode') ?>"
+                                    />
                             </div>
                         </div>
                         <div class="field even">
@@ -194,13 +196,35 @@
                     <div class="field odd">
                         <label for="telephone" class="required"><em>*</em><?php echo $this->__('Phone :') ?></label>
                         <div class="input-box">
-                            <input type="text" name="telephone" id="telephone" value="<?php echo $this->escapeHtml($this->getFormData()->getTelephone()) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Telephone')) ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?>" />
+                            <input type="text" class="input-text telephone_input validate-number" maxlength="3">
+                            <input type="text" class="input-text telephone_input validate-number" style="margin: 0 8%;" maxlength="3">
+                            <input type="text" class="input-text telephone_input validate-number" maxlength="4">
+
+                            <input style="display: none" type="text" name="telephone" id="telephone"
+                                   value="<?php echo $this->escapeHtml($this->getFormData()->getTelephone()) ?>"
+                                   title="<?php echo Mage::helper('core')->quoteEscape($this->__('Telephone')) ?>"
+                                   class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('telephone') ?> telephone_text_input"
+                                />
+                            <script>
+                                var telephone = "";
+                                jQuery(".telephone_input").keyup(function(){
+
+                                    jQuery(".telephone_input").each(function () {
+                                        telephone = telephone+jQuery(this).val();
+                                    })
+                                    console.log(telephone);
+
+                                    jQuery(".telephone_text_input").val(telephone);
+                                    telephone = "";
+                                })
+                            </script>
                         </div>
+                       
                     </div>
 
                     <li class="field even"><label for="website_url">Website Url</label>
                         <div class="input-box">
-                            <input type="text" id="website_url" name="website_url" value="" class="input-text" autocomplete="off">
+                            <input type="text" id="website_url" name="website_url" value="" class="input-text validate-url" autocomplete="off">
 
 
                             <kwdiv id="keeper-icon-11" class="keeper-inject-icon keepersecurity_wants-events" style="position: absolute; cursor: pointer; z-index: 11; border: none; width: 16px; height: 16px; left: 377px; top: 696px; background-image: url(&quot;chrome-extension://bfogiafebfohielmmehodmfbbebbbpei/images/16x16bw.png&quot;); background-size: 16px; background-position: 0px 0px; background-repeat: no-repeat;"></kwdiv></div>
@@ -262,7 +286,7 @@
                 <?php if ($this->isNewsletterEnabled()): ?>
                     <li class="control">
                         <div class="input-box">
-                            <input type="checkbox" name="is_subscribed" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sign Up for Newsletter')) ?>" value="1" id="is_subscribed"<?php if($this->getFormData()->getIsSubscribed()): ?> checked="checked"<?php endif; ?> class="checkbox" />
+                            <input type="checkbox" name="is_subscribed" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sign Up for Newsletter')) ?>" value="1" id="is_subscribed" checked="checked" class="checkbox" />
                         </div>
                         <label for="is_subscribed"><?php echo $this->__('Yes! Please send me information about sales, promotions and product releases.') ?></label>
                     </li>

@@ -186,9 +186,7 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
 .wrapper .top-container .home-top > div:nth-of-type(3) {
     background-color: #8D4C72;
 }
-.wrapper .account-login .wholesale-account-link i {
-    color: #8D4C72;
-}
+
 .wrapper .my-account #order-info-tabs li a {
     color: #8D4C72;
 }
@@ -208,4 +206,13 @@ div.footer .links a,
 .wrapper .footer-top .help strong,
 .wrapper .copyright a {
     color: #fff;
+}
+.wrapper .products-grid .button.login {
+
+    border-bottom: 1px solid #8D4C72;
+
+    color: #8D4C72;
+}
+.wrapper .my-account .addresses-list a {
+    color: #8D4C72;
 }
