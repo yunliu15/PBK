@@ -20,6 +20,7 @@
             <action method="addItem"><type>skin_js</type><name>js/slick.min.js</name></action>
         </reference>
 
+
         <reference name="top.links">
 
             <action method="setTemplate">
@@ -46,12 +47,10 @@
 
         </reference>
         <reference name="header">
-
             <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="mini_wishlist_top" after="cart_sidebar" template="wishlist/top-mini.phtml" />
 
             <!-- add storeview links -->
             <block type="core/template" name="storeviews" as="storeviews" template="page/template/storeviews.phtml" />
-
         </reference>
 
         <!-- reset the template for wishlist in sidebar -->
@@ -392,6 +391,13 @@
                     <title>My Shopping Cart</title>
 
                 </crumbinfo>
+            </action>
+        </reference>
+
+        <!-- remove quickshopping -->
+        <reference name="content">
+            <action method="unsetChild">
+                <name>quickshopping</name>
             </action>
         </reference>
 
