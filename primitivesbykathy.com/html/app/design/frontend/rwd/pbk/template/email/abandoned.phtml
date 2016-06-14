@@ -1,0 +1,21 @@
+abandoned test
+
+<?php
+$customer = $this->getCustomer();
+$quote = Mage::getModel('sales/quote')->loadByCustomer($customer);
+$id = 176;
+$customerTest =Mage::getModel('customer/customer')->load($id);
+$quoteTest = Mage::getModel('sales/quote')->loadByCustomer($customerTest);
+
+if ($quoteTest) {
+
+
+    foreach ($quoteTest->getAllItems() as $item) {
+
+        $product = $item->getProduct();
+        echo $product->getName() . ',';
+    }
+
+}
+
+?>

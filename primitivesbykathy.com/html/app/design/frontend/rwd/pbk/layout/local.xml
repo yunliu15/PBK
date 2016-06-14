@@ -2,7 +2,12 @@
 
 <layout version="0.1.0">
     <default>
+        <!--Remove estimator on cart -->
+        <!--<checkout_cart_index>-->
+            <!--<remove name="checkout.cart.shipping" />-->
+        <!--</checkout_cart_index>-->
 
+        <block type="amstockstatus/rewrite_checkout_cart_item_renderer" name="avability.status" as="avability.status" template="shero/avability.phtml"/>
         <reference name="header">
             <block type="core/template" name="footer.search" as="footerSearch" template="catalogsearch/form.mini.phtml"/>
         </reference>
@@ -115,7 +120,15 @@
         </reference>
 
     </default>
-<!-- set layout of catalog pages to 2columns-left -->
+
+    <customer_logged_in>
+        <reference name="top.links">
+            <action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>
+        </reference>
+    </customer_logged_in>
+
+
+    <!-- set layout of catalog pages to 2columns-left -->
     <catalog_category_layered>
 
         <reference name="root">

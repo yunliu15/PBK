@@ -70,14 +70,14 @@ $website_id = Mage::app()->getWebsite()->getId();
 
         <?php if (Mage::helper('customer')->isLoggedIn() && $website_id == 2 ): ?>
         <li>
-            <a href="<?php echo  Mage::helper('b2b')->getQuickOrderUrl()?>">
+            <a href="/quickshopping">
                 <?php echo $this->__("Quick Order");?>
             </a>
         </li>
         <?php endif ?>
 
         <?php if(!Mage::getSingleton('customer/session')->isLoggedIn() ): ?>
-            <li class="last"><div><a href="<?php echo Mage::getUrl('customer/account/create/'); ?>"><?php echo $this->__('Create Account');?></a></div></li>
+            <li class="last"><div><a href="<?php echo $wholesaleUrl . 'customer/account/create/'; ?>"><?php echo $this->__('Create Account');?></a></div></li>
         <?php  else: ?>
             <li class="last">
                 <div class="account-dropdown">
@@ -111,19 +111,19 @@ $website_id = Mage::app()->getWebsite()->getId();
                             <li>
                                 <a href="<?php echo Mage::getUrl('checkout/cart/'); ?>"><?php echo $this->__('My Shopping Cart');?></a>
                             </li>
+                            <li>
+                                <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log Out'; ?></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </li>
         <?php endif; ?>
+        <?php if (!Mage::helper('customer')->isLoggedIn() ): ?>
         <li>
             <div>
-                <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
-                    <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log Out'; ?></a>
 
-                    <?php
 
-                else: ?>
                     <div class="skip-links minilogin arrow-down">
                         <a href="#header-login" class="skip-link skip-login">Log in</a>
                     </div>
@@ -131,13 +131,14 @@ $website_id = Mage::app()->getWebsite()->getId();
 
 
                     <!--<a href="<?php //echo Mage::helper('customer')->getLoginUrl(); ?>">Login</a>-->
-                    <?php
 
-                endif; ?>
             </div>
         </li>
+            <?php
+
+        endif; ?>
         <?php if ($website_id == 1): ?>
-            <li><a class="last" href="<?php echo $wholesaleUrl?>">Wholesale </a></li>
+            <li><a class="last" href="<?php echo $wholesaleUrl?>" target="_blank">Wholesale </a></li>
         <?php endif;?>
 
     </ul>
