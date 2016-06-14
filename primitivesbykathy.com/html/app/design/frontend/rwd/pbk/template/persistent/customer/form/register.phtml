@@ -33,14 +33,40 @@
  */
 
 ?>
+
+<?php
+
+// we need to set some variables to change to use them in this page
+
+$store_id   = Mage::app()->getStore()->getId();
+$website_id = Mage::app()->getWebsite()->getId();
+$wholesaleBaseUrl = Mage::app()->getStore(3)->getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK);
+$retailBaseUrl = Mage::app()->getStore(1)->getBaseUrl(Mage_Core_Model_Store::URL_TYPE_LINK);
+?>
 <div class="account-create">
     <div class="page-title">
-        <h1><?php echo $this->__('Create an Account') ?></h1>
+        <?php if($website_id == "1"): ?>
+            <h1><?php echo $this->__('Create a Personal Account') ?></h1>
+        <?php elseif($website_id == "2"): ?>
+            <h1><?php echo $this->__('Create a Wholesale Account') ?></h1>
+        <?php  endif; ?>
+    </div>
+    <div>
+        <!-- We are on retail store-->
+        <?php if($website_id == "1"): ?>
+            <p>Looking to Create a Wholesale Account?</p>
+            <p>If you have a Business and Tax ID, <a class="MainLink" href="<?php echo $wholesaleBaseUrl ?>customer/account/create/">click here</a> to create a wholesale account with us. </p><br>
+        <!-- we are on wholesale store -->
+        <?php elseif($website_id == "2"): ?>
+            <p>Not a wholesaler? You can still purchase our products!</p>
+            <p>Find a retailer near you with our <a href="<?php  echo $retailBaseUrl ?>find-a-store">Store Locator</a>, or <a href="<?php  echo $retailBaseUrl ?>customer/account/create/">Create a Personal Account</a> to shop online.</p><br>
+        <?php endif; ?>
     </div>
     <?php echo $this->getChildHtml('form_fields_before')?>
     <?php echo $this->getMessagesBlock()->toHtml() ?>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" enctype="multipart/form-data">
         <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+
         <div class="fieldset">
             <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
             <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
@@ -51,7 +77,7 @@
                     <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
                 </li>
                 <li class="field odd">
-                    <label for="email_address" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
+                    <label for="email_address" class="required"><em>*</em><?php echo $website_id == 1? $this->__('Email Address'): $this->__('Primary Email'); ?></label>
                     <div class="input-box">
                         <input type="text" name="email" id="email_address" value="<?php echo $this->escapeHtml($this->getFormData()->getEmail()) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Email Address')) ?>" class="input-text validate-email required-entry" />
                     </div>
@@ -121,18 +147,37 @@
 
                     </li>
 
-                    <?php $_streetValidationClass = $this->helper('customer/address')->getAttributeValidationClass('street'); ?>
+                    <?php $_streetValidationClass = $this->helper('customer/address')->getAttributeValidationClass('street');
+                    $street_attr = Mage::getModel('eav/config')->getAttribute('customer_address','street');
+                    ?>
                     <li class="wide field">
-                        <label for="street_1" class="required"><em>*</em><?php echo $this->__('Street Address: ') ?></label>
+                        <label for="street_1" class="required"><em>*</em><?php echo $this->__($street_attr->getStoreLabel($store_id)); ?></label>
                         <div class="input-box">
                             <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(0)) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Street Address')) ?>" id="street_1" class="input-text <?php echo $_streetValidationClass ?>" />
                         </div>
                     </li>
-                    <li class="field"><label for="po_box"><?php echo $this->__('PO Box #, Apartment #, Space or Suite #: ') ?></label>
+
+                    <li class="wide field">
+                        <label for="street_1" ><?php echo $this->__("Address 2") ?></label>
                         <div class="input-box">
-                            <input type="text" id="po_box" name="po_box" value="" class="input-text" autocomplete="off">
+                            <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(0)) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Street Address')) ?>" id="street_1" class="input-text <?php echo $_streetValidationClass ?>" />
                         </div>
                     </li>
+                    <?php if($website_id == 2){  ?>
+                        <li class="wide field">
+                            <label for="street_1"><?php echo $this->__("Address 3") ?></label>
+                            <div class="input-box">
+                                <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(0)) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Street Address')) ?>" id="street_1" class="input-text <?php echo $_streetValidationClass ?>" />
+                            </div>
+                        </li>
+                    <?php } ?>
+                    <?php /* ?>
+                        <li class="field"><label for="po_box"><?php echo $this->__('PO Box #, Apartment #, Space or Suite #: ') ?></label>
+                            <div class="input-box">
+                                <input type="text" id="po_box" name="po_box" value="" class="input-text" autocomplete="off">
+                            </div>
+                        </li>
+                    <?php */ ?>
                     <?php $_streetValidationClass = trim(str_replace('required-entry', '', $_streetValidationClass)); ?>
                     <?php for ($_i = 2, $_n = $this->helper('customer/address')->getStreetLines(); $_i <= $_n; $_i++): ?>
 <!--                        <li class="add-field">-->
@@ -221,36 +266,46 @@
                         </div>
                        
                     </div>
+                    <?php if($website_id == "2"): ?>
+                        <li class="field even"><label for="website_url">Website URL</label>
+                            <div class="input-box">
+                                <input type="text" id="website_url" name="website_url" value="" class="input-text validate-url" autocomplete="off">
 
-                    <li class="field even"><label for="website_url">Website Url</label>
-                        <div class="input-box">
-                            <input type="text" id="website_url" name="website_url" value="" class="input-text validate-url" autocomplete="off">
+                                <kwdiv id="keeper-icon-11" class="keeper-inject-icon keepersecurity_wants-events" style="position: absolute; cursor: pointer; z-index: 11; border: none; width: 16px; height: 16px; left: 377px; top: 696px; background-image: url(&quot;chrome-extension://bfogiafebfohielmmehodmfbbebbbpei/images/16x16bw.png&quot;); background-size: 16px; background-position: 0px 0px; background-repeat: no-repeat;"></kwdiv></div>
+                        </li>
+                    <?php endif; ?>
 
-
-                            <kwdiv id="keeper-icon-11" class="keeper-inject-icon keepersecurity_wants-events" style="position: absolute; cursor: pointer; z-index: 11; border: none; width: 16px; height: 16px; left: 377px; top: 696px; background-image: url(&quot;chrome-extension://bfogiafebfohielmmehodmfbbebbbpei/images/16x16bw.png&quot;); background-size: 16px; background-position: 0px 0px; background-repeat: no-repeat;"></kwdiv></div>
-
-
-
-
-                    </li>
-                    <div class="field odd">
+                    <li class="field odd">
                     <?php $attribute = Mage::getModel('eav/config')->getAttribute('customer','how_did_you_find_us');
+
+                    $valuesCollection = Mage::getResourceModel('eav/entity_attribute_option_collection')
+                        ->setAttributeFilter($attribute->getId())
+                        ->setStoreFilter($store_id, false);
+
                     ?>
                     <label class="<?php if($attribute->getIsRequired() == true){?>required<?php } ?>"><?php echo $this->__('How Did You Hear About Us?') ?><?php if($attribute->getIsRequired() == true){?><em>*</em><?php } ?></label>
                     <select name="account[how_did_you_find_us]" class="<?php if($attribute->getIsRequired() == true){?>required-entry<?php } ?>">
-                        <?php
-                        $options = $attribute->getSource()->getAllOptions();
 
-                        foreach($options as $option){
+                        <?php
+                        $options = $attribute->setWebsite($website_id)->getSource()->getAllOptions();
+
+                        foreach($valuesCollection as $option){
                             ?>
-                            <option value='<?php echo $option['value']?>'><?php echo $this->__($option['label'])?></option>
+                            <option value='<?php echo $option->getOptionId()?>'><?php echo $this->__($option->getValue())?></option>
                         <?php } ?>
                     </select>
-                    </div>
-                    <li class="fields">
+                        <?php if($website_id == 2){ ?>
+                            <div class="input-box">
+<!--                                --><?php //$attribute = Mage::getModel('eav/config')->getAttribute('customer','new_marketingemail');
+//
+//                                ?>
+<!--                                <label class="--><?php //if($attribute->getIsRequired() == true){?><!--required--><?php //} ?><!--">--><?php //echo $attribute->getStoreLabel($store_id); ?><!----><?php //if($attribute->getIsRequired() == true){?><!--<em>*</em>--><?php //} ?><!--</label>-->
+<!--                                <input type="text" name="new_marketingemail" class="--><?php //if($attribute->getIsRequired() == true){?><!--required-entry--><?php //} ?><!-- input-text validate-email" />-->
 
-
+                            </div>
+                        <?php  } ?>
                     </li>
+
                     <?php $addressAttributes = $this->getChild('customer_form_address_user_attributes');?>
                     <?php if ($addressAttributes): ?>
                         <?php $addressAttributes->setEntity($this->getAddress());?>

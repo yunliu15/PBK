@@ -74,7 +74,7 @@ $retailUrl = Mage::getUrl('', array('_store'=>'1'));
                 </div>-->
 
                 <?php
-                $wholeSaleUrl = Mage::getUrl('customer/account/login/', array(
+                $wholeSaleUrl = Mage::getUrl('customer/account/create/', array(
                     '_store'=>'3'
                 ));
                 ?>
@@ -85,7 +85,7 @@ $retailUrl = Mage::getUrl('', array('_store'=>'1'));
 
                     <strong>Don't Have a Business And Tax ID? </strong>
                     <p>Create personal account, <a href="<?php echo $retailUrl . 'customer/account/create/'; ?>" class="red-link">click here</a></p>
-                    <p>or visit our <a href="/find-a-store" class="red-link">store locator</a> to find a store near you.</p>
+                    <p>or visit our <a href="<?php  echo $retailUrl ?>find-a-store" class="red-link">store locator</a> to find a store near you.</p>
                 </div>
 
             </div>

@@ -216,3 +216,6 @@ div.footer .links a,
 .wrapper .my-account .addresses-list a {
     color: #8D4C72;
 }
+.wrapper .products-grid .split-button.wishlist-selector .change.added {
+    background: #8D4C72;
+}

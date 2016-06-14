@@ -5,17 +5,16 @@ $domain = Mage::getBaseUrl (Mage_Core_Model_Store::URL_TYPE_WEB);
 $trashtalk = $domain . 'trashtalk';
 $questionables = $domain . 'questionables';
 $ws_trashtalk = $domain . 'ws_trashtalk';
-$ws_questionables = $domain . 'questionables';
+$ws_questionables = $domain . 'ws_questionables';
 
 $storeId = Mage::app()->getStore()->getStoreId();
-?>
-    <?php if($storeId != 1 && $storeId != 3): // not retail or wholesale
-        ?>
-    <a href="<?php echo $domain?>"> Primitives by Kathy </a>
 
+?>
+    <?php if($storeId != 1 && $storeId != 3): // not retail or wholesale ?>
+        <a href="<?php echo $domain?>"> Primitives by Kathy </a>
     <?php endif; ?>
 
-    <?php if($storeId == 1 || $storeId == 5): // retail or retail questionable
+    <?php if($storeId == 1 || $storeId == 6): // retail or retail questionable
         ?>
     <a href="<?php echo $trashtalk?>"> Trash Talk </a>
     <?php endif; ?>
@@ -23,7 +22,7 @@ $storeId = Mage::app()->getStore()->getStoreId();
     ?>
     <a href="<?php echo $questionables?>"> Questionables </a>
     <?php endif; ?>
-    <?php if($storeId == 3 || $storeId == 6): // wholesale or wholesale questionable
+    <?php if($storeId == 3 || $storeId == 5): // wholesale or wholesale questionable
         ?>
         <a href="<?php echo $ws_trashtalk ?>"> Trash Talk </a>
     <?php endif; ?>

@@ -874,6 +874,8 @@ tr.Canceled {background:#FAF3F1!important;}
 }
 .ms-submenu .featured-link a {
     font-weight: 700;
+    display: block;
+    color: #333637;
 }
 
 @media (min-width: 1065px) {
@@ -2123,11 +2125,11 @@ body.newsletter-manage-index .buttons-set button.button {
 .product-view .wishlist-sharing {
     border-top:1px solid #d5d5db;
     clear: both;
-    padding: 20px 0;
+    padding: 20px 0 10px 0;;
     margin-top: 10px;}
 
 .product-view .add-to-cart, .product-view .extra-info {float:left;}
-.product-view .product-collateral-wrapper {width:50%;float:right;padding-left:25px;    clear: both;}
+.product-view .product-collateral-wrapper {width:50%;float:right;padding-left:25px;    clear: right;}
 .catalog-product-view .ordering-info {margin-top:80px;}
 .catalog-product-view .ordering-info ul li:last-of-type {margin-right:0;}
 .catalog-product-view .ordering-info .block-title span{
@@ -5714,8 +5716,14 @@ img {
     color: #333637;
     font-weight: bold;
 }
+.page .block-layered-nav .block-content > dl.amshopby-narrow-by-list > dt {
+    background: #fff;
+}
 .page .block-layered-nav .block-content > dl > dt:hover {
     background: none;
+}
+.page .block-layered-nav .block-content > dl.amshopby-narrow-by-list > dt:hover {
+    background: #fff;
 }
 
 .catalog-category-view .category-title h1 {
@@ -5956,4 +5964,31 @@ input[name='requestcatalog']:hover {
 }
 ul.products-grid .actions {
     min-height: 35px;
+}
+
+.customer-account-create .page .page-title h1 {
+    display: inline-block;
+    border-bottom: 2px solid #333637;
+}
+.customer-account-create .page-title + div > p:first-of-type {
+    font-weight: bold;
+}
+.customer-account-create .page-title + div a {
+    color: #7E221B;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.products-grid .split-button.wishlist-selector .change.added {
+    background: #7E221B;
+}
+#checkout-review-table .product-img {
+    margin-right: 10px;
+}
+.opc .step a {
+    color: #7E221B;
+    text-decoration: underline;
+}
+.opc .back-link a {
+    color: #333637;
+    text-decoration: none;
 }
