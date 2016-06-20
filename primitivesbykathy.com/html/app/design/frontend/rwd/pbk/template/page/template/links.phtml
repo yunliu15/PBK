@@ -136,8 +136,8 @@ $website_id = Mage::app()->getWebsite()->getId();
                 endif; ?>
             </div>
         </li>
-        <?php if ($website_id == 1): ?>
-            <li><a class="last" href="<?php echo $wholesaleUrl?>">Wholesale </a></li>
+        <?php if ($website_id == 1 && !Mage::helper('customer')->isLoggedIn()): ?>
+            <li><a class="last" href="<?php echo $wholesaleUrl?>">Wholesale</a></li>
         <?php endif;?>
 
     </ul>

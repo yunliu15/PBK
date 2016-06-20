@@ -44,13 +44,20 @@
         <?php foreach ($_links as $_link): ?>
             <?php
             $label = $_link->getLabel();
-            if ($label == "Shipments"){
-                $label = "Shipped Items";
+            if ($label == "Refunds"){
+                $label = "Credits";
+
             }
+//            if ($label == "Shipments"){
+////                $label = "Shipped Items";
+//                $label ="";
+//            }
 
             ?>
             <?php if($_link->getUrl()): ?>
-                <li><a href="<?php echo $_link->getUrl() ?>"><?php echo $label ?></a></li>
+                <?php if ($label != "Shipments"): ?>
+                    <li><a href="<?php echo $_link->getUrl() ?>"><?php echo $label ?></a></li>
+                <?php endif; ?>
             <?php else: ?>
                 <li class="current"><?php echo $label ?></li>
             <?php endif; ?>

@@ -9690,10 +9690,10 @@ div.paypal-logo span > img {
 }
 .cms-page-view .std p,
 .cms-no-route .std p {
-  color: #636363;
+  color: #333637;
   font-family: "Lato", Arial, sans-serif;
-  font-size: 14px;
-  font-style: italic;
+  font-size: 15px;
+
   line-height: 24px;
 }
 .cms-page-view .std h1,
@@ -9706,10 +9706,9 @@ div.paypal-logo span > img {
 }
 .cms-page-view .std li,
 .cms-no-route .std li {
-  color: #636363;
+  color: #333637;
   font-family: "Lato", Arial, sans-serif;
-  font-size: 14px;
-  font-style: italic;
+  font-size: 15px;
   line-height: 24px;
 }
 .cms-page-view .col-left:after,

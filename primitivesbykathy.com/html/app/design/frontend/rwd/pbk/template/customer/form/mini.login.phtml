@@ -28,7 +28,7 @@
 $wholesaleUrl = Mage::getUrl('', array('_store'=>'3'));
 ?>
 <div class="block block-login">
-    <div class="block-title clearfix arrow-up">
+    <div class="block-title clearfix">
         <strong><span><?php echo $this->__('Log in') ?></span></strong>
         <span class="right"><?php echo $this->__('Need an account?') ?> <a href="<?php echo $wholesaleUrl . 'customer/account/create/'; ?>" class="red-link"> <?php echo $this->__('Click here!') ?>  </a></span>
     </div>
@@ -36,6 +36,7 @@ $wholesaleUrl = Mage::getUrl('', array('_store'=>'3'));
         <div class="block-content">
             <input name="form_key" type="hidden"
                    value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+            <input type="hidden" name="current_shero_url" value="<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>">
 
             <label for="mini-login"><?php //echo $this->__('Email:') ?></label><input type="text" autocapitalize="off" autocorrect="off" spellcheck="false" name="login[username]" id="mini-login" class="input-text required-entry validate-length" placeholder="Enter email or username"/>
             <label for="mini-password"><?php //echo $this->__('Password:') ?></label><input type="password" name="login[password]" id="mini-password" class="input-text required-entry validate-password" placeholder="Enter your password"/>

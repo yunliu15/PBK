@@ -215,7 +215,13 @@ td.order-details p {
 .cell-name.align-right {
   text-align: right;
 }
+.align-center {
+  text-align: center;
+}
 
+.align-right {
+  text-align: right;
+}
 .method-info,
 .method-info h6,
 .method-info p,

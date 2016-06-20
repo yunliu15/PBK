@@ -31,7 +31,7 @@
     <?php $_items = $_order->getAllItems(); ?>
     <?php $_itemCount = count($_items); ?>
     <tr>
-        <td>
+        <td colspan="4">
             <table class="items" cellpadding="0" cellspacing="0" border="0">
                 <thead>
                 <tr>
@@ -42,12 +42,16 @@
                             <?php echo $this->__('Item in your order'); ?>
                         <?php endif; ?>
                     </th>
+                    <!--<th class="cell-name align-center">
+                        <?php /*echo $this->__('Sku'); */?>
+                    </th>-->
                     <th class="cell-name align-center">
                         <?php echo $this->__('Qty'); ?>
                     </th>
                     <th class="cell-name align-right">
                         <?php echo $this->__('Price'); ?>
                     </th>
+                   
                 </tr>
                 </thead>
                 <?php $i=0; foreach ($_order->getAllItems() as $_item): ?>
@@ -58,8 +62,10 @@
         </td>
     </tr>
     <tr>
-        <td>
+        <td colspan="4">
+
             <?php echo $this->getChildHtml('order_totals') ?>
+
         </td>
     </tr>
     <?php if ($this->helper('giftmessage/message')->isMessagesAvailable('order', $_order, $_order->getStore()) && $_order->getGiftMessageId()): ?>

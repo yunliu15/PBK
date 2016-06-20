@@ -186,6 +186,12 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
 .wrapper .top-container .home-top > div:nth-of-type(3) {
     background-color: #8D4C72;
 }
+.wrapper .top-container .widget-banner > ul > li:last-of-type {
+    background-color: #8D4C72;
+}
+.wrapper .top-container .widget-banner > ul > li:first-of-type {
+    background-color: #7ca09b;
+}
 
 .wrapper .my-account #order-info-tabs li a {
     color: #8D4C72;
