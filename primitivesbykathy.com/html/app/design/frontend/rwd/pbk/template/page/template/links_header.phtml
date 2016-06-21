@@ -65,7 +65,7 @@ $website_id = Mage::app()->getWebsite()->getId();
             </li>
         <?php endif ?>
         <li>
-            <a href="<?php echo Mage::getUrl('customer-service');?>">Contact Us</a>
+            <a href="<?php echo Mage::getUrl('contact-us');?>">Contact Us</a>
         </li>
 
         <?php if (Mage::helper('customer')->isLoggedIn() && $website_id == 2 ): ?>

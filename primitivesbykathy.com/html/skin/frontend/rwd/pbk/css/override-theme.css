@@ -54,7 +54,7 @@ body .wrapper h1, body .wrapper h2, body .wrapper h3, body .wrapper h4, body .wr
 }
 .page p {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     color: #333637;
 }
 .page p.error {
@@ -876,6 +876,7 @@ tr.Canceled {background:#FAF3F1!important;}
     font-weight: 700;
     display: block;
     color: #333637;
+    margin-top: 5px;
 }
 
 @media (min-width: 1065px) {
@@ -1199,7 +1200,7 @@ body.cms-home .page .main-container {padding-bottom:65px;}
 .customer-account-login .account-login .col2-set .col-1 {margin-right:2%;}
 .login-bottom {padding-top:30px;}
 .account-login form .form-instructions {
-    font-size: 14px;
+    font-size: 15px;
 }
 .account-login .change-pw h2 {
     margin-bottom: 0;
@@ -1903,7 +1904,16 @@ body.newsletter-manage-index .buttons-set button.button {
     margin: 20px auto 0 auto;
     width: 200px;}
 .ordering-info li {margin-bottom:10px;}
-.ordering-info-subtitle {font-weight:bold; font-size:16px;}
+.ordering-info p {
+    margin-bottom: 15px;
+}
+.ordering-info a {
+    color: #7E221B;
+    text-decoration: underline;
+}
+.ordering-info-subtitle {font-weight:bold; font-size:16px;margin-bottom: 20px;}
+.cart .ordering-info-content{margin-bottom: 20px;}
+
 .checkout-help {background:#EDEBEC;text-align:center;padding:10px;}
 
 .breadcrumbs li a {color: #7E221B;}
@@ -2139,7 +2149,7 @@ body.newsletter-manage-index .buttons-set button.button {
     position: relative;
     z-index: 1;
     padding:0 20px;}
-.catalog-product-view .ordering-info-content a {color: #7E221B;}
+.catalog-product-view .ordering-info-content a {color: #7E221B;text-decoration: underline;}
 .catalog-product-view .ordering-info-content a:hover {color:#333637;}
 .product-img-box .product-image.product-img-wrapper.product-image-zoom {
 
@@ -5699,7 +5709,8 @@ img {
 #filter-results-container .actions a {
     color: #fff;
     font-size: 11px;
-    line-height: 20px;
+    position: relative;
+    top: -1px;
 }
 #am-top-nav > .block-title {
     display: none !important;
@@ -6139,4 +6150,11 @@ ul.products-grid .actions {
 }
 .block-layered-nav ol > li .count {
     color: #a0a0a0;
+}
+.product-view .product-collateral a {
+    color: #7E221B;
+    text-decoration: underline;
+}
+#checkout-step-payment dd p {
+    padding-left: 10px;
 }

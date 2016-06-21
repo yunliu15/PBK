@@ -225,3 +225,6 @@ div.footer .links a,
 .wrapper .products-grid .split-button.wishlist-selector .change.added {
     background: #8D4C72;
 }
+.wrapper .product-view .product-collateral a {
+    color: #8D4C72;
+}
