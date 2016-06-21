@@ -6137,3 +6137,6 @@ ul.products-grid .actions {
     font-weight:600;
     font-size:28px;
 }
+.block-layered-nav ol > li .count {
+    color: #a0a0a0;
+}
