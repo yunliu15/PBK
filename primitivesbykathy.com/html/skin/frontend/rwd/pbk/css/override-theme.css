@@ -6143,6 +6143,9 @@ ul.products-grid .actions {
 .wrapper .col-left, .wrapper .col-right, .wrapper .col-main {
     padding: 0 15px;
 }
+.wrapper .col-left {
+    padding-left: 0;
+}
 
 .selling_unit{
     font-weight:600;
@@ -6157,4 +6160,43 @@ ul.products-grid .actions {
 }
 #checkout-step-payment dd p {
     padding-left: 10px;
+}
+.wrapper .slick-dots {
+    margin-bottom: 0;
+}
+.cms-page-view td {
+    padding: 10px 5px;
+    vertical-align: top;
+}
+.cms-contact-us input[type='submit'],
+.cms-contact-us input[type='reset'] {
+    background: #343636;
+    padding: 7px 15px;
+    border: 0;
+    color: #FFFFFF;
+}
+.cms-contact-us input[type='submit']:hover,
+.cms-contact-us input[type='reset']:hover {
+    background: #646263;
+}
+.cms-contact-us select {
+    border: none;
+    outline: 1px solid grey;
+}
+.cms-page-view table {
+    font-size: 15px;
+}
+.cms-page-view .std a {
+    color: #7E221B;
+    text-decoration: underline;
+}
+.cms-page-view .std h2, .cms-no-route .std h2,
+.cms-page-view .std h1, .cms-no-route .std h1 {
+    text-transform: none;
+}
+#opc-shipping_method #amorderattr .checkboxes input {
+    top: 5px;
+}
+.wrapper .wishlist_ajax_element:before {
+    color: #7E221B !important;
 }

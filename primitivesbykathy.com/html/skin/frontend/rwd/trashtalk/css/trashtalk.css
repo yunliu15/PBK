@@ -228,3 +228,21 @@ div.footer .links a,
 .wrapper .product-view .product-collateral a {
     color: #8D4C72;
 }
+div.wrapper .wishlist_ajax_element:before {
+    color: #8D4C72 !important;
+}
+.cms-page-view .wrapper .std a {
+    color: #8D4C72 !important;
+}
+.cms-page-view .wrapper .std a span {
+    color: #8D4C72 !important;
+}
+.wrapper .case-discount-price {
+    color: #8D4C72;
+}
+div.cms-tabs .toggle-tabs li > span {
+    color: #8D4C72;
+}
+.customer-account-create div.page-title + div a {
+    color: #8D4C72;
+}
