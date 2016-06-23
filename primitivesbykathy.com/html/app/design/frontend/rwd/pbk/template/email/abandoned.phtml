@@ -39,6 +39,7 @@ $baseUrl = Mage::getBaseUrl();
         <tbody>
             <?php foreach ($quote->getAllItems() as $item): ?>
                 <?php $product = $item->getProduct(); ?>
+                <?php $product = Mage::getModel("catalog/product")->load($product->getId()); ?>
                 <?php $size = $product->getResource()->getAttribute('size')->getFrontend()->getValue($product); ?>
                 <?php $artist = $product->getResource()->getAttribute('artist')->getFrontend()->getValue($product); ?>
 
@@ -46,11 +47,11 @@ $baseUrl = Mage::getBaseUrl();
                     <td style="padding: 5px 0;">
                         <?php echo Mage::getModel("customadmin/helper")->get_image($product->getId()); ?>
                     </td>
-                    <td>
-                        <p><strong><?php echo $product->getSKU() . ' ' . $product->getName(); ?></strong></p>
-                        <p><?php echo 'Size: ' . $size . ' Artist: ' . $artist; ?></p>
-                        <p><?php echo 'Qty: ' . $item->getQty()?></p>
-                        <a href="<?php echo $baseUrl . 'checkout/cart/'; ?>">View Now >></a>
+                    <td style="vertical-align:middle;">
+                        <p style="margin:0;padding:3px 0;"><strong style="font-weight:bold;">#<?php echo $product->getSKU() . ' ' . $product->getName(); ?></strong></p>
+                        <p style="margin:0;padding:3px 0;"><?php echo 'Size: ' . $size . '. Artist: ' . $artist; ?></p>
+                        <p style="margin:0;padding:3px 0;"><?php echo 'Qty: ' . $item->getQty()?></p>
+                        <a href="<?php echo $baseUrl . 'checkout/cart/'; ?>">View Now &raquo; </a>
                     </td>
                 </tr>
 
