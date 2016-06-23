@@ -49,9 +49,9 @@ $baseUrl = Mage::getBaseUrl();
                     </td>
                     <td style="vertical-align:middle;">
                         <p style="margin:0;padding:3px 0;"><strong style="font-weight:bold;">#<?php echo $product->getSKU() . ' ' . $product->getName(); ?></strong></p>
-                        <p style="margin:0;padding:3px 0;"><?php echo 'Size: ' . $size . '. Artist: ' . $artist; ?></p>
+                        <p style="margin:0;padding:3px 0;"><?php echo 'SIZE: ' . $size . '. ARTIST: ' . $artist; ?></p>
                         <p style="margin:0;padding:3px 0;"><?php echo 'Qty: ' . $item->getQty()?></p>
-                        <a href="<?php echo $baseUrl . 'checkout/cart/'; ?>">View Now &raquo; </a>
+                        <a href="<?php echo $product->getProductUrl() //echo $baseUrl . 'checkout/cart/'; ?>">View Now &raquo; </a>
                     </td>
                 </tr>
 
