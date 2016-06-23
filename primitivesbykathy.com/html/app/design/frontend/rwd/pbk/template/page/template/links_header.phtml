@@ -88,29 +88,25 @@ $website_id = Mage::app()->getWebsite()->getId();
                                 <a href="<?php echo Mage::getUrl('customer/account/'); ?>"><?php echo $this->__('My Dashboard');?></a>
                             </li>
                             <li>
-                                <a href="<?php echo Mage::getUrl('customer/account/'); ?>"><?php echo $this->__('Track Package');?></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo Mage::getUrl('sales/order/history/'); ?>"><?php echo $this->__('Order Status and History');?></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo Mage::getUrl('sales/order/history/'); ?>"><?php echo $this->__('All Items Ordered');?></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo Mage::getUrl('invoice/history/'); ?>"><?php echo $this->__('My Invoices');?></a>
-                            </li>
-                            <li>
-                                <a href="<?php echo Mage::getUrl('customer/account/edit/'); ?>"><?php echo $this->__('Update Email/Password');?></a>
+                                <a href="<?php echo Mage::getUrl('customer/account/edit'); ?>"><?php echo $this->__('Account Information');?></a>
                             </li>
                             <li>
                                 <a href="<?php echo Mage::getUrl('customer/address/'); ?>"><?php echo $this->__('Manage Address Book');?></a>
                             </li>
                             <li>
-                                <a href="<?php echo Mage::getUrl('wishlist'); ?>"><?php echo $this->__('My Wishlist');?></a>
+                                <a href="<?php echo Mage::getUrl('sales/order/history/'); ?>"><?php echo $this->__('Order Status and History');?></a>
                             </li>
                             <li>
-                                <a href="<?php echo Mage::getUrl('checkout/cart/'); ?>"><?php echo $this->__('My Shopping Cart');?></a>
+                                <a href="<?php echo Mage::getUrl('invoice/history/'); ?>"><?php echo $this->__('My Invoices');?></a>
                             </li>
+
+                            <li>
+                                <a href="<?php echo Mage::getUrl('wishlist'); ?>"><?php echo $this->__('Saved Items');?></a>
+                            </li>
+                            <li>
+                                <a href="<?php echo Mage::getUrl('track-packages'); ?>"><?php echo $this->__('Track Packages');?></a>
+                            </li>
+
                             <li>
                                 <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log Out'; ?></a>
                             </li>

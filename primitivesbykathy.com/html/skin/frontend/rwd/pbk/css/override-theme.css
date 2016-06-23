@@ -374,7 +374,9 @@ tr.Canceled {background:#FAF3F1!important;}
 .account-dropdown .account-content li:last-of-type {
     margin-bottom: 0;
 }
-
+#header-account .account-dropdown .account-content li {
+    display: block;
+}
 #header-account .account-dropdown .account-content a {
     text-align: left;
 }
@@ -2847,9 +2849,9 @@ div.block-layered-nav.amshopby-filters-top dd a.amshopby-attr:hover {
 
 @media only screen and (max-width: 770px) {
     /* fix the issue that the click-open function not working on mobile size*/
-    .block-layered-nav .block-content.accordion-open > dl > dd.current {
+    /*.block-layered-nav .block-content.accordion-open > dl > dd.current {
         display: block !important;
-    }
+    }*/
     .wrapper .block-layered-nav .block-subtitle--filter:hover {
         background-color: #333;
         color: #FFFFFF;
@@ -6199,4 +6201,15 @@ ul.products-grid .actions {
 }
 .wrapper .wishlist_ajax_element:before {
     color: #7E221B !important;
+}
+@media (min-width: 768px) {
+    .sidebar .block-layered-nav dd.close {
+        display: none;
+    }
+}
+
+@media (max-width:767px) {
+    .mb-submenu img {
+        display: none;
+    }
 }

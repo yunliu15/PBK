@@ -23,15 +23,16 @@
  * @copyright Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license http://www.magento.com/license/enterprise-edition
  */
+
 ?>
-<?php
+<?php 
 $_item = $this->getItem();
 $isVisibleProduct = $_item->getProduct()->isVisibleInSiteVisibility();
 $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage_Catalog_Model_Product_Attribute_Source_Msrp_Type::TYPE_BEFORE_ORDER_CONFIRM);
 
 $storeId = Mage::app()->getStore()->getStoreId();
 $product_info = Mage::getModel('catalog/product')->setStoreId($storeId)->load($_item->getProductId());
-$text = $product_info->getAttributeText('custom_stock_status');
+$stockStatus = Mage::helper('amstockstatus')->showStockStatus($product_info);
 //if($_item->getProductType() == 'simple'){
 ////    var_dump($_item->debug());
 //}
@@ -84,9 +85,8 @@ $text = $product_info->getAttributeText('custom_stock_status');
 
         
         </div>
-<!--        <div class="avability-cart-test" style="width:100%; margin-top:-5px; margin-bottom: 5px">--><?php //echo $this->__("Availability:")?><!-- <span style="color:#7E221B">--><?php //echo $text; ?><!--</span></div>-->
-<!---->
-<!--        <div>-->
+
+        <div>
 
         </div>
         <?php if ($_options = $this->getOptionList()):?>
@@ -111,8 +111,10 @@ $text = $product_info->getAttributeText('custom_stock_status');
         <?php if ($messages = $this->getMessages()): ?>
         <?php foreach ($messages as $message): ?>
             <p class="item-msg <?php echo $message['type'] ?>">
-                <?php echo $this->escapeHtml($message['text']) ?>
-            </p>
+
+                <div class="avability-cart-test" style="width:100%; margin-top:-5px; margin-bottom: 5px"><?php echo $this->__("Availability:")?> <span style="color:#7E221B;font-size:13px !important;">   <?php echo $this->escapeHtml($message['text']) ?></span></div>
+
+                </p>
         <?php endforeach; ?>
         <?php endif; ?>
 
@@ -140,24 +142,41 @@ $text = $product_info->getAttributeText('custom_stock_status');
     </td>
 
     <?php
-    $stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($_item->getProductId());
-    $product_quantity_increment = ($stockItem->getQtyIncrements()) + 0;
+    $product_model = Mage::getModel("catalog/product")->load($_item->getProductId());
+
+    //we need to get the quantity increment value, so wi will get the model we need for this
+    $stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($product_model);
+    $product_quantity_increment = (Mage::helper("shero_qty")->getProductQtyInc($product_model)) + 0;
+    $product_max_quantity = ($stockItem->getQty()) + 0;
+    $product_min_quantity = ($stockItem->getMinSaleQty()) + 0; //max_sale_qty
+    $product_max_sale_quantity = ($stockItem->getMaxSaleQty()) + 0;
     ?>
 
     <td class="product-cart-actions" data-rwd-label="<?php echo $this->__('Qty'); ?>">
 
         <input type="text" pattern="\d*" name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4"
                data-cart-item-id="<?php echo $this->jsQuoteEscape($_item->getSku()) ?>"
+               data-max="<?php echo $product_max_quantity; ?>"
+               data-min="<?php echo $product_min_quantity; ?>"
                data-inc="<?php echo $product_quantity_increment; ?>"
+               data-max_allow="<?php echo $product_max_sale_quantity; ?>"
+               value="<?php echo Mage::helper("shero_qty")->getProductValue($product_min_quantity,$product_quantity_increment); ?>"
 
-               title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty qty-input" maxlength="12" />
+               title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty qty-input qty_increment_product_add cart_update<?php echo $_item->getId(); ?>" maxlength="12" />
         <div class="qty-btn">
             <div class="qty-btn-up"></div>
             <div class="qty-btn-down"></div>
         </div>
 
 
-        <button type="submit" name="update_cart_action" data-cart-item-update value="update_qty" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Update')); ?>" class="button-small btn-update"><span><span><?php echo $this->__('Update'); ?></span></span>
+        <button type="submit" name="update_cart_action" data-cart-item-update
+                value="update_qty" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Update')); ?>"
+                class="button-small btn-update update_cart_check"
+                data-check="<?php echo $_item->getId(); ?>"
+            >
+            <span>
+                    <?php echo $this->__('Update'); ?>
+            </span>
         </button>
 
 
@@ -184,9 +203,26 @@ $text = $product_info->getAttributeText('custom_stock_status');
                 }
 
                 return false;
-            })
+            });
 
+            // toggle readonly
+            var input = $('#shopping-cart-table').find('.qty-input');
 
+            toggleReadOnly();
+
+            $(window).resize(function() {
+                toggleReadOnly();
+            });
+
+            function toggleReadOnly() {
+
+                if ($(window).width() < 768) {
+                    input.attr('readonly','readonly');
+                }
+                else {
+                    input.attr('readonly',false);
+                }
+            }
 
         });
     </script>

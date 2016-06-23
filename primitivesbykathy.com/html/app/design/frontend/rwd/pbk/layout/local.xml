@@ -427,6 +427,11 @@
     <customer_account>
         <reference name="customer_account_navigation">
             <action method="addLink" translate="label" module="checkout">
+                <name>track_packages</name>
+                <path>track-packages</path>
+                <label>Track Packages</label>
+            </action>
+            <action method="addLink" translate="label" module="checkout">
                 <name>cart</name>
                 <path>checkout/cart/</path>
                 <label>My Cart/Checkout</label>
