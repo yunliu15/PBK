@@ -6257,3 +6257,32 @@ div.block-layered-nav dl dd ol > li > a {
         float: none;
     }
 }
+
+.product-view .case-discount-price {
+    margin-top: 10px;
+    width: 110%;
+}
+
+@media (max-width:599px) {
+    .cms-tradeshows td,
+    .cms-tradeshows table,
+    .cms-tradeshows tbody,
+    .cms-tradeshows tr {
+        display: block;
+    }
+    .cms-tradeshows img {
+        margin: auto;
+    }
+}
+/* quick shopping */
+@media (max-width: 1000px) {
+    .quick-shop-content form {
+        overflow: auto;
+    }
+    .quick-shop-content .data-table {
+        width: auto;
+    }
+    .quick-shop-content .data-table input {
+        width: auto;
+    }
+}
