@@ -34,7 +34,7 @@
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
 <?php $websiteId = Mage::app()->getWebsite()->getId(); ?>
-<?php $caseTest = $_product->getCaseTest(); ?>
+<?php $caseTest = $_product->getCaseSize(); ?>
 
 
 <script type="text/javascript">
@@ -49,11 +49,11 @@
                 <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
                 <input type="hidden" name="related_product" id="related-products-field" value="" />
             </div>
-
+            <div class="product-name mobile">
+                <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+            </div>
             <div class="product-img-box">
-                <div class="product-name">
-                    <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-                </div>
+
                 <?php echo $this->getChildHtml('media') ?>
             </div>
 
@@ -113,8 +113,10 @@
             </div>
 
             <div class="add-to-cart-wrapper">
+
                 <?php echo $this->getChildHtml('product_type_data') ?>
                 <?php //echo $this->getChildHtml('extrahint') ?>
+
 
                 <?php if (!$this->hasOptions()):?>
                     <div class="add-to-box">
@@ -132,7 +134,6 @@
                                 <span class="or"><?php echo $this->__('OR') ?></span>
                             <?php endif; ?>
                         <?php endif; ?>
-
                         <?php
                         if(!Mage::getSingleton('customer/session')->isLoggedIn()){ ?>
                             <div class="extra-info">
@@ -144,7 +145,7 @@
                                         }
                                     </style>
 
-                                    <span class="stock-status-product-page"><?php echo Mage::helper('amstockstatus')->showStockStatus($_product); ?></span>
+                                    <span class="stock-status-product-page test"><?php echo Mage::helper('amstockstatus')->getCustomStockStatusText($_product); ?></span>
                                 </p>
                             </div>
                         <?php }
@@ -161,14 +162,22 @@
                                         font-size: 16px !important;
                                     }
                                 </style>
-                                <span class="stock-status-product-page"><?php echo Mage::helper('amstockstatus')->showStockStatus($_product); ?></span>
+                                <span class="stock-status-product-page test"><?php echo Mage::helper('amstockstatus')->getCustomStockStatusText($_product); ?></span>
                             </p>
 
 
+
                         </div>
+                            <?php
+                                $qty_increment = Mage::helper("shero_qty")->getProductQtyInc($_product);
+                            if(!empty($qty_increment) && $qty_increment > 1){ ?>
+                                <div class="case-discount-price-bottom">
+                                    <p>Must purchase in quantities of <?php echo $qty_increment ?>.</p>
+                                </div>
+                            <?php }
+                            ?>
                             <?php if(isset($caseTest) && is_numeric($caseTest)): ?>
                                 <div class="case-discount-price-bottom">
-                                    <p>Must purchase in quantities of 2.</p>
                                     <p><em>Case discount is not valid with any other promos or sale offers.</em></p>
                                 </div>
                             <?php endif; ?>

@@ -94,18 +94,18 @@ if(empty($_cartQty)) {
 
 
         <div class="minicart-actions">
-            <?php if($_cartQty && $this->isPossibleOnepageCheckout()): ?>
+            <?php /*if($_cartQty && $this->isPossibleOnepageCheckout()): */?><!--
                 <ul class="checkout-types minicart">
-                    <?php echo $this->getChildHtml('extra_actions') ?>
+                    <?php /*echo $this->getChildHtml('extra_actions') */?>
                     <li>
-                        <a title="<?php echo $this->quoteEscape($this->__('Checkout')) ?>" class="button checkout-button" href="<?php echo $this->getCheckoutUrl() ?>">
-                            <?php echo $this->__('Checkout') ?>
+                        <a title="<?php /*echo $this->quoteEscape($this->__('Checkout')) */?>" class="button checkout-button" href="<?php /*echo $this->getCheckoutUrl() */?>">
+                            <?php /*echo $this->__('Checkout') */?>
                         </a>
                     </li>
                 </ul>
-            <?php endif ?>
+            --><?php /*endif */?>
             <a class="cart-link" href="<?php echo $this->getUrl('checkout/cart'); ?>">
-                <?php echo $this->__('View Cart'); ?>
+                <?php echo $this->__('View Cart / Checkout'); ?>
             </a>
         </div>
 

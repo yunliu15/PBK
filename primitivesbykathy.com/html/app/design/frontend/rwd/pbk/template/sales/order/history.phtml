@@ -39,6 +39,7 @@
     <input type="submit" name="search_date" class="link-reorder right search_by_date" value="Search By Date" style="padding: 3px;">
 </div>
 <?php if($_orders->getSize()): ?>
+    <?php $showNote = false;?>
 <table class="data-table orders" id="my-orders-table">
     <col width="1" />
     <col width="1" />
@@ -64,7 +65,15 @@
             <td class="date" data-th="Date"><span class="nobr"><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></span></td>
             <td class="ship" data-th="Ship To"><?php echo $_order->getShippingAddress() ? $this->escapeHtml($_order->getShippingAddress()->getName()) : '&nbsp;' ?></td>
             <td class="total" data-th="Order Total"><?php echo $_order->formatPrice($_order->getGrandTotal()) ?></td>
-            <td class="status" data-th="Order Status"><em><?php echo $_order->getStatusLabel() ?></em></td>
+            <td class="status" data-th="Order Status"><em>
+                    <?php $label = $_order->getStatusLabel() ?>
+                    <?php if(strtolower($label) == 'on hold') {
+                        echo 'Processing *';
+                        $showNote = true;
+                    }
+                    else echo $label;
+                    ?>
+                </em></td>
             <td class="a-center view">
                 <span class="nobr"><a class="link-view" href="<?php echo $this->getViewUrl($_order) ?>"><?php echo $this->__('View Order') ?></a>
                     <?php /*<span class="separator">|</span><a href="<?php echo $this->getTrackUrl($_order) ?>"><?php echo $this->__('Track Order') ?></a>&nbsp;*/ ?>
@@ -77,6 +86,9 @@
         <?php endforeach; ?>
     </tbody>
 </table>
+    <?php if($showNote): ?>
+        <p>* Reviewing note on order</p>
+    <?php endif; ?>
 <script type="text/javascript">decorateTable('my-orders-table');</script>
 <?php echo $this->getPagerHtml(); ?>
 <?php else: ?>
