@@ -715,6 +715,7 @@ $j(document).ready(function () {
         // Hide all stubs
         skipLinks.removeClass('skip-active');
         skipContents.removeClass('skip-active');
+        $j('#ms-topmenu').removeClass('active');
 
         // Toggle stubs
         if (isSkipContentOpen) {
@@ -869,7 +870,78 @@ $j(document).ready(function () {
         });
     }
 
+    // ==============================================
+    // UI Pattern - Toggle Content (tabs and accordions in one setup)
+    // ==============================================
+    
+    $j('.toggle-content').each(function () {
+        var wrapper = jQuery(this);
 
+        var hasTabs = wrapper.hasClass('tabs');
+        var hasAccordion = wrapper.hasClass('accordion');
+        var startOpen = wrapper.hasClass('open');
+
+        var dl = wrapper.children('dl:first');
+        var dts = dl.children('dt');
+        var panes = dl.children('dd');
+        var groups = new Array(dts, panes);
+
+        //Create a ul for tabs if necessary.
+        if (hasTabs) {
+            var ul = jQuery('<ul class="toggle-tabs"></ul>');
+            dts.each(function () {
+                var dt = jQuery(this);
+                var li = jQuery('<li></li>');
+                li.html(dt.html());
+                ul.append(li);
+            });
+            ul.insertBefore(dl);
+            var lis = ul.children();
+            groups.push(lis);
+        }
+
+        //Add "last" classes.
+        var i;
+        for (i = 0; i < groups.length; i++) {
+            groups[i].filter(':last').addClass('last');
+        }
+
+        function toggleClasses(clickedItem, group) {
+            var index = group.index(clickedItem);
+            var i;
+            for (i = 0; i < groups.length; i++) {
+                groups[i].removeClass('current');
+                groups[i].eq(index).addClass('current');
+            }
+        }
+
+        //Toggle on tab (dt) click.
+        dts.on('click', function (e) {
+            //They clicked the current dt to close it. Restore the wrapper to unclicked state.
+            if (jQuery(this).hasClass('current') && wrapper.hasClass('accordion-open')) {
+                wrapper.removeClass('accordion-open');
+            } else {
+                //They're clicking something new. Reflect the explicit user interaction.
+                wrapper.addClass('accordion-open');
+            }
+            toggleClasses(jQuery(this), dts);
+        });
+
+        //Toggle on tab (li) click.
+        if (hasTabs) {
+            lis.on('click', function (e) {
+                toggleClasses(jQuery(this), lis);
+            });
+            //Open the first tab.
+            lis.eq(0).trigger('click');
+        }
+
+        //Open the first accordion if desired.
+        if (startOpen) {
+            dts.eq(0).trigger('click');
+        }
+
+    });
 
 
     // ==============================================
@@ -993,8 +1065,7 @@ $j(document).ready(function () {
 
     if ($j('.products-grid').length) {
 
-        function alignProductGridActions() {
-
+        var alignProductGridActions = function () {
             // Loop through each product grid on the page
             $j('.products-grid').each(function(){
                 var gridRows = []; // This will store an array per row
@@ -1034,6 +1105,7 @@ $j(document).ready(function () {
                         var actionSpacing = 10;
                         // The height of the absolutely positioned .actions element
                         var actionHeight = $j(this).find('.product-info .actions').height();
+
                         // Add height of two elements. This is necessary since .actions is absolutely positioned and won't
                         // be included in the height of .product-info
                         var totalHeight = productInfoHeight + actionSpacing + actionHeight;
@@ -1054,105 +1126,12 @@ $j(document).ready(function () {
         }
         alignProductGridActions();
 
-
-
-
-
         // Since the height of each cell and the number of columns per page may change when the page is resized, we are
         // going to run the alignment function each time the page is resized.
         $j(window).on('delayed-resize', function (e, resizeEvent) {
             alignProductGridActions();
         });
     }
-
-
-// original position: line 936. have to move this section down here to fix the error alignProductGridActions is not a function       ------------ 031816 yl
-
-    // ==============================================
-    // UI Pattern - Toggle Content (tabs and accordions in one setup)
-    // ==============================================
-
-    $j('.toggle-content').each(function () {
-        var wrapper = jQuery(this);
-
-        var hasTabs = wrapper.hasClass('tabs');
-        var hasAccordion = wrapper.hasClass('accordion');
-        var startOpen = wrapper.hasClass('open');
-
-        var dl = wrapper.children('dl:first');
-        var dts = dl.children('dt');
-        var panes = dl.children('dd');
-        var groups = new Array(dts, panes);
-
-        //Create a ul for tabs if necessary.
-        if (hasTabs) {
-            var ul = jQuery('<ul class="toggle-tabs"></ul>');
-            dts.each(function () {
-                var dt = jQuery(this);
-                var li = jQuery('<li></li>');
-                li.html(dt.html());
-                ul.append(li);
-            });
-            ul.insertBefore(dl);
-            var lis = ul.children();
-            groups.push(lis);
-        }
-
-        //Add "last" classes.
-        var i;
-        for (i = 0; i < groups.length; i++) {
-            groups[i].filter(':last').addClass('last');
-        }
-
-        function toggleClasses(clickedItem, group) {
-            var index = group.index(clickedItem);
-            var i;
-            for (i = 0; i < groups.length; i++) {
-                groups[i].removeClass('current');
-                groups[i].eq(index).addClass('current');
-            }
-        }
-
-        //Toggle on tab (dt) click.
-        dts.on('click', function (e) {
-            //They clicked the current dt to close it. Restore the wrapper to unclicked state.
-            if (jQuery(this).hasClass('current') && wrapper.hasClass('accordion-open')) {
-                wrapper.removeClass('accordion-open');
-            } else {
-                //They're clicking something new. Reflect the explicit user interaction.
-                wrapper.addClass('accordion-open');
-            }
-            toggleClasses(jQuery(this), dts);
-
-        });
-
-        //Toggle on tab (li) click.
-        if (hasTabs) {
-            lis.on('click', function (e) {
-                toggleClasses(jQuery(this), lis);
-
-                //for homepage featured items
-                if ($j('.featured-items').length) {
-                    alignProductGridActions();
-                }
-
-            });
-            //Open the first tab.
-            lis.eq(0).trigger('click');
-
-        }
-
-        //Open the first accordion if desired.
-        if (startOpen) {
-            dts.eq(0).trigger('click');
-        }
-
-    });
-
-
-
-
-
 
     // ==============================================
     // Generic, efficient window resize handler
