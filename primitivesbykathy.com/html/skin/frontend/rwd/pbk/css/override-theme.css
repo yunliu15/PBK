@@ -45,7 +45,7 @@ body .wrapper h1, body .wrapper h2, body .wrapper h3, body .wrapper h4, body .wr
     color: #333637;
 }
 
-.page .page-title h1 {text-transform: none;border-bottom:1px solid #d5d5db;margin-bottom:20px; line-height: 28px;}
+.page .page-title h1 {text-transform: none;border-bottom:1px solid #d5d5db;margin-bottom:20px;}
 .page h2 {
     font-weight: 400;
     font-size: 24px;
@@ -6256,6 +6256,12 @@ div.block-layered-nav dl dd ol > li > a {
     .product-name.mobile {
         display: none;
     }
+    .cms-page-view .wrapper .col-main {
+        padding-left: 30px;
+    }
+    .page .page-title h1 {
+        line-height: 28px;
+    }
 }
 
 @media (max-width:767px) {
@@ -6343,6 +6349,12 @@ div.block-layered-nav dl dd ol > li > a {
     .cms-tradeshows img {
         margin: auto;
     }
+    .cms-page-view:not(.cms-find-a-store) td,
+    .cms-page-view:not(.cms-find-a-store) table,
+    .cms-page-view:not(.cms-find-a-store) tbody,
+    .cms-page-view:not(.cms-find-a-store) tr {
+        display: block;
+    }
 }
 /* quick shopping */
 @media (max-width: 1000px) {
@@ -6364,15 +6376,17 @@ div.block-layered-nav dl dd ol > li > a {
     margin-left: 3px;
     margin-bottom: 8px;
 }
+.cms-page-view .std .cms-tabs li {
+    margin-left: 0;
+    margin-bottom: 0;
+}
 .cms-page-view .wrapper .std li strong {
     font-size: 15px;
 }
 .cms-page-view .page .page-title h1 {
     margin-bottom: 40px;
 }
-.cms-page-view .wrapper .col-main {
-    padding-left: 30px;
-}
+
 .product-view .product-name .h1 {
     text-transform: capitalize;
 }
