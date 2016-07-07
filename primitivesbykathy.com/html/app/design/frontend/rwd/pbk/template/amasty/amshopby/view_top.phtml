@@ -5,6 +5,19 @@
  * @package Amasty_Shopby
  */
 ?>
+
+<?php
+
+$domain = Mage::getBaseUrl (Mage_Core_Model_Store::URL_TYPE_WEB);
+$trashtalk = $domain . 'trashtalk';
+$questionables = $domain . 'questionables';
+$ws_trashtalk = $domain . 'ws_trashtalk';
+$ws_questionables = $domain . 'ws_questionables';
+
+$storeId = Mage::app()->getStore()->getStoreId();
+
+?>
+
 <?php if($this->canShowBlock()): ?>
     <div id="am-top-nav" class="block block-layered-nav">
         <div class="block-title">
@@ -31,7 +44,22 @@
                                         <?php
                                         endif; ?>
                                         <dt><?php echo $this->__($_filter->getName()) ?></dt>
-                                        <dd><?php echo $_filter->getHtml() ?></dd>
+                                        <dd>
+                                            <?php echo $_filter->getHtml() ?>
+                                            <?php if($_filter->getName() == "Collection"): ?>
+                                                <?php if($storeId == 1 ): // retail
+                                                    ?>
+                                                    <a href="<?php echo $trashtalk?>"> Trash Talk </a>
+                                                    <a href="<?php echo $questionables?>"> Questionables </a>
+                                                <?php endif; ?>
+                                                <?php if($storeId == 3): // wholesale
+                                                    ?>
+                                                    <a href="<?php echo $ws_trashtalk ?>"> Trash Talk </a>
+                                                    <a href="<?php echo $ws_questionables?>"> Questionables </a>
+                                                <?php endif; ?>
+                                            <?php endif; ?>
+
+                                        </dd>
                                     </dl>
                                 </div>
                             <?php endif; ?>

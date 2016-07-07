@@ -2534,6 +2534,7 @@ body.amquickview-ajax-view {
     background-repeat: no-repeat;
     background-position: left 3px;
     color: #7E221B;
+    font-weight: normal;
 }
 
 .wrapper div.block-layered-nav dd a.amshopby-attr-inactive {
@@ -4998,9 +4999,11 @@ and (orientation: portrait) {
     font-size:10px;
 }
 
-.stock-status-product-page{
+.stock-status-product-page,
+.prod_status {
     color:#7E221B;
     font-size: 14px;
+    font-weight: bold;
 }
 
 
@@ -5717,7 +5720,7 @@ img {
     border-bottom-left-radius: 2em;
 }
 .current-filter .single-child {
-    padding: 2px 10px;
+    padding: 2px 10px 3px;
 }
 .btn-remove-inline img {
     display: none;
@@ -5741,14 +5744,14 @@ img {
     border-bottom-left-radius: 2em;
     text-transform: uppercase;
     position: relative;
-    top: 1px;
+    top: 2px;
     display: inline-block !important;
 }
 #filter-results-container .actions a {
     color: #fff;
     font-size: 11px;
     position: relative;
-    top: -1px;
+    top: -2px;
 }
 #am-top-nav > .block-title {
     display: none !important;
@@ -5962,7 +5965,7 @@ button.slick-prev {
 .wrapper .sidebar .block-title, .wrapper .cart .data-table th, .cart-forms #discount-coupon-form label, .cart .cart-totals-wrapper h4, .wrapper .data-table th, .my-account .order-details .order-totals-wrapper h4, #wishlist-table.clean-table thead th {
     font-size: 13px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 .wrapper .data-table th {
     padding: 7px 15px;
@@ -5994,8 +5997,7 @@ button.slick-prev {
 }
 
 .MainLink{
-    color:#900;
-    text-decoration: underline;
+    color:#7E221B;
 }
 
 .cms-page-view .wrapper .std li, .cms-no-route .wrapper .std li {
@@ -6087,6 +6089,11 @@ ul.products-grid .actions {
         padding-bottom: 10px;
     }
 }
+
+.cms-page-view .std ul {
+    list-style: disc outside;
+    margin-left: 1em;
+}
 /* cms tabs */
 .cms-tabs .toggle-tabs li {
     list-style: none;
@@ -6128,13 +6135,14 @@ ul.products-grid .actions {
 .cms-tabs .toggle-tabs li.current span, .cms-tabs .toggle-tabs li:hover span {
     color: #333637;
 }
-.cms-tabs .toggle-tabs {
+.cms-tabs ul.toggle-tabs {
     display: block;
     width: 100%;
     position: relative;
     border: 1px solid #cccccc;
     background-color: #EDEBEC;
     margin-bottom: 0;
+    margin-left: 0;
 }
 .cms-tabs .toggle-tabs:after {
     content: '';
@@ -6198,7 +6206,7 @@ ul.products-grid .actions {
 }
 .product-view .product-collateral a {
     color: #7E221B;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 #checkout-step-payment dd p {
     padding-left: 10px;
@@ -6335,7 +6343,7 @@ div.block-layered-nav dl dd ol > li > a {
 }
 
 .product-view .case-discount-price {
-    margin-top: 10px;
+    margin-top: 15px;
     width: 110%;
 }
 
@@ -6369,9 +6377,7 @@ div.block-layered-nav dl dd ol > li > a {
     }
 }
 
-.cms-page-view .std ul {
-    list-style: disc inside;
-}
+
 .cms-page-view .wrapper .std li {
     margin-left: 3px;
     margin-bottom: 8px;
@@ -6550,4 +6556,21 @@ select {
     ol.opc select {
         max-width: 280px;
     }
+}
+
+.change.added::before {
+    color: red !important;
+}
+
+.block-layered-nav .block-content > dl > dd > a {
+    display: block;
+    float: none;
+    background-image: url(../images/amshopby-cb1.png);
+    background-repeat: no-repeat;
+    background-position: left 3px;
+    padding-left: 18px;
+}
+
+p[class*="cart_qty_ajax"] {
+    font-weight: bold;
 }

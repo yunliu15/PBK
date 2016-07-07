@@ -27,102 +27,154 @@
 
 //we get the quote object so we can use it to load product qantity in cart
 $quote = Mage::getSingleton('checkout/session')->getQuote();
-
+$website_id = Mage::app()->getWebsite()->getId();
 
 ?>
 <?php if ($_products = $this->getRecentlyViewedProducts()): ?>
-<div class="block block-list block-viewed">
-    <div class="block-title">
-        <h4 class="all-upper with-line"><span><?php echo $this->__('Recently Viewed Products') ?></span></h4>
-        <div class="title-line">&nbsp;</div>
-    </div>
-    <div class="block-content">
-        <ol id="recently-viewed-items" class="products-grid products-grid--max-5-col">
-        <?php foreach ($_products as $_item): ?>
+    <div class="block block-list block-viewed">
+        <div class="block-title">
+            <h4 class="all-upper with-line"><span><?php echo $this->__('Recently Viewed Products') ?></span></h4>
+            <div class="title-line">&nbsp;</div>
+        </div>
+        <div class="block-content">
+            <ol id="recently-viewed-items" class="products-grid products-grid--max-5-col">
+                <?php foreach ($_products as $_item): ?>
 
 
-            <?php
-
-            //we need to get the quantity increment value, so wi will get the model we need for this
-            $stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($_item->getId());
-            $product_quantity_increment = ($stockItem->getQtyIncrements()) + 0;
-            $product_max_quantity = ($stockItem->getQty()) + 0;
-            $product_min_quantity = ($stockItem->getMinSaleQty()) + 0; //max_sale_qty
-            $product_max_sale_quantity = ($stockItem->getMaxSaleQty()) + 0;
-
-            ?>
-
-
-
-            <li class="item">
-                <div class="amlabel-div">
-                    <?php echo Mage::helper('amlabel')->getLabels($_item) ?></div>
-                <div class="bd-layer">
-                <div class="product-img-wrapper">
-
-                    <div class="product-image-div">
-                        <a href="<?php echo $this->getProductUrl($_item) ?>" class="product-image">
-                            <img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(280) ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" />
-                        </a>
-                    </div>
-                </div>
-                </div>
-                <div class="product-info no-bottom-p">
-                <h3 class="product-name"><a href="<?php echo $this->getProductUrl($_item) ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></h3>
-                <div class="product-sku">
-                    <span>Item: </span>
-                    <span>
-                        #<?php echo $_item['sku']; ?>
-                    </span>
-                </div>
-                <?php echo $this->getPriceHtml($_item, true, '-upsell') ?>
-                <?php echo $this->getReviewsSummaryHtml($_item) ?>
-
-                <div class="actions">
-                    <?php if ($_item->isSaleable()): ?>
-                        <input class="qty qty_increment_product_add input-text" type="text" pattern="\d*"
-                               style="width: 41px; height: 33px; "
-                               data-max="<?php echo $product_max_quantity; ?>"
-                               data-min="<?php echo $product_min_quantity; ?>"
-                               data-inc="<?php echo $product_quantity_increment; ?>"
-                               data-max_allow="<?php echo $product_max_sale_quantity; ?>"
-                               value="<?php echo  $product_quantity_increment >= $product_min_quantity ?  $product_quantity_increment :  $product_min_quantity; ?>"
-                            >
-                        <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>"
-                                class="button btn-cart"
-                                onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"
-                                data-url="<?php echo $this->getAddToCartUrl($_item) ?>"
-                            ><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
-                    <?php else: ?>
-                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
-                    <?php endif; ?>
-                    <ul class="add-to-links">
-                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                            <li><a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="link-wishlist icon icon-moon button"></a></li>
-                        <?php endif; ?>
-
-                    </ul>
-                </div>
-                </div>
-                <p class="cart_qty_ajax<?php echo $_item->getProductId(); ?>">
                     <?php
+                    $product_model = Mage::getModel("catalog/product")->load($_item->getProductId());
 
-                    $_item_ = $quote->getItemByProduct($_item);
-                    if(is_object($_item_)){
-                        $qty__ = $_item_->getQty();
-                        if($qty__ != 0){
-                            echo $qty__." item(s) added to cart";
-                        }
-                    }
-
+                    //we need to get the quantity increment value, so wi will get the model we need for this
+                    $stockItem = Mage::getModel('cataloginventory/stock_item')->loadByProduct($product_model);
+                    $product_quantity_increment = (Mage::helper("shero_qty")->getProductQtyInc($product_model)) + 0;
+                    $product_max_quantity = ($stockItem->getQty()) + 0;
+                    $product_min_quantity = ($stockItem->getMinSaleQty()) + 0; //max_sale_qty
+                    $product_max_sale_quantity = ($stockItem->getMaxSaleQty()) + 0;
                     ?>
 
-                </p>
 
-            </li>
-        <?php endforeach; ?>
-        </ol>
-        <!--<script type="text/javascript">decorateList('recently-viewed-items');</script>-->
+
+                    <li class="item">
+                        <div class="amlabel-div">
+                            <?php echo Mage::helper('amlabel')->getLabels($_item) ?></div>
+                        <div class="bd-layer">
+                            <div class="product-img-wrapper">
+
+                                <div class="product-image-div">
+                                    <a href="<?php echo $this->getProductUrl($_item) ?>" class="product-image">
+                                        <img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(280) ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info no-bottom-p">
+                            <h3 class="product-name"><a href="<?php echo $this->getProductUrl($_item) ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></h3>
+                            <div class="product-sku">
+                                <span>Item: </span>
+                    <span>
+                        #<?php echo $_item['sku']; ?> <?php if(isset($website_id) && $website_id == "2"){ echo "<span> - wholesale </span>"; } ?>
+                    </span>
+                            </div>
+                            <?php if(!Mage::getSingleton('customer/session')->isLoggedIn()){ // this is when the user is not logged in  ?>
+
+                                <div class="prod_status">
+                                    <?php
+                                    $stp_product = Mage::getModel("catalog/product")->load($_item->getProductId());
+                                    echo Mage::helper('amstockstatus')->showStockStatus($stp_product); ?>
+                                </div>
+                                <div class="actions">
+
+                                    <button title="<?php echo Mage::helper('core')->quoteEscape($this->__('Login to view the product prices')) ?>"
+                                            class="button"
+                                            onclick="setLocation('<?php echo Mage::getUrl('customer/account/login',array('_secure'=>true)) ?>')"
+                                        ><span><span><?php echo $this->__('Login to view Price') ?></span></span></button>
+                                    <ul class="add-to-links">
+                                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                        <li>
+                                            <div class="split-button split-button-crated light wishlist-selector <?php
+                                            if(Mage::getModel('wishlistajax/check')->checkItemInWishlist($product_model->getId())==true){
+                                                echo 'ajax_wishlist_red_button';
+                                            }else{
+                                                echo 'kot';
+                                            }
+                                            ?>">
+                                                <a href="#" class="change" onclick="setLocation('<?php echo Mage::getUrl('customer/account/login',array('_secure'=>true)) ?>'); return false;"
+                                                    title="You need to login to add product to wishlist"
+                                                    >
+                                                    Save for later
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <?php endif; ?>
+
+                                    </ul>
+                                </div>
+
+                            <?php }else{ // this is the option after the user is logged in  ?>
+                            <?php echo $this->getPriceHtml($_item, true, '-upsell') ?>
+                            <?php echo $this->getReviewsSummaryHtml($_item) ?>
+                            <?php //var_dump($_item->getData()); die(); ?>
+                            
+                            <div class="prod_status">
+                                <?php
+                                $stp_product = Mage::getModel("catalog/product")->load($_item->getProductId());
+                                echo Mage::helper('amstockstatus')->showStockStatus($stp_product); ?>
+                            </div>
+
+                            <div class="actions">
+                                <?php if ($_item->isSaleable()): ?>
+                                    <input class="qty qty_increment_product_add input-text qty_<?php echo $_item->getProductId(); ?>" type="text" pattern="\d*"
+                                           style="width: 41px; height: 33px; "
+                                           data-max="<?php echo $product_max_quantity; ?>"
+                                           data-min="<?php echo $product_min_quantity; ?>"
+                                           data-inc="<?php echo $product_quantity_increment; ?>"
+                                           data-max_allow="<?php echo $product_max_sale_quantity; ?>"
+                                           value="<?php echo Mage::helper("shero_qty")->getProductValue($product_min_quantity,$product_quantity_increment); ?>"
+                                        >
+                                    <button type="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Add to Cart')) ?>"
+                                            class="button btn-cart"
+                                            onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"
+                                            data-url="<?php echo $this->getAddToCartUrl($_item) ?>"
+                                        ><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                                <?php else: ?>
+                                    <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                                <?php endif; ?>
+                                <ul class="add-to-links">
+                                    <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                        <li><a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="link-wishlist icon icon-moon button <?php
+                                            if(Mage::getModel('wishlistajax/check')->checkItemInWishlist($product_model->getId())==true){
+                                                echo 'ajax_wishlist_red_button';
+                                            }else{
+                                                echo 'kot';
+                                            }
+                                            ?>"></a></li>
+                                    <?php endif; ?>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="cart_qty_ajax<?php echo $_item->getProductId(); ?>">
+                            <?php
+
+                            $_item_ = $quote->getItemByProduct($_item);
+                            if(is_object($_item_)){
+                                $qty__ = $_item_->getQty();
+                                if($qty__ != 0){
+                                    echo $qty__." item(s) added to cart";
+                                }
+                            }
+
+                            ?>
+
+                        </p>
+                        <?php } // here ends the if to check if the user is logged in or not  ?>
+
+
+                    </li>
+                <?php endforeach; ?>
+            </ol>
+            <!--<script type="text/javascript">decorateList('recently-viewed-items');</script>-->
+        </div>
     </div>
-</div>
+
 <?php endif; ?>

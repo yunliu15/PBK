@@ -246,3 +246,7 @@ div.cms-tabs .toggle-tabs li > span {
 .customer-account-create div.page-title + div a {
     color: #8D4C72;
 }
+.wrapper .MainLink,
+.wrapper .prod_status {
+    color:#8D4C72;
+}

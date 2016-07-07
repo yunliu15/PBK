@@ -139,11 +139,7 @@
                             <div class="extra-info">
                                 <div><?php echo $this->__("Availability")?></div>
                                 <p class="availability in-stock">
-                                    <style>
-                                        .prod_status{
-                                            font-size: 16px !important;
-                                        }
-                                    </style>
+
 
                                     <span class="stock-status-product-page test"><?php echo Mage::helper('amstockstatus')->getCustomStockStatusText($_product); ?></span>
                                 </p>
@@ -157,11 +153,7 @@
                             <div><?php echo $this->__("Availability")?></div>
                             <?php //echo $this->getChildHtml('product_type_availability'); ?>
                             <p class="availability in-stock">
-                                <style>
-                                    .prod_status{
-                                        font-size: 16px !important;
-                                    }
-                                </style>
+                                
                                 <span class="stock-status-product-page test"><?php echo Mage::helper('amstockstatus')->getCustomStockStatusText($_product); ?></span>
                             </p>
 
