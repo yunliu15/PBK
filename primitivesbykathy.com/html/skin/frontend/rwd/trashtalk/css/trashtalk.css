@@ -250,3 +250,21 @@ div.cms-tabs .toggle-tabs li > span {
 .wrapper .prod_status {
     color:#8D4C72;
 }
+.wrapper .ordering-info a {
+    color: #8D4C72;
+}
+.wrapper input[name='requestcatalog'] {
+    background-color: #8D4C72;
+
+}
+.wrapper input[name='requestcatalog']:hover {
+    background-color: #A26E8D;
+}
+.wrapper #filter-results-container .actions {
+    background-color: #8D4C72;
+}
+div.wrapper div.block-layered-nav dd a.amshopby-attr-selected {
+
+    background-image: url(../images/amshopby-cb2.png);
+    color: #8D4C72;
+}

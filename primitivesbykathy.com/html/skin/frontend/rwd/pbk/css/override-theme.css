@@ -1912,7 +1912,6 @@ body.newsletter-manage-index .buttons-set button.button {
 }
 .ordering-info a {
     color: #7E221B;
-    text-decoration: underline;
 }
 .ordering-info-subtitle {font-weight:bold; font-size:16px;margin-bottom: 20px;}
 .cart .ordering-info-content{margin-bottom: 20px;}
@@ -2152,7 +2151,7 @@ body.newsletter-manage-index .buttons-set button.button {
     position: relative;
     z-index: 1;
     padding:0 20px;}
-.catalog-product-view .ordering-info-content a {color: #7E221B;text-decoration: underline;}
+.catalog-product-view .ordering-info-content a {color: #7E221B;}
 .catalog-product-view .ordering-info-content a:hover {color:#333637;}
 .product-img-box .product-image.product-img-wrapper.product-image-zoom {
 
@@ -6022,6 +6021,10 @@ input[name='requestcatalog'] {
 input[name='requestcatalog']:hover {
     background-color: #B0564F;
 }
+
+.catalogrequests-pbk ~ form {
+    margin-top:20px;
+}
 ul.products-grid .actions {
     min-height: 35px;
 }
@@ -6573,4 +6576,18 @@ select {
 
 p[class*="cart_qty_ajax"] {
     font-weight: bold;
+}
+
+.cms-track-packages input[type="submit"],
+.cms-track-packages input[type="reset"] {
+    padding: 5px 10px 4px !important;
+    background: #333637;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    text-transform: uppercase;
+}
+.cms-track-packages input[type="submit"]:hover,
+.cms-track-packages input[type="reset"]:hover {
+    background: #646263;
 }
