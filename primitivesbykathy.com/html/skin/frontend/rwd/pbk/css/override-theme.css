@@ -1913,7 +1913,7 @@ body.newsletter-manage-index .buttons-set button.button {
 .ordering-info a {
     color: #7E221B;
 }
-.ordering-info-subtitle {font-weight:bold; font-size:16px;margin-bottom: 20px;}
+.ordering-info-subtitle {font-weight:bold; font-size:16px;}
 .cart .ordering-info-content{margin-bottom: 20px;}
 
 .checkout-help {background:#EDEBEC;text-align:center;padding:10px;}
@@ -3433,6 +3433,9 @@ div.footer .block-title strong {
     #storelocator-results td{width:100%;display:block;}
     #storelocator-results #storelocator-container #sidebar {height:auto;width:100%;}
     #storelocator-results #sidebar .featured {text-align:left;}
+    .wrapper #storelocator-container {
+        height: auto;
+    }
 
 }
 
@@ -6097,6 +6100,10 @@ ul.products-grid .actions {
     list-style: disc outside;
     margin-left: 1em;
 }
+.cms-find-a-store .std ul {
+    margin-left: 0;
+}
+
 /* cms tabs */
 .cms-tabs .toggle-tabs li {
     list-style: none;
@@ -6384,6 +6391,9 @@ div.block-layered-nav dl dd ol > li > a {
 .cms-page-view .wrapper .std li {
     margin-left: 3px;
     margin-bottom: 8px;
+}
+.cms-find-a-store .wrapper .std li {
+    margin-left: 0;
 }
 .cms-page-view .std .cms-tabs li {
     margin-left: 0;
