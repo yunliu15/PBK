@@ -151,10 +151,13 @@ $stockStatus = Mage::helper('amstockstatus')->showStockStatus($product_info);
     $product_min_quantity = ($stockItem->getMinSaleQty()) + 0; //max_sale_qty
     $product_max_sale_quantity = ($stockItem->getMaxSaleQty()) + 0;
     ?>
+   
 
     <td class="product-cart-actions" data-rwd-label="<?php echo $this->__('Qty'); ?>">
 
         <input type="text" pattern="\d*" name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4"
+
+               id="update_qty_input"
                data-cart-item-id="<?php echo $this->jsQuoteEscape($_item->getSku()) ?>"
                data-max="<?php echo $product_max_quantity; ?>"
                data-min="<?php echo $product_min_quantity; ?>"
@@ -173,6 +176,7 @@ $stockStatus = Mage::helper('amstockstatus')->showStockStatus($product_info);
                 value="update_qty" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Update')); ?>"
                 class="button-small btn-update update_cart_check"
                 data-check="<?php echo $_item->getId(); ?>"
+                id="update_cart_button"
             >
             <span>
                     <?php echo $this->__('Update'); ?>
@@ -182,51 +186,7 @@ $stockStatus = Mage::helper('amstockstatus')->showStockStatus($product_info);
 
     </td>
 
-    <?php //increase or decrease qty?>
-    <script>
-        jQuery(function($){
-            var qtyBtnUp = $('.qty-btn-up');
-            var qtyBtnD = $('.qty-btn-down');
-            qtyBtnUp.off().click(function() {
-                var qtyInput = $(this).parent().siblings('.qty-input');
-                var currentQty = parseInt(qtyInput.val());
-                var inc = parseInt(qtyInput.data('inc')) || 1;
-                qtyInput.val(currentQty + inc);
-                return false;
-            });
-            qtyBtnD.off().click(function() {
-                var qtyInput = $(this).parent().siblings('.qty-input');
-                var currentQty = parseInt(qtyInput.val());
-                var inc = parseInt(qtyInput.data('inc')) || 1;
-                if (currentQty > 0) {
-                    qtyInput.val(currentQty - inc);
-                }
-
-                return false;
-            });
-
-            // toggle readonly
-            var input = $('#shopping-cart-table').find('.qty-input');
-
-            toggleReadOnly();
-
-            $(window).resize(function() {
-                toggleReadOnly();
-            });
-
-            function toggleReadOnly() {
-
-                if ($(window).width() < 768) {
-                    input.attr('readonly','readonly');
-                }
-                else {
-                    input.attr('readonly',false);
-                }
-            }
-
-        });
-    </script>
-
+   
     <?php if ($canApplyMsrp): ?>
         <td class="a-center product-cart-price"<?php if ($this->helper('tax')->displayCartBothPrices()): ?> colspan="2"<?php endif; ?>>
             <span class="cart-price">

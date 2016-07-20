@@ -158,11 +158,23 @@
                             <button type="button" title="<?php echo $this->quoteEscape($this->__('Continue Shopping')) ?>" class="white-button btn-continue" onclick="setLocation('<?php echo Mage::helper('core')->quoteEscape($this->getContinueShoppingUrl()) ?>')"><span><span class="icon-moon"></span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
                         <?php endif; ?>
 
+                        
 
-                        <button type="submit" name="update_cart_action" data-cart-item-update value="update_qty" title="<?php echo $this->quoteEscape($this->__('Update Your Cart')); ?>" class="white-button btn-update"><span><span class="icon-moon"></span><span><?php echo $this->__('Update Your Cart'); ?></span></span></button>
+                        <button type="submit" name="update_cart_action"
+                                data-cart-item-update value="update_qty"
+                                title="<?php echo $this->quoteEscape($this->__('Update Your Cart')); ?>"
+                                class="white-button btn-update update_all_qty"
+                            >
+                                <span class="icon-moon">
 
-
+                                </span>
+                                <span>
+                                    <?php echo $this->__('Update Your Cart'); ?>
+                                </span>
+                        </button>
                         <button type="submit" name="update_cart_action" data-cart-empty value="empty_cart" title="<?php echo $this->quoteEscape($this->__('Empty Your Cart')); ?>" class="white-button btn-empty" id="empty_cart_button"><span><span class="icon-moon"></span><span><?php echo $this->__('Empty Your Cart'); ?></span></span></button>
+
+
 
 
                         <!--[if lt IE 8]>
@@ -241,3 +253,69 @@
 
     <?php echo $this->getChildHtml('crosssell') ?>
 </div>
+<script>
+
+
+    //increase or decrease qty
+    jQuery(function($){
+        var qtyBtnUp = $('.qty-btn-up');
+        var qtyBtnD = $('.qty-btn-down');
+        qtyBtnUp.off().click(function() {
+            var qtyInput = $(this).parent().siblings('.qty-input');
+            var currentQty = parseInt(qtyInput.val());
+            var inc = parseInt(qtyInput.data('inc')) || 1;
+            qtyInput.val(currentQty + inc);
+            return false;
+        });
+        qtyBtnD.off().click(function() {
+            var qtyInput = $(this).parent().siblings('.qty-input');
+            var currentQty = parseInt(qtyInput.val());
+            var inc = parseInt(qtyInput.data('inc')) || 1;
+            if (currentQty > 0) {
+                qtyInput.val(currentQty - inc);
+            }
+
+            return false;
+        });
+
+        // toggle readonly
+        var input = $('#shopping-cart-table').find('.qty-input');
+
+        toggleReadOnly();
+
+        $(window).resize(function() {
+            toggleReadOnly();
+        });
+
+        function toggleReadOnly() {
+
+            if ($(window).width() < 768) {
+                input.attr('readonly','readonly');
+            }
+            else {
+                input.attr('readonly',false);
+            }
+        }
+
+        //update cart when press enter with cursor in side of qty input
+        var inQty = false;
+
+        $('.qty-btn').hover(function(){
+            inQty = true;
+        }, function(){
+            inQty = false;
+        });
+        $('.product-cart-actions .qty-input').hover(function(){
+            inQty = true;
+        }, function(){
+            inQty = false;
+        });
+
+        $(document).keypress(function(e) {
+            if(e.which == 13 && inQty) { // Checks for the enter key
+                $('#update_cart_button').click();
+            }
+        });
+
+    });
+</script>

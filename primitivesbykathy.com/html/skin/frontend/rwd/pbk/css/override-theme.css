@@ -6620,3 +6620,8 @@ p[class*="cart_qty_ajax"] {
     font-weight: 900;
     color: #7E221B;
 }
+.customer-account-create a {color: #7E221B;}
+span.after-tax-id {
+    font-size: 13px;
+    padding-left:5px;
+}
