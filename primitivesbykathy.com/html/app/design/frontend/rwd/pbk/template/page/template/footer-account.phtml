@@ -1,20 +1,19 @@
 <div class="links">
     <div class="block-title"><strong><span>My Account</span></strong></div>
     <ul>
-        <li><a href="<?php echo Mage::getUrl('customer/account');?>">My Dashboard</a></li>
+        <li><a href="<?php echo Mage::getUrl('customer/account');?>">Dashboard</a></li>
         <li><a href="<?php echo Mage::getUrl('customer/account/edit');?>">Account Information</a></li>
         <li><a href="<?php echo Mage::getUrl('checkout/cart');?>">View Cart</a></li>
-        <li><a href="<?php echo Mage::getUrl('customer/address');?>">Manage Address Book</a></li>
-        <li><a href="<?php echo Mage::getUrl('sales/order/history');?>">Order Status and History</a></li>
-        <li><a href="<?php echo Mage::getUrl('invoice/history/');?>">My Invoices</a></li>
+        <li><a href="<?php echo Mage::getUrl('customer/address');?>">Address Book</a></li>
+        <li><a href="<?php echo Mage::getUrl('sales/order/history');?>">Orders</a></li>
+        <?php if(Mage::getSingleton('customer/session')->isLoggedIn()):?>
+            <li><a href="<?php echo Mage::getUrl('invoice/history/');?>">Invoices</a></li>
+        <?php else: ?>
+            <li><a href="<?php echo Mage::getUrl('customer/account/login');?>">Invoices</a></li>
+        <?php endif;?>
         <li><a href="<?php echo Mage::getUrl('wishlist');?>">Saved Items</a></li>
         <li><a href="<?php echo Mage::getUrl('customer/paymentinfo');?>">Payment Data</a></li>
-
-        <?php if(Mage::getSingleton('customer/session')->isLoggedIn()):?>
-            <li><a href="<?php echo Mage::getUrl('track-packages');?>">Track Packages</a></li>
-          <?php else: ?>
-            <li><a href="<?php echo Mage::getUrl('customer/account/login');?>">Track Packages</a></li>
-        <?php endif;?>
+        <li><a href="<?php echo Mage::getUrl('track-packages');?>">Track Packages</a></li>
         <?php if(Mage::getSingleton('customer/session')->isLoggedIn()):?>
             <li><a href="<?php echo Mage::getUrl('customer/account/logout');?>">Log Out</a></li>
         <?php else: ?>

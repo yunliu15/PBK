@@ -3385,7 +3385,7 @@ div.footer .block-title strong {
 
     .cms-customer-service td {display:block;width:100%!important;}
 
-    .wrapper .footer .links:nth-child(odd) {
+    .wrapper .footer .footer-top ~ div:nth-of-type(odd) {
         clear: none;
     }
 }
@@ -4458,7 +4458,7 @@ td.Discount + td .price {color: green !important;}
     margin-bottom: 0;
 }
 .products-grid .product-sku span {
-    font-size: 13px;
+    font-size: 14px;
 }
 .products-grid .button {
     background-color: #333637;
@@ -5004,7 +5004,7 @@ and (orientation: portrait) {
 .stock-status-product-page,
 .prod_status {
     color:#7E221B;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -5261,21 +5261,23 @@ and (orientation: portrait) {
 }
 
     /* register form */
-.account-create .field {
-    float: left;
-    width: 48%;
-    margin-right: 1%;
-}
+@media (min-width: 768px){
+    .account-create .field {
+        float: left;
+        width: 48%;
+        margin-right: 1%;
+    }
 
-.account-create .field.odd,
-.account-create .fields > div:nth-of-type(2n+1) {
-    clear: left;
-}
+    .account-create .field.odd,
+    .account-create .fields > div:nth-of-type(2n+1) {
+        clear: left;
+    }
 
-.account-create .control {
-    clear: both;
-    width: 48%;
-    max-width: 380px;
+    .account-create .control {
+        clear: both;
+        width: 48%;
+        max-width: 380px;
+    }
 }
 .account-create form .legend {
     border: none;
@@ -6549,10 +6551,18 @@ div.block-layered-nav dl dd ol > li > a {
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+   /* -webkit-appearance: none;
+    -moz-appearance: none;*/
+
     border-radius: 0 !important;
     padding-left: 10px;
+    border: none;
+    outline: 1px solid #d5d5db;
+}
+.checkout-onepage-index select.address-select  {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+
 }
 @media (max-width: 400px) {
     .opc input[type=text],.opc input[type=tel] {
@@ -6596,8 +6606,17 @@ p[class*="cart_qty_ajax"] {
     border: none;
     box-shadow: none;
     text-transform: uppercase;
+    margin-bottom: 10px;
 }
 .cms-track-packages input[type="submit"]:hover,
 .cms-track-packages input[type="reset"]:hover {
     background: #646263;
+}
+.showinvoice-history-index .sidebar .block-content ul > li:nth-of-type(6) a {
+    font-weight: 900;
+    color: #7E221B;
+}
+.cms-track-packages .sidebar li.current a {
+    font-weight: 900;
+    color: #7E221B;
 }
