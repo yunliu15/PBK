@@ -3068,6 +3068,7 @@ div.footer .block-title strong {
 .footer .store-link a {
     display: inline-block;
     width: 45%;
+    vertical-align: top;
 }
 .footer .store-link a.trash {
     width: 35%;
@@ -6627,4 +6628,26 @@ span.after-tax-id {
 
 .sherozal li.field:first-child {
     display: none;
+}
+
+.sherozal .customer-user-attributes .form-list .field:nth-child(2) {
+    float: right !important;
+}
+
+.featured-collections a.shop-now {
+    color: #7E221B;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.featured-collections .shop-now:after {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    content: "\f105";
+    position: relative;
+    left: 4px;
+    top:1px;
+    line-height: 8px;
 }

@@ -1,8 +1,8 @@
 .wrapper a:hover,
-.wrapper a:active,
-.wrapper a:focus {
-    color: #8D4C72;
-}
+ .wrapper a:active,
+ .wrapper a:focus {
+     color: #8D4C72;
+ }
 .wrapper .red-text {
     color: #8D4C72 !important;
 }
@@ -266,5 +266,28 @@ div.cms-tabs .toggle-tabs li > span {
 div.wrapper div.block-layered-nav dd a.amshopby-attr-selected {
 
     background-image: url(../images/amshopby-cb2.png);
+    color: #8D4C72;
+}
+.wrapper .arrow-right:after {
+
+     border-color: transparent transparent transparent #8D4C72;
+ }
+div.featured-collections a.shop-now {
+    color: #8D4C72;
+}
+.cms-track-packages div.sidebar li.current a {
+    color: #8D4C72;
+}
+.showinvoice-history-index div.sidebar .block-content ul > li:nth-of-type(6) a {
+    color: #8D4C72;
+}
+.avability-cart-test > span {
+    color: #8D4C72!important;
+}
+.wrapper .button-small:hover {
+    color: #8D4C72;
+    border-color: #8D4C72;
+}
+.wrapper .opc .step a {
     color: #8D4C72;
 }

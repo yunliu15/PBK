@@ -70,7 +70,7 @@ $website_id = Mage::app()->getWebsite()->getId();
 
         <?php if (Mage::helper('customer')->isLoggedIn() && $website_id == 2 ): ?>
         <li>
-            <a href="/quickshopping">
+            <a href="<?php echo Mage::getUrl('quickshopping');?>">
                 <?php echo $this->__("Quick Order");?>
             </a>
         </li>
@@ -85,24 +85,26 @@ $website_id = Mage::app()->getWebsite()->getId();
                     <div id="account-dropdow-content" class="account-content">
                         <ul>
                             <li>
-                                <a href="<?php echo Mage::getUrl('customer/account/'); ?>"><?php echo $this->__('My Dashboard');?></a>
+                                <a href="<?php echo Mage::getUrl('customer/account/'); ?>"><?php echo $this->__('Dashboard');?></a>
                             </li>
                             <li>
                                 <a href="<?php echo Mage::getUrl('customer/account/edit'); ?>"><?php echo $this->__('Account Information');?></a>
                             </li>
+                            <li><a href="<?php echo Mage::getUrl('checkout/cart');?>">View Cart</a></li>
                             <li>
-                                <a href="<?php echo Mage::getUrl('customer/address/'); ?>"><?php echo $this->__('Manage Address Book');?></a>
+                                <a href="<?php echo Mage::getUrl('customer/address/'); ?>"><?php echo $this->__('Address Book');?></a>
                             </li>
                             <li>
-                                <a href="<?php echo Mage::getUrl('sales/order/history/'); ?>"><?php echo $this->__('Order Status and History');?></a>
+                                <a href="<?php echo Mage::getUrl('sales/order/history/'); ?>"><?php echo $this->__('Orders');?></a>
                             </li>
                             <li>
-                                <a href="<?php echo Mage::getUrl('invoice/history/'); ?>"><?php echo $this->__('My Invoices');?></a>
+                                <a href="<?php echo Mage::getUrl('invoice/history/'); ?>"><?php echo $this->__('Invoices');?></a>
                             </li>
 
                             <li>
                                 <a href="<?php echo Mage::getUrl('wishlist'); ?>"><?php echo $this->__('Saved Items');?></a>
                             </li>
+                            <li><a href="<?php echo Mage::getUrl('customer/paymentinfo');?>">Payment Data</a></li>
                             <li>
                                 <a href="<?php echo Mage::getUrl('track-packages'); ?>"><?php echo $this->__('Track Packages');?></a>
                             </li>
