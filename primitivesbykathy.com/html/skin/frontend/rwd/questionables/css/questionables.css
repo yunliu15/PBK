@@ -84,7 +84,7 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
 }
 
 .wrapper .header-top p {
-    color: #333637;
+    color: #5F6466;
     text-transform: capitalize;
 }
 .header-top .all-upper {
@@ -115,7 +115,7 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
     background-color: #72A9B4;
 }
 .cms-home .collection-text {
-    background: #333637;
+    background: #5F6466;
 }
 .cms-home .collection-text a {
     color: #fff;
@@ -258,10 +258,10 @@ div.wrapper div.block-layered-nav dd a.amshopby-attr-selected {
 }
 div.header-top {
     background-color:#fff;
-    color: #333637;
+    color:#5F6466;
 }
 div.header-top p {
-    color: #333637;
+    color: #5F6466;
 }
 div.nav-top-wrapper {
     background: #72A9B4;
@@ -296,7 +296,7 @@ div.featured-collections a.shop-now {
     color: #72A9B4;
 }
 div.collection-text {
-    border-color: #333
+    border-color: #5F6466
 }
 .wrapper .footer-top {
     border-bottom: 1px solid #72A9B4;
@@ -313,4 +313,16 @@ div.collection-text {
 }
 .wrapper .opc .step a {
     color: #72A9B4;
+}
+div.my-account .buttons-set .button[title*="Save"] {
+    background: #72A9B4;
+}
+div.my-account .buttons-set .button[title*="Save"]:hover {
+    background: #99C0C5;
+}
+div.my-account ~ .buttons-set .button[title*="Save"] {
+    background: #72A9B4;
+}
+div.my-account ~ .buttons-set .button[title*="Save"]:hover {
+    background: #99C0C5;
 }

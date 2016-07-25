@@ -85,7 +85,7 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
     background-color: #f6f3ed;
 }
 .wrapper .header-top p {
-    color: #333637;
+    color: #5F6466;
     text-transform: capitalize;
 }
 .header-top .all-upper {
@@ -119,7 +119,7 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
     background-color: #7ca09b;
 }
 .cms-home .collection-text {
-    background: #333637;
+    background: #5F6466;
 }
 .cms-home .collection-text a {
     color: #fff;
@@ -290,4 +290,16 @@ div.featured-collections a.shop-now {
 }
 .wrapper .opc .step a {
     color: #8D4C72;
+}
+.wrapper .my-account .buttons-set .button[title*="Save"] {
+    background: #8D4C72;
+}
+.wrapper .my-account .buttons-set .button[title*="Save"]:hover {
+    background: #A26E8D;
+}
+.wrapper .my-account ~ .buttons-set .button[title*="Save"] {
+    background: #8D4C72;
+}
+.wrapper .my-account ~ .buttons-set .button[title*="Save"]:hover {
+    background: #A26E8D;
 }

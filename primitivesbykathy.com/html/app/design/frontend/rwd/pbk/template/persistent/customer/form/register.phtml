@@ -71,7 +71,7 @@ $retailBaseUrl = Mage::app()->getStore(1)->getBaseUrl(Mage_Core_Model_Store::URL
             <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
             <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
             <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
-            <h2 class="legend"><?php echo $this->__('Log In Details') ?></h2>
+            <h2 class="legend"><?php echo $this->__('Account Login Info') ?></h2>
             <ul class="form-list clearfix">
                 <li class="fields">
                     <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
@@ -83,20 +83,20 @@ $retailBaseUrl = Mage::app()->getStore(1)->getBaseUrl(Mage_Core_Model_Store::URL
                     </div>
                 </li>
                 <li class="field even">
-                    <label for="confirm_email_address" class="required"><em>*</em><?php echo $this->__('Confirm Email Address') ?></label>
+                    <label for="confirm_email_address" class="required"><em>*</em><?php echo $this->__('Confirm Primary Email') ?></label>
                     <div class="input-box">
                         <input type="text" name="confirm_email" id="confirm_email" value="<?php echo $this->escapeHtml($this->getFormData()->getEmail()) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Confirm Email Address')) ?>" class="input-text validate-email required-entry validate-cemail" />
                     </div>
                 </li>
                 <li class="fields">
                     <div class="field">
-                        <label for="password" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+                        <label for="password" class="required"><em>*</em><?php echo $this->__('Login Password') ?></label>
                         <div class="input-box">
                             <input type="password" name="password" id="password" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Password')) ?>" class="input-text required-entry validate-password" />
                         </div>
                     </div>
                     <div class="field">
-                        <label for="confirmation" class="required"><em>*</em><?php echo $this->__('Confirm Password') ?></label>
+                        <label for="confirmation" class="required"><em>*</em><?php echo $this->__('Confirm Login Password') ?></label>
                         <div class="input-box">
                             <input type="password" name="confirmation" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Confirm Password')) ?>" id="confirmation" class="input-text required-entry validate-cpassword" />
                         </div>
@@ -125,9 +125,9 @@ $retailBaseUrl = Mage::app()->getStore(1)->getBaseUrl(Mage_Core_Model_Store::URL
                 <input type="hidden" name="create_address" value="1" />
                 <?php $website_id = Mage::app()->getWebsite()->getId();
                     if($website_id == 1){ ?>
-                        <h2 class="legend"><?php echo $this->__('Account and Contact Info') ?></h2>
+                        <h2 class="legend"><?php echo $this->__('Account & Contact Info') ?></h2>
                     <?php }else{ ?>
-                        <h2 class="legend"><?php echo $this->__('Business and Contact Info') ?></h2>
+                        <h2 class="legend"><?php echo $this->__('Business & Contact Info') ?></h2>
                     <?php } ?>
 
                 <ul class="form-list clearfix">
@@ -189,13 +189,13 @@ $retailBaseUrl = Mage::app()->getStore(1)->getBaseUrl(Mage_Core_Model_Store::URL
                     <li class="fields">
 
 
-
-                        <div class="field">
-                            <label for="city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
+                        <div class="field ">
+                            <label for="country" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
                             <div class="input-box">
-                                <input type="text" name="city" value="<?php echo $this->escapeHtml($this->getFormData()->getCity()) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('City')) ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="city" />
+                                <?php echo $this->getCountryHtmlSelect() ?>
                             </div>
                         </div>
+
                         <div class="field">
                             <label for="region_id" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
                             <div class="input-box">
@@ -214,6 +214,12 @@ $retailBaseUrl = Mage::app()->getStore(1)->getBaseUrl(Mage_Core_Model_Store::URL
                             </div>
                         </div>
                         <div class="field odd">
+                            <label for="city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
+                            <div class="input-box">
+                                <input type="text" name="city" value="<?php echo $this->escapeHtml($this->getFormData()->getCity()) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('City')) ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('city') ?>" id="city" />
+                            </div>
+                        </div>
+                        <div class="field even">
                             <label for="zip" class="required"><em>*</em><?php echo $this->__('Zip/Postal Code') ?></label>
                             <div class="input-box">
                                 <input type="text" name="postcode" value="<?php echo $this->escapeHtml($this->getFormData()->getPostcode()) ?>"
@@ -222,12 +228,7 @@ $retailBaseUrl = Mage::app()->getStore(1)->getBaseUrl(Mage_Core_Model_Store::URL
                                     />
                             </div>
                         </div>
-                        <div class="field even">
-                            <label for="country" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
-                            <div class="input-box">
-                                <?php echo $this->getCountryHtmlSelect() ?>
-                            </div>
-                        </div>
+
 
                     </li>
 <!--                    <li class="fields">-->
@@ -242,7 +243,9 @@ $retailBaseUrl = Mage::app()->getStore(1)->getBaseUrl(Mage_Core_Model_Store::URL
                         <label for="telephone" class="required"><em>*</em><?php echo $this->__('Phone :') ?></label>
                         <div class="input-box">
                             <input type="text" class="input-text telephone_input validate-number" maxlength="3">
-                            <input type="text" class="input-text telephone_input validate-number" style="margin: 0 8%;" maxlength="3">
+                            <span class="separator"> &#8212 </span>
+                            <input type="text" class="input-text telephone_input validate-number" style="" maxlength="3">
+                            <span class="separator"> &#8212 </span>
                             <input type="text" class="input-text telephone_input validate-number" maxlength="4">
 
                             <input style="display: none" type="text" name="telephone" id="telephone"
@@ -257,23 +260,24 @@ $retailBaseUrl = Mage::app()->getStore(1)->getBaseUrl(Mage_Core_Model_Store::URL
                                     jQuery(".telephone_input").each(function () {
                                         telephone = telephone+jQuery(this).val();
                                     })
-                                    console.log(telephone);
 
-                                    jQuery(".telephone_text_input").val(telephone);
+                                    if(telephone){
+                                        var input1 = telephone.substring(0,3);
+                                        var input2 = telephone.substring(3,6);
+                                        var input3 = telephone.substring(6,10);
+                                            console.log(input1+"-"+input2+"-"+input3);
+                                    }
+
+                                    console.log(input1+"-"+input2+"-"+input3);
+
+                                    jQuery(".telephone_text_input").val(input1+"-"+input2+"-"+input3);
                                     telephone = "";
                                 })
                             </script>
                         </div>
                        
                     </div>
-                    <?php if($website_id == "2"): ?>
-                        <li class="field even"><label for="website_url">Website URL</label>
-                            <div class="input-box">
-                                <input type="text" id="website_url" name="website_url" value="" class="input-text validate-url" autocomplete="off">
 
-                                <kwdiv id="keeper-icon-11" class="keeper-inject-icon keepersecurity_wants-events" style="position: absolute; cursor: pointer; z-index: 11; border: none; width: 16px; height: 16px; left: 377px; top: 696px; background-image: url(&quot;chrome-extension://bfogiafebfohielmmehodmfbbebbbpei/images/16x16bw.png&quot;); background-size: 16px; background-position: 0px 0px; background-repeat: no-repeat;"></kwdiv></div>
-                        </li>
-                    <?php endif; ?>
 
                     <li class="field odd">
                     <?php $attribute = Mage::getModel('eav/config')->getAttribute('customer','how_did_you_find_us');
@@ -304,6 +308,15 @@ $retailBaseUrl = Mage::app()->getStore(1)->getBaseUrl(Mage_Core_Model_Store::URL
 
                             </div>
                         <?php  } ?>
+
+                        <?php if($website_id == "2"): ?>
+                    <li class="field even"><label for="website_url">Website URL</label>
+                        <div class="input-box">
+                            <input type="text" id="website_url" name="website_url" value="" class="input-text validate-url" autocomplete="off">
+
+                            <kwdiv id="keeper-icon-11" class="keeper-inject-icon keepersecurity_wants-events" style="position: absolute; cursor: pointer; z-index: 11; border: none; width: 16px; height: 16px; left: 377px; top: 696px; background-image: url(&quot;chrome-extension://bfogiafebfohielmmehodmfbbebbbpei/images/16x16bw.png&quot;); background-size: 16px; background-position: 0px 0px; background-repeat: no-repeat;"></kwdiv></div>
+                    </li>
+                <?php endif; ?>
                     </li>
 
                     <?php $addressAttributes = $this->getChild('customer_form_address_user_attributes');?>
