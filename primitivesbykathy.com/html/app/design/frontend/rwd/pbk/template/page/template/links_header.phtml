@@ -33,6 +33,7 @@
 $wholesaleUrl = Mage::getUrl('', array('_store'=>'3'));
 $retailUrl = Mage::getUrl('', array('_store'=>'1'));
 $website_id = Mage::app()->getWebsite()->getId();
+$storeId = Mage::app()->getStore()->getStoreId();
 ?>
 <?php $_links = $this->getLinks(); ?>
 <?php if(count($_links)>0): ?>
@@ -136,7 +137,12 @@ $website_id = Mage::app()->getWebsite()->getId();
 
         endif; ?>
         <?php if ($website_id == 1 && !Mage::helper('customer')->isLoggedIn()): ?>
-            <li><a class="last" href="<?php echo $wholesaleUrl?>" target="_blank">Wholesale </a></li>
+
+            <li><a class="last" href="<?php
+                if ($storeId == 2 ) echo $wholesaleUrl . 'ws_trashtalk';
+                else if ($storeId == 6 ) echo $wholesaleUrl . 'ws_questionables';
+                else echo $wholesaleUrl;
+                ?>" target="_blank">Wholesale </a></li>
         <?php endif;?>
 
     </ul>

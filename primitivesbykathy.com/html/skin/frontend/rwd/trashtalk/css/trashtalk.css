@@ -119,7 +119,7 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
     background-color: #7ca09b;
 }
 .cms-home .collection-text {
-    background: #5F6466;
+    background: #333;
 }
 .cms-home .collection-text a {
     color: #fff;
@@ -214,9 +214,6 @@ div.footer .links a,
     color: #fff;
 }
 .wrapper .products-grid .button.login {
-
-    border-bottom: 1px solid #8D4C72;
-
     color: #8D4C72;
 }
 .wrapper .my-account .addresses-list a {
@@ -302,4 +299,17 @@ div.featured-collections a.shop-now {
 }
 .wrapper .my-account ~ .buttons-set .button[title*="Save"]:hover {
     background: #A26E8D;
+}
+.wrapper .pages .next:hover:before {
+    border-left: 4px solid #8D4C72;
+}
+.wrapper .pager .pages li:not(.current):hover {
+    color: #8D4C72;
+    border-color: #8D4C72;
+}
+.wrapper .pager .pages li:not(.current):hover a {
+    color: #8D4C72;
+}
+.wrapper #search_mini_form .search-button.button:hover .icon-moon:before {
+    color: #8D4C72;
 }

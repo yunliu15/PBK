@@ -29,8 +29,8 @@ $invoices = $this->get_user_invoices();
         <tbody>
         <?php foreach ($invoices as $invoice): ?>
             <tr>
-                <td data-th="Invoice #">
-                    <?php echo $invoice->getIncrementId() ?>&nbsp;
+                <td data-th="Invoice #" class="number">
+                    <a href="<?php echo $this->getUrl('sales/order/invoice/', array('order_id'=>$invoice->getOrderId())) ?>"><?php echo $invoice->getIncrementId() ?></a>&nbsp;
                 </td>
                 <td data-th="Date" ><?php echo date("m/d/Y", strtotime($invoice->getCreatedAt())) ?>&nbsp;</td>
                 <td data-th="Bill To"><?php

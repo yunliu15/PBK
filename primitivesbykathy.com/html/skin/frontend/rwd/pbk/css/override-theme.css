@@ -592,7 +592,7 @@ tr.Canceled {background:#FAF3F1!important;}
     width: 100%;
     margin-right: 5px;
     color: #fff;
-    background: #5F6466;
+    background: #343636;
 
 }
 .wrapper .header-minicart .minicart-actions .cart-link:hover {
@@ -1438,14 +1438,15 @@ body.cms-home .page .main-container {padding-bottom:65px;}
     width: 17px;
     height: 17px;
     background-image: url("../images/icon_sprite_new.png");
-    background-position: -32px -186px;
+    background-position: 0 -186px;
+
     position: relative;
     top: 4px;
     right: 3px;
 }
 .link-edit:hover:before {
 
-    background-position: 0 -186px;
+    background-position: -32px -186px;
 }
 
 .my-account .link-email:before {
@@ -2489,7 +2490,7 @@ body.amquickview-ajax-view {
     padding: 0;
     width: 33px;
     height: 33px;
-    background: #5F6466;
+    background: #343636;
 }
 .products-grid .split-button.wishlist-selector .change:hover,
 .products-grid .split-button.wishlist-selector .change.active {
@@ -4461,15 +4462,15 @@ td.Discount + td .price {color: green !important;}
     font-size: 14px;
 }
 .products-grid .button {
-    background-color: #5F6466;
-    border-color: #5F6466;
+    background-color: #343636;
+    border-color: #343636;
     Font-size: 12px;
     color: #fff;
 
 }
 
 .products-grid .split-button.wishlist-selector .change {
-    background-color: #5F6466;
+    background-color: #343636;
 }
 .products-grid .split-button.wishlist-selector .change:after {
     font-size: 12px;
@@ -4569,7 +4570,7 @@ td.Discount + td .price {color: green !important;}
 /**** search by date **/
 input.search_by_date {
     padding: 5px 10px 4px !important;
-    background: #5F6466;
+    background: #343636;
     color: #fff;
     border: none;
     box-shadow: none;
@@ -4588,12 +4589,12 @@ input.search_by_date:hover {
 .cart .buttons-set .button, .cart-table .button, .sidebar .actions .button, .button.button-secondary {
     padding: 7px 24px !important;
 }
-@media only screen and (max-width: 1200px) {
+/*@media only screen and (max-width: 1200px) {
     .buttons-set button.button {
 
         margin: 13px -80px 0 165px !important;
     }
-}
+}*/
 @media only screen and (max-width: 637px) {
     .buttons-set button.button {
         /*margin: 13px -40px 0 68px !important;*/
@@ -5218,7 +5219,7 @@ and (orientation: portrait) {
     font-size: 13px;
 }
 .wrapper .products-grid .amquickview-hover:hover {
-    background: #5F6466;
+    background: #343636;
 }
 .wrapper .amquickview-hover img.am-quickview-icon {
     display: none !important;
@@ -5864,6 +5865,7 @@ img {
 
 .input-text.telephone_input {
     width: 26%;
+    max-width: 100px;
 }
 .discount-percent {
     color: #7E221B;
@@ -6460,6 +6462,17 @@ div.block-layered-nav dl dd ol > li > a {
     .cms-rep-info td {
         display: block;
     }
+
+    .manage-payment-method .col2-set .col-1, .manage-payment-method .col2-set .col-2 {
+        float: none;
+        width: 100%;
+        clear: both;
+        overflow: hidden;
+        padding: 0;
+    }
+    .manage-payment-method .col2-set .col-1 {
+        margin-bottom: 20px;
+    }
 }
 @media (max-width: 340px) {
     .product-view .add-to-cart .qty-wrapper label {
@@ -6468,6 +6481,7 @@ div.block-layered-nav dl dd ol > li > a {
 }
 .opc select {
     padding-right: 15px;
+    height: 30px;
 }
 #co-billing-form label[for='billing-address-select'] ~ .input-box:after,
 #co-shipping-form label[for='shipping-address-select'] ~ .input-box:after {
@@ -6601,7 +6615,7 @@ p[class*="cart_qty_ajax"] {
 .cms-track-packages input[type="submit"],
 .cms-track-packages input[type="reset"] {
     padding: 5px 10px 4px !important;
-    background: #5F6466;
+    background: #343636;
     color: #fff;
     border: none;
     box-shadow: none;
@@ -6626,13 +6640,13 @@ span.after-tax-id {
     padding-left:5px;
 }
 
-.sherozal li.field:first-child {
-    display: none;
-}
+/*.sherozal li.field:first-child {*/
+    /*display: none;*/
+/*}*/
 
-.sherozal .customer-user-attributes .form-list .field:nth-child(2) {
-    float: right !important;
-}
+/*.sherozal .customer-user-attributes .form-list .field:nth-child(2) {*/
+    /*float: right !important;*/
+/*}*/
 
 .featured-collections a.shop-now {
     color: #7E221B;
@@ -6667,6 +6681,7 @@ span.after-tax-id {
 }
 .footer .block-title {border-top: none;}
 .my-account .form-list select {height: 30px;}
+.customer-paymentinfo-index .form-list select {height: 30px;}
 .customer-address-form .buttons-set button.button {
     float: none !important;
     margin-left: 0!important;
@@ -6675,3 +6690,32 @@ span.after-tax-id {
     text-align: left;
 }
 .customer-address-form .buttons-set .back-link {float: none;}
+@media (max-width: 340px) {
+    .footer-container .footer {
+        padding: 20px;
+    }
+}
+
+
+.my-account .customer-user-attributes > .form-list > li:nth-of-type(3) {
+    display: block !important;
+}
+
+#shopping-cart-totals-table .summary-details strong {font-weight: normal;}
+div.cart .cart-totals table tfoot strong {
+    font-weight: 700;
+}
+h1.catalogrequests-pbk,
+.page .title-page > h1,
+.wishlist-management .sub-title h2,
+.manage-payment-method h2,
+.manage-payment-method h4 {text-transform: capitalize;}
+.pager .limiter {
+    margin-right: 2px;
+}
+.data-table .number > a {
+    color: #7E221B;
+}
+.data-table .number > a:hover {
+    color: #5F6466;
+}
