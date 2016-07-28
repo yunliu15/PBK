@@ -6782,7 +6782,8 @@ input[type=text] {
     border: 1px solid #d5d5db;
 }
 
-.wrapper .page input[type=text], .wrapper .page input[type=password] {
+.wrapper .page input[type=text], .wrapper .page input[type=password],
+.wrapper .input-text {
     border-radius: 3px;
 
 }
