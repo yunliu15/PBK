@@ -51,15 +51,23 @@ $website_id = Mage::app()->getWebsite()->getId();
 <!--        <h2 class="legend">--><?php //echo $this->__('Contact Information') ?><!--</h2>-->
         <p class="required"><?php echo $this->__('* Required Fields') ?></p>
         <ul class="form-list">
+
+            <li class="fields">
             <?php $website_id = Mage::app()->getWebsite()->getId(); ?>
             <?php  if($website_id == "2"): ?>
-                <li class="wide" style="margin-right: 10%;">
-                    <label for="company"><?php echo $this->__('Business Name') ?></label>
-                    <div class="input-box">
-                        <input type="text" name="company" id="company" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Business Name')) ?>" value="<?php echo $this->escapeHtml($this->getAddress()->getCompany()) ?>" class="input-text <?php echo $this->helper('customer/address')->getAttributeValidationClass('company') ?>" />
-                    </div>
-                </li>
+<!--                <li class="wide" style="margin-right: 10%;">-->
+<!--                    <label for="company">--><?php //echo $this->__('Business Name') ?><!--</label>-->
+<!--                    <div class="input-box">-->
+<!--                        <input type="text" name="company" id="company" title="--><?php //echo Mage::helper('core')->quoteEscape($this->__('Business Name')) ?><!--" value="--><?php //echo $this->escapeHtml($this->getAddress()->getCompany()) ?><!--" class="input-text --><?php //echo $this->helper('customer/address')->getAttributeValidationClass('company') ?><!--" />-->
+<!--                    </div>-->
+<!--                </li>-->
+                <?php $userDefinedAttributes = $this->getLayout()->getBlock('customer_form_user_attributes'); ?>
+                <?php if ($userDefinedAttributes):?>
+                    <?php echo $userDefinedAttributes->setEntity($this->getAddress())->setShowContainer(false)->toHtml(); ?>
+                <?php endif;?>
+
             <?php endif; ?>
+            </li>
             <li class="fields">
                 <?php echo $this->getNameBlockHtml() ?>
             </li>
@@ -140,20 +148,20 @@ $website_id = Mage::app()->getWebsite()->getId();
 
 
 
-<!--            <li class="wide">-->
-<!--                <label for="street_1" class="required"><em>*</em>--><?php //echo $this->__('Address 2') ?><!--</label>-->
-<!--                <div class="input-box">-->
-<!--                    <input type="text" name="street[]" value="--><?php //echo $this->escapeHtml($this->getAddress()->getStreet(2)) ?><!--" title="--><?php //echo Mage::helper('core')->quoteEscape($this->__('Address 2')) ?><!--" id="street_2" class="input-text --><?php //echo $_streetValidationClass ?><!--" />-->
-<!--                </div>-->
-<!--            </li>-->
-<!--            --><?php //if($website_id == 2){  ?>
-<!--            <li class="wide">-->
-<!--                <label for="street_1" class="required"><em>*</em>--><?php //echo $this->__('Address 3') ?><!--</label>-->
-<!--                <div class="input-box">-->
-<!--                    <input type="text" name="street[]" value="--><?php //echo $this->escapeHtml($this->getAddress()->getStreet(3)) ?><!--" title="--><?php //echo Mage::helper('core')->quoteEscape($this->__('Address 2')) ?><!--" id="street_3" class="input-text --><?php //echo $_streetValidationClass ?><!--" />-->
-<!--                </div>-->
-<!--            </li>-->
-<!--            --><?php // } ?>
+            <li class="wide">
+                <label for="street_1" class="required"><em>*</em><?php echo $this->__('Address 2') ?></label>
+                <div class="input-box">
+                    <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getAddress()->getStreet(2)) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Address 2')) ?>" id="street_2" class="input-text <?php echo $_streetValidationClass ?>" />
+                </div>
+            </li>
+            <?php if($website_id == 2){  ?>
+            <li class="wide">
+                <label for="street_1" class="required"><em>*</em><?php echo $this->__('Address 3') ?></label>
+                <div class="input-box">
+                    <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getAddress()->getStreet(3)) ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Address 2')) ?>" id="street_3" class="input-text <?php echo $_streetValidationClass ?>" />
+                </div>
+            </li>
+            <?php  } ?>
 
 
 
@@ -230,7 +238,7 @@ $website_id = Mage::app()->getWebsite()->getId();
                         <div class="input-box">
 
                             <b><?php echo $shipping_info; ?></b>
-                            <p style="color: #008300"><?php
+                            <p style="color: #6F868C"><?php
                                 echo $this->__("To change your Shipping Method and Shipping #, please contact customer service a: 1-866-295-2849");
                                 ?></p>
                         </div>
@@ -238,10 +246,10 @@ $website_id = Mage::app()->getWebsite()->getId();
 
                 <?php } ?>
             </li>
-            <?php $userDefinedAttributes = $this->getLayout()->getBlock('customer_form_user_attributes'); ?>
-            <?php if ($userDefinedAttributes):?>
-                <?php echo $userDefinedAttributes->setEntity($this->getAddress())->setShowContainer(false)->toHtml(); ?>
-            <?php endif;?>
+<!--            --><?php //$userDefinedAttributes = $this->getLayout()->getBlock('customer_form_user_attributes'); ?>
+<!--            --><?php //if ($userDefinedAttributes):?>
+<!--                --><?php //echo $userDefinedAttributes->setEntity($this->getAddress())->setShowContainer(false)->toHtml(); ?>
+<!--            --><?php //endif;?>
 <!--            <li--><?php //if($this->canSetAsDefaultBilling()) echo ' class="control"' ?><!-->
 <!--                --><?php //if($this->isDefaultBilling()): ?>
 <!--                    <strong>--><?php //echo $this->__('Default Billing Address') ?><!--</strong>-->

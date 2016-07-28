@@ -65,12 +65,12 @@ $storeId = Mage::app()->getStore()->getStoreId();
                 <a href="<?php echo Mage::getUrl('find-a-store');?>">Store Locator</a>
             </li>
         <?php endif ?>
-        <li>
+        <li class="hide-mobile">
             <a href="<?php echo Mage::getUrl('contact-us');?>">Contact Us</a>
         </li>
 
         <?php if (Mage::helper('customer')->isLoggedIn() && $website_id == 2 ): ?>
-        <li>
+        <li class="hide-mobile">
             <a href="<?php echo Mage::getUrl('quickshopping');?>">
                 <?php echo $this->__("Quick Order");?>
             </a>
@@ -82,7 +82,7 @@ $storeId = Mage::app()->getStore()->getStoreId();
         <?php  else: ?>
             <li class="last">
                 <div class="account-dropdown">
-                    <a class="arrow-down" href="<?php echo Mage::getUrl('customer/account/'); ?>"> <?php echo $this->__("My Account");?></a>
+                    <a class="arrow-down" onclick="return false"  href="<?php echo Mage::getUrl('customer/account/'); ?>"> <span class="hide-mobile"><?php echo $this->__("My ");?></span><?php echo $this->__("Account");?></a>
                     <div id="account-dropdow-content" class="account-content">
                         <ul>
                             <li>
@@ -109,6 +109,16 @@ $storeId = Mage::app()->getStore()->getStoreId();
                             <li>
                                 <a href="<?php echo Mage::getUrl('track-packages'); ?>"><?php echo $this->__('Track Packages');?></a>
                             </li>
+                            <li class="hide-desk">
+                                <a href="<?php echo Mage::getUrl('contact-us');?>">Contact Us</a>
+                            </li>
+                            <?php if (Mage::helper('customer')->isLoggedIn() && $website_id == 2 ): ?>
+                                <li class="hide-desk">
+                                    <a href="<?php echo Mage::getUrl('quickshopping');?>">
+                                        <?php echo $this->__("Quick Order");?>
+                                    </a>
+                                </li>
+                            <?php endif ?>
 
                             <li>
                                 <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'Log Out'; ?></a>

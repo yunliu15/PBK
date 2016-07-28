@@ -336,3 +336,9 @@ div.my-account ~ .buttons-set .button[title*="Save"]:hover {
 .wrapper #search_mini_form .search-button.button:hover .icon-moon:before {
     color: #72A9B4;
 }
+.wrapper .data-table .number > a {
+    color: #72A9B4;
+}
+.wrapper .after-tax-id a {
+    color: #72A9B4;
+}

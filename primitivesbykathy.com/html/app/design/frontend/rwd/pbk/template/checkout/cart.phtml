@@ -158,13 +158,15 @@
                             <button type="button" title="<?php echo $this->quoteEscape($this->__('Continue Shopping')) ?>" class="white-button btn-continue" onclick="setLocation('<?php echo Mage::helper('core')->quoteEscape($this->getContinueShoppingUrl()) ?>')"><span><span class="icon-moon"></span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
                         <?php endif; ?>
 
-                        
+
+                        <button type="submit" name="update_cart_action" data-cart-empty value="empty_cart" title="<?php echo $this->quoteEscape($this->__('Empty Your Cart')); ?>" class="white-button btn-empty" id="empty_cart_button"><span><span class="icon-moon"></span><span><?php echo $this->__('Empty Your Cart'); ?></span></span></button>
+
 
                         <button type="submit" name="update_cart_action"
                                 data-cart-item-update value="update_qty"
                                 title="<?php echo $this->quoteEscape($this->__('Update Your Cart')); ?>"
                                 class="white-button btn-update update_all_qty"
-                            >
+                        >
                                 <span class="icon-moon">
 
                                 </span>
@@ -172,8 +174,6 @@
                                     <?php echo $this->__('Update Your Cart'); ?>
                                 </span>
                         </button>
-                        <button type="submit" name="update_cart_action" data-cart-empty value="empty_cart" title="<?php echo $this->quoteEscape($this->__('Empty Your Cart')); ?>" class="white-button btn-empty" id="empty_cart_button"><span><span class="icon-moon"></span><span><?php echo $this->__('Empty Your Cart'); ?></span></span></button>
-
 
 
 

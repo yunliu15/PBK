@@ -313,3 +313,9 @@ div.featured-collections a.shop-now {
 .wrapper #search_mini_form .search-button.button:hover .icon-moon:before {
     color: #8D4C72;
 }
+.wrapper .data-table .number > a {
+    color: #8D4C72;
+}
+.wrapper .after-tax-id a {
+    color: #8D4C72;
+}
