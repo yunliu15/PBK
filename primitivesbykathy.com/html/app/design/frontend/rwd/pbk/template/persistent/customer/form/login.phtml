@@ -55,6 +55,42 @@ $retailUrl = Mage::getUrl('', array('_store'=>'1'));
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form" class="scaffold-form">
         <?php echo $this->getBlockHtml('formkey'); ?>
         <div class="col2-set">
+
+            <?php // This column should be col-1 if the registration column is not displayed ?>
+            <div class="<?php if ($this->helper('customer')->isRegistrationAllowed()): ?>col-2<?php else: ?>col-1<?php endif; ?> registered-users">
+                <div class="content fieldset">
+                    <h2><?php echo $this->__('Registered Customers') ?></h2>
+                    <p class="form-instructions"><?php echo $this->__('If you have already created an account with us, please log in.') ?></p>
+
+                    <ul class="form-list">
+                        <li>
+                            <label for="email" class="required" style="width: auto;"><em>*</em><?php echo $this->__('Email Address or Usename') ?></label>
+                            <div class="input-box">
+                                <input type="text" autocapitalize="off" autocorrect="off" spellcheck="false" name="login[username]" value="<?php echo $this->escapeHtml($this->getUsername()) ?>" id="email" class="input-text required-entry" title="<?php echo $this->quoteEscape($this->__('Email Address or Username')) ?>" />
+                            </div>
+                        </li>
+                        <li>
+                            <label for="pass" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+                            <div class="input-box">
+                                <input type="password" name="login[password]" class="input-text required-entry validate-password" id="pass" title="<?php echo $this->quoteEscape($this->__('Password')) ?>" />
+                            </div>
+                        </li>
+                        <?php echo $this->getChildHtml('form.additional.info'); ?>
+
+                        <?php echo $this->getChildHtml('persistent.remember.me'); ?>
+                    </ul>
+                    <?php echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
+
+                    <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+                </div>
+                <div class="buttons-set">
+                    <button type="submit" class="btn-login red-button" title="<?php echo $this->quoteEscape($this->__('Login')) ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
+                    <p><strong>NEED HELP?</strong></p>
+                    <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="red-link"><?php echo $this->__('Click here if you forgot your email/username or password.') ?></a>
+                </div>
+
+            </div>
+
             <?php if ($this->helper('customer')->isRegistrationAllowed()): ?>
             <div class="col-1 new-users">
                 <div class="content">
@@ -90,40 +126,7 @@ $retailUrl = Mage::getUrl('', array('_store'=>'1'));
 
             </div>
             <?php endif; ?>
-            <?php // This column should be col-1 if the registration column is not displayed ?>
-            <div class="<?php if ($this->helper('customer')->isRegistrationAllowed()): ?>col-2<?php else: ?>col-1<?php endif; ?> registered-users">
-                <div class="content fieldset">
-                    <h2><?php echo $this->__('Registered Customers') ?></h2>
-                    <p class="form-instructions"><?php echo $this->__('If you have already created an account with us, please log in.') ?></p>
 
-                    <ul class="form-list">
-                        <li>
-                            <label for="email" class="required" style="width: auto;"><em>*</em><?php echo $this->__('Email Address or Usename') ?></label>
-                            <div class="input-box">
-                                <input type="text" autocapitalize="off" autocorrect="off" spellcheck="false" name="login[username]" value="<?php echo $this->escapeHtml($this->getUsername()) ?>" id="email" class="input-text required-entry" title="<?php echo $this->quoteEscape($this->__('Email Address or Username')) ?>" />
-                            </div>
-                        </li>
-                        <li>
-                            <label for="pass" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
-                            <div class="input-box">
-                                <input type="password" name="login[password]" class="input-text required-entry validate-password" id="pass" title="<?php echo $this->quoteEscape($this->__('Password')) ?>" />
-                            </div>
-                        </li>
-                        <?php echo $this->getChildHtml('form.additional.info'); ?>
-
-                        <?php echo $this->getChildHtml('persistent.remember.me'); ?>
-                    </ul>
-                    <?php echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
-
-                    <p class="required"><?php echo $this->__('* Required Fields') ?></p>
-                </div>
-                <div class="buttons-set">
-                    <button type="submit" class="btn-login red-button" title="<?php echo $this->quoteEscape($this->__('Login')) ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
-                    <p><strong>NEED HELP?</strong></p>
-                    <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="red-link"><?php echo $this->__('Click here if you forgot your email/username or password.') ?></a>
-                </div>
-
-            </div>
         </div>
         <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
             <input name="context" type="hidden" value="checkout" />

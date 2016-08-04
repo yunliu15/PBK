@@ -79,13 +79,13 @@ $this->setDefaultDirection('desc');
                        Sort by New
                     </option>
                     <option value="<?php echo $this->getOrderUrl('sku', 'desc') ?>"<?php if($this->isOrderCurrent('sku') ): ?> selected="selected"<?php endif; ?>>
-                        Item #
+                        Sort by Item #
                     </option>
                     <option value="<?php echo $this->getOrderUrl('price', 'asc') ?>"<?php if($this->isOrderCurrent('price')): ?> selected="selected"<?php endif; ?>>
-                        Price
+                        Sort by Price
                     </option>
                     <option value="<?php echo $this->getOrderUrl('name', 'asc') ?>"<?php if($this->isOrderCurrent('name')): ?> selected="selected"<?php endif; ?>>
-                        Name
+                        Sort by Name
                     </option>
 
 

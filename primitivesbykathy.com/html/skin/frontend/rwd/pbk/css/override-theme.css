@@ -2270,13 +2270,13 @@ body.amquickview-ajax-view {
     min-height:0;
 }
 .products-grid .button.btn-cart:hover {
-    background: #646263;
-    border-color: #646263;
+    background: #8a8e90;
+    border-color: #8a8e90;
 }
 
 .link-wishlist.button.icon-moon:hover {
-    background: #646263;
-    border-color: #646263;
+    background: #8a8e90;
+    border-color: #8a8e90;
 }
 .link-wishlist.icon-moon:before {
     content: "\f004";
@@ -2504,7 +2504,7 @@ body.amquickview-ajax-view {
 }
 .products-grid .split-button.wishlist-selector .change:hover,
 .products-grid .split-button.wishlist-selector .change.active {
-    background: #646263;
+    background: #8a8e90;
 }
 .products-grid .split-button.wishlist-selector .change:after {
     font-family: 'icomoon' !important;
@@ -5803,11 +5803,9 @@ img {
 }
 .before-main-content .toolbar {
     border-bottom: 1px solid #d5d5db;
-    padding: 10px 10px 3px;
+    padding: 10px 0 3px;
 }
-.before-main-content .pager p {
-    color: #fff;
-}
+
 .before-main-content .pages .current, .pages .current {
     border: 1px solid #646263;
     width: 30px;
@@ -5863,6 +5861,9 @@ img {
     .amlabel-div table:nth-of-type(2), .amlabel-div table:nth-of-type(3) {
         display: none;
     }
+
+    /* hide banner on mobile */
+    .catalog-category-view .category-image {display: none;}
 
 }
 
@@ -6113,12 +6114,12 @@ ul.products-grid .actions {
 }
 
 .cms-page-view .std ul {
-    list-style: disc outside;
+    list-style: outside disc;
     margin-left: 1.5em;
-}
-body[class*="cms-faq"] .std ul {
     margin-bottom: 40px;
+    margin-top: -10px;
 }
+
 
 .cms-find-a-store .std ul {
     margin-left: 0;
@@ -6754,7 +6755,9 @@ h1.catalogrequests-pbk {
     text-align: right;
 }
 #opc-shipping_method label {font-size: 15px;}
-#dt_method_authnetcim {display: none;}
+#dt_method_authnetcim {/*display: none;*/}
+
+
 @media only screen and (min-width: 768px) {
     .hide-desk {
         display: none !important;
@@ -6786,4 +6789,17 @@ input[type=text] {
 .wrapper .input-text {
     border-radius: 3px;
 
+}
+.toolbar-bottom .pager .count-container {display: none;}
+.toolbar .sorter > .sort-by .sort-by-switcher {display: none;}
+.sort-by.arrow-down:after {right: 3px;}
+.footer-top-links ul > li:first-of-type {padding-left: 0;}
+
+div.block-layered-nav dd a {
+    clear: both;
+}
+@media only screen and (max-width: 770px) {
+    .block-layered-nav .block-content.accordion-open > dl > dd.current {
+        display: block!important;
+    }
 }
