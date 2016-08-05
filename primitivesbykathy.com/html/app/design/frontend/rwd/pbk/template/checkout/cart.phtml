@@ -96,6 +96,7 @@
 
     <a name="table"></a>
     <form action="<?php echo $this->getFormActionUrl() ?>" method="post">
+ 
         <?php echo $this->getBlockHtml('formkey'); ?>
         <table id="shopping-cart-table" class="cart-table data-table">
             <col width="1" />
@@ -279,7 +280,7 @@
         });
 
         // toggle readonly
-        var input = $('#shopping-cart-table').find('.qty-input');
+        /*var input = $('#shopping-cart-table').find('.qty-input');
 
         toggleReadOnly();
 
@@ -295,7 +296,7 @@
             else {
                 input.attr('readonly',false);
             }
-        }
+        }*/
 
         //update cart when press enter with cursor in side of qty input
         var inQty = false;

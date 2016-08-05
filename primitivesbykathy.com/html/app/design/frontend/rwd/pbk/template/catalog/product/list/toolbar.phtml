@@ -76,7 +76,7 @@ $this->setDefaultDirection('desc');
                     --><?php /*endforeach; */?>
 
                     <option value="<?php echo $this->getOrderUrl('news_from_date', 'desc') ?>"<?php if($this->isOrderCurrent('news_from_date') ): ?> selected="selected"<?php endif; ?>>
-                       Sort by New
+                       Sort by Newest
                     </option>
                     <option value="<?php echo $this->getOrderUrl('sku', 'desc') ?>"<?php if($this->isOrderCurrent('sku') ): ?> selected="selected"<?php endif; ?>>
                         Sort by Item #
@@ -108,7 +108,7 @@ $this->setDefaultDirection('desc');
             <?php if($this->getLastPageNum()>1): ?>
                 <p class="amount amount--has-pages">
                     <!--<?php //echo $this->__('Showing %s to %s of %s ', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum())?><strong>Items</strong>-->
-                    <?php echo $this->__('Showing ') .$this->getFirstNum() . $this->__(' to ') . $this->getLastNum() . $this->__(' of ') ?>
+                    <span><?php echo $this->__('Showing ') .$this->getFirstNum() . $this->__(' to ') . $this->getLastNum() . $this->__(' of ') ?></span>
                     <strong><?php echo $this->getTotalNum() . $this->__(' Items')?></strong>
                 </p>
             <?php else: ?>

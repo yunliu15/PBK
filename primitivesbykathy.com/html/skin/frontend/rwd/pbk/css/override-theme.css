@@ -5863,8 +5863,14 @@ img {
     }
 
     /* hide banner on mobile */
-    .catalog-category-view .category-image {display: none;}
-
+    .catalog-banner {display: none;}
+    /* hide top pager on mobile */
+    #am-top-toolbar .pager .pages {display: none;}
+    #am-top-toolbar .count-container, #am-top-toolbar .count-container .amount {
+        display: block;
+        text-align: center;
+        float: none;
+    }
 }
 
 @media (max-width: 540px) {
@@ -6759,13 +6765,13 @@ h1.catalogrequests-pbk {
 
 
 @media only screen and (min-width: 768px) {
-    .hide-desk {
+    .hide-desk, .mobile-only {
         display: none !important;
     }
 }
 @media only screen and (max-width: 767px) {
     #header .welcome-msg {display: none;}
-    .hide-mobile {
+    .hide-mobile, .desktop-only {
         display: none !important;
     }
     .account-dropdown .account-content {
