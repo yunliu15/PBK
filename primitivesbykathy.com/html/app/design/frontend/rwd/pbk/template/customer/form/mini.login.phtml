@@ -30,7 +30,7 @@ $wholesaleUrl = Mage::getUrl('', array('_store'=>'3'));
 <div class="block block-login">
     <div class="block-title clearfix">
         <strong><span><?php echo $this->__('Log in') ?></span></strong>
-        <span class="right"><?php echo $this->__('Need an account?') ?> <a href="<?php echo $wholesaleUrl . 'customer/account/create/'; ?>" class="red-link"> <?php echo $this->__('Click here!') ?>  </a></span>
+
     </div>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post">
         <div class="block-content">
@@ -42,7 +42,7 @@ $wholesaleUrl = Mage::getUrl('', array('_store'=>'3'));
             <label for="mini-password"><?php //echo $this->__('Password:') ?></label><input type="password" name="login[password]" id="mini-password" class="input-text required-entry validate-password" placeholder="Enter your password"/>
             <div class="actions">
                 <a href="<?php echo Mage::getUrl('customer/account/forgotpassword/'); ?>" class="red-link">
-                    <?php echo $this->__('Forgot my log info?') ?>
+                    <?php echo $this->__('I forgot my log info') ?>
                 </a>
 
 
@@ -53,4 +53,6 @@ $wholesaleUrl = Mage::getUrl('', array('_store'=>'3'));
             ?>
         </div>
     </form>
+    <a class="btn-create-account button" title="Create a new account" href="<?php echo $wholesaleUrl . 'customer/account/create/'; ?>"><span><span>Create a New Account</span></span></a>
+
 </div>

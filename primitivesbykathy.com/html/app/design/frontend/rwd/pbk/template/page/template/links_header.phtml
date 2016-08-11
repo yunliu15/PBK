@@ -61,16 +61,16 @@ $storeId = Mage::app()->getStore()->getStoreId();
             --><?php /*endif; */?>
 
         <?php if ($website_id == 1): ?>
-            <li>
+            <li class="mobile-menu-hide">
                 <a href="<?php echo Mage::getUrl('find-a-store');?>">Store Locator</a>
             </li>
         <?php endif ?>
-        <li class="hide-mobile">
-            <a href="<?php echo Mage::getUrl('contact-us');?>">Contact Us</a>
+        <li class="mobile-menu-hide">
+            <a href="<?php echo Mage::getUrl('contact');?>">Contact Us</a>
         </li>
 
         <?php if (Mage::helper('customer')->isLoggedIn() && $website_id == 2 ): ?>
-        <li class="hide-mobile">
+        <li class="mobile-menu-hide">
             <a href="<?php echo Mage::getUrl('quickshopping');?>">
                 <?php echo $this->__("Quick Order");?>
             </a>
@@ -78,7 +78,16 @@ $storeId = Mage::app()->getStore()->getStoreId();
         <?php endif ?>
 
         <?php if(!Mage::getSingleton('customer/session')->isLoggedIn() ): ?>
-            <li class="last"><div><a href="<?php echo $wholesaleUrl . 'customer/account/create/'; ?>"><?php echo $this->__('Create Account');?></a></div></li>
+            <li>
+                <div>
+
+
+                    <div class="skip-links minilogin arrow-down">
+                        <a href="#header-login" class="skip-link skip-login">Create Account / Log in</a>
+                    </div>
+
+                </div>
+            </li>
         <?php  else: ?>
             <li class="last">
                 <div class="account-dropdown">
@@ -128,27 +137,10 @@ $storeId = Mage::app()->getStore()->getStoreId();
                 </div>
             </li>
         <?php endif; ?>
-        <?php if (!Mage::helper('customer')->isLoggedIn() ): ?>
-        <li>
-            <div>
 
-
-                    <div class="skip-links minilogin arrow-down">
-                        <a href="#header-login" class="skip-link skip-login">Log in</a>
-                    </div>
-
-
-
-                    <!--<a href="<?php //echo Mage::helper('customer')->getLoginUrl(); ?>">Login</a>-->
-
-            </div>
-        </li>
-            <?php
-
-        endif; ?>
         <?php if ($website_id == 1 && !Mage::helper('customer')->isLoggedIn()): ?>
 
-            <li><a class="last" href="<?php
+            <li class="mobile-menu-hide"><a class="last" href="<?php
                 if ($storeId == 2 ) echo $wholesaleUrl . 'ws_trashtalk';
                 else if ($storeId == 6 ) echo $wholesaleUrl . 'ws_questionables';
                 else echo $wholesaleUrl;

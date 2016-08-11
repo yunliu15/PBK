@@ -58,7 +58,7 @@
                     <td class="total"><?php echo $_order->formatPrice($_order->getGrandTotal()) ?></td>
                     <td class="status"><em>
                             <?php $label = $_order->getStatusLabel() ?>
-                            <?php if(strtolower($label) == 'on hold') {
+                            <?php if(strtolower($label) == 'on hold' || strtolower($label) == 'processing' || strtolower($label) == '*processing') {
                                 echo 'Processing *';
                                 $showNote = true;
                             }

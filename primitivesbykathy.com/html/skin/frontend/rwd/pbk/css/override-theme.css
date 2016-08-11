@@ -772,6 +772,7 @@ tr.Canceled {background:#FAF3F1!important;}
     background-color:#fff;
     border:1px solid #bfbfbf;
     min-width:300px;
+    max-width: 350px;
 }
 #header-login .button{padding:7px 30px;}
 #header-login .block-login {margin-bottom:0;}
@@ -789,8 +790,8 @@ tr.Canceled {background:#FAF3F1!important;}
 #header-login .block-title .right {float:right;}
 #header-login .block-title .right a {display:initial;}
 #mini-login,#mini-password {width:100%;margin-bottom:10px;}
-#header-login .remember-me-box {list-style:none;text-align:left;position: absolute;
-    bottom: 10px;}
+#header-login .remember-me-box {list-style:none;text-align:left;margin-top: -15px;
+}
 #header-login .remember-me-box .link-tip{display:none;}
 #header-login .remember-me-box .input-box {float:left;margin-right:5px;}
 #header-login .actions .red-link{padding-left:0;}
@@ -801,7 +802,7 @@ tr.Canceled {background:#FAF3F1!important;}
     display: block;
     position: absolute;
     z-index: 200;
-    top: 40px;
+    top: 38px;
     right: 0;
     width: 320px;
     background: white;
@@ -5863,7 +5864,7 @@ img {
     }
 
     /* hide banner on mobile */
-    .catalog-banner {display: none;}
+    .catalog-banner, .category-image {display: none;}
     /* hide top pager on mobile */
     #am-top-toolbar .pager .pages {display: none;}
     #am-top-toolbar .count-container, #am-top-toolbar .count-container .amount {
@@ -6219,7 +6220,7 @@ ul.products-grid .actions {
     border-color: transparent transparent #bfbfbf transparent;
     position: absolute;
     top: 15px;
-    /* right: 0; */
+    left: 40%;
 }
 .product-view .product-sku {
     margin-bottom: 15px;
@@ -6778,6 +6779,15 @@ h1.catalogrequests-pbk {
         right: 0;
         left: auto;
     }
+    /* hide mini-cart on mobile */
+    #header-cart {
+        display: none!important;
+    }
+    .header-minicart .arrow-down:after {
+        display: none;
+    }
+
+    .storeviews {display: none;}
 }
 @media only screen and (max-width: 480px) {
     .nav-top {
@@ -6808,4 +6818,53 @@ div.block-layered-nav dd a {
     .block-layered-nav .block-content.accordion-open > dl > dd.current {
         display: block!important;
     }
+}
+.opc label[for='billing:telephone'] ~ .input-box {position: relative; }
+.opc label[for='billing:telephone'] ~ .input-box .validation-advice {
+    position: absolute;
+    top: 30px;
+}
+.opc label[for='billing:telephone'] ~ .input-box .validation-advice ~ input {margin-bottom: 20px;}
+
+#header-login form {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d5d5db;
+}
+#header-login .btn-create-account {
+    background: #fff;
+    color: #5F6466;
+    border: 1px solid #5F6466;
+    padding: 10px 30px;
+}
+#header-login .btn-create-account:hover {
+    background: #F0F1F3;
+}
+#header-login .btn-create-account span {
+    color: #5F6466;
+}
+#header-login .btn-create-account span span:before {
+    background-image: url('../images/account-black.png');
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: -5px;
+}
+@media (min-width: 1065px) {
+    .desk-menu-hide {
+        display: none !important;
+    }
+}
+@media (max-width: 1064px) {
+    .mobile-menu-hide {
+        display: none !important;
+    }
+    #header-account .links li:not(:last-of-type) {
+        border-right: none;
+    }
+}
+.opc-firststep-billing .field.fax {
+    display: none;
 }
