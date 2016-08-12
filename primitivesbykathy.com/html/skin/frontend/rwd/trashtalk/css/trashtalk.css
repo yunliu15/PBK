@@ -147,7 +147,7 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
 .wrapper .with-line span,
 .catalog-product-view .wrapper .ordering-info .block-title span {
     background-image: none;
-    background: #f6f3ed;
+    background: #fff;
 }
 .wrapper .logo {
     max-width: 185px;
@@ -317,5 +317,8 @@ div.featured-collections a.shop-now {
     color: #8D4C72;
 }
 .wrapper .after-tax-id a {
+    color: #8D4C72;
+}
+.wrapper #header-login .block-login .actions a {
     color: #8D4C72;
 }

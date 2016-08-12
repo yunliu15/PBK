@@ -6868,3 +6868,6 @@ div.block-layered-nav dd a {
 .opc-firststep-billing .field.fax {
     display: none;
 }
+#header-login .block-login .actions a {
+    color: #7E221B;
+}

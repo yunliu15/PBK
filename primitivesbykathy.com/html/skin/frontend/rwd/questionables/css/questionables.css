@@ -345,3 +345,6 @@ div.my-account ~ .buttons-set .button[title*="Save"]:hover {
 .wrapper .after-tax-id a {
     color: #72A9B4;
 }
+.wrapper #header-login .block-login .actions a {
+    color: #72A9B4;
+}
