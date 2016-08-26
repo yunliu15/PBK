@@ -5800,7 +5800,7 @@ img {
 
 .catalog-category-view .category-title h1 {
     padding-left: 0;
-    text-transform: uppercase;
+    margin-bottom: 0;
 }
 .before-main-content .toolbar {
     border-bottom: 1px solid #d5d5db;
@@ -6862,6 +6862,9 @@ div.block-layered-nav dd a {
     .desk-menu-hide {
         display: none !important;
     }
+    .wrapper .ms-topmenu .ms-label.anchor_text {
+        margin-left: -15px;
+    }
 }
 @media (max-width: 1064px) {
     .mobile-menu-hide {
@@ -6870,10 +6873,30 @@ div.block-layered-nav dd a {
     #header-account .links li:not(:last-of-type) {
         border-right: none;
     }
+    .ms-megamenu .mb-header, .ms-megamenu .mb-footer {
+        display: none;
+    }
 }
 .opc-firststep-billing .field.fax {
     display: none;
 }
 #header-login .block-login .actions a {
     color: #7E221B;
+}
+.ms-topmenu .ms-submenu {
+    padding-left: 35px;
+    padding-right: 35px;
+    top: 39px !important;
+}
+.ms-megamenu .ms-submenu {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    display: none;
+    max-width: 100%;
+    min-width: 160px;
+    opacity: 1 !important;
+    padding: 15px;
+    position: absolute;
+    top: 52px;
+    z-index: 200;
 }
