@@ -6091,15 +6091,21 @@ ul.products-grid .actions {
 .top-container .widget-banner > ul > li a {
     color: #fff;
 }
-.top-container .widget-banner > ul > li:last-of-type {
+.top-container .widget-banner > ul > li {
+    display: none;
+}
+.top-container .widget-banner > ul > li:nth-of-type(3) {
     margin-right: 0;
     background-color: #7E221B;
+    display: block;
 }
 .top-container .widget-banner > ul > li:first-of-type {
     background-color: #6F868C;
+    display: block;
 }
 .top-container .widget-banner > ul > li:nth-of-type(2) {
     background-color: #333637;
+    display: block;
 }
 .top-container .widget-banner p {
     text-transform: uppercase;

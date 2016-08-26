@@ -186,7 +186,7 @@ div.wrapper .split-button .list-container li span:hover, div.wrapper .split-butt
 .wrapper .top-container .home-top > div:nth-of-type(3) {
     background-color: #8D4C72;
 }
-.wrapper .top-container .widget-banner > ul > li:last-of-type {
+.wrapper .top-container .widget-banner > ul > li:nth-of-type(3) {
     background-color: #8D4C72;
 }
 .wrapper .top-container .widget-banner > ul > li:first-of-type {
@@ -322,3 +322,5 @@ div.featured-collections a.shop-now {
 .wrapper #header-login .block-login .actions a {
     color: #8D4C72;
 }
+.amshopby-column br { display: none;}
+.wrapper div.block-layered-nav dd a.amshopby-attr-inactive { display: none;}
