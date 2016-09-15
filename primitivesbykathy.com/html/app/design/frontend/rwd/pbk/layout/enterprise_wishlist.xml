@@ -41,6 +41,7 @@
         </reference>
 
         <reference name="before_body_end">
+            <block type="core/template" name="wishlist.multiple.wrapper" template="wishlist/catalog/product/wrapper.phtml" ifconfig="wishlist/general/multiple_enabled"/>
             <block type="enterprise_wishlist/behaviour" name="wishlist_behaviour" as="wishlist_behaviour" template="wishlist/behaviour.phtml" />
         </reference>
     </default>

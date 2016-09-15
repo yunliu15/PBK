@@ -2670,10 +2670,10 @@ body.amquickview-ajax-view {
     min-width: 16.2%;
     width: 16.2%;
 }
-.wrapper .amshopby-filters-top > div:last-of-type.amshopby-item-top {
+/*.wrapper .amshopby-filters-top > div:last-of-type.amshopby-item-top {
     width: calc(100% - 81.5% - 14px);
     min-width: calc(100% - 81.5% - 14px);
-}
+}*/
 .wrapper .amshopby-filters-top > div:last-of-type.amshopby-item-top dd {
     width: calc(100% - 1px);
 }
@@ -5344,12 +5344,7 @@ img {
 .col3-1.last {
     margin-right: 0;
 }
-.collection.sale {
-    height: 0;
-    padding-bottom: 41%;
-    background-color: #7E221B;
-    color: #fff;
-}
+
 .collection.sale h1,
 .collection.sale p {
     color: #fff;
@@ -5472,7 +5467,6 @@ img {
 
     .collection.col3-2 {
         width: 100%;
-        padding: 10px;
         height: auto;
         margin-right: 0;
     }
@@ -5669,7 +5663,7 @@ img {
     .page .top-container {
         max-width: 100%;
         background-color: #F0F1F3;
-        padding: 20px;
+        padding: 15px 0;
         margin-top: 0;
     }
 }
@@ -6080,12 +6074,15 @@ ul.products-grid .actions {
 }
 .top-container .widget-banner > ul > li {
     float: left;
-    width: 30%;
-    margin-right: 5%;
+    width: calc(33.33% - 10px);
+    margin-right: 15px;
     color: #fff;
-    padding: 10px;
-    padding-bottom: 999px;
-    margin-bottom: -989px;
+    padding: 0;
+    margin-bottom: 0;
+    border: none;
+}
+.top-container .widget-banner > ul > li img {
+    margin:auto;
 }
 .top-container .widget-banner > ul > li p,
 .top-container .widget-banner > ul > li a {
@@ -6096,15 +6093,15 @@ ul.products-grid .actions {
 }
 .top-container .widget-banner > ul > li:nth-of-type(3) {
     margin-right: 0;
-    background-color: #7E221B;
+
     display: block;
 }
 .top-container .widget-banner > ul > li:first-of-type {
-    background-color: #6F868C;
+
     display: block;
 }
 .top-container .widget-banner > ul > li:nth-of-type(2) {
-    background-color: #333637;
+
     display: block;
 }
 .top-container .widget-banner p {
@@ -6121,8 +6118,7 @@ ul.products-grid .actions {
     .top-container .widget-banner > ul > li {
         width: 100%;
         margin-right: 0;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
+        padding-bottom: 15px;
     }
 }
 
@@ -6895,8 +6891,33 @@ div.block-layered-nav dd a {
     max-width: 100%;
     min-width: 160px;
     opacity: 1 !important;
-    padding: 15px;
+    padding: 5px 25px;
     position: absolute;
     top: 52px;
     z-index: 200;
+}
+
+button.slick-prev::before, button.slick-next::before {
+    color: white;
+    font-family: "slick";
+    font-size: 30px;
+    line-height: 1;
+    opacity: 0.75;
+}
+
+button.slick-prev, button.slick-next {
+    background: transparent none repeat scroll 0 0;
+    border: medium none;
+    color: transparent;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    height: 20px;
+    line-height: 0;
+    outline: medium none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+    width: 30px;
 }

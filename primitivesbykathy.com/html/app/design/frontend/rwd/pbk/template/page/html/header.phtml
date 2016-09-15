@@ -139,11 +139,11 @@
 
                         </div>
                         <?php if(Mage::getSingleton('customer/session')->isLoggedIn()): ?>
-                            <a title="Checkout" class="button full-red-button checkout-button" href="<?php echo Mage::getBaseUrl();?>checkout/cart/">
+                            <a title="Checkout" class="button full-red-button checkout-button" href="<?php echo Mage::getUrl('checkout/cart');?>">
                                 Checkout
                             </a>
                         <?php else: ?>
-                            <a title="Checkout" class="button full-red-button checkout-button" href="<?php echo Mage::getBaseUrl();?>customer/account/login">
+                            <a title="Checkout" class="button full-red-button checkout-button" href="<?php echo Mage::getUrl('customer/account/login');?>">
                                 Checkout
                             </a>
                         <?php endif; ?>
