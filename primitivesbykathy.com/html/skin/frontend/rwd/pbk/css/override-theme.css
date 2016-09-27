@@ -363,8 +363,8 @@ tr.Canceled {background:#FAF3F1!important;}
     width: 120%;
     min-width: 200px;
     padding: 10px;
-    top: 20px;
-    left: -14px;
+    top: 25px;
+    right: 0;
     z-index: 223;
     text-align: left;
     text-transform: capitalize;
@@ -2154,6 +2154,7 @@ body.newsletter-manage-index .buttons-set button.button {
     margin-top: 10px;}
 
 .product-view .add-to-cart, .product-view .extra-info {float:left;}
+.product-view .extra-info {margin-bottom: 20px;}
 .product-view .product-collateral-wrapper {width:50%;float:right;padding-left:25px;    clear: right;}
 .catalog-product-view .ordering-info {margin-top:80px;}
 .catalog-product-view .ordering-info ul li:last-of-type {margin-right:0;}
@@ -3197,6 +3198,21 @@ div.footer .block-title strong {
         font-size: 22px;
         top: 8px;
         left: 12px;
+    }
+    .products-grid .button[title='OUT OF STOCK'] span {
+        display: none;
+    }
+    .products-grid .button[title='OUT OF STOCK']:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background-image: url("../images/outofstock.png");
+        background-position: center;
+        position: absolute;
+        left: 13px;
+        top: 6px;
+        background-size: 100%;
     }
 
 }
@@ -4478,6 +4494,17 @@ td.Discount + td .price {color: green !important;}
     color: #fff;
 
 }
+.products-grid .button[title='OUT OF STOCK'] {
+    background: #fff;
+    color: #5F6466;
+    cursor: auto;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    position: relative;
+    height: 33px;
+    min-width: 47px;
+}
+.products-grid .button[title='OUT OF STOCK']
 
 .products-grid .split-button.wishlist-selector .change {
     background-color: #343636;
@@ -6920,4 +6947,24 @@ button.slick-prev, button.slick-next {
     top: 50%;
     transform: translate(0px, -50%);
     width: 30px;
+}
+
+.button.btn-cart.out-stock {
+    background: #fff;
+    border: 1px solid #343636;;
+    color: #5F6466;
+    cursor: auto;
+}
+.button.btn-cart.out-stock:before {
+    display: none;
+}
+.checkout-types.top {
+    display: none;
+}
+.header-top .widget-banner li {
+    padding: 0;
+    border: 0;
+    font-size: 12px;
+    margin-bottom: 0;
+    background: none;
 }

@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 
 <layout version="0.1.0">
+  
     <default>
         <!--Remove estimator on cart -->
         <!--<checkout_cart_index>-->
             <!--<remove name="checkout.cart.shipping" />-->
         <!--</checkout_cart_index>-->
+
 
         <block type="amstockstatus/rewrite_checkout_cart_item_renderer" name="avability.status" as="avability.status" template="shero/avability.phtml"/>
         <reference name="header">
@@ -13,7 +15,6 @@
         </reference>
 
         <reference name="head">
-
             <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Lato: 300, 300italic, 400, 400italic, 700, 700italic, 900,900italic</href></action>
 
             <!-- CSS -->
@@ -55,6 +56,8 @@
 
         </reference>
         <reference name="header">
+            <block type="core/text_list" name="widgets_header_top" as="widgets_header_top" translate="label"> <label>Widgets Header Top</label> </block>
+
             <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="mini_wishlist_top" after="cart_sidebar" template="wishlist/top-mini.phtml" />
 
             <!-- add storeview links -->
@@ -426,6 +429,7 @@
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
+
     </catalog_product_view>
 
     <!-- add links to My account left nav -->
@@ -436,10 +440,11 @@
                 <path>track-packages</path>
                 <label>Track Packages</label>
             </action>
-            <action method="addLink" translate="label" module="checkout">
-                <name>cart</name>
-                <path>checkout/cart/</path>
-                <label>My Cart/Checkout</label>
+            
+            <action method="addLink" translate="label" module="customer">
+                <name>logout</name>
+                <path>customer/account/logout</path>
+                <label>Log Out</label>
             </action>
 
         </reference>
@@ -448,6 +453,7 @@
     <!--Add recently viewed products to product page-->
     <catalog_product_view translate="label">
         <reference name="content">
+
             <block type="reports/product_viewed" name="product.recently.viewed" as="product_recently_viewed" template="reports/product_viewed-grid.phtml"/>
             <block type="cms/block" name="ordering_info_pdp" after="-">
                 <action method="setBlockId"><block_id>ordering_info_pdp</block_id></action>
@@ -517,6 +523,7 @@
             <action method="setColumnCount"><columns>4</columns></action>
         </reference>
     </catalogsearch_result_index>
+
 
 
 </layout>
