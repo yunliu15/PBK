@@ -1,0 +1,531 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+  
+    <default>
+        <!--Remove estimator on cart -->
+        <!--<checkout_cart_index>-->
+            <!--<remove name="checkout.cart.shipping" />-->
+        <!--</checkout_cart_index>-->
+
+
+        <block type="amstockstatus/rewrite_checkout_cart_item_renderer" name="avability.status" as="avability.status" template="shero/avability.phtml"/>
+        <reference name="header">
+            <block type="core/template" name="footer.search" as="footerSearch" template="catalogsearch/form.mini.phtml"/>
+        </reference>
+
+        <reference name="head">
+            <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Lato: 300, 300italic, 400, 400italic, 700, 700italic, 900,900italic</href></action>
+
+            <!-- CSS -->
+            <action method="addItem" after="-"><type>skin_css</type><name>css/override-theme.css</name><params/></action>
+            <action method="addItem"><type>skin_css</type><name>css/slick.css</name><params/></action>
+            <action method="addItem"><type>skin_css</type><name>css/slick-theme.css</name><params/></action>
+
+            <!-- JS -->
+            <action method="removeItem"><type>js</type><name>js/jquery/jquery-min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/slick.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/slick.min.js</name></action>
+
+        </reference>
+
+
+        <reference name="top.links">
+
+            <action method="setTemplate">
+                <template>page/template/links_header.phtml</template>
+            </action>
+
+
+            <remove name="wishlist_link"/>
+            <remove name="checkout_cart_link"/>
+            <block type="customer/form_login" name="header_customer_form_mini_login"  template="customer/form/mini.login.phtml"/>
+            <!-- add links to top links -->
+            <!--<action method="addLink">
+                <label>Store Locator</label>
+                <url>find-a-store</url>
+                <title>Store Locator</title><prepare/><urlParams/>
+                <position>0</position>
+            </action>
+            <action method="addLink">
+                <label>Contact Us</label>
+                <url>customer-service</url>
+                <title>Contact Us</title>
+                <position>0</position>
+            </action>-->
+
+        </reference>
+        <reference name="header">
+            <block type="core/text_list" name="widgets_header_top" as="widgets_header_top" translate="label"> <label>Widgets Header Top</label> </block>
+
+            <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="mini_wishlist_top" after="cart_sidebar" template="wishlist/top-mini.phtml" />
+
+            <!-- add storeview links -->
+            <block type="core/template" name="storeviews" as="storeviews" template="page/template/storeviews.phtml" />
+        </reference>
+
+        <!-- reset the template for wishlist in sidebar -->
+        <reference name="right">
+            <action method="unsetChild">
+                <alias>wishlist</alias>
+            </action>
+            <!-- add a new wishlist block using desired template here-->
+
+        </reference>
+
+        <!--add a custom position for inserting widget: top in the main content area -->
+        <reference name="content">
+            <block type="core/text_list" name="widgets_content_top" as="widgets_content_top" translate="label" before="-"> <label>Widgets Content Top</label> </block>
+        </reference>
+        <!--add a custom position for inserting widget: top container -->
+        <reference name="top.container">
+            <block type="core/text_list" name="widgets_page_top" as="widgets_page_top" translate="label"> <label>Widgets Page Top</label> </block>
+        </reference>
+
+
+       <!-- <reference name="footer">
+            <block type="cms/block" name="footer_bottom" after="-">
+                <action method="setBlockId"><block_id>footer_bottom</block_id></action>
+            </block>
+        </reference>-->
+        <reference name="header">
+            <block type="core/template" name="top.search2" as="topSearch" template="catalogsearch/form.mini.phtml"/>
+        </reference>
+
+        <reference name="footer">
+            <remove name="footer_links"/>
+            <remove name="footer_links2"/>
+            <remove name="footer_links_company"/>
+            <remove name="footer.newsletter" />
+            <block type="cms/block" name="footer_top" before="-">
+                <action method="setBlockId"><block_id>footer_top</block_id></action>
+            </block>
+            <block type="cms/block" name="footer_column1" after="footer_top">
+                <action method="setBlockId"><block_id>footer_column1</block_id></action>
+            </block>
+            <block type="cms/block" name="footer_column2" after="footer_column1">
+                <action method="setBlockId"><block_id>footer_column2</block_id></action>
+            </block>
+            <block type="cms/block" name="footer_column3" after="footer_column2">
+                <action method="setBlockId"><block_id>footer_column3</block_id></action>
+            </block>
+            <block type="cms/block" name="footer_column4" after="footer_column3">
+                <action method="setBlockId"><block_id>footer_column4</block_id></action>
+            </block>
+            <block type="cms/block" name="footer_column5" after="footer_column4">
+                <action method="setBlockId"><block_id>footer_column5</block_id></action>
+            </block>
+            <block type="cms/block" name="footer_copyright" after="-">
+                <action method="setBlockId"><block_id>footer_copyright</block_id></action>
+            </block>
+
+        </reference>
+
+        <reference name="root">
+            <block type="core/text_list" name="before_content" as="preface" translate="label">
+                <label>Preface, full width</label>
+            </block>
+        </reference>
+
+    </default>
+
+    <customer_logged_in>
+        <reference name="top.links">
+            <action method="removeLinkByUrl"><url helper="customer/getLogoutUrl"/></action>
+        </reference>
+    </customer_logged_in>
+
+
+    <!-- set layout of catalog pages to 2columns-left -->
+    <catalog_category_layered>
+
+        <reference name="root">
+           <action method="setTemplate">
+            <template>page/2columns-left.phtml</template>
+           </action>
+
+         </reference>
+
+
+        <!-- new position for category image, category title and toolbar(not working for ajax, have to use javascript) -->
+      <reference name="before_content">
+            <block type="catalog/category_view" name="category_top" template="catalog/category/category-top.phtml">
+                <action method="append"><block>product_list</block></action>
+            </block>
+
+        </reference>
+
+        <reference name="left_first">
+            <block type="cms/block" name="catalog_banner" after="-">
+                <action method="setBlockId"><block_id>catalog_banner</block_id></action>
+            </block>
+
+        </reference>
+
+    </catalog_category_layered>
+
+    <!-- update layout of search result page -->
+    <catalogsearch_result_index>
+        <!-- new position for category image, category title and toolbar(not working for ajax, have to use javascript) -->
+        <reference name="before_content">
+            <block type="catalogsearch/result" name="result_top" template="catalogsearch/result-top.phtml">
+                <action method="append"><block>product_list</block></action>
+            </block>
+
+        </reference>
+    </catalogsearch_result_index>
+
+
+    <!--add slider to homepage -->
+    <cms_index_index>
+        <reference name="header">
+            <block type="cms/block" name="slider" after="-">
+                <action method="setBlockId"><block_id>slider</block_id></action>
+            </block>
+        </reference>
+       <!-- <reference name="content">
+            <block type="catalog/product_list" name="product_list" template="catalog/product/list.phtml" />
+        </reference>-->
+
+    </cms_index_index>
+
+<!-- add breadcrumbs to my account -->
+    <customer_account translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Home</crumbname>
+                <crumbinfo>
+                    <label>Home</label>
+                    <title>Home</title>
+                    <link>{{baseUrl}}</link>
+                </crumbinfo>
+            </action>
+            <action method="addCrumb">
+                <crumbname>My Account</crumbname>
+                <crumbinfo>
+                    <label>My Account</label>
+                    <title>My Account</title>
+                    <link>{{baseUrl}}/customer/account</link>
+                </crumbinfo>
+            </action>
+        </reference>
+    </customer_account>
+
+    <customer_account>
+        <reference name="content">
+            <action method="unsetChild"><alias>widgets_content_top</alias></action>
+        </reference>
+
+        <!-- move account side navigation into left_first block -->
+        <reference name="left">
+            <action method="unsetChild"><name>customer_account_navigation</name></action>
+
+
+        </reference>
+        <reference name="left_first">
+            <action method="insert"><name>customer_account_navigation</name></action>
+
+
+        </reference>
+
+    </customer_account>
+    <customer_account_index translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Dashboard</crumbname>
+                <crumbinfo>
+                    <label>Dashboard</label>
+                    <title>Dashboard</title>
+                </crumbinfo>
+            </action>
+        </reference>
+
+        <!-- move widget banners down after welcome messages -->
+
+        <reference name="customer_account_dashboard">
+            <action method="insert">
+                <blockName>widgets_content_top</blockName>
+                <alias>widgets_content_top</alias>
+            </action>
+        </reference>
+
+
+    </customer_account_index>
+
+    <!-- add breadcrumb for account information-->
+    <customer_account_edit translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Account Information</crumbname>
+                <crumbinfo>
+                    <label>Account Information</label>
+                    <title>Account Information</title>
+
+                </crumbinfo>
+            </action>
+        </reference>
+    </customer_account_edit>
+    <!-- add breadcrumb for address-->
+    <customer_address_index translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Address Book</crumbname>
+                <crumbinfo>
+                    <label>Address Book</label>
+                    <title>Address Book</title>
+
+                </crumbinfo>
+            </action>
+        </reference>
+    </customer_address_index>
+    <customer_address_form translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Address Book</crumbname>
+                <crumbinfo>
+                    <label>Address Book</label>
+                    <title>Address Book</title>
+                    <link>{{baseUrl}}/customer/address</link>
+                </crumbinfo>
+            </action>
+            <action method="addCrumb">
+                <crumbname>Edit Address</crumbname>
+                <crumbinfo>
+                    <label>Edit Address</label>
+                    <title>Address Book</title>
+                </crumbinfo>
+            </action>
+        </reference>
+    </customer_address_form>
+
+<!-- add breadcrumb for my orders-->
+    <sales_order_history translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>My Orders</crumbname>
+                <crumbinfo>
+                    <label>My Orders</label>
+                    <title>My Orders</title>
+
+                </crumbinfo>
+            </action>
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params></params></action>
+        <action method="addItem"><type>js</type><name>calendar/calendar.js</name></action>
+    <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name></action>
+<block type="core/html_calendar" name="head.calendar" as="calendar" template="page/js/calendar.phtml" />
+
+        </reference>
+
+    </sales_order_history>
+
+    <!-- add breadcrumb for individual order item -->
+    <sales_order_view translate="label">
+        <reference name="breadcrumbs">
+            <action method="setTemplate"><template>page/html/breadcrumbs_order.phtml</template></action>
+            <action method="addCrumb">
+                <crumbname>My Orders</crumbname>
+                <crumbinfo>
+                    <label>My Orders</label>
+                    <title>My Orders</title>
+                    <link>{{baseUrl}}/sales/order/history/</link>
+                </crumbinfo>
+            </action>
+            <action method="addCrumb">
+                <crumbname>Order View</crumbname>
+                <crumbinfo>
+                    <label>Order </label>
+                    <title>Order View</title>
+                </crumbinfo>
+            </action>
+        </reference>
+
+
+        <reference name="order_items">
+            <action method="addItemRender"><type>default</type><block>sales/order_item_renderer_default</block><template>sales/order/items/renderer/default_account.phtml</template></action>
+        </reference>
+
+    </sales_order_view>
+
+    <!-- add breadcrumb for my wishlist-->
+    <wishlist_index_index translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Saved Items</crumbname>
+                <crumbinfo>
+                    <label>Saved Items</label>
+                    <title>Saved Items</title>
+
+                </crumbinfo>
+            </action>
+        </reference>
+    </wishlist_index_index>
+
+    <!-- remove my order from account sidebar -->
+    <customer_account translate="label">
+
+        <remove name="sale.reorder.sidebar"/>
+    </customer_account>
+
+    <!-- add breadcrumbs to login page -->
+    <customer_account_login translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Home</crumbname>
+                <crumbinfo>
+                    <label>Home</label>
+                    <title>Home</title>
+                    <link>{{baseUrl}}</link>
+                </crumbinfo>
+            </action>
+            <action method="addCrumb">
+                <crumbname>Sign In</crumbname>
+                <crumbinfo>
+                    <label>Sign In</label>
+                    <title>Sign In</title>
+
+                </crumbinfo>
+            </action>
+        </reference>
+<!--remove banner from login page -->
+        <reference name="content">
+            <action method="unsetChild"><alias>widgets_content_top</alias></action>
+        </reference>
+    </customer_account_login>
+
+    <!-- add breadcrumbs to shopping cart -->
+    <checkout_cart_index translate="label">
+        <reference name="breadcrumbs">
+            <action method="addCrumb">
+                <crumbname>Home</crumbname>
+                <crumbinfo>
+                    <label>Home</label>
+                    <title>Home</title>
+                    <link>{{baseUrl}}</link>
+                </crumbinfo>
+            </action>
+            <action method="addCrumb">
+                <crumbname>My Shopping Cart</crumbname>
+                <crumbinfo>
+                    <label>My Shopping Cart</label>
+                    <title>My Shopping Cart</title>
+
+                </crumbinfo>
+            </action>
+        </reference>
+
+        <!-- remove quickshopping -->
+        <reference name="content">
+            <action method="unsetChild">
+                <name>quickshopping</name>
+            </action>
+        </reference>
+
+    </checkout_cart_index>
+
+    <!-- product layout -->
+    <catalog_product_view>
+
+        
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+
+    </catalog_product_view>
+
+    <!-- add links to My account left nav -->
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="checkout">
+                <name>track_packages</name>
+                <path>track-packages</path>
+                <label>Track Packages</label>
+            </action>
+            
+            <action method="addLink" translate="label" module="customer">
+                <name>logout</name>
+                <path>customer/account/logout</path>
+                <label>Log Out</label>
+            </action>
+
+        </reference>
+    </customer_account>
+
+    <!--Add recently viewed products to product page-->
+    <catalog_product_view translate="label">
+        <reference name="content">
+
+            <block type="reports/product_viewed" name="product.recently.viewed" as="product_recently_viewed" template="reports/product_viewed-grid.phtml"/>
+            <block type="cms/block" name="ordering_info_pdp" after="-">
+                <action method="setBlockId"><block_id>ordering_info_pdp</block_id></action>
+            </block>
+        </reference>
+    </catalog_product_view>
+
+    <!-- Quickview Template -->
+   <!--<PRODUCT_QUICKVIEW>
+        <reference name="product.info">
+            <action method="setTemplate"><template>catalog/product/view_quickview.phtml</template></action>
+        </reference>
+    </PRODUCT_QUICKVIEW>-->
+
+    <!--update layout of quickview -->
+    <amquickview_ajax_view>
+
+      <reference name="product.info">
+            <action method="setTemplate"><template>catalog/product/view_quickview.phtml</template></action>
+        </reference>
+
+        <remove name="product.recently.viewed"/>
+        <remove name="ordering_info_pdp"/>
+        <!-- remove widgets from quick view -->
+        <remove name="widgets_content_top"/>
+        <remove name="b2b.sticky.footer" />
+
+    </amquickview_ajax_view>
+
+
+  <checkout_onepage_index>
+
+
+      <!-- remove widgets from checkout page -->
+      <remove name="widgets_content_top"/>
+      <remove name="widgets_page_top"/>
+
+    </checkout_onepage_index>
+
+    <!-- missing head content for b2b register page -->
+    <b2b_account_register>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/iwd/b2b/styles.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/iwd/b2b/bootstrap.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/iwd/b2b/media/signin.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/iwd/b2b/media/register.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/iwd/b2b/media/global.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/iwd/b2b/datepicker3.css</stylesheet></action>
+
+            <!--<action method="addItem"><type>skin_js</type><name>js/iwd/b2b/jquery-1.11.1.min.js</name></action>-->
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/bootstrap.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/bootstrap-datepicker.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/application.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/login.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/decorator.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/iwd/b2b/plugin/register.js</name></action>
+        </reference>
+
+    </b2b_account_register>
+
+    <!-- Search Results page -->
+    <catalogsearch_result_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="search_result_list">
+            <action method="setColumnCount"><columns>4</columns></action>
+        </reference>
+    </catalogsearch_result_index>
+
+
+
+</layout>

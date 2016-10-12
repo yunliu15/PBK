@@ -2324,7 +2324,7 @@ body.amquickview-ajax-view {
 /* multiple wishlists */
 .split-button div.list-container {
     width: 100%;
-    min-width: 134px;
+    min-width: 150px;
     left: 0;
 }
 .product-essential .add-to-links > li {
@@ -3737,6 +3737,21 @@ body[class^=" b2b"] .temp-wrapper {background:none;}
     background: #646263;
 }
 /* Quick order */
+
+
+.quickshopping-index-index .popup-trigger { color: #990000;
+    font-size: 12px; font-weight: 700; cursor: pointer; }
+.quickshopping-index-index .popup {display: none; position: absolute; left: 50%; width: 300px; margin-left: -450px; padding: 20px 20px;
+    background: #fff; color: #333; font-size: 15px; line-height: 25px; border: 1px solid #150E2D; z-index: 9999;
+   }
+.quickshopping-index-index .popup-mobile {position: relative; top: 0; left: 0; margin: 30px 0 0; width: 100%;}
+.quickshopping-index-index .popup-btn-close {position: absolute; top: 8px; right: 14px; color: #4EBD79; font-size: 14px; font-weight: bold; text-transform: uppercase; cursor: pointer;}
+.quickshopping-index-index .popup p.title{font-weight:bold;font-size:17px;}
+.quickshopping-index-index .popup p{color:#5F6466 !important;}
+.quickshopping-index-index .popup p span{color:#990000;}
+.quickshopping-index-index .popup ol {list-style-type: number; margin-left:15px;}
+.quickshopping-index-index .popup ol li span{font-style:italic; font-size:12px;}
+
 .wrapper .b2b-wrapper .div-table {
     min-width: 100%;
     width: 1148px;
@@ -6309,10 +6324,11 @@ ul.products-grid .actions {
 .cms-page-view table {
     font-size: 15px;
 }
-.cms-page-view .std a {
+
+.cms-page-view .std a, .cms-page-view.catalog a {
      color: #7E221B;
 }
-.cms-page-view .std a:hover {
+.cms-page-view .std a:hover, .cms-page-view.catalog a:hover {
     text-decoration: underline;
 }
 .cms-page-view .std h2, .cms-no-route .std h2,
@@ -6774,6 +6790,175 @@ h1.catalogrequests-pbk,
 .pager .limiter {
     margin-right: 2px;
 }
+
+.lu-title-page h1 {
+    margin-bottom: 25px;
+}
+
+p.quick-order_info-text {
+    margin-bottom: 25px;
+}
+
+.quick-shop-content p:nth-child(2) {
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.quick-shop-content p:nth-child(2):before {
+    content: "*";
+}
+
+/* Added on 10-5-2016 */
+.order-header-row {
+    float: left;
+    width: 76%;
+}
+
+.csv-file-import-wrapper {
+    float: left;
+    width: 20%;
+    margin-left: 2em;
+}
+
+.csv-file-import {
+    border: 1px solid #D5D9DC;
+    padding: 15px;
+}
+
+.lu-order-header {
+    float: left;
+    width: 50%;
+}
+
+.lu-online-form {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 35px;
+    display: inline-block;
+}
+
+.lu-popup-trigger {
+    font-weight: normal !important;
+    padding-left: .3em;
+}
+
+.lu-popup-trigger-2 {
+    font-size: 11px !important;
+    font-weight: normal !important;
+    color: #990000;
+    cursor: pointer;
+}
+
+.lu-pager {
+    float: left;
+    width: 50%;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.lu-limiter {
+    float: right !important;
+    padding: 0 5px 5px 5px;
+}
+
+.lu-add-to-cart {
+    margin-top: 10px !important;
+    padding: 15px 58px !important;
+    /*background-color: #5F6466 !important;*/
+}
+
+.lu-xls-icon {
+    color: #990000;
+}
+
+input.lu-filename {
+    color: transparent;
+}
+
+.lu-btn-quick-import {
+    width: 100%;
+    margin-top: 1em !important;
+}
+
+.lu-popup-title {
+    font-size: 16px !important;
+}
+
+.lu-popup-list {
+    list-style-type: decimal;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.csv-order-list {
+    list-style-type: decimal;
+    padding-left: 1em;
+}
+
+.adjust-row {
+    font-weight: normal;
+    font-size: 15px;
+    margin-right: .5em;
+}
+
+.limiter-row {
+    height: 26px;
+    outline: 1px solid #a7a7a7;
+    width: 134px;
+}
+
+.csv-title-text {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px !important;
+}
+
+@media only screen and (max-width: 770px) {
+    .lu-order-header {
+        width: 50% !important;
+    }
+
+    .lu-pager {
+        float: left !important;
+        width: 50% !important;
+        clear: none !important;
+    }
+
+    .order-header-row {
+        width: 100%;
+        float: none;
+    }
+
+    .csv-file-import-wrapper {
+        width: 100%;
+        margin-left: 0;
+        padding-top: 3em;
+        float: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .lu-order-header {
+        width: 100% !important;
+    }
+
+    .lu-pager {
+        width: 100% !important;
+        /*text-align: left;*/
+    }
+
+    .lu-limiter {
+        display: inline-block;
+    }
+
+    .csv-file-import-wrapper {
+        width: 100%;
+        margin-left: 0;
+        padding-top: 3em;
+        float: none;
+    }
+}
+
 h1.catalogrequests-pbk {
     margin-top: 0;
     margin-bottom: 30px;
@@ -6976,3 +7161,14 @@ button.slick-prev, button.slick-next {
 .header-top .widget-banner li:first-child {
     display: block;
 }
+
+
+.order-info-message{
+    color: #7E221B;
+    float:left;
+
+}
+
+
+
+
