@@ -3489,6 +3489,9 @@ div.footer .block-title strong {
     #header-login .arrow-up:before{
         display:none;
     }
+    .wishlist-cart-wrapper > .checkout-button {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 400px) {

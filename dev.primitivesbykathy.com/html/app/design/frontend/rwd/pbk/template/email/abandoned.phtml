@@ -1,0 +1,63 @@
+
+
+<?php
+$customer = $this->getCustomer();
+$quote = Mage::getModel('sales/quote')->loadByCustomer($customer);
+
+$baseUrl = Mage::getBaseUrl();
+//the code to get the image for a product
+//Mage::getModel("customadmin/helper")->get_image($product->getId());
+
+/*if ($quote) {
+
+
+    foreach ($quote->getAllItems() as $item) {
+
+        $product = $item->getProduct();
+        echo $product->getName() . ',';
+        echo Mage::getModel("customadmin/helper")->get_image($product->getId());
+    }
+
+}*/
+
+?>
+
+
+
+<!-- cart items -->
+<?php if ($quote): ?>
+    <table width="100%" >
+        <thead style="border-bottom: 1px solid #ccc;">
+            <tr>
+                <th style="text-align: left; font-size: 16px; padding: 5px 0;">
+                    Items In Your Cart
+                </th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            <?php foreach ($quote->getAllItems() as $item): ?>
+                <?php $product = $item->getProduct(); ?>
+                <?php $product = Mage::getModel("catalog/product")->load($product->getId()); ?>
+                <?php $size = $product->getResource()->getAttribute('size')->getFrontend()->getValue($product); ?>
+                <?php $artist = $product->getResource()->getAttribute('artist')->getFrontend()->getValue($product); ?>
+
+                <tr style="border-bottom: 1px solid #ccc;;">
+                    <td style="padding: 5px 0;">
+                        <?php echo Mage::getModel("customadmin/helper")->get_image($product->getId()); ?>
+                    </td>
+                    <td style="vertical-align:middle;">
+                        <p style="margin:0;padding:3px 0;"><strong style="font-weight:bold;">#<?php echo $product->getSKU() . ' ' . $product->getName(); ?></strong></p>
+                        <p style="margin:0;padding:3px 0;"><?php echo 'SIZE: ' . $size . '. ARTIST: ' . $artist; ?></p>
+                        <p style="margin:0;padding:3px 0;"><?php echo 'Qty: ' . $item->getQty()?></p>
+                        <a href="<?php echo $product->getProductUrl() //echo $baseUrl . 'checkout/cart/'; ?>">View Now &raquo; </a>
+                    </td>
+                </tr>
+
+            <?php endforeach; ?>
+        </tbody>
+
+    </table>
+<?php endif; ?>
+<!-- end cart items -->
