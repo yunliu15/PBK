@@ -175,6 +175,13 @@
         </reference>
     </catalogsearch_result_index>
 
+    <!-- update layout of amasty landing page -->
+    <amlanding_page_view>
+        <reference name="before_content">
+            <block type="core/template" name="landing_top" template="amasty/amlanding/landing-top.phtml" />
+        </reference>
+    </amlanding_page_view>
+
 
     <!--add slider to homepage -->
     <cms_index_index>
